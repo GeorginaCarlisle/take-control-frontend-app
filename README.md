@@ -95,7 +95,7 @@ Take Control API live link:
 
 ## Testing and Validation
 
-[Return to contents list](#contents)
+See [TESTING.md](TESTING.md) for all testing and validation.
 
 ## Bugs and Fixes
 
