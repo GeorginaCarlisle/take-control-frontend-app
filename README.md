@@ -1,102 +1,122 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Take Control
 
-Welcome,
+Developer: Georgina Carlisle
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.  
-DO NOT use this template if you are using the Gitpod IDE. Use the following command instead:  
-`npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm`
+Image of application to go here
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **31st August, 2023**
+A task management application that allows users to set, manage and organise their focus areas, goals and tasks. Created using React alongside linked Django Rest API.
 
-## Codeanywhere Reminders
+Take Control App live link:
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Take Control API repository:
+Take Control API live link:
 
-To log into the Heroku toolbelt CLI:
+## Contents
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Features](#features)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- [Existing Features](#existing-features)
+
+- [Future Features](#future-features)
+
+[Design](#design)
+
+- [The Strategy Plane](#the-strategy-plane)
+
+- [The Scope Plane](#the-scope-plane)
+
+- [The Structure Plane](#the-structure-plane)
+
+- [The Skeleton Plane](#the-skeleton-plane)
+
+- [The Surface Plane](#the-surface-plane)
+
+[Agile Methodology](#agile-methodology)
+
+[Languages](#languages)
+
+[Frameworks and Libraries](#frameworks-and-libraries)
+
+[Tools and Technologies](#tools-and-technologies)
+
+[Testing and Validation](#testing-and-validation)
+
+[Bugs and Fixes](#bugs-and-fixes)
+
+[Deployment](#deployment)
+
+[Cloning this repository](#cloning-this-repository)
+
+[Forking a branch](#forking-a-branch)
+
+[Credits](#credits)
+
+[Acknowledgements](#acknowledgements)
 
 ---
 
-Happy coding!
+## Features
 
-# Getting Started with Create React App
+### Existing Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Future Features
 
-## Available Scripts
+[Return to contents list](#contents)
 
-In the project directory, you can run:
+## Design
 
-### `npm install`
+### The Strategy Plane
 
-Installs the required npm packages.
+### The Scope Plane
 
-### `npm start`
+### The Structure Plane
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
+### The Skeleton Plane
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### The Surface Plane
 
-### `npm test`
+[Return to contents list](#contents)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Agile Methodology
 
-### `npm run build`
+[Return to contents list](#contents)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Languages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Return to contents list](#contents)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Frameworks and Libraries
 
-### `npm run eject`
+[Return to contents list](#contents)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tools and Technologies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Return to contents list](#contents)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing and Validation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Return to contents list](#contents)
 
-## Learn More
+## Bugs and Fixes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Return to contents list](#contents)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+[Return to contents list](#contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Cloning this repository
 
-### Analyzing the Bundle Size
+[Return to contents list](#contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Forking a branch
 
-### Making a Progressive Web App
+[Return to contents list](#contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Credits
 
-### Advanced Configuration
+[Return to contents list](#contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Return to contents list](#contents)
