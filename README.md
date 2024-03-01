@@ -67,6 +67,33 @@ Take Control API live link:
 
 ### The Strategy Plane
 
+#### Target User Group
+
+Adults who are wanting to take control and push forwards in their life. Setting goals, making progress and keeping on top of everything they wish to achieve.
+The target group often have lots on their plate and want to be able to keep multiple plates spinning.
+
+#### Problem Background
+
+For those with a full life, lots on their plate and lots they want to achieve, it can be hard to keep track of everything and despite determination and hard work things start to slip and get missed. It can be difficult to prioritise and manage everything in a way that allows for balance and progression across multiple areas. Without a way to keep organised their focus can jump from area to area, with long-term consistency difficult to maintain and any progression made easily lost.
+
+#### Problem Statement
+
+“I am a busy individual who is finding it difficult to keep track of everything I need to do and all the extra things that will enable me to progress and push forwards.”
+
+#### Project Aim
+
+To provide users with an application that allows them to store and manipulate data that:
+
+- identifies the different focus areas in their life
+- sets goals
+- notes tasks to be undertaken (one off and repeated)
+- allows for organisation and prioritisation
+- allows for tracking and deadline setting
+
+#### Safety Considerations
+
+User’s data needs to be kept safe. Viewable and editable by them alone. The code behind the application also needs to be kept safe with secret keys etc. hidden.
+
 ### The Scope Plane
 
 ### The Structure Plane
