@@ -254,6 +254,14 @@ User Stories which detail the scope of this project from the users point of view
 
 ### The Structure Plane
 
+The following diagram shows the main features within the application and the user's path through these.
+
+![Flow diagram](documentation/planning/pp5-frontendflow.jpg)
+
+A [Component Plan](documentation/planning/component-plan.pdf) has been created showing how React components will be used to achieve this structure. This plan is designed as a starting point that will be further adapted as the project is being built and also contains notes on some of the key functionality.
+
+For backend structure please see the [Take Control API README](https://github.com/GeorginaCarlisle/take-control-api?tab=readme-ov-file#design).
+
 [Return to contents list](#contents)
 
 ### The Skeleton Plane
