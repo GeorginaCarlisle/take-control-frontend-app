@@ -341,7 +341,7 @@ The following will be utilised to increase the accessibility of this application
 - Aria labels, alt text and aria-hidden to ensure visual information will be correctly passed on for those who cannot access it.
 - Space around clickable elements on mobile, so that it is easy for users to activate the correct functionality when using a touch screen.
 
-#### Frameworks and Libraries
+#### Frameworks and libraries to support styling
 
 [React bootstrap](https://react-bootstrap-v4.netlify.app/) will be used to speed up styling and allow time to be focused on functionality. Bootstrap’s grid system will be used to control responsivity. The following components from bootstrap will also be used and modified as needed:
 
@@ -381,7 +381,7 @@ The main text will be black with colour being used for the following to aid navi
 
 Please see [TESTING.md](TESTING.md) for contrast level tests.
 
-#### Fonts
+#### Font choices
 
 For the application name and page titles [Bebas Neue by Ryoichi Tsunekawa](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) has been chosen as it gives a real feeling of strength and taking control.
 
@@ -409,6 +409,40 @@ A logo image has been created, incorporating the main green colour and the idea 
 
 ## Tools and Technologies
 
+### Tools and technologies used to aid with planning
+
+[Drawio](https://www.drawio.com/) - Used to create the flow diagram showing how the user will move through the website.
+
+[Balsamiq](https://balsamiq.com/) - Used to create wireframes showing the skeleton plane of the design phase.
+
+[Material - Palette configuration tool](https://m2.material.io/inline-tools/color/) - Used to generate colour scheme ideas.
+
+[Adobe](https://color.adobe.com/create/color-wheel) - Used to create the colour scheme image.
+
+### Tools and technologies used to aid with the coding of this project
+
+[Code Institute Template](https://github.com/new?template_name=react-ci-template&template_owner=Code-Institute-Org) - Provided me with a familiar base from which to build my project.
+
+[GitHub](https://github.com/)  - Stores the repository for this project so that it can be viewed by others. Github issues and projects were also utilised, see [Agile Methodology](#agile-methodology).
+
+[git](https://git-scm.com/) - Controlled the building of this project in a series of versions which can be tracked.
+
+[Visual Studio Code](https://code.visualstudio.com/) - The editor in which this project has been built.
+
+### Tools and technologies used to aid with the content for this project
+
+[Smashing Logo](https://smashinglogo.com/en/) - Used to help generate ideas for the logo.
+
+[Inkscape](https://inkscape.org/) - Used to create the logo following an idea generated within Smashing Logo.
+
+[Favicon.io](https://favicon.io/favicon-converter/) - Used to convert the logo into a favicon.
+
+[Photoscape X](http://x.photoscape.org/) - Used to re-size and crop images.
+
+### Tools and technologies used to aid testing this project
+
+[WebAim contrast checker](https://webaim.org/resources/contrastchecker/) - Used to test the contrast between foreground and background colours to ensure they met accessibility guidelines.
+
 [Return to contents list](#contents)
 
 ## Testing and Validation
@@ -432,6 +466,12 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 [Return to contents list](#contents)
 
 ## Credits
+
+### Fonts
+
+[Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) by Ryoichi Tsunekawa
+
+[Lato](https://fonts.google.com/specimen/Lato?query=Lato) by Lukasz Dziedzic
 
 [Return to contents list](#contents)
 
