@@ -322,6 +322,77 @@ The new task page provides a quick way of creating new tasks that is accessed di
 
 ### The Surface Plane
 
+#### Aims
+
+The aim for the surface plane is to provide a clean, relaxed and professional space.
+
+There will often be a lot on the screen, the vast majority of which will be text and so white space, clearly defined containers and use of colour will be key to helping the user navigate around the information.
+
+The application contains a lot of interaction through which the user will manipulate their data. Common icons will be used helping to maintain a clean and uncluttered site. Only well-known icons will be used, aiding intuitive navigation of the site, aria-labels and hover labels will also be added to make these accessible to all. Where buttons are used, they will follow consistent styling.
+
+The application needs to provide a great user experience on both mobile and desktop, so that it can be used will the user is working on a desktop as well as throughout the day via mobile.
+
+#### Accessibility
+
+The following will be utilised to increase the accessibility of this application:
+
+- Semantic html to pass on clear meaning at a base level.
+- High text colour contrast throughout. With all text passing both WCAG AA and WCAG AAA for their text size.
+- Aria labels, alt text and aria-hidden to ensure visual information will be correctly passed on for those who cannot access it.
+- Space around clickable elements on mobile, so that it is easy for users to activate the correct functionality when using a touch screen.
+
+#### Frameworks and Libraries
+
+[React bootstrap](https://react-bootstrap-v4.netlify.app/) will be used to speed up styling and allow time to be focused on functionality. Bootstrap’s grid system will be used to control responsivity. The following components from bootstrap will also be used and modified as needed:
+
+- Alerts (for success and error messages)
+- Accordion (for mobile views)
+- Badges (for labels)
+- Buttons (for form submission etc.)
+- Cards (for focus cards)
+- Dropdowns (for mobile nav and task choices)
+- Forms (for create and edit functionality)
+- List Group (throughout)
+- NavBar and Nav (for main navigation)
+- Overlay/Popovers/tooltips (for hover info on functional items)
+- Spinners (for indicating data loading)
+
+[React drop and drag](https://react-dnd.github.io/react-dnd/about) will be considered for improving user experience by allowing users to drag tasks from backlog to today and then from today to completed, rather than a more clunky toggle system. It will also then be used for ordering of today tasks and ranking focuses. As this will involve upskilling, it will only be used should time allow.
+
+#### Colour Scheme
+
+The following colours have been chosen:
+![colour scheme](documentation/planning/colour/colour-scheme.png)
+
+The main sections of the page will be given different background colours to help differentiate them as different:
+
+- Header (light grey)
+- Main background (Green – with low opacity)
+- Page component (very light grey)
+- Footer (dark grey with white text)
+- Alert messages (light blue)
+
+The main text will be black with colour being used for the following to aid navigation and page scanning:
+
+- Logo + section titles (Green)
+- Page title and current page in nav bar (Purple)
+- Clickable elements (Pink)
+- Clickable elements on hover (Purple)
+
+Please see [TESTING.md](TESTING.md) for contrast level tests.
+
+#### Fonts
+
+For the application name and page titles [Bebas Neue by Ryoichi Tsunekawa](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) has been chosen as it gives a real feeling of strength and taking control.
+
+For the main text [Lato by Lukasz Dziedzic](https://fonts.google.com/specimen/Lato?query=Lato) has been chosen as it has a very clean and relaxed feel to it fitting in with the aims for the surface plane. It also has a number of styles within it providing scope to change the weight of the font etc.
+
+#### Logo
+
+A logo image has been created, incorporating the main green colour and the idea of a spinning plate made up of different elements. This logo will sit alongside the app name “Take Control” and slogan “Keep all your plates spinning” and will be used as the favicon.
+
+![Logo](documentation/planning/logo.png)
+
 [Return to contents list](#contents)
 
 ## Agile Methodology
