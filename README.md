@@ -266,6 +266,58 @@ For backend structure please see the [Take Control API README](https://github.co
 
 ### The Skeleton Plane
 
+A number of wireframes have been created to plan out how and where everything will be displayed. The final layout will be further developed during the build phase. Any changes will be noted in the [features](#features) section.
+
+#### Landing Page
+
+![Screenshot showing how the landing page will look](documentation/planning/wireframes/landing-page.png)
+
+#### Main plan page
+
+This is where users will first be taken when they log in.
+
+![Screenshot showing how the main planning page will look](documentation/planning/wireframes/plan-page.png)
+
+#### Focus page
+
+The focus page is accessed through the plan page and includes a number of components, all of which can be rendered in create, view, or edit modes. Three wireframes have been included to show these different variations.
+
+![Screenshot showing how the focus page will look when first creating a new focus](documentation/planning/wireframes/focus-create.png)
+
+![Screenshot showing how the focus page will look when viewing](documentation/planning/wireframes/focus-view.png)
+
+![Screenshot showing how all the different elements on the focus page will look when being edited](documentation/planning/wireframes/focus-edit.png)
+
+#### Miscellaneous page
+
+This is page for unlinked tasks and is accessed from the main plan page. It will also handle editing in the same manner as the focus page.
+
+![Screenshot showing how the miscellaneous page will look](documentation/planning/wireframes/miscellaneous-view.png)
+
+#### Take Action page
+
+![Screenshot showing how the take action page will look](documentation/planning/wireframes/take-action-page.png)
+
+#### Labels page
+
+![Screenshot showing how the labels page will look](documentation/planning/wireframes/labels-page.png)
+
+Once labels have been created, they can be added in the Take Action page.
+
+![Screenshot showing how the labels can be added](documentation/planning/wireframes/labels-add.png)
+
+#### Ordering page
+
+This wireframe shows today's tasks being ordered. The same setup will also be used for ranking focus areas.
+
+![Screenshot showing how the ordering page will look](documentation/planning/wireframes/ordering-page.png)
+
+#### New task page
+
+The new task page provides a quick way of creating new tasks that is accessed directly from the take action page.
+
+![Screenshot showing how the new task page will look](documentation/planning/wireframes/new-task-page.png)
+
 [Return to contents list](#contents)
 
 ### The Surface Plane
