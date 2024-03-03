@@ -397,6 +397,63 @@ A logo image has been created, incorporating the main green colour and the idea 
 
 ## Agile Methodology
 
+Agile values and principles have been followed in the creation of this project where they fit into a solo project built purely for educational purposes within a very short timescale.
+
+In particular the following common Agile practices have been followed: user stories, product backlog, time boxing, prioritization and information radiators.
+
+### User Stories
+
+Please see the [Scope Plane](#the-scope-plane) for the user stories created for this project which breakdown the Epics detailing the main features of the platform into manageable chunks of work.
+
+The issues tool on GitHub has been used to record all user stories. Acceptance criteria and tasks were added to the user stories as the project progressed.
+
+### MoSCoW Prioritisation
+
+Due to the short time frame in which to build this project all user stories were given a MoSCoW label at the very beginning of the development phase:
+
+Must-have - the user stories deemed vital for this phase of the project.
+
+Should-have - the user stories deemed important but not vital for this phase of the project.
+
+Could-have - the user stories that will only have a small impact if left out of this phase of the project.
+
+Throughout the development phase I worked on completing all must-haves before assessing to see if I had time for should-haves and could-haves. As I progressed through the time available for completion of this project, I then began to re-categorised some of the user stories into:
+
+Won't-have - the user stories that won't be worked on during this phase of the project, forming future features for the project.
+
+### Information Radiator
+
+GitHub projects was utilised as a kanban board for this project and was linked to both this repository and the [Take Control API repository](https://github.com/GeorginaCarlisle/take-control-api). This allowed both frontend and backend tasks to be viewed together and worked on in an order that allowed me to push for the best overall product that could be achieved within the time frame.
+
+### Product Backlog
+
+A product backlog was used in which to store all user stories, prior to being assigned into an iteration. Any user stories not completed at the end of the iteration were then moved back into the backlog. At the end of the project a number of user stories remained in the product backlog. These have been discussed in the [future features](#future-features) section of the readme.
+
+The product backlog is visible on GitHub through the use of a specific backlog column in the project board.
+
+### Time Boxing
+
+Developement of the project was split into four time boxes/iterations. Each iteration was set to a period of one week and had a set focus. This allowed for judgements to be made for each task as to how far to push perfection and how quickly to move on, so that I was able to bring the project together into a finished state prior to the deadline.
+
+#### First Sprint
+
+Focus: Getting everything set up and initial deployment of both repositories before beginning API must-haves.
+
+Beginning of the sprint:
+![Screenshot of the project board at the beginning of the first sprint](documentation/Agile/first-sprint-start.png)
+
+#### Second Sprint
+
+Focus: Finishing API must-haves. Once those are in place work will focus on frontend must-haves.
+
+#### Third Sprint
+
+Focus: All must-haves to be completed. A decision to then be taken on what else can be achieved in the remainder of this sprint.
+
+#### Fourth Sprint
+
+Focus: Final testing and README tasks alongside ensuring any remaining bugs are fixed.
+
 [Return to contents list](#contents)
 
 ## Languages
