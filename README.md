@@ -595,7 +595,7 @@ Instructions to fork directly from an issue:
 
 ### Code
 
-[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
+[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies, setting up routing and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
 
 ### Fonts
 

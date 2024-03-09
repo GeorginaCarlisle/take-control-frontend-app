@@ -3,3 +3,11 @@
   background-color: rgba(0, 121, 38, 0.6);
   min-height: 100vh;
 }
+
+.Main {
+  margin-top: 60px;
+  background-color: #f5f5f5;
+  border: black;
+  border-width: 2px;
+  border-radius: 5px;
+}
