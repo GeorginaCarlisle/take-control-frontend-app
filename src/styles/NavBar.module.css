@@ -1,0 +1,23 @@
+.Header {
+  background-color: #c9c4c4;
+  height: 55px;
+  align-items: normal;
+}
+
+.LogoContainer {
+  display: flex;
+}
+
+.Logo {
+  height: 39px;
+  display: inline;
+  vertical-align: bottom;
+}
+
+.LogoName {
+  font-family: "Bebas Neue", sans-serif;
+  color: #007926;
+  display: inline-block;
+  margin-bottom: 0;
+  padding-top: 5px;
+}
