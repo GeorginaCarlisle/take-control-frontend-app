@@ -1,0 +1,39 @@
+.Footer {
+  width: 100%;
+  background-color: #595959;
+  color: white;
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  align-items: center;
+}
+
+.Footer > p {
+  margin: 0;
+}
+
+.DesktopOnly {
+  display: none;
+}
+
+.Date {
+  margin-left: 10px;
+}
+
+.Icons {
+  margin-left: 30px;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.Icons:hover {
+  color: #3c159c;
+}
+
+@media screen and (min-width:576px){
+  .DesktopOnly {
+    display: inline;
+  }
+  .Icons {
+    margin-left: 20px;
+  }
+}

@@ -2,6 +2,7 @@ import {Route,Switch} from 'react-router-dom'
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import { Container } from 'react-bootstrap';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
       </Container>
+      <Footer />
     </div>
   );
 }
