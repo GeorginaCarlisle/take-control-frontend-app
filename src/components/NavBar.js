@@ -23,8 +23,8 @@ const NavBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>
-          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Signup</NavLink>
-          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Signin</NavLink>
+          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Sign Up</NavLink>
+          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Sign In</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
