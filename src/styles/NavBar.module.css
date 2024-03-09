@@ -1,5 +1,5 @@
 .Header {
-  background-color: #c9c4c4;
+  background-color: #dfdcdc;
   height: 55px;
   align-items: normal;
 }
@@ -22,8 +22,12 @@
   padding-top: 5px;
 }
 
+.LogoName:hover {
+  color: #3c159c;
+}
+
 .Link {
-  margin-left: 30px;
+  margin-bottom: 15px;
   color: black;
   font-size: 1.2rem;
 }
@@ -35,4 +39,27 @@
 .Active {
   color: #3c159c;
   font-weight: 700;
+}
+
+.NavLinks {
+  position: fixed;
+  top: 55px;
+  right: 0px;
+  padding: 10px 20px 5px 20px;
+  background-color: #dfdcdc;
+  text-align: left;
+  border-bottom-left-radius: 5px;
+}
+
+@media screen and (min-width:768px){
+  .Link {
+    margin-left: 30px;
+    margin-bottom: 0px;
+  }
+  .NavLinks {
+    position: static;
+  }
+  .DesktopLinks{
+    justify-content: flex-end;
+  }
 }

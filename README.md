@@ -609,4 +609,6 @@ Instructions to fork directly from an issue:
 
 [Code Institute](https://codeinstitute.net/) -  The majority of the coding skills, knowledge and understanding showcased in this project have been learnt through the 'Diploma of Full stack software development' that I am completing with Code Institute.
 
+[React bootstrap documentation](https://react-bootstrap.github.io/) - Used throughout the project in order to utilise bootstraps components.
+
 [Return to contents list](#contents)

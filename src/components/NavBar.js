@@ -20,8 +20,8 @@ const NavBar = () => {
         </div>
       </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+      <Navbar.Collapse id="basic-navbar-nav" className={styles.DesktopLinks}>
+        <Nav className={styles.NavLinks}>
           <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>
           <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Sign Up</NavLink>
           <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Sign In</NavLink>
