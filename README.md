@@ -458,9 +458,15 @@ Focus: Final testing and README tasks alongside ensuring any remaining bugs are 
 
 ## Languages
 
+HTML, CSS, JavaScript and JSX
+
 [Return to contents list](#contents)
 
 ## Frameworks and Libraries
+
+[React 17.0.2](https://legacy.reactjs.org/docs/getting-started.html) - A JavaScript library for building user interfaces. An older version was chosen to stay inline with all other dependencies used as part of the Moments walkthrough which provided a base that this project was then modelled on.
+
+[React bootstrap 1.6.3](https://react-bootstrap.github.io/) - A frontend framework built for react that provides common components. React bootstrap was chosen to help speed up the development of this project and allow time to focused elsewhere.
 
 [Return to contents list](#contents)
 
@@ -524,6 +530,10 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 
 ## Credits
 
+### Code
+
+[Code Institute] - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
+
 ### Fonts
 
 [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) by Ryoichi Tsunekawa
@@ -533,5 +543,7 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 [Return to contents list](#contents)
 
 ## Acknowledgements
+
+[Code Institute]() -  The majority of the coding skills, knowledge and understanding showcased in this project have been learnt through the 'Diploma of Full stack software development' that I am completing with Code Institute.
 
 [Return to contents list](#contents)
