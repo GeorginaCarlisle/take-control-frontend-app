@@ -4,10 +4,14 @@ import styles from '../styles/NavBar.module.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/logo.png'
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 
 const NavBar = () => {
+
+  const {expanded, setExpanded, ref} = useClickOutsideToggle();
+
   return (
-    <Navbar expand="md" fixed="top" className={styles.Header}>
+    <Navbar expanded={expanded} expand="md" fixed="top" className={styles.Header}>
       <NavLink to="/">
         <div className={styles.LogoContainer}>
             <img
@@ -19,7 +23,11 @@ const NavBar = () => {
             </div>
         </div>
       </NavLink>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle
+        ref={ref}
+        onClick={() => setExpanded(!expanded)}
+        aria-controls="basic-navbar-nav"
+      />
       <Navbar.Collapse id="basic-navbar-nav" className={styles.DesktopLinks}>
         <Nav className={styles.NavLinks}>
           <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>

@@ -597,6 +597,10 @@ Instructions to fork directly from an issue:
 
 [Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies, setting up routing and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
 
+The following specific code was copied from the "Moments" walkthrough:
+
+- useClickOutsideToggle custom hook.
+
 ### Fonts
 
 [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) by Ryoichi Tsunekawa
