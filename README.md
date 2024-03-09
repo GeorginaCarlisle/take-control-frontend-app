@@ -7,9 +7,9 @@ Image of application to go here
 A task management application that allows users to set, manage and organise their focus areas, goals and tasks. Created using React alongside linked Django Rest API.
 
 Links:
-Take Control App live
+[Take Control App live](https://take-control-frontend-32659c908a57.herokuapp.com/)
+[Take Control API live](https://take-control-api-d106d6135431.herokuapp.com/)
 [Take Control API repository](https://github.com/GeorginaCarlisle/take-control-api)
-Take Control API live
 
 ## Contents
 
@@ -518,13 +518,74 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 
 ## Deployment
 
+This project has been deployed using Heroku.
+
+Instructions to deploy using Heroku:
+
+1 - While in Heroku, navigate to dashboard and then click on the new button in the top right corner choosing: create new app.
+
+2 - Input a name for your app (this name will need to be unique) and choose the correct region for where you are located. Click create app.
+
+3 - Click on deploy tab. Select deploy method, in this case Git Hub. Confirm connection to git hub by searching for the correct repository and then connecting to it.
+
+4 - To manually deploy project click 'Deploy Branch'. Once built a message will appear saying: Your app was successfully deployed. Click the view button to view the deployed page making a note of it's url.
+
 [Return to contents list](#contents)
 
 ## Cloning this repository
 
+In order to work on this repository you will first need to clone it.
+
+Instructions to clone the repository:
+
+1 - While in the GitHub repository, click on the green code button.
+
+2 - Copy the link.
+
+3 - In your IDE or local coding environment use the link to open the repository.
+
+For example: in VScode
+
+clicking on 'Clone Git Repository...' will bring up a box in which to paste the link.
+once vscode has the link, you will then be asked where you would like the repo saving.
+You should now be set up ready to work on the repository.
+
+For example: in CodeAnywhere
+
+Click on 'Add new workspace'
+You will then be given the option to 'Create from your project repository' and a box in which to paste the link
+CodeAnywhere will now open a new workspace containing the repository.
+You should now be set up ready to work on the repository.
+
+4 - Install all dependencies. I use the command: npm install
+
+5 - Check it's all working by running the program. I used the command: npm start
+
 [Return to contents list](#contents)
 
 ## Forking a branch
+
+In order to protect the main branch while you work on something new, essential when working as part of a team or when you want to experiment with a new feature, you will need to fork a branch.
+
+Instructions to fork the repository:
+
+1 - While in the GitHub repository, click on the branch symbol and text indicating the number of branches.
+
+2 - This will load details on current branches. Click on the green 'New branch' button.
+
+3 - Enter a name for the new branch and then click the green 'create new branch' button.
+
+4 - Your new branch should now have appeared on the screen.
+
+5 - Clicking on the new branch and then following the steps for cloning will allow you to open up and work on this branch.
+
+Instructions to fork directly from an issue:
+
+1 - Click to view an issue, either from the issues list or from the project board. From the project board you will need to click once to bring up the issue and then again on the title to go into it fully.
+
+2 - Partway down the right hand side (on desktop) you should see the heading 'Development' and under this a link to 'create a branch for this issue or link a pull request'.
+
+3 - Click on the link to create a forked branch that is tied to the issue.
 
 [Return to contents list](#contents)
 
@@ -532,7 +593,7 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 
 ### Code
 
-[Code Institute] - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
+[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
 
 ### Fonts
 
@@ -544,6 +605,6 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 
 ## Acknowledgements
 
-[Code Institute]() -  The majority of the coding skills, knowledge and understanding showcased in this project have been learnt through the 'Diploma of Full stack software development' that I am completing with Code Institute.
+[Code Institute](https://codeinstitute.net/) -  The majority of the coding skills, knowledge and understanding showcased in this project have been learnt through the 'Diploma of Full stack software development' that I am completing with Code Institute.
 
 [Return to contents list](#contents)
