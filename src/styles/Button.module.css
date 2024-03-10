@@ -9,6 +9,7 @@
 .Button {
   color: white;
   background-color: #9c1576;
+  border-color: #9c1576;
   border-radius: 5px;
   box-sizing: border-box;
   height: 34px;

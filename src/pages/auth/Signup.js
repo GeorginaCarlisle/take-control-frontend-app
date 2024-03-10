@@ -3,7 +3,9 @@ import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';
 import logo from '../../assets/purple-logo.png';
-import { Button, Form } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 
@@ -19,6 +21,8 @@ const Signup = () => {
 
   const history = useHistory();
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -32,7 +36,7 @@ const Signup = () => {
       await axios.post('/dj-rest-auth/registration/', signUpData);
       history.push('/signin');
     } catch(err){
-      console.log(err);
+      setErrors(err.response?.data);
     }
   };
 
@@ -51,6 +55,11 @@ const Signup = () => {
       <div className={`${pageStyles.ContentContainer} ${formStyles.FormContainer}`}>
         <Form onSubmit={handleSubmit}>
 
+          {errors.username?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group controlId="username" className={formStyles.FormGroup}>
             <Form.Label className={formStyles.FormLabel}>Username:</Form.Label>
             <Form.Control
@@ -62,6 +71,11 @@ const Signup = () => {
             />
           </Form.Group>
 
+          {errors.password1?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group controlId="password1" className={formStyles.FormGroup}>
             <Form.Label className={formStyles.FormLabel}>Password:</Form.Label>
             <Form.Control
@@ -73,6 +87,11 @@ const Signup = () => {
             />
           </Form.Group>
 
+          {errors.password2?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group controlId="password2" className={`${formStyles.FormGroup} ${formStyles.FinalGroup}`}>
             <Form.Label className={formStyles.FormLabel}>Confirm password:</Form.Label>
             <Form.Control
@@ -84,6 +103,11 @@ const Signup = () => {
             />
           </Form.Group>
 
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <Button className={`${btnStyles.Button} ${formStyles.SubmitButton}`} type="submit">
             Sign up
           </Button>
