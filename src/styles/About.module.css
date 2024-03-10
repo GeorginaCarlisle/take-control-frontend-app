@@ -1,0 +1,22 @@
+/* Extra title styling */
+
+.Logo {
+  height: 40px;
+  display: inline;
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+/* Styling of content */
+
+.Intro {
+  margin-bottom: 20px;
+}
+  
+ul {
+  padding-inline-start: 20px;
+}
+  
+li {
+  margin-bottom: 10px;
+}

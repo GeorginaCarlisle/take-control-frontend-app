@@ -1,0 +1,26 @@
+/* Styling for all buttons keeping consistency across site */
+
+.ButtonContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Button {
+  color: white;
+  background-color: #9c1576;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 34px;
+  padding: 4px 10px 2px 10px;
+}
+
+.Button:hover {
+  color: #9c1576;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  border-color: #9c1576;
+  border: solid;
+  border-width: 2px;
+  padding: 2px 10px 2px 10px;
+}
