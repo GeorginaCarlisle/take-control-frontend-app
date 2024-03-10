@@ -49,6 +49,8 @@ Links:
 
 [Forking a branch](#forking-a-branch)
 
+[Connecting to the Take Control API](#connecting-to-the-take-control-api)
+
 [Credits](#credits)
 
 [Acknowledgements](#acknowledgements)
@@ -470,6 +472,8 @@ HTML, CSS, JavaScript and JSX
 
 [React Router 5.3.0](https://github.com/remix-run/react-router) - A lightweight, fully-featured routing library for React.
 
+[Axios](https://axios-http.com/) - A simple promise based HTTP client for the browser and node.js.
+
 [Return to contents list](#contents)
 
 ## Tools and Technologies
@@ -591,15 +595,26 @@ Instructions to fork directly from an issue:
 
 [Return to contents list](#contents)
 
+## Connecting to the Take Control API
+
+In order to connect this frontend application to it's partner API:
+
+1 - Add the deployed url of this project as a config var to the API within its Heroku deployment settings with the key CLIENT_ORIGIN. Make sure their is no / at the end of the url.
+
+2 - This project then uses the Axios library to handle connection.
+
+[Return to contents list](#contents)
+
 ## Credits
 
 ### Code
 
-[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies, setting up routing and deploying to Heroku. The "Moments" walkthrough was also used as an example project on which this project is based.
+[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies, setting up routing, deploying to Heroku and connecting to the backend API. The "Moments" walkthrough was also used as an example project on which this project is based.
 
 The following specific code was copied from the "Moments" walkthrough:
 
 - useClickOutsideToggle custom hook.
+- axiosDefault file.
 
 ### Fonts
 

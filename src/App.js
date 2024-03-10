@@ -1,4 +1,5 @@
-import {Route,Switch} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom';
+import './api/axiosDefaults';
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
