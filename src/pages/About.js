@@ -11,7 +11,7 @@ const Home = () => {
           <img
             src={logo}
             alt="Take control logo. A green decagon made of intersecting lines"
-            className={styles.Logo}
+            className={pageStyles.Logo}
           />
           <h1>Take Control</h1>
         </div>

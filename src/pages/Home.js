@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles/Home.module.css';
 import btnStyles from '../styles/Button.module.css';
 import pageStyles from '../styles/Page.module.css';
 import logo from '../assets/purple-logo.png';
@@ -13,7 +12,7 @@ const Home = () => {
           <img
             src={logo}
             alt="Take control logo. A green decagon made of intersecting lines"
-            className={styles.Logo}
+            className={pageStyles.Logo}
           />
           <h1>Take Control</h1>
         </div>

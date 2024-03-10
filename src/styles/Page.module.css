@@ -16,6 +16,13 @@
   text-align: center;
 }
 
+.Logo {
+  height: 40px;
+  display: inline;
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
 /* Styling of content */
 
 .ContentContainer {

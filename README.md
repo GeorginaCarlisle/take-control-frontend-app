@@ -609,7 +609,13 @@ In order to connect this frontend application to it's partner API:
 
 ### Code
 
-[Code Institute](https://codeinstitute.net/) - "Moments" learning materials were followed during the initial set-up of this project, installing dependencies, setting up routing, deploying to Heroku and connecting to the backend API. The "Moments" walkthrough was also used as an example project on which this project is based.
+[Code Institute](https://codeinstitute.net/) - The "Moments" walkthrough was used as an example project on which this project is based. The "Moments" learning materials were specifically followed, adjusting to the needs of this project when:
+
+- installing dependencies
+- setting up routing
+- deploying to Heroku
+- connecting to the backend API
+- setting up authentication pages: sign up and sign in
 
 The following specific code was copied from the "Moments" walkthrough:
 

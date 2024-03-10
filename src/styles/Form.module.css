@@ -1,0 +1,26 @@
+/* Form Styling */
+.FormContainer {
+  position: relative;
+}
+
+.FinalGroup {
+  margin-bottom: 45px;
+}
+
+.SubmitButton {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+@media screen and (min-width:768px){
+  .FormGroup {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .FormLabel {
+    margin-right: 5px;
+    margin-bottom: 0px;
+    line-height: 38px;
+  }
+}
