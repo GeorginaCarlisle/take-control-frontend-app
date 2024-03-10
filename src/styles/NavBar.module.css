@@ -34,6 +34,7 @@
 
 .Link:hover {
   color: #3c159c;
+  text-decoration: none;
 }
 
 .Active {

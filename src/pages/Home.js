@@ -2,10 +2,11 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import styles from '../styles/Home.module.css';
 import logo from '../assets/purple-logo.png';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const Home = () => {
   return (
-    <div className={styles.ContentContainer}>
+    <div className={styles.PageContainer}>
       <div className={styles.TitleContainer}>
         <div className={styles.Title}>
           <img
@@ -17,22 +18,25 @@ const Home = () => {
         </div>
         <h2>keep all your plates spinning</h2>
       </div>
-      <div>
+      <div className={styles.ContentContainer}>
         <p className={styles.Intro}>
           When there is lots you want to achieve, alongside plenty of responsibilities, 
-          it can be hard to keep all your plates spinning. This is where Take Control steps in, here you can:
+          it can be hard to keep all your plates spinning. This is where Take Control steps in.
+        </p>
+        <p>
+          Here you can:
         </p>
         <ul>
           <li>
             Define areas in your life you wish to focus on.
           </li>
           <li>
-            Note down all the day to day tasks that need to be done.
+            Note down all the day to day tasks that need accomplishing.
           </li>
           <li>
             Set yourself goals (breaking them down into smaller goals if needed) including 
-            success criteria, a completion date and a remainder for yourself of the value 
-            you that achieving your goal will bring.
+            success criteria, a completion date and a reminder for yourself of the value 
+            that achieving your goal will bring.
           </li>
           <li>
             Add habits you want to build as repeated tasks, specifying how often you would 
@@ -48,8 +52,12 @@ const Home = () => {
         </ul>
       </div>
       <div className={styles.ButtonContainer}>
-        <Button className={styles.Button} >Get signed up!</Button>
-        <Button className={styles.Button} >Find out more</Button>
+        <Link className={styles.LinkButton} to={'/signup'}>
+          Get signed up!
+        </Link>
+        <Link className={styles.LinkButton} to={'/about'}>
+        Find out more
+        </Link>
       </div>
     </div>
   )
