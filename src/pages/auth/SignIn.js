@@ -9,24 +9,22 @@ import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 
-const Signup = () => {
+function SignIn() {
 
-  const [signUpData, setSignUpData] = useState({
+  const [signInData, setSignInData] = useState({
     username: '',
-    email: '',
-    password1: '',
-    password2: ''
+    password: ''
   });
 
-  const { username, email, password1, password2 } = signUpData;
+  const { username, password } = signInData;
 
   const history = useHistory();
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
-    setSignUpData({
-      ...signUpData,
+    setSignInData({
+      ...signInData,
       [event.target.name]: event.target.value,
     });
   };
@@ -34,8 +32,8 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('/dj-rest-auth/registration/', signUpData);
-      history.push('/signin');
+      await axios.post('/dj-rest-auth/login/', signInData);
+      history.push('/plan');
     } catch(err){
       setErrors(err.response?.data);
     }
@@ -50,7 +48,7 @@ const Signup = () => {
             alt="Take control logo. A green decagon made of intersecting lines"
             className={pageStyles.Logo}
           />
-          <h1>Get signed up!</h1>
+          <h1>Sign in to your account</h1>
         </div>
       </div>
       <div className={`${pageStyles.ContentContainer} ${formStyles.FormContainer}`}>
@@ -60,6 +58,7 @@ const Signup = () => {
                 {message}
               </Alert>
             ))}
+
           {errors.username?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
               {message}
@@ -69,63 +68,31 @@ const Signup = () => {
             <Form.Label className={formStyles.FormLabel}>Username:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter a username"
+              placeholder="Enter your username"
               name="username"
               value={username}
               onChange={handleChange}
             />
           </Form.Group>
 
-          {errors.email?.map((message, idx) => (
+          {errors.password?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="email" className={formStyles.FormGroup}>
-            <Form.Label className={formStyles.FormLabel}>Email:</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter your email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </Form.Group>
-
-          {errors.password1?.map((message, idx) => (
-            <Alert key={idx} className={formStyles.ErrorAlert}>
-              {message}
-            </Alert>
-          ))}
-          <Form.Group controlId="password1" className={formStyles.FormGroup}>
+          <Form.Group controlId="password" className={`${formStyles.FormGroup} ${formStyles.FinalGroup}`}>
             <Form.Label className={formStyles.FormLabel}>Password:</Form.Label>
             <Form.Control
               type="password"
               placeholder="Password"
-              name="password1"
-              value={password1}
-              onChange={handleChange}
-            />
-          </Form.Group>
-
-          {errors.password2?.map((message, idx) => (
-            <Alert key={idx} className={formStyles.ErrorAlert}>
-              {message}
-            </Alert>
-          ))}
-          <Form.Group controlId="password2" className={`${formStyles.FormGroup} ${formStyles.FinalGroup}`}>
-            <Form.Label className={formStyles.FormLabel}>Confirm password:</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Confirm password"
-              name="password2"
-              value={password2}
+              name="password"
+              value={password}
               onChange={handleChange}
             />
           </Form.Group>
 
           <Button className={`${btnStyles.Button} ${formStyles.SubmitButton}`} type="submit">
-            Sign up
+            Sign In
           </Button>
         </Form>
       </div>
@@ -133,4 +100,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignIn;
