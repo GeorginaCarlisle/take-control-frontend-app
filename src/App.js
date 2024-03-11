@@ -1,4 +1,3 @@
-import React, { createContext, useEffect, useState } from 'react';
 import { Route,Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import styles from './App.module.css';
@@ -9,9 +8,6 @@ import About from './pages/About';
 import Signup from './pages/auth/Signup';
 import SignIn from './pages/auth/SignIn';
 import Plan from './pages/plan/Plan';
-import axios from 'axios';
-
-
 
 function App() {
   return (
@@ -24,6 +20,10 @@ function App() {
           <Route exact path="/signup" render={() => <Signup />} />
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/plan" render={() => <Plan />} />
+          <Route exact path="/takeaction" render={() => <h1>Take Action</h1>} />
+          <Route exact path="/labels" render={() => <h1>Labels</h1>} />
+          <Route exact path="/profile" render={() => <h1>Profile</h1>} />
+          <Route exact path="/signout" render={() => <h1>Signout</h1>} />
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
       </div>

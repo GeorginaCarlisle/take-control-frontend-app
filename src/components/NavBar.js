@@ -5,10 +5,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/logo.png'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import { useCurrentUser } from '../api/contexts/CurrentUserContext';
 
 const NavBar = () => {
 
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
+
+  const currentUser = useCurrentUser();
+
+  const loggedInLinks = (
+    <>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/plan">Plan</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/takeaction">Take Action</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/labels">Labels</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/profile">Profile</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/signout">Signout</NavLink>
+    </>
+  );
+
+  const loggedOutLinks = (
+    <>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Sign Up</NavLink>
+      <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Sign In</NavLink>
+    </>
+  );
 
   return (
     <Navbar expanded={expanded} expand="md" fixed="top" className={styles.Header}>
@@ -30,9 +51,7 @@ const NavBar = () => {
       />
       <Navbar.Collapse id="basic-navbar-nav" className={styles.DesktopLinks}>
         <Nav className={styles.NavLinks}>
-          <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>
-          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Sign Up</NavLink>
-          <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Sign In</NavLink>
+          {currentUser ? (loggedInLinks) : (loggedOutLinks)}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
