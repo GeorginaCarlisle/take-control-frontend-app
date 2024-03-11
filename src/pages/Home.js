@@ -3,7 +3,8 @@ import btnStyles from '../styles/Button.module.css';
 import pageStyles from '../styles/Page.module.css';
 import logo from '../assets/purple-logo.png';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
-import { useCurrentUser } from '../api/contexts/CurrentUserContext';
+import { useCurrentUser } from '../contexts/CurrentUserContext';
+
 
 const Home = () => {
 

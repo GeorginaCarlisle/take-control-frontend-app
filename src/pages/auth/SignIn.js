@@ -7,8 +7,9 @@ import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import axios from 'axios';
-import { useSetCurrentUser } from '../../api/contexts/CurrentUserContext';
+
 
 function SignIn() {
 
@@ -39,6 +40,9 @@ function SignIn() {
       setCurrentUser(data.user);
       history.push('/');
     } catch(err){
+      console.log(err)
+      console.log(err.response)
+      console.log(err.response.data)
       setErrors(err.response?.data);
     }
   };
@@ -58,10 +62,10 @@ function SignIn() {
       <div className={`${pageStyles.ContentContainer} ${formStyles.FormContainer}`}>
         <Form onSubmit={handleSubmit}>
           {errors.non_field_errors?.map((message, idx) => (
-              <Alert key={idx} className={formStyles.ErrorAlert}>
-                {message}
-              </Alert>
-            ))}
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
 
           {errors.username?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>

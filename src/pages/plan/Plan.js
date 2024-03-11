@@ -1,5 +1,5 @@
-import React from 'react'
-import { useCurrentUser } from '../../api/contexts/CurrentUserContext';
+import React from 'react';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 
 const Plan = () => {

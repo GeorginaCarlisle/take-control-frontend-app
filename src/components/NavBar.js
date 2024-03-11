@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/logo.png'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
-import { useCurrentUser, useSetCurrentUser } from '../api/contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
 
 const NavBar = () => {

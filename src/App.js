@@ -1,5 +1,7 @@
 import { Route,Switch } from 'react-router-dom';
 import './api/axiosDefaults';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom';
+import { useCurrentUser } from './contexts/CurrentUserContext';
 import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -8,8 +10,6 @@ import About from './pages/About';
 import Signup from './pages/auth/Signup';
 import SignIn from './pages/auth/SignIn';
 import Plan from './pages/plan/Plan';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom';
-import { useCurrentUser } from './api/contexts/CurrentUserContext';
 import TakeAction from './pages/action/TakeAction';
 import Labels from './pages/labels/Labels';
 import Profile from './pages/profile/Profile';
