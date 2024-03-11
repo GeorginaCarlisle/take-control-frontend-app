@@ -658,4 +658,6 @@ The following specific code was copied from the "Moments" walkthrough:
 
 [React bootstrap documentation](https://react-bootstrap.github.io/) - Used throughout the project in order to utilise bootstraps components.
 
+[React router documentation](https://v5.reactrouter.com/web/example/auth-workflow) - Used when adding redirection for non authenticated users.
+
 [Return to contents list](#contents)
