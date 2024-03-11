@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import axios from 'axios';
+import { setTokenTimestamp } from '../../utils/utils';
 
 
 function SignIn() {
@@ -38,6 +39,7 @@ function SignIn() {
     try {
       const {data} = await axios.post('/dj-rest-auth/login/', signInData);
       setCurrentUser(data.user);
+      setTokenTimestamp(data);
       history.push('/');
     } catch(err){
       console.log(err)

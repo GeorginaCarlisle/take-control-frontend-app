@@ -4,7 +4,7 @@ import axios from "axios"
 import { createContext, useContext, useEffect, useMemo, useState } from "react"
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
+import { removeTokenTimestamp, shouldRefreshToken } from '../utils/utils';
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -30,7 +30,7 @@ export const CurrentUserProvider = ({children}) => {
   }, []);
 
   useMemo(() => {
-    axiosReq.interceptors.response.use(
+    axiosReq.interceptors.request.use(
       async (config) => {
         if (shouldRefreshToken()){
           try {
@@ -38,7 +38,7 @@ export const CurrentUserProvider = ({children}) => {
           } catch(err){
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
-                history.push('/signin');
+                history.push('/signin')
               }
               return null;
             });
@@ -53,26 +53,26 @@ export const CurrentUserProvider = ({children}) => {
       }
     );
 
-    axiosRes.interceptors.reponse.use(
+    axiosRes.interceptors.response.use(
       (response) => response,
-      async (err) => {
-        if (err.response?.status === 401){
-          try{
-            await axios.post('/dj-rest-auth/token/refresh/')
-          } catch(err){
-            setCurrentUser(prevCurrentUser => {
-              if (prevCurrentUser){
-                history.push('/signin');
-              }
-              return null;
-            });
-            removeTokenTimestamp();
+        async (err) => {
+          if (err.response?.status === 401){
+            try{
+              await axios.post('/dj-rest-auth/token/refresh/')
+            } catch(err){
+              setCurrentUser(prevCurrentUser => {
+                if (prevCurrentUser){
+                  history.push('/signin')
+                }
+                return null;
+              });
+              removeTokenTimestamp();
+            }
+            return axios(err.config);
           }
-          return axios(err.config);
+          return Promise.reject(err);
         }
-        return Promise.reject(err);
-      }
-    )
+    );
   }, [history]);
 
   return (

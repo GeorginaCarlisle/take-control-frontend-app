@@ -495,6 +495,8 @@ HTML, CSS, JavaScript and JSX
 
 [Axios](https://axios-http.com/) - A simple promise based HTTP client for the browser and node.js.
 
+[jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used to decode the JSON web tokens.
+
 [Return to contents list](#contents)
 
 ## Tools and Technologies
@@ -642,7 +644,8 @@ The following specific code was copied from the "Moments" walkthrough:
 
 - useClickOutsideToggle custom hook.
 - axiosDefault file.
-- CurrentUserContext.
+- CurrentUserContext which includes currentUser and axios token refreshing.
+- utils file.
 
 ### Fonts
 
