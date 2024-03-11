@@ -5,21 +5,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/logo.png'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
-import { useCurrentUser } from '../api/contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../api/contexts/CurrentUserContext';
+import axios from 'axios';
 
 const NavBar = () => {
 
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
 
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
+  const handleSignout = async () => {
+    try {
+      await axios.post('dj-rest-auth/logout/');
+      setCurrentUser(null);
+    } catch(err) {
+      console.log(err)
+    }
+  }
   const loggedInLinks = (
     <>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/plan">Plan</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/takeaction">Take Action</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/labels">Labels</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/profile">Profile</NavLink>
-      <NavLink className={styles.Link} activeClassName={styles.Active} to="/signout">Signout</NavLink>
+      <NavLink className={styles.Link} onClick={handleSignout} to="/" >Signout</NavLink>
     </>
   );
 
