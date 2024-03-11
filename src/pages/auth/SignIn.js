@@ -8,8 +8,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
+import { useSetCurrentUser } from '../../api/contexts/CurrentUserContext';
 
 function SignIn() {
+
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: '',
@@ -32,7 +35,8 @@ function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('/dj-rest-auth/login/', signInData);
+      const {data} = await axios.post('/dj-rest-auth/login/', signInData);
+      setCurrentUser(data.user);
       history.push('/plan');
     } catch(err){
       setErrors(err.response?.data);

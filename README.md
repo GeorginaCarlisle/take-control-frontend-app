@@ -642,6 +642,7 @@ The following specific code was copied from the "Moments" walkthrough:
 
 - useClickOutsideToggle custom hook.
 - axiosDefault file.
+- CurrentUserContext.
 
 ### Fonts
 

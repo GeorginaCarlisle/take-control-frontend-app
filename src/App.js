@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { Route,Switch } from 'react-router-dom';
 import './api/axiosDefaults';
 import styles from './App.module.css';
@@ -9,9 +9,11 @@ import About from './pages/About';
 import Signup from './pages/auth/Signup';
 import SignIn from './pages/auth/SignIn';
 import Plan from './pages/plan/Plan';
+import axios from 'axios';
+
+
 
 function App() {
-
   return (
     <div className={styles.App}>
       <NavBar />
