@@ -444,9 +444,30 @@ Focus: Getting everything set up and initial deployment of both repositories bef
 Beginning of the sprint:
 ![Screenshot of the project board at the beginning of the first sprint](documentation/Agile/first-sprint-start.png)
 
+End of the sprint:
+![Screenshot of the project board at the end of the first sprint](documentation/Agile/first-sprint-end.png)
+Notes: I was able to push on further than first anticipated and added further user stories into this sprint.
+
+Finished tasks for the API:
+![Screenshot of the closed api tasks](documentation/Agile/first-sprint-api-closed.png)
+
+Open tasks for the API:
+![Screenshot of the closed api tasks](documentation/Agile/first-sprint-api-open.png)
+Note: The above tasks have been completed, however as there have been issues manually testing PUT, PATCH and DELETE endpoints they remain open until these have been fully tested via the frontend. See [manual testing information](https://github.com/GeorginaCarlisle/take-control-api/blob/main/TESTING.md#manual-testing) for more details.
+
+Finished tasks for the frontend:
+![Screenshot of the closed frontend user stories](documentation/Agile/first-sprint-frontend-closed.png)
+
+Open tasks for the frontend:
+![Screenshot of the open frontend user stories](documentation/Agile/first-sprint-frontend-open.png)
+Note: The Landing Page user story is completed for this stage of the project and will be further enhance at the end. The sign-up and sign-in pages just need to generate a success message in order to be completed.
+
 #### Second Sprint
 
-Focus: Finishing API must-haves. Once those are in place work will focus on frontend must-haves.
+Focus: Working through the must-haves for the frontend and checking that all api endpoints are working correctly when accessed via the frontend.
+
+Beginning of the sprint:
+![Screenshot of the project board at the beginning of the second sprint](documentation/Agile/second-sprint-start.png)
 
 #### Third Sprint
 
