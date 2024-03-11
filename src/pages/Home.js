@@ -3,8 +3,34 @@ import btnStyles from '../styles/Button.module.css';
 import pageStyles from '../styles/Page.module.css';
 import logo from '../assets/purple-logo.png';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { useCurrentUser } from '../api/contexts/CurrentUserContext';
 
 const Home = () => {
+
+  const currentUser = useCurrentUser();
+
+  const signedOutButtons = (
+    <>
+      <Link className={btnStyles.Button} to={'/signup'}>
+      Get signed up!
+      </Link>
+      <Link className={btnStyles.Button} to={'/about'}>
+      Find out more
+      </Link>
+    </>
+  );
+
+  const signedInButtons = (
+    <>
+      <Link className={btnStyles.Button} to={'/plan'}>
+      Get planning!
+      </Link>
+      <Link className={btnStyles.Button} to={'/takeaction'}>
+      Take Action
+      </Link>
+    </>
+  );
+
   return (
     <div className={pageStyles.PageContainer}>
       <div className={pageStyles.TitleContainer}>
@@ -16,15 +42,14 @@ const Home = () => {
           />
           <h1>Take Control</h1>
         </div>
-        <h2>keep all your plates spinning</h2>
+        <h2>
+          {currentUser ? (`Welcome to your account ${currentUser.username}`) : (
+            "keep all your plates spinning")}
+        </h2>
+      
       </div>
       <div className={btnStyles.ButtonContainer}>
-        <Link className={btnStyles.Button} to={'/signup'}>
-          Get signed up!
-        </Link>
-        <Link className={btnStyles.Button} to={'/about'}>
-        Find out more
-        </Link>
+        {currentUser ? (signedInButtons) : (signedOutButtons)}
       </div>
     </div>
   )
