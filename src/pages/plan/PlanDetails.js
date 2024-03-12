@@ -86,17 +86,7 @@ const PlanDetails = ({mobile}) => {
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body>
-                    <div className={accStyles.GoalContainer}>
-                      <div className={cardStyles.Goal}>
-                        <p>Task name</p>
-                      </div>
-                      <div className={cardStyles.Goal}>
-                        <p>Task name</p>
-                      </div>
-                      <div className={cardStyles.Goal}>
-                        <p>Task name</p>
-                      </div>
-                    </div>
+                    <p>A place for tasks that don't fit into any of your focus areas.</p>
                     <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
                       Go
                     </Link>
@@ -116,19 +106,10 @@ const PlanDetails = ({mobile}) => {
                   <img className={cardStyles.Image} src={miscellaneousImage} alt='miscellaneous'/>
                   <div className={cardStyles.Title}>
                     <h2>Miscellaneous</h2>
-                    <p>Tasks that don't fit into any of your focus areas</p>
                   </div>
                 </div>
                 <div className={cardStyles.GoalContainer}>
-                  <div className={cardStyles.Goal}>
-                    <p>Task name</p>
-                  </div>
-                  <div className={cardStyles.Goal}>
-                    <p>Task name</p>
-                  </div>
-                  <div className={cardStyles.Goal}>
-                    <p>Task name</p>
-                  </div>
+                  <p>A place for tasks that don't fit into any of your focus areas.</p>
                 </div>
                 <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
                   Go
