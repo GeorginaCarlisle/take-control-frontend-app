@@ -11,8 +11,8 @@ import { useAccordionToggle } from 'react-bootstrap';
 const FocusHighlightMobile = (props) => {
   const {
     name,
-    why,
     image,
+    id
   } = props;
 
   // function copied from React bootstrap and adjusted
@@ -25,7 +25,7 @@ const FocusHighlightMobile = (props) => {
     const isCurrentEventKey = currentEventKey === eventKey;
     return (
       <div
-        className={accStyles.InnerHeader}
+        className={accStyles.Header}
         style={{
           color: isCurrentEventKey ? '#3c159c' : 'black',
           fontWeight: isCurrentEventKey ? 'bold' : 'normal' }}
@@ -33,9 +33,9 @@ const FocusHighlightMobile = (props) => {
       >
         {children}
         {isCurrentEventKey ? (
-          <i class="fa-solid fa-angle-down" className={accStyles.Angle}></i>
+          <i class="fa-solid fa-angle-down"></i>
         ) : (
-          <i class="fa-solid fa-angle-up" className={accStyles.Angle}></i>
+          <i class="fa-solid fa-angle-up"></i>
         )}
       </div>
     );
@@ -44,24 +44,27 @@ const FocusHighlightMobile = (props) => {
   return (
     <Card>
       <Card.Header>
-        <ContextAwareToggle as={Card.Header} eventKey="0">
-          <div>
-          <img className={cardStyles.Image} src={image} alt='focus'/>
+        <ContextAwareToggle as={Card.Header} eventKey={id}>
+          <div className={accStyles.Title}>
+            <img className={accStyles.Image} src={image} alt='focus'/>
             <h2>{name}</h2>
           </div>
         </ContextAwareToggle>
       </Card.Header>
-      <Accordion.Collapse eventKey="0">
+      <Accordion.Collapse eventKey={id}>
         <Card.Body>
-          <p>{why}</p>
-          <div className={accStyles.InnerContainer}>
-            <h3>Goal name</h3>
-            <span>10/05/2024</span>
-            <p>Description of goal</p>
-            <p>Value to be gained on achievement of goal</p>
-            <p>Extra</p>
+          <div className={accStyles.GoalContainer}>
+            <div className={accStyles.Goal}>
+              <div className={accStyles.GoalTitle}>
+                <h3>Goal name</h3>
+                <span>10/05/2024</span>
+              </div>
+              <p>Description of goal</p>
+              <p>Value to be gained on achievement of goal</p>
+              <p>Extra</p>
+            </div>
           </div>
-          <Link className={btnStyles.Button} to={'/focus/id'}>
+          <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
             Go
           </Link>
         </Card.Body>

@@ -52,7 +52,7 @@ const PlanDetails = ({mobile}) => {
     const isCurrentEventKey = currentEventKey === eventKey;
     return (
       <div
-        className={accStyles.InnerHeader}
+        className={accStyles.Header}
         style={{
           color: isCurrentEventKey ? '#3c159c' : 'black',
           fontWeight: isCurrentEventKey ? 'bold' : 'normal' }}
@@ -81,17 +81,27 @@ const PlanDetails = ({mobile}) => {
               )}
               <Card>
                 <Card.Header>
-                  <ContextAwareToggle as={Card.Header} eventKey="1">
-                  <div>
-                      <span>Image</span>
-                      <span>Miscellaneous</span>
+                  <ContextAwareToggle as={Card.Header} eventKey="0">
+                    <div className={accStyles.Title}>
+                      <img className={accStyles.Image} src={miscellaneousImage} alt='focus'/>
+                      <h2>Miscellaneous</h2>
                     </div>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="1">
+                <Accordion.Collapse eventKey="0">
                   <Card.Body>
-                    <p>This area is for any tasks which don't fit into any of your focus areas</p>
-                    <Link className={btnStyles.Button} to={'/miscellaneous'}>
+                    <div className={accStyles.GoalContainer}>
+                      <div className={cardStyles.Goal}>
+                        <p>Task name</p>
+                      </div>
+                      <div className={cardStyles.Goal}>
+                        <p>Task name</p>
+                      </div>
+                      <div className={cardStyles.Goal}>
+                        <p>Task name</p>
+                      </div>
+                    </div>
+                    <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
                       Go
                     </Link>
                   </Card.Body>

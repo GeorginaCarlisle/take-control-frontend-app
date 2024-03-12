@@ -7,13 +7,55 @@
   border-radius: 5px;
 }
 
-.InnerHeader {
+.Header {
   display: flex;
   justify-content: space-between;
 }
 
-.InnerContainer {
+.Title {
+  display: flex;
+  align-items: center;
+}
+
+.Title > h2 {
+  font-size: 1.2rem;
+}
+
+.Image {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.GoalContainer {
+  max-height: 200px;
+  overflow: scroll;
+  margin-bottom: 32px;
+}
+
+.Goal {
   border-color: #007926;  
   border: solid;
-  border-width: 2px;
+  border-width: 1px;
+  padding: 5px;
+}
+
+.GoalTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.GoalTitle > h3 {
+  font-size: 1.3rem;
+  color: #3c159c;
+}
+
+.Goal > p {
+  margin-bottom: 5px;
+}
+
+.Button {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
