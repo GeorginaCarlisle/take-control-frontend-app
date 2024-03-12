@@ -1,0 +1,19 @@
+.Accordion {
+  width: 90vw;
+  background-color: #f5f5f5;
+  border-color: #007926;  
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+.InnerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.InnerContainer {
+  border-color: #007926;  
+  border: solid;
+  border-width: 2px;
+}

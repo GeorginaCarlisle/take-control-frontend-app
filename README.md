@@ -655,6 +655,10 @@ The following specific code was copied from the "Moments" walkthrough:
 
 [Return to contents list](#contents)
 
+### Icons
+
+[Font Awesome](https://fontawesome.com/) icons - Used throughout the project.
+
 ## Acknowledgements
 
 [Code Institute](https://codeinstitute.net/) -  The majority of the coding skills, knowledge and understanding showcased in this project have been learnt through the 'Diploma of Full stack software development' that I am completing with Code Institute.
