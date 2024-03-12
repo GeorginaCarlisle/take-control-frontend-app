@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import btnStyles from '../../styles/Button.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import cardStyles from '../../styles/Cards.module.css';
@@ -7,11 +7,40 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
-import focusImage from '../../assets/default-focus.jpg';
 import miscellaneousImage from '../../assets/miscellaneous-tasks.jpg';
+import { axiosReq } from '../../api/axiosDefaults';
+import FocusHighlightMobile from '../focus/FocusHighlightMobile';
+import FocusHighlightDesktop from '../focus/FocusHighlightDesktop';
 
 
 const PlanDetails = ({mobile}) => {
+  const [focuses, setFocuses] = useState({ results: []});
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  //const { pathname } = useLocation();
+
+  useEffect(() => {
+    const fetchFocuses = async () => {
+      try {
+        console.log("sending get request");
+        const {data} = await axiosReq.get('/focus/');
+        console.log(data);
+        setFocuses(data);
+        setHasLoaded(true);
+      } catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      fetchFocuses();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, []);
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -41,110 +70,71 @@ const PlanDetails = ({mobile}) => {
 
   return (
     <div>
-      {mobile ? (
-        <Accordion className={accStyles.Accordion}>
-          <Card>
-            <Card.Header>
-              <ContextAwareToggle as={Card.Header} eventKey="0">
-                <div>
-                  <span>Image</span>
-                  <h2>Focus Name</h2>
+      {hasLoaded ? (
+        <>
+          {mobile ? (
+            <Accordion className={accStyles.Accordion}>
+              {focuses.results.length && (
+                focuses.results.map(focus => (
+                  <FocusHighlightMobile key={focus.id} {...focus} />
+                ))
+              )}
+              <Card>
+                <Card.Header>
+                  <ContextAwareToggle as={Card.Header} eventKey="1">
+                  <div>
+                      <span>Image</span>
+                      <span>Miscellaneous</span>
+                    </div>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body>
+                    <p>This area is for any tasks which don't fit into any of your focus areas</p>
+                    <Link className={btnStyles.Button} to={'/miscellaneous'}>
+                      Go
+                    </Link>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          ) : (
+            <div className={cardStyles.CardsContainer}>
+              {focuses.results.length && (
+                focuses.results.map(focus => (
+                  <FocusHighlightDesktop key={focus.id} {...focus} />
+                ))
+              )}
+              <div className={cardStyles.Card}>
+                <div className={cardStyles.Header}>
+                  <img className={cardStyles.Image} src={miscellaneousImage} alt='miscellaneous'/>
+                  <div className={cardStyles.Title}>
+                    <h2>Miscellaneous</h2>
+                    <p>Tasks that don't fit into any of your focus areas</p>
+                  </div>
                 </div>
-              </ContextAwareToggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <p>Focus is important to me because ...</p>
-                <div className={accStyles.InnerContainer}>
-                  <h3>Goal name</h3>
-                  <span>10/05/2024</span>
-                  <p>Description of goal</p>
-                  <p>Value to be gained on achievement of goal</p>
-                  <p>Extra</p>
+                <div className={cardStyles.GoalContainer}>
+                  <div className={cardStyles.Goal}>
+                    <p>Task name</p>
+                  </div>
+                  <div className={cardStyles.Goal}>
+                    <p>Task name</p>
+                  </div>
+                  <div className={cardStyles.Goal}>
+                    <p>Task name</p>
+                  </div>
                 </div>
-                <Link className={btnStyles.Button} to={'/focus/id'}>
+                <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
                   Go
                 </Link>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card>
-            <Card.Header>
-              <ContextAwareToggle as={Card.Header} eventKey="1">
-              <div>
-                  <span>Image</span>
-                  <span>Miscellaneous</span>
-                </div>
-              </ContextAwareToggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                <p>This area is for any tasks which don't fit into any of your focus areas</p>
-                <Link className={btnStyles.Button} to={'/miscellaneous'}>
-                  Go
-                </Link>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
+              </div>
+            </div>
+          )}
+        </>
       ) : (
-        <div className={cardStyles.CardsContainer}>
-          <div className={cardStyles.Card}>
-            <div className={cardStyles.Header}>
-              <img className={cardStyles.Image} src={focusImage} alt='focus'/>
-              <div className={cardStyles.Title}>
-                <h2>Focus Name</h2>
-                <p>Focus is important to me because ...</p>
-              </div>
-            </div>
-            <div className={cardStyles.GoalContainer}>
-              <div className={cardStyles.Goal}>
-                <div className={cardStyles.GoalTitle}>
-                  <h3>Goal name</h3>
-                  <span>10/05/2024</span>
-                </div>
-                <p>Description of goal</p>
-                <p>Value to be gained on achievement of goal</p>
-                <p>Extra</p>
-              </div>
-              <div className={cardStyles.Goal}>
-                <div className={cardStyles.GoalTitle}>
-                  <h3>Goal name</h3>
-                  <span>10/05/2024</span>
-                </div>
-                <p>Description of goal</p>
-                <p>Value to be gained on achievement of goal</p>
-                <p>Extra</p>
-              </div>
-            </div>
-            <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
-              Go
-            </Link>
-          </div>
-          <div className={cardStyles.Card}>
-            <div className={cardStyles.Header}>
-              <img className={cardStyles.Image} src={miscellaneousImage} alt='miscellaneous'/>
-              <div className={cardStyles.Title}>
-                <h2>Miscellaneous</h2>
-                <p>Tasks that don't fit into any of your focus areas</p>
-              </div>
-            </div>
-            <div className={cardStyles.GoalContainer}>
-              <div className={cardStyles.Goal}>
-                <p>Task name</p>
-              </div>
-              <div className={cardStyles.Goal}>
-                <p>Task name</p>
-              </div>
-              <div className={cardStyles.Goal}>
-                <p>Task name</p>
-              </div>
-            </div>
-            <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
-              Go
-            </Link>
-          </div>
-        </div>
+        <>
+        <h2>We are just loading your focus areas</h2>
+        </>
       )}
     </div>
   )

@@ -1,5 +1,6 @@
 .CardsContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .Card {
