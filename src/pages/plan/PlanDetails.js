@@ -17,18 +17,14 @@ const PlanDetails = ({mobile}) => {
   const [focuses, setFocuses] = useState({ results: []});
   const [hasLoaded, setHasLoaded] = useState(false);
 
-  //const { pathname } = useLocation();
-
   useEffect(() => {
     const fetchFocuses = async () => {
       try {
-        console.log("sending get request");
         const {data} = await axiosReq.get('/focus/');
-        console.log(data);
         setFocuses(data);
         setHasLoaded(true);
       } catch(err) {
-        console.log(err)
+        //console.log(err)
       }
     };
     setHasLoaded(false);
