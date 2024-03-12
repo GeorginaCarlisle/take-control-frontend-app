@@ -13,6 +13,8 @@ import Plan from './pages/plan/Plan';
 import TakeAction from './pages/action/TakeAction';
 import Labels from './pages/labels/Labels';
 import Profile from './pages/profile/Profile';
+import Focus from './pages/focus/Focus';
+import FocusOrder from './pages/focus/FocusOrder';
 
 function App() {
 
@@ -27,11 +29,15 @@ function App() {
           <Route exact path="/about" render={() => <About />} />
           <Route exact path="/signup" render={() => <Signup />} />
           <Route exact path="/signin" render={() => <SignIn />} />
-
           <Route exact path="/plan" render={() => (
             currentUser ? ( <Plan /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
-
+          <Route exact path="/focus" render={() => (
+            currentUser ? ( <Focus /> ) : ( <Redirect to={{pathname: "/signin"}} />)
+          )} />
+          <Route exact path="/focus/order" render={() => (
+            currentUser ? ( <FocusOrder /> ) : ( <Redirect to={{pathname: "/signin"}} />)
+          )} />
           <Route exact path="/takeaction" render={() => (
             currentUser ? ( <TakeAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)
             )} />
