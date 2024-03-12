@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import btnStyles from '../../styles/Button.module.css';
 import accStyles from '../../styles/Accordion.module.css';
+import cardStyles from '../../styles/Cards.module.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
+import focusImage from '../../assets/default-focus.jpg';
+import miscellaneousImage from '../../assets/miscellaneous-tasks.jpg';
 
 
 const PlanDetails = ({mobile}) => {
@@ -85,7 +88,63 @@ const PlanDetails = ({mobile}) => {
           </Card>
         </Accordion>
       ) : (
-        <h2>Desktop</h2>
+        <div className={cardStyles.CardsContainer}>
+          <div className={cardStyles.Card}>
+            <div className={cardStyles.Header}>
+              <img className={cardStyles.Image} src={focusImage} alt='focus'/>
+              <div className={cardStyles.Title}>
+                <h2>Focus Name</h2>
+                <p>Focus is important to me because ...</p>
+              </div>
+            </div>
+            <div className={cardStyles.GoalContainer}>
+              <div className={cardStyles.Goal}>
+                <div className={cardStyles.GoalTitle}>
+                  <h3>Goal name</h3>
+                  <span>10/05/2024</span>
+                </div>
+                <p>Description of goal</p>
+                <p>Value to be gained on achievement of goal</p>
+                <p>Extra</p>
+              </div>
+              <div className={cardStyles.Goal}>
+                <div className={cardStyles.GoalTitle}>
+                  <h3>Goal name</h3>
+                  <span>10/05/2024</span>
+                </div>
+                <p>Description of goal</p>
+                <p>Value to be gained on achievement of goal</p>
+                <p>Extra</p>
+              </div>
+            </div>
+            <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
+              Go
+            </Link>
+          </div>
+          <div className={cardStyles.Card}>
+            <div className={cardStyles.Header}>
+              <img className={cardStyles.Image} src={miscellaneousImage} alt='miscellaneous'/>
+              <div className={cardStyles.Title}>
+                <h2>Miscellaneous</h2>
+                <p>Tasks that don't fit into any of your focus areas</p>
+              </div>
+            </div>
+            <div className={cardStyles.GoalContainer}>
+              <div className={cardStyles.Goal}>
+                <p>Task name</p>
+              </div>
+              <div className={cardStyles.Goal}>
+                <p>Task name</p>
+              </div>
+              <div className={cardStyles.Goal}>
+                <p>Task name</p>
+              </div>
+            </div>
+            <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
+              Go
+            </Link>
+          </div>
+        </div>
       )}
     </div>
   )
