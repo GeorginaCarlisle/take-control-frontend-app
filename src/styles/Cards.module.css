@@ -71,3 +71,15 @@
   bottom: 0px;
   right: 0px;
 }
+
+.SpinnerContainer {
+  display: flex;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
+
+.SpinnerContainer > h2 {
+  margin-left: 10px;
+}

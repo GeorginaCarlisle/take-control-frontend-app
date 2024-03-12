@@ -3,6 +3,7 @@ import cardStyles from '../../styles/Cards.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const FocusHighlightDesktop = (props) => {
@@ -68,7 +69,10 @@ const FocusHighlightDesktop = (props) => {
         </>
       ) : (
         <>
+        <div className={cardStyles.SpinnerContainer}>
+          <Spinner animation="border" />
           <p>We are just loading your goals</p>
+        </div>
         </>
       )}
     </div>

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
 import { useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
 
@@ -100,7 +101,10 @@ const FocusHighlightMobile = (props) => {
               </>
             ) : (
               <>
-                <p>We are just loading your goals</p>
+                <div className={cardStyles.SpinnerContainer}>
+                  <Spinner animation="border" />
+                  <p>We are just loading your goals</p>
+                </div>
               </>
             )}
           </div>

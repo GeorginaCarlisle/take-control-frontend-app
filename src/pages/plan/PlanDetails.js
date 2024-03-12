@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
 import { useAccordionToggle } from 'react-bootstrap';
 import miscellaneousImage from '../../assets/miscellaneous-tasks.jpg';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -120,7 +121,10 @@ const PlanDetails = ({mobile}) => {
         </>
       ) : (
         <>
-        <h2>We are just loading your focus areas</h2>
+        <div className={cardStyles.SpinnerContainer}>
+          <Spinner animation="border" />
+          <h2>We are just loading your focus areas</h2>
+        </div>
         </>
       )}
     </div>
