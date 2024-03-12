@@ -11,11 +11,9 @@ const Plan = () => {
 
   return (
     <div className={pageStyles.PageContainer}>
-      <div className={pageStyles.TitleContainer}>
         <div className={pageStyles.Title}>
           <h1>{currentUser.username}'s Plan</h1>
         </div>      
-      </div>
       <div className={btnStyles.ButtonContainer}>
         <Link className={btnStyles.Button} to={'/focus'}>
           Add focus

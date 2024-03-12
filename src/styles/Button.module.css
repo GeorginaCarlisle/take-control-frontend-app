@@ -1,9 +1,10 @@
 /* Styling for all buttons keeping consistency across site */
 
 .ButtonContainer {
-  margin-top: 30px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  max-width: 300px;
 }
 
 .Button {

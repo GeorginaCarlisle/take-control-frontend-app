@@ -37,6 +37,11 @@
 /* Styling to allow for different Mobile and desktop views */
 .DesktopOnly {
   display: none;
+  margin-top: 20px;
+}
+
+.MobileOnly {
+  margin-top: 20px;
 }
 
 @media screen and (min-width:768px){
