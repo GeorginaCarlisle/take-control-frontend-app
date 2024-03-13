@@ -88,9 +88,11 @@ const PlanDetails = ({mobile}) => {
                 <Accordion.Collapse eventKey="0">
                   <Card.Body>
                     <p>A place for tasks that don't fit into any of your focus areas.</p>
-                    <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
-                      Go
-                    </Link>
+                    <div className={cardStyles.ButtonContainer}>
+                      <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
+                        Go to miscellaneous area
+                      </Link>
+                    </div>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -112,9 +114,11 @@ const PlanDetails = ({mobile}) => {
                 <div className={cardStyles.GoalContainer}>
                   <p>A place for tasks that don't fit into any of your focus areas.</p>
                 </div>
-                <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
-                  Go
-                </Link>
+                <div className={cardStyles.ButtonContainer}>
+                  <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/miscellaneous'}>
+                    Go to miscellaneous area
+                  </Link>
+                </div>
               </div>
             </div>
           )}

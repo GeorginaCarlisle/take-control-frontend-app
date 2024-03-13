@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
 import { useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
+import GoalHighlights from '../goals/GoalHighlights';
 
 const FocusHighlightMobile = (props) => {
   const {
@@ -39,7 +40,7 @@ const FocusHighlightMobile = (props) => {
     return () => {
       clearTimeout(timer)
     }
-  }, []);
+  }, [id]);
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -84,14 +85,7 @@ const FocusHighlightMobile = (props) => {
               <>
                 {goals.results.length ? (
                   goals.results.map(goal => (
-                    <div className={accStyles.Goal} key={goal.id}>
-                      <div className={accStyles.GoalTitle}>
-                        <h3>{goal.title}</h3>
-                        <span>{goal.deadline}</span>
-                      </div>
-                      <p>{goal.description}</p>
-                      <p>{goal.value}</p>
-                    </div>
+                    <GoalHighlights key={goal.id} {...goal} />
                   ))
                 ) : (
                   <p>You don't have any goals set for this focus area.</p>
@@ -106,9 +100,11 @@ const FocusHighlightMobile = (props) => {
               </>
             )}
           </div>
-          <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
-            Go
-          </Link>
+          <div className={cardStyles.ButtonContainer}>
+            <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
+              Go to focus area
+            </Link>
+          </div>
         </Card.Body>
       </Accordion.Collapse>
     </Card>

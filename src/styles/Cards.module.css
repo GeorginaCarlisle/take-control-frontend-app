@@ -48,7 +48,8 @@
   border-color: #007926;  
   border: solid;
   border-width: 1px;
-  padding: 5px;
+  padding: 5px 5px 20px 5px;
+  position: relative;
 }
 
 .GoalTitle {
@@ -66,10 +67,10 @@
   margin-bottom: 5px;
 }
 
-.Button {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+.ButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .SpinnerContainer {
@@ -82,4 +83,16 @@
 
 .SpinnerContainer > h2 {
   margin-left: 10px;
+}
+
+.ActiveToggle {
+  font-size: 1.2rem;
+  color: #9c1576;
+  position: absolute;
+  bottom: 5px;
+  right: 10px
+}
+
+.ActiveToggle:hover {
+  color:#3c159c;
 }

@@ -4,6 +4,7 @@ import btnStyles from '../../styles/Button.module.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import Spinner from 'react-bootstrap/Spinner';
+import GoalHighlights from '../goals/GoalHighlights';
 
 
 const FocusHighlightDesktop = (props) => {
@@ -36,7 +37,7 @@ const FocusHighlightDesktop = (props) => {
     return () => {
       clearTimeout(timer)
     }
-  }, []);
+  }, [id]);
   
   return (
     <div className={cardStyles.Card}>
@@ -52,14 +53,7 @@ const FocusHighlightDesktop = (props) => {
         <>
           {goals.results.length ? (
             goals.results.map(goal => (
-              <div className={cardStyles.Goal} key={goal.id}>
-                <div className={cardStyles.GoalTitle}>
-                  <h3>{goal.title}</h3>
-                  <span>{goal?.deadline}</span>
-                </div>
-                <p>{goal?.description}</p>
-                <p>{goal?.value}</p>
-              </div>
+              <GoalHighlights key={goal.id} {...goal} />
             ))
           ) : (
             <p>You don't have any goals set for this focus area.</p>
@@ -74,9 +68,11 @@ const FocusHighlightDesktop = (props) => {
         </>
       )}
     </div>
-    <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
-      Go
-    </Link>
+    <div className={cardStyles.ButtonContainer}>
+      <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
+        Go to focus area
+      </Link>
+    </div>
   </div>
   )
 }
