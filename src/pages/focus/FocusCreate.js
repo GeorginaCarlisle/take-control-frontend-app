@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/FocusCreate.module.css';
 import defaultImage from '../../assets/default-focus.jpg';
-import { Button, Form, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { Alert, Button, Form, Image } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const FocusCreate = () => {
 
@@ -15,7 +16,13 @@ const FocusCreate = () => {
     image: '',
   });
 
+  const history = useHistory();
+
+  const [errors, setErrors] = useState({});
+
   const { name, why, image } = focusData;
+
+  const imageInput = useRef(null);
 
   const handleChange = (event) => {
     setFocusData({
@@ -25,12 +32,30 @@ const FocusCreate = () => {
   };
 
   const handleChangeImage = (event) => {
-    if (event.target.files.length){
+    if (event.target.files.length > 0){
       URL.revokeObjectURL(image);
       setFocusData({
         ...focusData,
         image: URL.createObjectURL(event.target.files[0])
       });
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('name', name)
+    formData.append('why', why)
+    if (imageInput.current.files.length > 0) {
+      formData.append('image', imageInput.current.files[0]);
+    }
+    try {
+      const {data} = await axiosReq.post('/focus/', formData);
+      history.push(`/focus/${data.id}`);
+    } catch(err){
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -40,9 +65,14 @@ const FocusCreate = () => {
         <h1 className={pageStyles.Title}>Create a new focus</h1>
       </div>
       <div className={`${pageStyles.ContentContainer} ${formStyles.FormContainer}`}>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <div className={styles.FocusForm}>
             <Form.Group className={styles.ImageGroup}>
+              {errors.image?.map((message, idx) => (
+                <Alert key={idx} className={formStyles.ErrorAlert}>
+                  {message}
+                </Alert>
+              ))}
               {image ? (
                 <>
                   <div className={styles.ImagePlus}>
@@ -66,7 +96,7 @@ const FocusCreate = () => {
                 >
                   <div className={styles.ImagePlus}>
                     <div className={styles.ImageContainer}>
-                      <img src={defaultImage} alt={"Click or tap to upload an image"} className={styles.Image}/>
+                      <img src={defaultImage} alt={"View looking through a camera lens to focus on a scene"} className={styles.Image}/>
                     </div>
                     <p>"Click or tap to upload an image"</p>
                   </div>
@@ -78,10 +108,16 @@ const FocusCreate = () => {
                 accept="image/*"
                 className={styles.FormFile}
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
 
             </Form.Group>
             <div className={styles.MainForm}>
+              {errors.name?.map((message, idx) => (
+                <Alert key={idx} className={formStyles.ErrorAlert}>
+                  {message}
+                </Alert>
+              ))}
               <Form.Group controlId="name" className={styles.Group}>
                 <Form.Label className={formStyles.FormLabel}>Focus:</Form.Label>
                 <Form.Control
@@ -93,6 +129,11 @@ const FocusCreate = () => {
                 />
               </Form.Group>
 
+              {errors.why?.map((message, idx) => (
+                <Alert key={idx} className={formStyles.ErrorAlert}>
+                  {message}
+                </Alert>
+              ))}
               <Form.Group controlId="why" className={styles.Group}>
                 <Form.Label className={formStyles.FormLabel}>Why:</Form.Label>
                 <Form.Control
@@ -103,6 +144,11 @@ const FocusCreate = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {errors.non_field_errors?.map((message, idx) => (
+                <Alert key={idx} className={formStyles.ErrorAlert}>
+                  {message}
+                </Alert>
+              ))}
             </div>
           </div>
           <div className={styles.Buttons}>

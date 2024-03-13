@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/focus/create" render={() => (
             currentUser ? ( <FocusCreate /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
-          <Route exact path="/focus" render={() => (
+          <Route exact path="/focus/:id" render={() => (
             currentUser ? ( <Focus /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
           <Route exact path="/focus/order" render={() => (
