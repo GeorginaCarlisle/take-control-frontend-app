@@ -86,7 +86,7 @@ const FocusHighlightMobile = (props) => {
               <>
                 {goals.results.length ? (
                   goals.results.map(goal => (
-                    <div className={accStyles.Goal}>
+                    <div className={accStyles.Goal} key={goal.id}>
                       <div className={accStyles.GoalTitle}>
                         <h3>{goal.title}</h3>
                         <span>{goal.deadline}</span>

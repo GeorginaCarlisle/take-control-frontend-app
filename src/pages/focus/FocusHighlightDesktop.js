@@ -54,7 +54,7 @@ const FocusHighlightDesktop = (props) => {
         <>
           {goals.results.length ? (
             goals.results.map(goal => (
-              <div className={cardStyles.Goal}>
+              <div className={cardStyles.Goal} key={goal.id}>
                 <div className={cardStyles.GoalTitle}>
                   <h3>{goal.title}</h3>
                   <span>{goal?.deadline}</span>
