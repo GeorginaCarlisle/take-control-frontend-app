@@ -126,6 +126,7 @@ const FocusCreate = () => {
                   name="name"
                   value={name}
                   onChange={handleChange}
+                  className={styles.ShortInput}
                 />
               </Form.Group>
 
@@ -142,6 +143,7 @@ const FocusCreate = () => {
                   name="why"
                   value={why}
                   onChange={handleChange}
+                  className={styles.LongInput}
                 />
               </Form.Group>
               {errors.non_field_errors?.map((message, idx) => (

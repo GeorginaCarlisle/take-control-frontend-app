@@ -1,17 +1,9 @@
 .FocusForm {
-  display: flex;
+  margin-bottom: 35px;
 }
 
 .MainForm {
   padding-left: 10px;
-}
-
-.Group {
-  display: flex;
-}
-
-.ImageGroup {
-  margin-bottom: 0;
 }
 
 .ImagePlus {
@@ -60,4 +52,23 @@
 .Centre {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (min-width:768px){
+  .FocusForm {
+    display: flex;
+    margin-bottom: 0;
+  }
+  .ImageGroup {
+    margin-bottom: 0;
+  }
+  .Group {
+    display: flex;
+  }
+  .LongInput {
+    width: 400px;
+  }
+  .ShortInput {
+    width: 200px;
+  }
 }
