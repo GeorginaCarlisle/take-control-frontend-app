@@ -24,7 +24,14 @@
 
 .Image {
   height: 90px;
+  width: 90px;
+  object-fit: cover;
   margin-right: 5px;
+}
+
+.Title {
+  max-height: 120px;
+  overflow: auto;
 }
 
 .Title > h2 {
@@ -37,7 +44,7 @@
 }
 
 .GoalContainer {
-  height: 230px;
+  height: 200px;
   overflow: scroll;
   border-color: #007926;  
   border: solid;
