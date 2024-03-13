@@ -20,13 +20,11 @@ const FocusHighlightDesktop = (props) => {
   useEffect(() => {
     const fetchGoals = async () => {
       try {
-        console.log("sending get request");
         const {data} = await axiosReq.get(`/goals/?focus_id=${id}`);
-        console.log(data);
         setGoals(data);
         setHasLoaded(true);
       } catch(err) {
-        console.log(err)
+        //console.log(err)
       }
     };
     setHasLoaded(false);
