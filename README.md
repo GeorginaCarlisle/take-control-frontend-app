@@ -521,6 +521,8 @@ HTML, CSS, JavaScript and JSX
 
 [Visual Studio Code](https://code.visualstudio.com/) - The editor in which this project has been built.
 
+[Chatgpt](https://chat.openai.com/) - Chatgpt was used on occasion to help troubleshoot bugs. It's use has been clearly referenced in [bugs and fixes](#bugs-and-fixes).
+
 ### Tools and technologies used to aid with the content for this project
 
 [Smashing Logo](https://smashinglogo.com/en/) - Used to help generate ideas for the logo.
@@ -542,6 +544,10 @@ HTML, CSS, JavaScript and JSX
 See [TESTING.md](TESTING.md) for all testing and validation.
 
 ## Bugs and Fixes
+
+| # | Bug | What was tried | Fix |
+| --- | --- | --- | --- |
+| # 1 | Redirect to signin was being called, even when their was a current user, on refreshing the page. | Tested and confirmed navigation links handling as expected. Checked through code. Used console.log to check currentUser contained a user. Troubleshooted issue with chatGPT. | The CurrentUserContext initially set currentUser to null, with [chatGPT](https://chat.openai.com/) suggesting "This might lead to a flicker or delay in rendering the protected routes while currentUser is being fetched." Following the suggestion to set currentUser to an empty object instead resolved the issue. |
 
 [Return to contents list](#contents)
 
