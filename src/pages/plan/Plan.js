@@ -15,7 +15,7 @@ const Plan = () => {
           <h1>{currentUser.username}'s Plan</h1>
         </div>      
       <div className={btnStyles.ButtonContainer}>
-        <Link className={btnStyles.Button} to={'/focus'}>
+        <Link className={btnStyles.Button} to={'/focus/create'}>
           Add focus
         </Link>
         <Link className={btnStyles.Button} to={'/focus/order'}>

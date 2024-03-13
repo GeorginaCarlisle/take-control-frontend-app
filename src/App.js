@@ -15,10 +15,12 @@ import Labels from './pages/labels/Labels';
 import Profile from './pages/profile/Profile';
 import Focus from './pages/focus/Focus';
 import FocusOrder from './pages/focus/FocusOrder';
+import FocusCreate from './pages/focus/FocusCreate';
 
 function App() {
 
   const currentUser = useCurrentUser();
+  console.log(currentUser);
 
   return (
     <div className={styles.App}>
@@ -31,6 +33,9 @@ function App() {
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/plan" render={() => (
             currentUser ? ( <Plan /> ) : ( <Redirect to={{pathname: "/signin"}} />)
+          )} />
+          <Route exact path="/focus/create" render={() => (
+            currentUser ? ( <FocusCreate /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
           <Route exact path="/focus" render={() => (
             currentUser ? ( <Focus /> ) : ( <Redirect to={{pathname: "/signin"}} />)

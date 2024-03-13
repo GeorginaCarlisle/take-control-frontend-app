@@ -1,0 +1,63 @@
+.FocusForm {
+  display: flex;
+}
+
+.MainForm {
+  padding-left: 10px;
+}
+
+.Group {
+  display: flex;
+}
+
+.ImageGroup {
+  margin-bottom: 0;
+}
+
+.ImagePlus {
+  padding: 5px;
+  border-color: #007926;  
+  border: solid;
+  border-width: 1px;
+}
+
+.ImagePlus > p {
+  margin-bottom: 0;
+}
+
+.ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Image {
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+}
+
+.FormFile {
+  margin-top: 15px;
+  width: 200px;
+}
+
+.Buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.InnerButton {
+  color: white;
+}
+
+.InnerButton:hover {
+  color: #9c1576;
+  text-decoration: none;
+}
+
+.Centre {
+  display: flex;
+  justify-content: center;
+}
