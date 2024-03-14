@@ -1,23 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pageStyles from '../../styles/Page.module.css';
 import styles from '../../styles/FocusDesktop.module.css';
+import FocusView from './FocusView';
 
 const DesktopFocus = ({ id }) => {
+
+  const [key, setKey] = useState({
+    focus_id: {id},
+    focus_state: 'view',
+  })
+
+  const { focus_id, focus_state } = key;
+
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
       <div className={styles.BackCross}>
         <i class="fa-solid fa-x"></i>
       </div>
       <div className={styles.FocusContainer}>
-
-        <>
-          <div>Image</div>
-          <div>
-            <div>Focus Details</div>
-            <div>Edit button</div>
-            <div>Delete button</div>
-          </div>
-        </>
+        {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
 
       </div>
       <div className={styles.LinkedDetailsContainer}>

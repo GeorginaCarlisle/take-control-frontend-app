@@ -1,0 +1,56 @@
+.FocusContainer {
+  padding: 5px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.Image {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.Details {
+  padding: 5px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-right: 50px;
+}
+
+.Title {
+  display: inline;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #3c159c;
+}
+
+.Details > p {
+  margin-bottom: 0;
+}
+
+.Label {
+  display: none;
+}
+
+.IconContainer {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+}
+
+@media screen and (min-width:768px){
+  .Label {
+    display: inline;
+  }
+  .Title {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  .Details {
+    font-size: 1.2rem;
+    padding-right: 100px;
+  }
+}

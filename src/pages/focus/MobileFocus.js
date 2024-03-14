@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import pageStyles from '../../styles/Page.module.css';
 import styles from '../../styles/FocusMobile.module.css';
 import accStyles from '../../styles/Accordion.module.css';
@@ -6,8 +6,16 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
+import FocusView from './FocusView';
 
 const MobileFocus = ({ id }) => {
+
+  const [key, setKey] = useState({
+    focus_id: {id},
+    focus_state: 'view',
+  })
+
+  const { focus_id, focus_state } = key;
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -41,16 +49,7 @@ const MobileFocus = ({ id }) => {
         <i class="fa-solid fa-x"></i>
       </div>
       <div className={styles.FocusContainer}>
-
-        <>
-          <div>Image</div>
-          <div>
-            <div>Focus Details</div>
-            <div>Edit button</div>
-            <div>Delete button</div>
-          </div>
-        </>
-
+        {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
       </div>
 
       <Accordion>

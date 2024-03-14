@@ -27,3 +27,22 @@
   border-width: 2px;
   padding: 2px 10px 2px 10px;
 }
+
+.Icon {
+  color: #9c1576;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #f5f5f5;
+  margin-left: 6px;
+}
+
+.Icon:hover {
+  color: #3c159c;
+}
+
+@media screen and (min-width:768px){
+  .Icon {
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+}
