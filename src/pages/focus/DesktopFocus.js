@@ -3,6 +3,7 @@ import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/FocusDesktop.module.css';
 import FocusView from './FocusView';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const DesktopFocus = ({ id }) => {
 
@@ -13,11 +14,17 @@ const DesktopFocus = ({ id }) => {
 
   const { focus_id, focus_state } = key;
 
+  const history = useHistory();
+
+  const handleBack = () => {
+    history.push('/plan')
+  }
+
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
-      <div className={btnStyles.BackCross}>
+      <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
         <i class="fa-solid fa-x"></i>
-      </div>
+      </button>
       <div className={styles.FocusContainer}>
         {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
       </div>

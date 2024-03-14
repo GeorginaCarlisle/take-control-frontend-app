@@ -8,6 +8,7 @@ import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
 import FocusView from './FocusView';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const MobileFocus = ({ id }) => {
 
@@ -17,6 +18,12 @@ const MobileFocus = ({ id }) => {
   })
 
   const { focus_id, focus_state } = key;
+
+  const history = useHistory();
+
+  const handleBack = () => {
+    history.push('/plan')
+  }
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -46,9 +53,9 @@ const MobileFocus = ({ id }) => {
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
-      <div className={btnStyles.BackCross}>
+      <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
         <i class="fa-solid fa-x"></i>
-      </div>
+      </button>
       <div className={styles.FocusContainer}>
         {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
       </div>
