@@ -20,7 +20,6 @@ import FocusCreate from './pages/focus/FocusCreate';
 function App() {
 
   const currentUser = useCurrentUser();
-  console.log(currentUser);
 
   return (
     <div className={styles.App}>

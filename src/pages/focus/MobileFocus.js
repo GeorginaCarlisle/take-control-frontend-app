@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import pageStyles from '../../styles/Page.module.css';
 import styles from '../../styles/FocusMobile.module.css';
+import btnStyles from '../../styles/Button.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
@@ -11,7 +12,7 @@ import FocusView from './FocusView';
 const MobileFocus = ({ id }) => {
 
   const [key, setKey] = useState({
-    focus_id: {id},
+    focus_id: id,
     focus_state: 'view',
   })
 
@@ -45,7 +46,7 @@ const MobileFocus = ({ id }) => {
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
-      <div className={styles.BackCross}>
+      <div className={btnStyles.BackCross}>
         <i class="fa-solid fa-x"></i>
       </div>
       <div className={styles.FocusContainer}>

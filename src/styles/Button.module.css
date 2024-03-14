@@ -40,9 +40,14 @@
   color: #3c159c;
 }
 
-@media screen and (min-width:768px){
-  .Icon {
-    font-size: 1.4rem;
-    margin-left: 10px;
-  }
+.BackCross {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #9c1576;
+  font-size: 1.2rem;
+}
+
+.BackCross:hover {
+  color: #3c159c;
 }

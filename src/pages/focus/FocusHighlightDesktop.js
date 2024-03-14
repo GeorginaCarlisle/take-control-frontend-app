@@ -69,7 +69,7 @@ const FocusHighlightDesktop = (props) => {
       )}
     </div>
     <div className={cardStyles.ButtonContainer}>
-      <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={'/focus/id'}>
+      <Link className={`${btnStyles.Button} ${cardStyles.Button}`} to={`/focus/${id}`}>
         Go to focus area
       </Link>
     </div>

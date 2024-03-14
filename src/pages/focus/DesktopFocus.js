@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import pageStyles from '../../styles/Page.module.css';
+import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/FocusDesktop.module.css';
 import FocusView from './FocusView';
 
 const DesktopFocus = ({ id }) => {
 
   const [key, setKey] = useState({
-    focus_id: {id},
+    focus_id: id,
     focus_state: 'view',
   })
 
@@ -14,12 +15,11 @@ const DesktopFocus = ({ id }) => {
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
-      <div className={styles.BackCross}>
+      <div className={btnStyles.BackCross}>
         <i class="fa-solid fa-x"></i>
       </div>
       <div className={styles.FocusContainer}>
         {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
-
       </div>
       <div className={styles.LinkedDetailsContainer}>
 

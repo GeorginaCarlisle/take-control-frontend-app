@@ -18,14 +18,3 @@
 h3 {
     font-size: 1.2rem;
 }
-
-.BackCross {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: #9c1576;
-}
-
-.BackCross:hover {
-    color: #3c159c;
-}

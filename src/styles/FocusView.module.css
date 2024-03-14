@@ -1,7 +1,6 @@
 .FocusContainer {
   padding: 5px;
   display: flex;
-  margin-bottom: 10px;
 }
 
 .Image {
@@ -16,8 +15,8 @@
   font-size: 1rem;
   display: flex;
   flex-direction: column;
+  padding-right: 70px;
   position: relative;
-  padding-right: 50px;
 }
 
 .Title {
@@ -25,20 +24,30 @@
   font-weight: 600;
   font-size: 1.2rem;
   color: #3c159c;
+  margin-bottom: 10px;
 }
 
 .Details > p {
   margin-bottom: 0;
 }
 
-.Label {
-  display: none;
-}
-
 .IconContainer {
   position: absolute;
-  bottom: 0px;
+  top: 60px;
   right: 0;
+}
+
+.SpinnerContainer {
+  display: flex;
+  padding: 10px;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
+
+.SpinnerContainer > h2 {
+  margin-left: 10px;
 }
 
 @media screen and (min-width:768px){
@@ -47,10 +56,12 @@
   }
   .Title {
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
-  .Details {
-    font-size: 1.2rem;
-    padding-right: 100px;
+  .IconContainer {
+    top: 60px;
+  }
+  .FocusContainer {
+    margin-bottom: 10px;
   }
 }
