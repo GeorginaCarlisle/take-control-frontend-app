@@ -1,0 +1,36 @@
+.MainContainer {
+    position: relative;
+    padding: 0;
+    height: 70vh;
+}
+
+.FocusContainer {
+    border-color: #007926;  
+    border-bottom: solid;
+    border-width: 2px;
+    width: 100%;
+    height: 90px;
+}
+
+.LinkedDetailsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.DayToDayContainer {
+    border-color: #007926;  
+    border-left: solid;
+    border-width: 2px;
+}
+
+.BackCross {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #9c1576;
+}
+
+.BackCross:hover {
+    color: #3c159c;
+}
