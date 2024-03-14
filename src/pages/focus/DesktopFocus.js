@@ -4,15 +4,17 @@ import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/FocusDesktop.module.css';
 import FocusView from './FocusView';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import TaskList from '../tasks/TaskList';
 
 const DesktopFocus = ({ id }) => {
 
   const [key, setKey] = useState({
     focus_id: id,
     focus_state: 'view',
+    goal_id: '',
   })
 
-  const { focus_id, focus_state } = key;
+  const { focus_id, focus_state, goal_id } = key;
 
   const history = useHistory();
 
@@ -51,15 +53,7 @@ const DesktopFocus = ({ id }) => {
               </div>
               <div className="Nested tasks">
                 <h3>Nested tasks</h3>
-                <div className="Task List">
-                  <ul>
-                    <li>Task one</li>
-                    <li>Task two</li>
-                  </ul>
-                  <div className="TaskCreate">
-                    Create a new task
-                  </div>
-                </div>
+                <TaskList id={goal_id} type="goal"/>
               </div>
             </div>
           </div>
@@ -68,19 +62,7 @@ const DesktopFocus = ({ id }) => {
         <div className={styles.DayToDayContainer}>
           <h3>Day to day tasks</h3>
           <p>(Those jobs that just need doing)</p>
-
-          <>
-            <div className="Task List">
-              <ul>
-                <li>Task one</li>
-                <li>Task two</li>
-              </ul>
-              <div className="TaskCreate">
-                Create a new task
-              </div>
-            </div>
-          </>
-
+          <TaskList id={focus_id} type="daytoday"/>
         </div>
       </div>
     </div>

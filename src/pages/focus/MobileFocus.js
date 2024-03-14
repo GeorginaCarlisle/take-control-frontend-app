@@ -9,15 +9,17 @@ import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
 import FocusView from './FocusView';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import TaskList from '../tasks/TaskList';
 
 const MobileFocus = ({ id }) => {
 
   const [key, setKey] = useState({
     focus_id: id,
     focus_state: 'view',
+    goal_id: '',
   })
 
-  const { focus_id, focus_state } = key;
+  const { focus_id, focus_state, goal_id } = key;
 
   const history = useHistory();
 
@@ -70,16 +72,7 @@ const MobileFocus = ({ id }) => {
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-
-              <>
-                <div className="Task List">
-                  <ul>
-                    <li>Task one</li>
-                    <li>Task two</li>
-                  </ul>
-                </div>
-              </>
-
+              <TaskList id={focus_id} type="daytoday"/>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -141,15 +134,7 @@ const MobileFocus = ({ id }) => {
                 <div>Delete button</div>
                 <div className="Nested tasks">
                   <h3>Nested tasks</h3>
-                  <div className="Task List">
-                    <ul>
-                      <li>Task one</li>
-                      <li>Task two</li>
-                    </ul>
-                    <div className="TaskCreate">
-                      Create a new task
-                    </div>
-                  </div>
+                  <TaskList id={goal_id} type="goal"/>
                 </div>
               </Card.Body>
             </Accordion.Collapse>
