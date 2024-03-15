@@ -28,6 +28,14 @@
   color: #3c159c;
 }
 
+.SpinnerContainer {
+  display: flex;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
+
 @media screen and (min-width:768px){
   .DesktopNewTask {
     display: block;

@@ -15,6 +15,7 @@ const DesktopFocus = ({ id }) => {
   })
 
   const { focus_id, focus_state, goal_id } = key;
+  console.log(focus_id)
 
   const history = useHistory();
 
@@ -53,7 +54,7 @@ const DesktopFocus = ({ id }) => {
               </div>
               <div className="Nested tasks">
                 <h3>Nested tasks</h3>
-                <TaskList id={goal_id} type="goal"/>
+                
               </div>
             </div>
           </div>
@@ -62,7 +63,7 @@ const DesktopFocus = ({ id }) => {
         <div className={styles.DayToDayContainer}>
           <h3>Day to day tasks</h3>
           <p>(Those jobs that just need doing)</p>
-          <TaskList id={focus_id} type="daytoday"/>
+          <TaskList focus_id={focus_id} type="daytoday"/>
         </div>
       </div>
     </div>

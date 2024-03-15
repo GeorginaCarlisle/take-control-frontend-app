@@ -20,7 +20,7 @@ const MobileFocus = ({ id }) => {
   })
 
   const { focus_id, focus_state, goal_id } = key;
-
+  console.log(focus_id)
   const history = useHistory();
 
   const handleBack = () => {
@@ -72,7 +72,7 @@ const MobileFocus = ({ id }) => {
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body className={styles.BodyContainer}>
-              <TaskList id={focus_id} type="daytoday"/>
+              <TaskList focus_id={focus_id} type="daytoday"/>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -134,7 +134,7 @@ const MobileFocus = ({ id }) => {
                 <div>Delete button</div>
                 <div className="Nested tasks">
                   <h3>Nested tasks</h3>
-                  <TaskList id={goal_id} type="goal"/>
+                  
                 </div>
               </Card.Body>
             </Accordion.Collapse>
