@@ -7,10 +7,10 @@ const TaskList = ( props ) => {
   const { focus_id, goal_id, type } = props;
 
   return (
-    <div className={styles.ListContainer}>
-      <ul>
+    <div>
+      <div>
         <TaskView />
-      </ul>
+      </div>
       <div className={styles.DesktopNewTask}>
         Create a new task
       </div>

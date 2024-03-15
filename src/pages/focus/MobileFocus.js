@@ -71,7 +71,7 @@ const MobileFocus = ({ id }) => {
             </ContextAwareToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
-            <Card.Body>
+            <Card.Body className={styles.BodyContainer}>
               <TaskList id={focus_id} type="daytoday"/>
             </Card.Body>
           </Accordion.Collapse>

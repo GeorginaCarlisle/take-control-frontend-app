@@ -1,13 +1,41 @@
-.ListContainer {
-
-}
-
 .DesktopNewTask {
   display: none;
+}
+
+.TaskContainer {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+
+.TaskDetails > h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.TaskDetails > p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.ChoiceIcon {
+  color: #9c1576;
+  font-size: 1.2rem;
+  border: none;
+  background-color: white;
+}
+
+.ChoiceIcon:hover {
+  color: #3c159c;
 }
 
 @media screen and (min-width:768px){
   .DesktopNewTask {
     display: block;
+  }
+  .ChoiceIcon {
+    background-color: #f5f5f5;
+  }
+  .TaskContainer {
+    grid-template-columns: 30px 1fr;
   }
 }
