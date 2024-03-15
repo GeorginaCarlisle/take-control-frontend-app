@@ -168,12 +168,10 @@ const PlanDetails = ({mobile}) => {
           )}
         </>
       ) : (
-        <>
         <div className={cardStyles.SpinnerContainer}>
           <Spinner animation="border" />
           <h2>We are just loading your focus areas</h2>
         </div>
-        </>
       )}
     </div>
   )

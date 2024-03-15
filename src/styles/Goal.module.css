@@ -1,0 +1,42 @@
+.GoalSection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.GoalList {
+  border-color: #007926;  
+  border-right: solid;
+  border-width: 2px;
+}
+
+.GoalList > h3 {
+  color: #3c159c;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.GoalList > p {
+  font-size: 0.9rem;
+  margin: 10px;
+}
+
+.GoalTab {
+  border-color: #007926;  
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+
+.GoalTab > p {
+  margin-bottom: 0;
+}
+
+.SpinnerContainer {
+  display: flex;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
