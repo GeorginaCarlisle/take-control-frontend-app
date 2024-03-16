@@ -64,7 +64,7 @@ const TaskList = ( props ) => {
             </div>
         )}
       </div>
-      <div className={styles.DesktopNewTask}>
+      <div>
         Create a new task
       </div>
     </div>

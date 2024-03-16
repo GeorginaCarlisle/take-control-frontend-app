@@ -83,7 +83,7 @@ const GoalSection = (props) => {
           ) : (
             <div className={styles.SpinnerContainer}>
               <Spinner animation="border" />
-              <p>We are just loading your focus areas</p>
+              <p>We are just loading your goals</p>
             </div>
           )}
       </div>

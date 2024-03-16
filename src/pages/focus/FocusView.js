@@ -7,7 +7,7 @@ import { Spinner } from 'react-bootstrap';
 
 const FocusView = (props) => {
 
-  const {id, setKey} = props;
+  const {id, setKeyParameters} = props;
 
   const [focusData, setFocusData] = useState({
     name: "",

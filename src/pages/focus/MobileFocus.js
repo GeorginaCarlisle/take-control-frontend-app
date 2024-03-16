@@ -10,17 +10,18 @@ import { useAccordionToggle } from 'react-bootstrap';
 import FocusView from './FocusView';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TaskList from '../tasks/TaskList';
+import GoalSectionMobile from '../goals/GoalSectionMobile';
 
 const MobileFocus = ({ id }) => {
 
-  const [key, setKey] = useState({
+  const [keyParameters, setKeyParameters] = useState({
     focus_id: id,
     focus_state: 'view',
     goal_id: '',
   })
 
-  const { focus_id, focus_state, goal_id } = key;
-  console.log(focus_id)
+  const { focus_id, focus_state } = keyParameters;
+
   const history = useHistory();
 
   const handleBack = () => {
@@ -59,11 +60,10 @@ const MobileFocus = ({ id }) => {
         <i class="fa-solid fa-x"></i>
       </button>
       <div className={styles.FocusContainer}>
-        {focus_state==='view' && <FocusView id={focus_id} setKey={setKey} />}
+        {focus_state==='view' && <FocusView id={focus_id} setKeyParameters={setKeyParameters} />}
       </div>
 
       <Accordion>
-
         <Card>
           <Card.Header>
             <ContextAwareToggle as={Card.Header} eventKey="0">
@@ -76,71 +76,7 @@ const MobileFocus = ({ id }) => {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-
-        <Card>
-          <Card.Header>
-            <ContextAwareToggle as={Card.Header} eventKey="0">
-              <h3>Create a new day to day task</h3>
-            </ContextAwareToggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>
-
-              <>
-                <div className="TaskCreate">
-                  Create a new task
-                </div>
-              </>
-
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-
-        <Card>
-          <Card.Header>
-            <ContextAwareToggle as={Card.Header} eventKey="0">
-              <h3>Create a new goal</h3>
-            </ContextAwareToggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>
-
-              <>
-                <p>
-                  Form to create a new goal
-                </p>
-              </>
-
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-
-
-        <>
-          <Card>
-            <Card.Header>
-              <ContextAwareToggle as={Card.Header} eventKey="0">
-                <h3>Goal Title</h3>
-              </ContextAwareToggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <p>Goal description</p>
-                <p>Value goal will provide</p>
-                <p>Success Criteria</p>
-                <p>To be achieved by 10/07/2024</p>
-                <p>Active</p>
-                <div>Edit button</div>
-                <div>Delete button</div>
-                <div className="Nested tasks">
-                  <h3>Nested tasks</h3>
-                  
-                </div>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </>
-
+        <GoalSectionMobile keyParameters={keyParameters} setKeyParameters={setKeyParameters}/>
       </Accordion>
     </div>
   )
