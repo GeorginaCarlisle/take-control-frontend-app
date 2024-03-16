@@ -76,7 +76,7 @@ const GoalSectionMobile = (props) => {
       {hasLoaded ? (
         goals.results.length>0 && (
           goals.results.map( goal => (
-            <Card>
+            <Card key={goal.id}>
               <Card.Header>
                 <ContextAwareToggle as={Card.Header} eventKey={goal.id}>
                   <h3>{goal.title}</h3>

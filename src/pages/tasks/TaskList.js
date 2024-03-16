@@ -14,21 +14,21 @@ const TaskList = ( props ) => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      if (goal_id) {
+      if (type==="daytoday") {
         try {
-          const {data} = await axiosReq.get(`/tasks/?goal=${goal_id}`);
+          const {data} = await axiosReq.get(`/tasks/?focus=${focus_id}&goal=None`);
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
           //console.log(err)
         }
-      } else {
+      } else if (type==="goal") {
         try {
-          const {data} = await axiosReq.get(`/tasks/?focus=${focus_id}`);
+          const {data} = await axiosReq.get(`/tasks/?goal=${goal_id}`);
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
-          //console.log(err)
+          console.log(err)
         }
       }
     };
@@ -41,7 +41,7 @@ const TaskList = ( props ) => {
     return () => {
       clearTimeout(timer)
     }
-  }, [focus_id, goal_id]);
+  }, [focus_id, goal_id, type]);
 
   return (
     <div>
@@ -53,7 +53,7 @@ const TaskList = ( props ) => {
             ))
           ) : (
             <div>
-              <p>No tasks yet!</p>
+              <p>No tasks yet! Create your first task below.</p>
             </div>
           )
         ) : (

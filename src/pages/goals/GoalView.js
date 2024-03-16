@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/Goal.module.css';
-import btnStyles from '../../styles/Button.module.css';
 import TaskList from '../tasks/TaskList';
 
 const GoalView = (props) => {
@@ -51,9 +50,9 @@ const GoalView = (props) => {
           </button>
         </div>
       </div>
-      
-      <div className="Nested tasks">
-        
+      <div className={styles.NestedTasks}>
+        <h3>Tasks for your goal</h3>
+        <TaskList goal_id={id} type="goal"/>
       </div>
     </>
   )

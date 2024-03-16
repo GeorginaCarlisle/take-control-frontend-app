@@ -93,7 +93,7 @@ const GoalSection = (props) => {
           {hasLoaded ? (
             goals.results.length>0 ? (
               goals.results.map( goal => (
-                <ContextAwareToggle eventKey={goal.id}>
+                <ContextAwareToggle eventKey={goal.id} key={goal.id}>
                   <p>{goal.title}</p>
                 </ContextAwareToggle>
               ))
@@ -109,7 +109,7 @@ const GoalSection = (props) => {
             </div>
           )}
       </div>
-      <div>
+      <div className={styles.GoalPlus}>
         {hasLoaded ? (
           currentGoal ? (
             <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>

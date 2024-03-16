@@ -1,6 +1,7 @@
 .TaskContainer {
   display: grid;
   grid-template-columns: 40px 1fr;
+  margin-bottom: 10px;
 }
 
 .TaskDetails > h4 {
