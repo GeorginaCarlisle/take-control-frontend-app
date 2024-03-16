@@ -19,8 +19,6 @@ const GoalSection = (props) => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [currentGoal, setCurrentGoal] = useState();
 
-  console.log(currentGoal);
-
   useEffect(() => {
     const fetchGoals = async () => {
       try {
@@ -28,7 +26,7 @@ const GoalSection = (props) => {
         setGoals(data);
         setHasLoaded(true);
       } catch(err) {
-        console.log(err)
+        //console.log(err)
       }
     };
     setHasLoaded(false);

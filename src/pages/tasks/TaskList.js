@@ -7,7 +7,6 @@ import { Spinner } from 'react-bootstrap';
 const TaskList = ( props ) => {
 
   const { focus_id, goal_id, type } = props;
-  console.log(focus_id);
 
   const [tasks, setTasks] = useState({ results: [] });
 
@@ -21,7 +20,7 @@ const TaskList = ( props ) => {
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
-          console.log(err)
+          //console.log(err)
         }
       } else {
         try {
@@ -29,7 +28,7 @@ const TaskList = ( props ) => {
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
-          console.log(err)
+          //console.log(err)
         }
       }
     };
