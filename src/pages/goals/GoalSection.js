@@ -40,11 +40,17 @@ const GoalSection = (props) => {
 
   function ContextAwareToggle({ children, eventKey, callback }) {
     const openGoal = () => {
-      setKeyParameters({
-        ...keyParameters,
-        goal_id: eventKey,
-      });
-
+      eventKey===goal_id ? (
+        setKeyParameters({
+          ...keyParameters,
+          goal_id: '',
+        })
+      ) : (
+        setKeyParameters({
+          ...keyParameters,
+          goal_id: eventKey,
+        })
+      );
     }
     return (
       <div 
@@ -54,11 +60,13 @@ const GoalSection = (props) => {
           fontWeight: eventKey===goal_id ? 'bold' : 'normal' }}
         onClick={openGoal}>
         {children}
-        {eventKey===goal_id ? (
-          <i class="fa-solid fa-angle-right"></i>
-        ) : (
-          <i class="fa-solid fa-angle-left"></i>
-        )}
+        <div className={styles.TabControl}>
+          {eventKey===goal_id ? (
+            <i class="fa-solid fa-angle-right"></i>
+          ) : (
+            <i class="fa-solid fa-angle-left"></i>
+          )}
+        </div>
       </div>
     );
   }

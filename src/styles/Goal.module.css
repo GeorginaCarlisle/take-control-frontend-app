@@ -27,10 +27,17 @@
   border-bottom: solid;
   border-width: 1px;
   padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 20px;
 }
 
 .GoalTab > p {
   margin-bottom: 0;
+}
+
+.TabControl {
+  display: flex;
+  align-items: center;
 }
 
 .SpinnerContainer {
