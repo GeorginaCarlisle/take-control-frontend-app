@@ -15,7 +15,8 @@ const DesktopFocus = ({ id }) => {
     goal_id: '',
   })
 
-  const { focus_id, focus_state } = keyParameters;
+  const { focus_id, focus_state, goal_id } = keyParameters;
+  console.log(goal_id);
 
   const history = useHistory();
 

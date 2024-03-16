@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Goal.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
 import { Spinner } from 'react-bootstrap';
+import GoalView from './GoalView';
 
 const GoalSection = (props) => {
   const {
@@ -16,6 +17,9 @@ const GoalSection = (props) => {
 
   const [goals, setGoals] = useState({ results: []});
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [currentGoal, setCurrentGoal] = useState();
+
+  console.log(currentGoal);
 
   useEffect(() => {
     const fetchGoals = async () => {
@@ -37,6 +41,18 @@ const GoalSection = (props) => {
       clearTimeout(timer)
     }
   }, [focus_id]);
+
+  useEffect(() => {
+    const getCurrentGoal = () => {
+      const goal = goals.results.filter((goal) => goal.id === goal_id)[0];
+      setCurrentGoal(goal);
+    };
+    if (hasLoaded && goal_id) {
+      getCurrentGoal();
+    } else {
+      setCurrentGoal();
+    }
+  }, [goal_id, hasLoaded, goals]);
 
   function ContextAwareToggle({ children, eventKey, callback }) {
     const openGoal = () => {
@@ -95,21 +111,27 @@ const GoalSection = (props) => {
             </div>
           )}
       </div>
-      <div className="GoalPlus">
-        <div className="GoalView">
-          <h3>Goal Title</h3>
-          <p>Goal description</p>
-          <p>Value goal will provide</p>
-          <p>Success Criteria</p>
-          <p>To be achieved by 10/07/2024</p>
-          <p>Active</p>
-          <div>Edit button</div>
-          <div>Delete button</div>
+      <div className={styles.GoalPlusContainer}>
+        {hasLoaded ? (
+          currentGoal ? (
+            <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>
+          ) : (
+            goals.results.length>0 ? (
+              <div>
+                Click on a goal from your Goal list to view that goal and any nested tasks.
+              </div>
+            ) : (
+              <div>
+                Create a new goal
+              </div>
+            )
+          )
+        ) : (
+          <div className={styles.SpinnerContainer}>
+            <Spinner animation="border" />
+            <p>Just loading ...</p>
         </div>
-        <div className="Nested tasks">
-          <h3>Nested tasks</h3>
-          
-        </div>
+        )}
       </div>
     </div>
   )

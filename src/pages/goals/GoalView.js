@@ -39,7 +39,7 @@ const GoalView = (props) => {
       </div>
       
       <div className="Nested tasks">
-        <TaskList goal_id={id} type="goal"/>
+        
       </div>
     </>
   )
