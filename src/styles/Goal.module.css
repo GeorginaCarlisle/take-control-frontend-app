@@ -127,7 +127,7 @@
 
 .IconContainer {
   position: absolute;
-  top: 5px;
+  top: 7px;
   right: 5px;
 }
 
@@ -156,5 +156,11 @@
   .GoalList {
     overflow: auto;
     box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width:992px){
+  .GoalSection {
+    grid-template-columns: 200px 1fr;
   }
 }

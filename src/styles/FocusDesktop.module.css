@@ -2,7 +2,7 @@
   position: relative;
   padding: 0;
   height: 70vh;
-  width: 90vw;
+  width: 95vw;
   max-width: 1000px;
   box-sizing: border-box;
   display: grid;
@@ -22,7 +22,7 @@
 .LinkedDetailsContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 1fr 200px;
   box-sizing: border-box;
   overflow: auto;
 }
@@ -43,4 +43,14 @@
 
 .DayToDayContainer > p {
   font-size: 0.9rem;
+}
+
+@media screen and (min-width:992px){
+  .MainContainer {
+    width: 90vw;
+  }
+  .LinkedDetailsContainer {
+    grid-template-columns: 1fr 250px;
+  }
+
 }
