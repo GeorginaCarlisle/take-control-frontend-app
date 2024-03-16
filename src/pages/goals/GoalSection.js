@@ -109,7 +109,7 @@ const GoalSection = (props) => {
             </div>
           )}
       </div>
-      <div className={styles.GoalPlusContainer}>
+      <div>
         {hasLoaded ? (
           currentGoal ? (
             <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>

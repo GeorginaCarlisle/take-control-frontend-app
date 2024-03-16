@@ -83,7 +83,7 @@ const GoalSectionMobile = (props) => {
                 </ContextAwareToggle>
               </Card.Header>
               <Accordion.Collapse eventKey={goal.id}>
-                <Card.Body>
+                <Card.Body className={styles.GoalBody}>
                   <GoalView {...goal} goals={goals} setGoals={setGoals}/>
                 </Card.Body>
               </Accordion.Collapse>
