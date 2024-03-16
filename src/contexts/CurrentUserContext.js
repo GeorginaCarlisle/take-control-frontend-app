@@ -13,7 +13,7 @@ export const useCurrentUser = () => useContext(CurrentUserContext)
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext)
 
 export const CurrentUserProvider = ({children}) => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
   const handleMount = async () => {
@@ -21,7 +21,7 @@ export const CurrentUserProvider = ({children}) => {
       const {data} = await axiosRes.get('dj-rest-auth/user/')
       setCurrentUser(data)
     } catch(err){
-      console.log(err)
+      //console.log(err)
     }
   };
 
@@ -56,6 +56,7 @@ export const CurrentUserProvider = ({children}) => {
     axiosRes.interceptors.response.use(
       (response) => response,
         async (err) => {
+          console.log("AxiosRes being run!")
           if (err.response?.status === 401){
             try{
               await axios.post('/dj-rest-auth/token/refresh/')
