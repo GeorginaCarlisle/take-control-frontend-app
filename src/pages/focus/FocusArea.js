@@ -5,6 +5,7 @@ import styles from '../../styles/FocusView.module.css';
 import FocusView from './FocusView';
 import { Spinner } from 'react-bootstrap';
 import FocusEdit from './FocusEdit';
+import FocusDelete from './FocusDelete';
 
 const FocusArea = ( {id} ) => {
 
@@ -41,6 +42,8 @@ const FocusArea = ( {id} ) => {
       return <FocusView {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
     } else if (focusState==='edit') {
       return <FocusEdit {...focusData} id={id} setFocusData={setFocusData} setFocusState={setFocusState}/>
+    } else if (focusState==='delete') {
+      return <FocusDelete id={id} setFocusState={setFocusState}/>
     }
   };
 
