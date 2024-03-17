@@ -472,9 +472,24 @@ Focus: Working through the must-haves for the frontend and checking that all api
 Beginning of the sprint:
 ![Screenshot of the project board at the beginning of the second sprint](documentation/Agile/second-sprint-start.png)
 
+End of the sprint:
+![Screenshot of the project board at the end of the second sprint](documentation/Agile/second-sprint-end.png)
+Notes: This sprint was full of both [frontend](#bugs-and-fixes) and [backend bugs](https://github.com/GeorginaCarlisle/take-control-api?tab=readme-ov-file#bugs-and-fixes), which significantly slowed down progress and as a result a number of users stories remain untackled.
+
+Finished tasks for the frontend:
+![Screenshot of the closed frontend user stories](documentation/Agile/second-sprint-frontend-closed.png)
+
+Open tasks for the frontend:
+![Screenshot of the open frontend user stories](documentation/Agile/second-sprint-frontend-open.png)
+
+Note: No api tasks were part of this sprint.
+
 #### Third Sprint
 
 Focus: All must-haves to be completed. A decision to then be taken on what else can be achieved in the remainder of this sprint.
+
+Beginning of the sprint:
+![Screenshot of the project board at the beginning of the third sprint](documentation/Agile/third-sprint-start.png)
 
 #### Fourth Sprint
 
