@@ -40,7 +40,7 @@ const FocusArea = ( {id} ) => {
     if (focusState==='view') {
       return <FocusView {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
     } else if (focusState==='edit') {
-      return <FocusEdit {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
+      return <FocusEdit {...focusData} id={id} setFocusData={setFocusData} setFocusState={setFocusState}/>
     }
   };
 
@@ -50,9 +50,9 @@ const FocusArea = ( {id} ) => {
         <FocusContext />
       ) : (
         <div className={styles.SpinnerContainer}>
-        <Spinner animation="border" />
-        <p>Loading your focus details ...</p>
-      </div>
+          <Spinner animation="border" />
+          <p>Loading your focus details ...</p>
+        </div>
       )}
     </div>
   )

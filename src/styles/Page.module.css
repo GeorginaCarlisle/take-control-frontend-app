@@ -38,7 +38,7 @@
 /* Styling to allow for different Mobile and desktop views */
 .DesktopOnly {
   display: none;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .MobileOnly {

@@ -1,27 +1,42 @@
+/* General styling */
+
 .FocusContainer {
   border-color: #007926;  
   border-bottom: solid;
   border-width: 1px;
   width: 100%;
-  height: 110px;
   padding: 5px;
-  display: flex;
   overflow: auto;
   box-sizing: border-box;
 }
 
 .Image {
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   margin-right: 5px;
 }
 
+.SpinnerContainer {
+  display: flex;
+  padding: 10px;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
+
+.SpinnerContainer > h2 {
+  margin-left: 10px;
+}
+
+/* View specific styling*/
 .Details {
   padding: 5px;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
+  align-content: center;
   padding-right: 70px;
   position: relative;
 }
@@ -44,20 +59,83 @@
   right: 0;
 }
 
-.SpinnerContainer {
+/* Edit specific styling */
+
+.FocusForm {
+  margin-bottom: 35px;
   display: flex;
-  padding: 10px;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0;
 }
 
-.SpinnerContainer > p {
-  margin-left: 10px;
+.MainForm {
+  padding-left: 10px;
+  font-size: 0.9rem;
+  margin: 10px 20px 0px 0px;
 }
 
-.SpinnerContainer > h2 {
-  margin-left: 10px;
+.ImageGroup {
+  margin-bottom: 40px;
+  margin-left: 15px;
+  order: 2;
 }
+
+.EditImage {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.FormFile {
+  margin-top: 5px;
+  font-size: 0.7rem;
+  overflow: visible;
+}
+
+.FormLabel {
+  line-height: 30px;
+  margin: 0px 5px 0px 10px;
+}
+
+.ButtonsPlus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Button {
+  margin: 5px 20px 5px 20px;
+  padding: 0px 6px 0px 6px;
+}
+
+.InnerButton {
+  color: white;
+}
+
+.InnerButton:hover {
+  color: #9c1576;
+  text-decoration: none;
+}
+
 
 @media screen and (min-width:768px){
+  .FocusForm {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    position: static;
+  }
+  .Group {
+    display: flex;
+    margin-bottom: 0px;
+  }
+  .MainForm {
+    display: flex;
+    margin: 0;
+  }
   .Label {
     display: inline;
   }
@@ -70,7 +148,35 @@
   }
   .FocusContainer {
     border-width: 2px;
-    height: 102px;
+    height: 120px;
     margin-bottom: 10px;
+    display: flex;
+  }
+  .ImageGroup {
+    order: 1;
+    margin-bottom: 0;
+  }
+  .Image {
+    height: 110px;
+    width: 110px;
+  }
+  .ErrorContainer {
+    min-height: 30px;
+  }
+  .ShortInput {
+    height: 30px;
+    width: 150px;
+  }
+  .LongInput {
+    height: 30px;
+    width: 280px;
+  }
+  .ButtonsPlus {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+  }
+  .FormSection {
+    order: 2;
   }
 }

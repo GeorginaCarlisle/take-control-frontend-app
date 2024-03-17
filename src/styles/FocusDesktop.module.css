@@ -1,22 +1,12 @@
 .MainContainer {
   position: relative;
   padding: 0;
-  height: 70vh;
+  height: 75vh;
   width: 95vw;
   max-width: 1000px;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: 102px 1fr
-}
-
-.FocusContainer {
-  border-color: #007926;  
-  border-bottom: solid;
-  border-width: 2px;
-  width: 100%;
-  height: 102px;
-  overflow: auto;
-  box-sizing: border-box;
+  grid-template-rows: 120px 1fr
 }
 
 .LinkedDetailsContainer {
