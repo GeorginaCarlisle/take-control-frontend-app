@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Spinner, useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
 import GoalView from './GoalView';
+import GoalCreate from './GoalCreate';
 
 
 const GoalSectionMobile = (props) => {
@@ -114,11 +115,7 @@ const GoalSectionMobile = (props) => {
         <Accordion.Collapse eventKey="99">
           <Card.Body>
 
-            <>
-              <p>
-                Form to create a new goal
-              </p>
-            </>
+            <GoalCreate setGoals={setGoals} />
 
           </Card.Body>
         </Accordion.Collapse>

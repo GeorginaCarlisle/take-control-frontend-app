@@ -4,8 +4,6 @@ import TaskList from '../tasks/TaskList';
 
 const GoalView = (props) => {
   const {
-    setGoals,
-    goals,
     id,
     title,
     description,

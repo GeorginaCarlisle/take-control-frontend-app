@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Goal.module.css';
+import btnStyles from '../../styles/Button.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
-import { Spinner } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import GoalView from './GoalView';
+import GoalCreate from './GoalCreate';
 
 const GoalSection = (props) => {
   const {
@@ -18,6 +20,15 @@ const GoalSection = (props) => {
   const [goals, setGoals] = useState({ results: []});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [currentGoal, setCurrentGoal] = useState();
+  const [goalState, setGoalState] = useState("view");
+
+  const handleCreate = () => {
+    setGoalState("create");
+    setKeyParameters({
+      ...keyParameters,
+      goal_id: '',
+    });
+  }
 
   useEffect(() => {
     const fetchGoals = async () => {
@@ -54,18 +65,19 @@ const GoalSection = (props) => {
 
   function ContextAwareToggle({ children, eventKey, callback }) {
     const openGoal = () => {
-      eventKey===goal_id ? (
+      if (eventKey===goal_id) {
         setKeyParameters({
           ...keyParameters,
           goal_id: '',
-        })
-      ) : (
+        });
+      } else {
         setKeyParameters({
           ...keyParameters,
           goal_id: eventKey,
-        })
-      );
-    }
+        });
+        setGoalState("view");
+      }
+    };
     return (
       <div 
         className={styles.GoalTab}
@@ -84,6 +96,26 @@ const GoalSection = (props) => {
       </div>
     );
   }
+
+  function GoalContext() {
+    if (goalState==='view') {
+      return currentGoal ? (
+        <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>
+      ) : (
+        goals.results.length>0 ? (
+          <div className={styles.GoalPlusMessage}>
+            Click on a goal from your Goal list to view that goal and any nested tasks.
+          </div>
+        ) : (
+          <div className={styles.GoalPlusMessage}>
+            Create a new goal
+          </div>
+        )
+      )
+    } else if (goalState==='create') {
+      return <GoalCreate setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters}/>
+    } 
+  };
 
   return (
     <div className={styles.GoalSection}>
@@ -108,22 +140,15 @@ const GoalSection = (props) => {
               <p>We are just loading your goals</p>
             </div>
           )}
+          <Button className={`${btnStyles.Button} ${styles.Button}`} onClick={handleCreate}>
+            <div>
+              Add a goal
+            </div>
+          </Button>
       </div>
       <div className={styles.GoalPlus}>
         {hasLoaded ? (
-          currentGoal ? (
-            <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>
-          ) : (
-            goals.results.length>0 ? (
-              <div className={styles.GoalPlusMessage}>
-                Click on a goal from your Goal list to view that goal and any nested tasks.
-              </div>
-            ) : (
-              <div className={styles.GoalPlusMessage}>
-                Create a new goal
-              </div>
-            )
-          )
+          <GoalContext />
         ) : (
           <div className={styles.SpinnerContainer}>
             <Spinner animation="border" />
