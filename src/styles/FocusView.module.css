@@ -6,6 +6,7 @@
   border-width: 1px;
   width: 100%;
   padding: 5px;
+  padding-right: 28px;
   overflow: auto;
   box-sizing: border-box;
 }
@@ -74,9 +75,8 @@
 }
 
 .MainForm {
-  padding-left: 10px;
   font-size: 0.9rem;
-  margin: 10px 20px 0px 0px;
+  margin: 10px 0px 0px 15px;
 }
 
 .ImageGroup {
@@ -179,7 +179,7 @@
   }
   .LongInput {
     height: 30px;
-    width: 280px;
+    width: 300px;
   }
   .ButtonsPlus {
     position: static;
