@@ -74,43 +74,23 @@ const FocusCreate = () => {
                 </Alert>
               ))}
               {image ? (
-                <>
-                  <div className={styles.ImagePlus}>
-                    <figure className={styles.ImageContainer}>
-                      <Image src={image} className={styles.Image}/>
-                    </figure>
-                    <div className={styles.Centre}>
-                      <Form.Label
-                        className={btnStyles.Button}
-                        htmlFor="image-upload"
-                      >
-                        Change the image
-                      </Form.Label>
-                    </div>
-                  </div>
-                </>
+                <Image src={image} className={styles.Image}/>
               ) : (
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <div className={styles.ImagePlus}>
-                    <div className={styles.ImageContainer}>
-                      <img src={defaultImage} alt={"View looking through a camera lens to focus on a scene"} className={styles.Image}/>
-                    </div>
-                    <p>"Click or tap to upload an image"</p>
+                <div className={styles.AddImage}>
+                  <div className={styles.ImageContainer}>
+                    <Image src={defaultImage} className={styles.DefaultImage}/>
                   </div>
-                </Form.Label>
+                  <p>Click below to add an image</p>
+                </div>
               )}
-
               <Form.File
                 id="image-upload"
                 accept="image/*"
                 className={styles.FormFile}
                 onChange={handleChangeImage}
                 ref={imageInput}
+                aria-label='Click to change the focus image'
               />
-
             </Form.Group>
             <div className={styles.MainForm}>
               {errors.name?.map((message, idx) => (

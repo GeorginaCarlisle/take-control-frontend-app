@@ -6,27 +6,34 @@
   padding-left: 10px;
 }
 
-.ImagePlus {
-  padding: 5px;
+.Image {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+.DefaultImage {
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+}
+
+.AddImage {
   border-color: #007926;  
   border: solid;
   border-width: 1px;
+  padding: 5px;
 }
 
-.ImagePlus > p {
+.AddImage > p {
+  font-size: 0.9rem;
+  text-align: center;
   margin-bottom: 0;
 }
 
 .ImageContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.Image {
-  height: 90px;
-  width: 90px;
-  margin: 10px;
 }
 
 .FormFile {
