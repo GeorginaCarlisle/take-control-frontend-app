@@ -64,7 +64,7 @@ const FocusCreate = () => {
       <div className={pageStyles.TitleContainer}>
         <h1 className={pageStyles.Title}>Create a new focus</h1>
       </div>
-      <div className={`${pageStyles.ContentContainer} ${formStyles.FormContainer}`}>
+      <div className={`${pageStyles.ContentContainer} ${styles.FormContainer}`}>
         <Form onSubmit={handleSubmit}>
           <div className={styles.FocusForm}>
             <Form.Group className={styles.ImageGroup}>
@@ -119,7 +119,7 @@ const FocusCreate = () => {
                 <Form.Label className={formStyles.FormLabel}>Why:</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Why is this area important to you? Why do you want to focus on it?"
+                  placeholder="Why is this area important to you?"
                   name="why"
                   value={why}
                   onChange={handleChange}

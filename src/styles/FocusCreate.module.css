@@ -1,3 +1,9 @@
+.FormContainer {
+  position: relative;
+  width: 90vw;
+  max-width: 400px;
+}
+
 .FocusForm {
   margin-bottom: 35px;
 }
@@ -76,6 +82,11 @@
     width: 400px;
   }
   .ShortInput {
-    width: 200px;
+    width: 300px;
+  }
+  .FormContainer {
+    position: relative;
+    width: 90vw;
+    max-width: 700px;
   }
 }
