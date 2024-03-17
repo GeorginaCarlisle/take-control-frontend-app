@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+.ViewContainer {
+  display: flex;
+}
+
 .Image {
   height: 80px;
   width: 80px;
@@ -55,7 +59,7 @@
 
 .IconContainer {
   position: absolute;
-  top: 60px;
+  bottom: 5px;
   right: 0;
 }
 

@@ -15,7 +15,7 @@ const FocusView = (props) => {
   }
 
   return (
-    <>
+    <div className={styles.ViewContainer}>
       <img className={styles.Image} src={image} alt='focus'/>
       <div className={styles.Details}>
         <h3 className={styles.Title}>{name}</h3>
@@ -29,7 +29,7 @@ const FocusView = (props) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -48,7 +48,6 @@ const GoalHighlights = (props) => {
         <span>{deadline}</span>
       </div>
       <p>{description}</p>
-      <p>{value}</p>
       {active ? (
         <span onClick={() => handlePause(goal.id)} className={cardStyles.ActiveToggle}>
           <i class="fa-solid fa-play"></i>
