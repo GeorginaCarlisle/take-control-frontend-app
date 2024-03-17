@@ -1,6 +1,13 @@
 .FocusContainer {
+  border-color: #007926;  
+  border-bottom: solid;
+  border-width: 1px;
+  width: 100%;
+  height: 110px;
   padding: 5px;
   display: flex;
+  overflow: auto;
+  box-sizing: border-box;
 }
 
 .Image {
@@ -62,6 +69,8 @@
     top: 60px;
   }
   .FocusContainer {
+    border-width: 2px;
+    height: 102px;
     margin-bottom: 10px;
   }
 }

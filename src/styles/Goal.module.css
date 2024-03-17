@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+.GoalPlusMessage {
+  margin: 10px;
+}
+
 /* Specific to mobile view */
 
 .GoalBody {
@@ -119,6 +123,7 @@
 
 .SpinnerContainer {
   display: flex;
+  margin: 5px;
 }
 
 .SpinnerContainer > p {

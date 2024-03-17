@@ -7,20 +7,19 @@ import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { useAccordionToggle } from 'react-bootstrap';
-import FocusView from './FocusView';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import TaskList from '../tasks/TaskList';
 import GoalSectionMobile from '../goals/GoalSectionMobile';
+import FocusArea from './FocusArea';
 
 const MobileFocus = ({ id }) => {
 
   const [keyParameters, setKeyParameters] = useState({
     focus_id: id,
-    focus_state: 'view',
     goal_id: '',
   })
 
-  const { focus_id, focus_state } = keyParameters;
+  const { focus_id } = keyParameters;
 
   const history = useHistory();
 
@@ -59,9 +58,8 @@ const MobileFocus = ({ id }) => {
       <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
         <i class="fa-solid fa-x"></i>
       </button>
-      <div className={styles.FocusContainer}>
-        {focus_state==='view' && <FocusView id={focus_id} setKeyParameters={setKeyParameters} />}
-      </div>
+
+      <FocusArea id={focus_id} />
 
       <Accordion>
         <Card>

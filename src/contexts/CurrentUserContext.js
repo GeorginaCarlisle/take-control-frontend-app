@@ -56,7 +56,6 @@ export const CurrentUserProvider = ({children}) => {
     axiosRes.interceptors.response.use(
       (response) => response,
         async (err) => {
-          console.log("AxiosRes being run!")
           if (err.response?.status === 401){
             try{
               await axios.post('/dj-rest-auth/token/refresh/')

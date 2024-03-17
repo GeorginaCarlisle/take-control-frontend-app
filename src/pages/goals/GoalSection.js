@@ -115,11 +115,11 @@ const GoalSection = (props) => {
             <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>
           ) : (
             goals.results.length>0 ? (
-              <div>
+              <div className={styles.GoalPlusMessage}>
                 Click on a goal from your Goal list to view that goal and any nested tasks.
               </div>
             ) : (
-              <div>
+              <div className={styles.GoalPlusMessage}>
                 Create a new goal
               </div>
             )
