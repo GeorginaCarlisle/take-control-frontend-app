@@ -4,6 +4,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import styles from '../../styles/FocusView.module.css';
 import FocusView from './FocusView';
 import { Spinner } from 'react-bootstrap';
+import FocusEdit from './FocusEdit';
 
 const FocusArea = ( {id} ) => {
 
@@ -35,17 +36,24 @@ const FocusArea = ( {id} ) => {
     fetchFocus();
   }, [history, id])
 
-  return (
+  function FocusContext() {
+    if (focusState==='view') {
+      return <FocusView {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
+    } else if (focusState==='edit') {
+      return <FocusEdit {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
+    }
+  };
 
+  return (
     <div className={styles.FocusContainer}>
       {hasLoaded ? (
-        focusState==='view' && <FocusView {...focusData} setFocusData={setFocusData} setFocusState={setFocusState}/>
+        <FocusContext />
       ) : (
         <div className={styles.SpinnerContainer}>
-          <Spinner animation="border" />
-          <p>Loading your focus details ...</p>
-        </div>
-      )}      
+        <Spinner animation="border" />
+        <p>Loading your focus details ...</p>
+      </div>
+      )}
     </div>
   )
 }

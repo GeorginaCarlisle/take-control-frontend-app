@@ -10,6 +10,10 @@ const FocusView = (props) => {
     setFocusState,
   } = props;
 
+  const handleEdit = () => {
+    setFocusState('edit');
+  }
+
   return (
     <>
       <img className={styles.Image} src={image} alt='focus'/>
@@ -17,7 +21,7 @@ const FocusView = (props) => {
         <h3 className={styles.Title}>{name}</h3>
         <p>{why}</p>
         <div className={styles.IconContainer}>
-          <button className={btnStyles.Icon} aria-label="Click to edit focus">
+          <button className={btnStyles.Icon} aria-label="Click to edit focus" onClick={handleEdit}>
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
           <button className={btnStyles.Icon} aria-label="Click to delete focus">
