@@ -23,14 +23,13 @@ const FocusArea = ( {id} ) => {
 
   useEffect(() => {
     const fetchFocus = async () => {
-      console.log(id);
       try {
         const { data } = await axiosReq.get(`/focus/${id}`)
         const {name, why, image} = data;
         setFocusData({name, why, image});
         setHasLoaded(true);
       } catch(err){
-        console.log(err);
+        //console.log(err);
       }
     };
     setHasLoaded(false);
