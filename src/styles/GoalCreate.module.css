@@ -1,0 +1,49 @@
+.title {
+  display: none;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Input {
+  line-height: 30px;
+  padding: 0px 10px 0px 10px;
+}
+
+.FormLabel {
+  line-height: 40px;
+  margin: 0px;
+}
+
+.ExtraFields {
+  display: flex;
+}
+
+.Date {
+  margin-right: 30px;
+}
+
+@media screen and (min-width:576px){
+  .Group {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width:768px){
+  .CreateContainer {
+    padding: 10px;
+  }
+  .title {
+    display: block;
+    color: #3c159c;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width:992px){
+
+}
