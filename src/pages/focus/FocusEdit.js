@@ -47,7 +47,6 @@ const FocusEdit = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(id)
     const formData = new FormData();
     formData.append('name', newName)
     formData.append('why', newWhy)
@@ -63,6 +62,10 @@ const FocusEdit = (props) => {
         setErrors(err.response?.data);
       }
     }
+  };
+
+  const handleCancel = () => {
+    setFocusState('view');
   };
 
   return (
@@ -140,13 +143,13 @@ const FocusEdit = (props) => {
                 ))}
             </div>
             <div>
-              <Button className={`${btnStyles.Button} ${styles.Button}`}>
-                <Link to={'/plan'} className={styles.InnerButton}>
+              <Button className={`${btnStyles.Button} ${styles.Button}`} onClick={handleCancel}>
+                <div className={styles.InnerButton}>
                   Cancel
-                </Link>
+                </div>
               </Button>
               <Button className={`${btnStyles.Button} ${styles.Button}`} type="submit">
-                Save
+                Save changes
               </Button>
             </div>
           </div>
