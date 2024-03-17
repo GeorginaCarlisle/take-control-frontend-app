@@ -43,7 +43,7 @@ const FocusArea = ( {id} ) => {
     } else if (focusState==='edit') {
       return <FocusEdit {...focusData} id={id} setFocusData={setFocusData} setFocusState={setFocusState}/>
     } else if (focusState==='delete') {
-      return <FocusDelete id={id} setFocusState={setFocusState}/>
+      return <FocusDelete {...focusData} id={id} setFocusState={setFocusState}/>
     }
   };
 
