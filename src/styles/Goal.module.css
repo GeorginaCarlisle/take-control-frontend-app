@@ -97,13 +97,6 @@
   margin-right: 5px;
 }
 
-.Active {
-  margin-left: 20px;
-  margin-right: 5px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
 .DeadlineWarning {
   color: red;
 }

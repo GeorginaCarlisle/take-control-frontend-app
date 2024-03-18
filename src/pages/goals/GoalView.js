@@ -10,7 +10,6 @@ const GoalView = (props) => {
     value,
     criteria,
     deadline,
-    active,
     deadline_near,
     days_remaining
   } = props;
@@ -29,12 +28,6 @@ const GoalView = (props) => {
           ) : (
             <p>No deadline</p>
           )}
-          <div>
-            <label className={styles.Active} htmlFor="checkbox">
-              {active ? ('Goal active:') : ('Goal paused:')}
-            </label>
-            <input type="checkbox" checked={active} onChange={() => {}} />
-          </div>
         </div>
         {deadline_near && (
           <p className={styles.DeadlineWarning}>DEADLINE NEAR only {days_remaining} days remaining</p>

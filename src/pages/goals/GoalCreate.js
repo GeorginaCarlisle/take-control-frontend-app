@@ -26,7 +26,6 @@ const GoalCreate = (props) => {
     value,
     criteria,
     deadline,
-    active,
   } = goalData;
 
   const [errors, setErrors] = useState({});
@@ -112,13 +111,6 @@ const GoalCreate = (props) => {
           </Form.Group>
           <div className={styles.ExtraFields}>
             <p className={styles.Date}>Date Input</p>
-            <Form.Group controlId="active">
-              <Form.Check   
-                type="checkbox" 
-                label="Set goal as active"
-                name="active"
-                value={active} />
-            </Form.Group>
           </div>
         </div>
         <div className={styles.Buttons}>
