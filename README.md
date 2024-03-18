@@ -515,6 +515,8 @@ HTML, CSS, JavaScript and JSX
 
 [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used to decode the JSON web tokens.
 
+[react-datepicker](https://www.npmjs.com/package/react-datepicker) - Used to provide a way to input a deadline date for goals and tasks.
+
 [Return to contents list](#contents)
 
 ## Tools and Technologies
@@ -569,6 +571,7 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 | # 2 | Dangerous site warning on first accessing the deployed url. | Slack searched for similar issues faced by other students. | Warning is due to the frontend and backend coming from a different point of origin and the cross site refering involved. If time allows I will look into combining front and backends under one terminal. |
 | # 3 | When calling the base root users are automatically redirected to the signin page, instead of being able to view the home page. | Tested accessing the home page through the logo link, this worked as expected. Used chrome dev tools to step through the code on initial loading of page. Very early on CurrentUserProvider is run and get request made and currentUser is set to an empty array. Home is then initially rendering as though there is a user. However, a few steps further on the axiosRes interceptor is run which fails as there is no token and consequently it pushes the signin route as there was a user. Adding console.logs confirmed that currentuser is initially being classed as True. CurrentUser initially {} due to code in CurrentUserContext. | Changing initial setting of currentUser from {} to null within CurrentUserContext.js. |
 | # 4 | The back button in mobilefocus is not working (no hover, no pointer and no functionality) when editing the focus. It works in all other scenarios where this button is found. | Explored the css using chrome dev tools and noticed a message saying [type=button]:not(:disabled). Explored further and noticed that the edit form element overlaps the button. | Adjusted styling so that there was no overlap, button now working. |
+| # 5 | Installing and attempting to use date-picker led to the following error: "./node_modules/date-fns/startOfISOWeek.mjs Can't import the named export 'startOfWeek' from non EcmaScript module (only default export is available)" | Research at [stackoverflow](https://stackoverflow.com/questions/69343038/cant-import-the-named-export-xxxx-from-non-ecmascript-module-only-default-expo) led me to believe that a webpack.config.js was needed to resolve the error. I then went round the houses twice (once on my own and once with tutor support), creating my own webpack.config.js file and fighting through lots of file, dependency and installation issues finally resulting in needing to remove the webpack file as it was preventing npm start with no way around that we could find. Alternative options were sort. Tried [react-bootstrap-date-picker](https://www.npmjs.com/package/@types/react-bootstrap-date-picker) but this caused dependency issues with the react bootstrap already installed. Tried [react-day-picker](https://react-day-picker.js.org/) but this led to the issue as it also utilized date-fns. | Decision due to time restraints to call off the hunt for a date picker and instead fall back on a simple hmtl input field with type date, then exploring any conversion need to work with drf api. |
 
 [Return to contents list](#contents)
 
@@ -699,5 +702,7 @@ The following specific code was copied from the "Moments" walkthrough:
 [A complete guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - Used to query different CSS grid properties.
 
 [CSS Grid Layout: The Fr Unit](https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit?utm_medium=content_acq&utm_source=css-tricks&utm_campaign=&utm_content=awareness_bestsellers) - Helped me to understand the fr unit and how to best use.
+
+[React datepicker documentataion](https://reactdatepicker.com/) - Used when adding a datepicker into the forms for goals and tasks.
 
 [Return to contents list](#contents)
