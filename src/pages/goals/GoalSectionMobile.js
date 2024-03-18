@@ -71,8 +71,6 @@ const GoalSectionMobile = (props) => {
     );
   }
 
-
-
   return (
     <>
       {hasLoaded ? (

@@ -29,6 +29,14 @@
   margin-right: 30px;
 }
 
+.CreateContainer {
+  border-color: #007926;  
+  border-bottom: solid;
+  border-width: 1px;
+  padding: 20px;
+  position: relative;
+}
+
 @media screen and (min-width:576px){
   .Group {
     display: grid;

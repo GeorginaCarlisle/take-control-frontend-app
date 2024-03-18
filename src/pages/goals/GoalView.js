@@ -45,10 +45,6 @@ const GoalView = (props) => {
           </button>
         </div>
       </div>
-      <div className={styles.NestedTasks}>
-        <h3>Tasks for your goal</h3>
-        <TaskList goal_id={id} type="goal"/>
-      </div>
     </>
   )
 }

@@ -5,6 +5,7 @@ import styles from '../../styles/Goal.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import GoalView from './GoalView';
 import GoalEdit from './GoalEdit';
+import TaskList from '../tasks/TaskList';
 
 const GoalIndividual = (props) => {
   const {
@@ -59,6 +60,10 @@ const GoalIndividual = (props) => {
       <Accordion.Collapse eventKey={goal.id}>
         <Card.Body className={styles.GoalBody}>
           <GoalContext />
+          <div className={styles.NestedTasks}>
+            <h3>Tasks for your goal</h3>
+            <TaskList goal_id={goal.id} type="goal"/>
+          </div>
         </Card.Body>
       </Accordion.Collapse>
     </Card>

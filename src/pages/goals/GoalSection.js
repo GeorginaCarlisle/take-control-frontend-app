@@ -6,6 +6,7 @@ import { Button, Spinner } from 'react-bootstrap';
 import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
 import GoalEdit from './GoalEdit';
+import TaskList from '../tasks/TaskList';
 
 const GoalSection = (props) => {
   const {
@@ -101,7 +102,13 @@ const GoalSection = (props) => {
   function GoalContext() {
     if (goalState==='view') {
       return currentGoal ? (
-        <GoalView {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
+        <>
+          <GoalView {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
+          <div className={styles.NestedTasks}>
+            <h3>Tasks for your goal</h3>
+            <TaskList goal_id={goal_id} type="goal"/>
+          </div>
+        </>
       ) : (
         goals.results.length>0 ? (
           <div className={styles.GoalPlusMessage}>
