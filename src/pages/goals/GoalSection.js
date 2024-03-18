@@ -7,6 +7,7 @@ import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
 import GoalEdit from './GoalEdit';
 import TaskList from '../tasks/TaskList';
+import GoalDelete from './GoalDelete';
 
 const GoalSection = (props) => {
   const {
@@ -124,6 +125,8 @@ const GoalSection = (props) => {
       return <GoalCreate goals={goals} setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters} keyParameters={keyParameters}/>
     } else if (goalState==='edit') {
       return <GoalEdit {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
+    } else if (goalState==='delete') {
+      return <GoalDelete {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters} keyParameters={keyParameters}/>
     }
   };
 

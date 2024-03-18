@@ -6,6 +6,7 @@ import accStyles from '../../styles/Accordion.module.css';
 import GoalView from './GoalView';
 import GoalEdit from './GoalEdit';
 import TaskList from '../tasks/TaskList';
+import GoalDelete from './GoalDelete';
 
 const GoalIndividual = (props) => {
   const {
@@ -21,6 +22,8 @@ const GoalIndividual = (props) => {
       return <GoalView {...goal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
     } else if (goalState==='edit') {
       return <GoalEdit {...goal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
+    } else if (goalState==='delete') {
+      return <GoalDelete {...goal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
     }
   };
 

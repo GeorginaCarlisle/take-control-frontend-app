@@ -17,6 +17,10 @@ const GoalView = (props) => {
     setGoalState('edit');
   }
 
+  const handleDelete = () => {
+    setGoalState('delete');
+  }
+
   return (
     <>
       <div className={styles.GoalViewContainer}>
@@ -38,7 +42,7 @@ const GoalView = (props) => {
           <button className={styles.Icon} onClick={handleEdit} aria-label="Click to edit focus">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
-          <button className={styles.Icon} aria-label="Click to delete focus">
+          <button className={styles.Icon} onClick={handleDelete}aria-label="Click to delete focus">
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>
