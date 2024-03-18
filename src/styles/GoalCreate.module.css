@@ -12,6 +12,10 @@
   padding: 0px 10px 0px 10px;
 }
 
+.DateInput {
+  width: 150px;
+}
+
 .FormLabel {
   line-height: 40px;
   margin: 0px;

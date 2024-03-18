@@ -3,21 +3,27 @@ import { Alert, Button, Form } from 'react-bootstrap';
 import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const GoalCreate = (props) => {
   const {
+    goals,
     setGoals,
     setGoalState,
-    setKeyParameters
+    setKeyParameters,
+    keyParameters
   } = props;
+
+  const { focus_id } = keyParameters;
+
+  const goalList = goals.results;
 
   const [goalData, setGoalData] = useState({
     title: '',
     description: '',
     value: '',
     criteria: '',
-    deadline: null,
-    active: true,
+    deadline: '',
   });
 
   const {
@@ -30,11 +36,72 @@ const GoalCreate = (props) => {
 
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('title', title)
+    formData.append('description', description)
+    formData.append('value', value)
+    formData.append('criteria', criteria)
+    formData.append('focus', focus_id)
+    if (deadline) {
+      const parts = deadline.split('-');
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      const djangoDate = date.toISOString();
+      console.log(djangoDate);
+      formData.append('deadline', djangoDate)
+    }
+    try {
+      const {data} = await axiosReq.post('/goals/', formData);
+      setKeyParameters({
+        ...keyParameters,
+        goal_id: data.id,
+      });
+      setGoals(
+        { results: [
+          ...goalList,
+          data
+        ]}
+      );
+      if (setGoalState) {
+        setGoalState("view");
+      } else {
+        setGoalData({
+          title: '',
+          description: '',
+          value: '',
+          criteria: '',
+          deadline: '',
+        })
+      };
+    } catch(err){
+      console.log(err.response);
+      console.log(err.response.data.title);
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data);
+      }
+    }
+  };
 
-  const handleChange = () => {};
+  const handleChange = (event) => {
+    setGoalData({
+      ...goalData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const handleCancel = () => {};
+  const handleCancel = () => {
+    setGoalData({
+      title: '',
+      description: '',
+      value: '',
+      criteria: '',
+      deadline: '',
+    });
+    if (setGoalState) {
+      setGoalState("view");
+    }
+  };
 
   return (
     <div className={styles.CreateContainer}>
@@ -109,8 +176,16 @@ const GoalCreate = (props) => {
               className={styles.Input}
             />
           </Form.Group>
-          <div className={styles.ExtraFields}>
-            <p className={styles.Date}>Date Input</p>
+          <div className={styles.Group}>
+            <label htmlFor="deadline">Achieve by:</label>
+            <input
+              type="date"
+              id="deadline"
+              name="deadline"
+              value={deadline}
+              onChange={handleChange}
+              className={styles.DateInput}
+            />
           </div>
         </div>
         <div className={styles.Buttons}>

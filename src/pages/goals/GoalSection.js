@@ -113,7 +113,7 @@ const GoalSection = (props) => {
         )
       )
     } else if (goalState==='create') {
-      return <GoalCreate setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters}/>
+      return <GoalCreate goals={goals} setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters} keyParameters={keyParameters}/>
     } 
   };
 
