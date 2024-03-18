@@ -8,6 +8,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 const GoalEdit = (props) => {
   const {
     id,
+    focus,
     title,
     description,
     value,
@@ -18,6 +19,8 @@ const GoalEdit = (props) => {
     setGoalState
   } = props;
 
+  const convertedDate = new Date(deadline).toISOString().split('T')[0];
+
   const goalList = goals.results;
 
   const [goalData, setGoalData] = useState({
@@ -25,7 +28,7 @@ const GoalEdit = (props) => {
     newDescription: description,
     newValue: value,
     newCriteria: criteria,
-    newDeadline: deadline,
+    newDeadline: convertedDate,
   });
 
   const [errors, setErrors] = useState({});
@@ -49,10 +52,47 @@ const GoalEdit = (props) => {
     setGoalState("view");
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log("handleSubmit called");
+    const formData = new FormData();
+    formData.append('title', newTitle)
+    formData.append('description', newDescription)
+    formData.append('value', newValue)
+    formData.append('criteria', newCriteria)
+    formData.append('focus', focus)
+    console.log(focus);
+    if (newDeadline) {
+      const parts = newDeadline.split('-');
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      const djangoDate = date.toISOString();
+      formData.append('deadline', djangoDate)
+    }
+    console.log(formData)
+    try {
+      const {data} = await axiosReq.put(`/goals/${id}`, formData);
+      console.log("put request sent");
+      const goalIndex = goalList.findIndex(goal => goal.id === id);
+      goalList[goalIndex] = data;
+      setGoals(
+        { results: [
+          ...goalList
+        ]}
+      );
+      setGoalState("view");
+    } catch(err){
+      console.log(err);
+      console.log(err.response);
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
   return (
     <div className={styles.CreateContainer}>
       <h3 className={styles.title}>Edit goal</h3>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div className={styles.MainForm}>
 
           {errors.title?.map((message, idx) => (

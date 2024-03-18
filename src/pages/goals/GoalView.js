@@ -1,10 +1,8 @@
 import React from 'react'
 import styles from '../../styles/Goal.module.css';
-import TaskList from '../tasks/TaskList';
 
 const GoalView = (props) => {
   const {
-    id,
     title,
     description,
     value,
