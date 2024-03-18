@@ -143,7 +143,7 @@ const GoalCreate = (props) => {
             />
           </Form.Group>
 
-          {errors.title?.value((message, idx) => (
+          {errors.value?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
               {message}
             </Alert>
