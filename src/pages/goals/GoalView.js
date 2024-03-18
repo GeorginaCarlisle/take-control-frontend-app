@@ -11,9 +11,13 @@ const GoalView = (props) => {
     criteria,
     deadline,
     deadline_near,
-    days_remaining
+    days_remaining,
+    setGoalState
   } = props;
 
+  const handleEdit = () => {
+    setGoalState('edit');
+  }
 
   return (
     <>
@@ -33,7 +37,7 @@ const GoalView = (props) => {
           <p className={styles.DeadlineWarning}>DEADLINE NEAR only {days_remaining} days remaining</p>
         )}
         <div className={styles.IconContainer}>
-          <button className={styles.Icon} aria-label="Click to edit focus">
+          <button className={styles.Icon} onClick={handleEdit} aria-label="Click to edit focus">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
           <button className={styles.Icon} aria-label="Click to delete focus">

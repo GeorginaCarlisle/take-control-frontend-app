@@ -5,6 +5,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { Button, Spinner } from 'react-bootstrap';
 import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
+import GoalEdit from './GoalEdit';
 
 const GoalSection = (props) => {
   const {
@@ -100,7 +101,7 @@ const GoalSection = (props) => {
   function GoalContext() {
     if (goalState==='view') {
       return currentGoal ? (
-        <GoalView {...currentGoal} goals={goals} setGoals={setGoals}/>
+        <GoalView {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
       ) : (
         goals.results.length>0 ? (
           <div className={styles.GoalPlusMessage}>
@@ -114,7 +115,9 @@ const GoalSection = (props) => {
       )
     } else if (goalState==='create') {
       return <GoalCreate goals={goals} setGoals={setGoals} setGoalState={setGoalState} setKeyParameters={setKeyParameters} keyParameters={keyParameters}/>
-    } 
+    } else if (goalState==='edit') {
+      return <GoalEdit {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
+    }
   };
 
   return (

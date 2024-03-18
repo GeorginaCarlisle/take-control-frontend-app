@@ -6,8 +6,8 @@ import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
 import { Spinner, useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
-import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
+import GoalIndividual from './GoalIndividual';
 
 
 const GoalSectionMobile = (props) => {
@@ -18,8 +18,7 @@ const GoalSectionMobile = (props) => {
   } = props;
 
   const {
-    focus_id,
-    goal_id,
+    focus_id
   } = keyParameters;
 
   const [goals, setGoals] = useState({ results: []});
@@ -72,23 +71,14 @@ const GoalSectionMobile = (props) => {
     );
   }
 
+
+
   return (
     <>
       {hasLoaded ? (
         goals.results.length>0 && (
           goals.results.map( goal => (
-            <Card key={goal.id}>
-              <Card.Header>
-                <ContextAwareToggle as={Card.Header} eventKey={goal.id}>
-                  <h3>{goal.title}</h3>
-                </ContextAwareToggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey={goal.id}>
-                <Card.Body className={styles.GoalBody}>
-                  <GoalView {...goal} goals={goals} setGoals={setGoals}/>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
+            <GoalIndividual goal={goal} goals={goals} setGoals={setGoals}/>
           ))
         )
       ) : (
