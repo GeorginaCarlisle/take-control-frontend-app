@@ -1,10 +1,36 @@
-import React, { useContext } from 'react';
-import { Accordion, AccordionContext, Card, useAccordionToggle } from 'react-bootstrap';
+import React, { useContext, useEffect, useState } from 'react';
+import { Accordion, AccordionContext, Card, Spinner, useAccordionToggle } from 'react-bootstrap';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const MobileTakeAction = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [activeTasks, setActiveTasks] = useState({ results: []});
+  const [todayTasks, setTodayTasks] = useState({ results: []});
+  const [completedTasks, setCompletedTasks] = useState({ results: []});
+
+  useEffect(() => {
+    const fetchActiveTasks = async () => {
+      try {
+        const {data} = await axiosReq.get('tasks/?active=True');
+        setActiveTasks(data);
+        setHasLoaded(true);
+      }  catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      fetchActiveTasks();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, []);
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -46,7 +72,20 @@ const MobileTakeAction = () => {
               <p>Add additional task button</p>
               <p>Ordering filter</p>
             </div>
-            <ActionTask />
+            {hasLoaded ? (
+              activeTasks.results.length>0 ? (
+                activeTasks.results.map( task => (
+                  <ActionTask key={task.id} {...task} setActiveTasks={setActiveTasks} setTodayTasks={setTodayTasks} type="active"/>
+                ))
+              ) : (
+                <p>You dont have any active tasks</p>
+              )
+            ) : (
+              <div className={styles.SpinnerContainer}>
+                <Spinner animation="border" />
+                <p>We are just loading your tasks</p>
+              </div>
+            )}
           </Card.Body>
         </Accordion.Collapse>
       </Card>
