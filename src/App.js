@@ -14,7 +14,6 @@ import TakeAction from './pages/action/TakeAction';
 import Labels from './pages/labels/Labels';
 import Profile from './pages/profile/Profile';
 import Focus from './pages/focus/Focus';
-import FocusOrder from './pages/focus/FocusOrder';
 import FocusCreate from './pages/focus/FocusCreate';
 
 function App() {
@@ -38,9 +37,6 @@ function App() {
           )} />
           <Route exact path="/focus/:id" render={() => (
             currentUser ? ( <Focus /> ) : ( <Redirect to={{pathname: "/signin"}} />)
-          )} />
-          <Route exact path="/focus/order" render={() => (
-            currentUser ? ( <FocusOrder /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
           <Route exact path="/takeaction" render={() => (
             currentUser ? ( <TakeAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)

@@ -16,10 +16,7 @@ const Plan = () => {
         </div>      
       <div className={btnStyles.ButtonContainer}>
         <Link className={btnStyles.Button} to={'/focus/create'}>
-          Create focus
-        </Link>
-        <Link className={btnStyles.Button} to={'/focus/order'}>
-          Rank focus areas
+          Create new focus area
         </Link>
       </div>
       <div className={pageStyles.MobileOnly}>
