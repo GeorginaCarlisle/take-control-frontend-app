@@ -107,7 +107,7 @@ const GoalSection = (props) => {
           <GoalView {...currentGoal} goals={goals} setGoals={setGoals} setGoalState={setGoalState}/>
           <div className={styles.NestedTasks}>
             <h3>Tasks for your goal</h3>
-            <TaskList goal_id={goal_id} type="goal"/>
+            <TaskList focus_id={focus_id} goal_id={goal_id} type="goal"/>
           </div>
         </>
       ) : (
