@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Alert, Button, Form } from 'react-bootstrap';
+import { Alert, Form } from 'react-bootstrap';
 import formStyles from '../../styles/Form.module.css';
-import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
 
@@ -37,13 +36,17 @@ const TaskCreate = (props) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append('name', name)
-    formData.append('focus', focus)
-    formData.append('goal', goal)
+    if (focus) {
+      formData.append('focus', focus)
+    };
+    if (goal) {
+      formData.append('goal', goal)
+    }
     if (deadline) {
       const parts = deadline.split('-');
       const date = new Date(parts[0], parts[1] - 1, parts[2]);
       const djangoDate = date.toISOString();
-      formData.append('deadline', djangoDate)
+      formData.append('deadline', djangoDate);
     }
     try {
       const {data} = await axiosReq.post('/tasks/', formData);
@@ -60,6 +63,7 @@ const TaskCreate = (props) => {
         deadline: '',
       });
     } catch(err){
+      //console.log(err);
       if (err.response?.status !== 401){
         setErrors(err.response?.data);
       }
@@ -73,7 +77,8 @@ const TaskCreate = (props) => {
     });
   };
 
-  const handleCancel = () => {
+  const handleCancel = (event) => {
+    event.preventDefault();
     setTaskData({
       name: '',
       focus: focus_id,
@@ -119,10 +124,10 @@ const TaskCreate = (props) => {
         </div>
         <div className={styles.IconContainer}>
           <button className={styles.Icon} type="submit" aria-label="Click to save task">
-          <i class="fa-solid fa-floppy-disk"></i>
+          <i className="fa-solid fa-floppy-disk"></i>
           </button>
           <button className={styles.Icon} onClick={handleCancel} aria-label="Click to cancel">
-            <i class="fa-regular fa-rectangle-xmark"></i>
+            <i className="fa-regular fa-rectangle-xmark"></i>
           </button>
         </div>
       </Form>
