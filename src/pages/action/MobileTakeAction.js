@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Accordion, AccordionContext, Card, useAccordionToggle } from 'react-bootstrap';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
+import ActionTask from './ActionTask';
 
 const MobileTakeAction = () => {
 
@@ -40,10 +41,12 @@ const MobileTakeAction = () => {
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>
-            <p>Ordering filter</p>
-            <p>Add additional task button</p>
-            <p>List of active tasks</p>
+          <Card.Body className={styles.AccordionBody}>
+            <div className={styles.FunctionContainer}>
+              <p>Add additional task button</p>
+              <p>Ordering filter</p>
+            </div>
+            <ActionTask />
           </Card.Body>
         </Accordion.Collapse>
       </Card>

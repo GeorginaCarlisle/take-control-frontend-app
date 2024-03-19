@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from '../../styles/TakeAction.module.css'
 import pageStyles from '../../styles/Page.module.css';
+import ActionTask from './ActionTask';
 
-const DesktopTakeAction = ({ id }) => {
+const DesktopTakeAction = () => {
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
@@ -12,7 +13,7 @@ const DesktopTakeAction = ({ id }) => {
           <p className={styles.OrderBy}>Order by filter</p>
         </div>
         <div className={styles.TasksContainer}>
-          <p>List of tasks</p>
+          <ActionTask />
         </div>
       </div>
       <div className={`${styles.Column} ${styles.MiddleColumn}`}>

@@ -29,6 +29,19 @@
   max-width: 500px;
 }
 
+.AccordionBody {
+  padding: 0;
+}
+
+.FunctionContainer {
+  border-color: #007926;  
+  border-bottom: solid;
+  border-width: 1px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
 /* Desktop Specific */
 
 .MainContainer {
