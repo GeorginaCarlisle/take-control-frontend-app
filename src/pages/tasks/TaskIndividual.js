@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TaskView from './TaskView';
+import TaskEdit from './TaskEdit';
 
 const TaskIndividual = (props) => {
   const {
@@ -16,7 +17,7 @@ const TaskIndividual = (props) => {
     if (taskState==='view') {
       return <TaskView key={task.id} {...task} setTaskState={setTaskState}/>
     } else if (taskState==='edit') {
-      return 
+      return <TaskEdit />
     } else if (taskState==='delete') {
       return 
     }

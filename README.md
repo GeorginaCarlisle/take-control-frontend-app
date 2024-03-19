@@ -667,6 +667,7 @@ In order to connect this frontend application to it's partner API:
 - deploying to Heroku
 - connecting to the backend API
 - setting up authentication pages: sign up and sign in
+- creating the dropdown options for a task
 
 The following specific code was copied from the "Moments" walkthrough:
 

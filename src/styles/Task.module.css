@@ -19,14 +19,41 @@
   margin-bottom: 0;
 }
 
+.Choice {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .ChoiceIcon {
   color: #9c1576;
   font-size: 1.2rem;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 
 .ChoiceIcon:hover {
+  color: #3c159c;
+}
+
+.ChoiceMenu {
+  width: 5.5rem;
+  min-width: 5.5rem;
+  padding: 5px 5px 5px 10px;
+  background-color: white;
+  border-color: #007926;  
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 5px;
+}
+
+.ChoiceOption {
+  color: #9c1576;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ChoiceOption:hover {
   color: #3c159c;
 }
 
