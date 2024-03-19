@@ -1,0 +1,95 @@
+.ActionTitle {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.ButtonContainer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px;
+}
+
+.AddTaskBtn {
+  display: none;
+}
+
+.ExtraInfo {
+  display: none;
+}
+
+/* Mobile Specific */
+
+.Accordion {
+  border-color: #007926;  
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  width: 90vw;
+  max-width: 500px;
+}
+
+/* Desktop Specific */
+
+.MainContainer {
+  padding: 0;
+  width: 95vw;
+  height: 75vh;
+  max-width: 1200px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.Column {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+.MiddleColumn {
+  border-color: #007926;  
+  border-right: solid;
+  border-left: solid;
+  border-width: 2px;
+}
+
+.TitleContainer {
+  border-color: #007926;  
+  border-bottom: solid;
+  border-width: 1px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TitleContainer > h3 {
+  color: #3c159c;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.OrderBy {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  margin: 0;
+}
+
+.TasksContainer {
+  overflow: auto;
+
+}
+
+@media screen and (min-width:768px){
+  .ExtraInfo {
+    display: inline;
+  }
+  .ActionTitle {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .AddTaskBtn {
+    display: block;
+  }
+}
