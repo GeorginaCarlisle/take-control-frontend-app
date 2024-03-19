@@ -15,7 +15,7 @@ const TaskList = ( props ) => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      if (type==="daytoday") {
+      if (type==="day to day") {
         try {
           const {data} = await axiosReq.get(`/tasks/?focus=${focus_id}&goal=None`);
           setTasks(data);
@@ -53,18 +53,18 @@ const TaskList = ( props ) => {
   }, [focus_id, goal_id, type]);
 
   function CreateContext() {
-    if (type==="daytoday") {
-      return <TaskCreate type={type} focus_id={focus_id} />
+    if (type==="day to day") {
+      return <TaskCreate type={type} focus_id={focus_id} tasks={tasks} setTasks={setTasks}/>
     } else if (type==="goal") {
-      return <TaskCreate type={type} goal_id={goal_id} />
+      return <TaskCreate type={type} focus_id={focus_id} goal_id={goal_id} tasks={tasks} setTasks={setTasks}/>
     } else if (type==="miscellaneous") {
-      return <TaskCreate type={type} />
+      return <TaskCreate type={type} tasks={tasks} setTasks={setTasks}/>
     } 
   };
 
   return (
     <div>
-      <div>
+      <div className={styles.TaskListContainer}>
         {hasLoaded ? (
           tasks.results.length ? (
             tasks.results.map(task => (

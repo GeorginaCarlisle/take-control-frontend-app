@@ -33,9 +33,11 @@ const DesktopFocus = ({ id }) => {
       <div className={styles.LinkedDetailsContainer}>
         <GoalSection keyParameters={keyParameters} setKeyParameters={setKeyParameters}/>
         <div className={styles.DayToDayContainer}>
-          <h3>Day to day tasks</h3>
-          <p>(Those jobs that just need doing)</p>
-          <TaskList focus_id={focus_id} type="daytoday"/>
+          <div className={styles.DayToDayInfo}>
+            <h3>Day to day tasks</h3>
+            <p>(Those jobs that just need doing)</p>
+          </div>
+          <TaskList focus_id={focus_id} type="day to day"/>
         </div>
       </div>
     </div>

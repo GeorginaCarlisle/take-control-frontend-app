@@ -21,18 +21,22 @@
   border-color: #007926;  
   border-left: solid;
   border-width: 2px;
-  padding: 10px;
   overflow: auto;
   box-sizing: border-box;
 }
 
-.DayToDayContainer > h3 {
+.DayToDayInfo {
+  padding: 10px;
+}
+
+.DayToDayInfo > h3 {
   color: #3c159c;
   font-weight: 700;
 }
 
-.DayToDayContainer > p {
+.DayToDayInfo > p {
   font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width:992px){

@@ -101,15 +101,11 @@
   color: red;
 }
 
-.NestedTasks {
-  padding: 20px;
-}
-
 .NestedTasks > h3 {
   color: #3c159c;
   font-weight: 700;
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin: 20px 20px 0px 20px;
 }
 
 /* General */
@@ -145,15 +141,15 @@
   .GoalViewContainer {
     padding: 10px;
   }
-  .NestedTasks {
-    padding: 10px;
-  }
   .Icon {
     background-color: #f5f5f5;
   }
   .GoalList {
     overflow: auto;
     box-sizing: border-box;
+  }
+  .NestedTasks > h3 {
+    margin: 10px;
   }
 }
 
