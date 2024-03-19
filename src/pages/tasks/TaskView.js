@@ -24,6 +24,10 @@ const TaskView = (props) => {
     setTaskState('edit');
   }
 
+  const handleDelete = () => {
+    setTaskState('delete');
+  }
+
   return (
     <div className={taskStyles.TaskContainer}>
 
@@ -32,6 +36,9 @@ const TaskView = (props) => {
         <Dropdown.Menu className={taskStyles.ChoiceMenu} popperConfig={{ strategy: "fixed" }}>
           <Dropdown.Item className={taskStyles.ChoiceOption} onClick={handleEdit} aria-label="edit" >
             Edit task
+          </Dropdown.Item>
+          <Dropdown.Item className={taskStyles.ChoiceOption} onClick={handleDelete} aria-label="edit" >
+            Delete task
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>

@@ -76,6 +76,11 @@
   color: #3c159c;
 }
 
+/* Delete specifc */
+.DeleteParagraph {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width:576px){
 
 }
