@@ -49,6 +49,33 @@
   color: #3c159c;
 }
 
+/* Edit specific */
+.EditContainer {
+  padding: 20px;
+  position: relative;
+  background-color: #dfdcdc;
+}
+
+.EditIconContainer {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.EditIcon {
+  color: #9c1576;
+  font-size: 1.3rem;
+  border: none;
+  background-color: #dfdcdc;
+  margin-left: 8px;
+}
+
+.EditIcon:hover {
+  color: #3c159c;
+}
+
 @media screen and (min-width:576px){
 
 }
@@ -60,6 +87,9 @@
   }
   .FormContainer {
     padding: 10px;
+  }
+  .EditContainer {
+    padding: 15px 10px 15px 10px;
   }
   .Icon {
     font-size: 1.2rem;
@@ -84,7 +114,10 @@
     flex-direction: column;
   }
   .TaskInput {
-    max-width: 130px;
+    max-width: 146px;
+  }
+  .EditInput {
+    max-width:146px;
   }
   .DateInput {
     width: 120px;

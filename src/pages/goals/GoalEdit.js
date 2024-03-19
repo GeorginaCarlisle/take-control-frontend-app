@@ -54,24 +54,20 @@ const GoalEdit = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("handleSubmit called");
     const formData = new FormData();
     formData.append('title', newTitle)
     formData.append('description', newDescription)
     formData.append('value', newValue)
     formData.append('criteria', newCriteria)
     formData.append('focus', focus)
-    console.log(focus);
     if (newDeadline) {
       const parts = newDeadline.split('-');
       const date = new Date(parts[0], parts[1] - 1, parts[2]);
       const djangoDate = date.toISOString();
       formData.append('deadline', djangoDate)
     }
-    console.log(formData)
     try {
       const {data} = await axiosReq.put(`/goals/${id}`, formData);
-      console.log("put request sent");
       const goalIndex = goalList.findIndex(goal => goal.id === id);
       goalList[goalIndex] = data;
       setGoals(

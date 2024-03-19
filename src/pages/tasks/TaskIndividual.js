@@ -17,7 +17,7 @@ const TaskIndividual = (props) => {
     if (taskState==='view') {
       return <TaskView key={task.id} {...task} setTaskState={setTaskState}/>
     } else if (taskState==='edit') {
-      return <TaskEdit />
+      return <TaskEdit {...task} setTaskState={setTaskState} tasks={tasks} setTasks={setTasks} focus_id={focus_id} goal_id={goal_id}/>
     } else if (taskState==='delete') {
       return 
     }
