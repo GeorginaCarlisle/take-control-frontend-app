@@ -15,6 +15,7 @@ import Labels from './pages/labels/Labels';
 import Profile from './pages/profile/Profile';
 import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
+import Miscellaneous from './pages/plan/Miscellaneous';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/plan" render={() => (
             currentUser ? ( <Plan /> ) : ( <Redirect to={{pathname: "/signin"}} />)
+          )} />
+          <Route exact path="/miscellaneous" render={() => (
+            currentUser ? ( <Miscellaneous /> ) : ( <Redirect to={{pathname: "/signin"}} />)
           )} />
           <Route exact path="/focus/create" render={() => (
             currentUser ? ( <FocusCreate /> ) : ( <Redirect to={{pathname: "/signin"}} />)

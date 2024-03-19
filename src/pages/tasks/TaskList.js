@@ -30,6 +30,14 @@ const TaskList = ( props ) => {
         } catch(err) {
           console.log(err)
         }
+      } else if (type==="miscellaneous") {
+        try {
+          const {data} = await axiosReq.get('/tasks/?focus=None');
+          setTasks(data);
+          setHasLoaded(true);
+        } catch(err) {
+          console.log(err)
+        }
       }
     };
     setHasLoaded(false);

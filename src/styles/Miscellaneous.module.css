@@ -1,0 +1,33 @@
+.MainContainer {
+  padding: 0;
+  position: relative;
+  width: 90vw;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.Title {
+  display: flex;
+  align-items: center;
+  border-color: #007926;  
+  border-bottom: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+
+.Title > h2 {
+  font-size: 1.3rem;
+  color: #3c159c;
+  font-weight: 600;
+}
+
+.Image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.TaskList {
+  padding: 10px;
+}
