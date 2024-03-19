@@ -515,8 +515,6 @@ HTML, CSS, JavaScript and JSX
 
 [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used to decode the JSON web tokens.
 
-[react-datepicker](https://www.npmjs.com/package/react-datepicker) - Used to provide a way to input a deadline date for goals and tasks.
-
 [Return to contents list](#contents)
 
 ## Tools and Technologies

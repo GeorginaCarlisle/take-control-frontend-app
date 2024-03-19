@@ -3,6 +3,7 @@ import styles from '../../styles/Task.module.css';
 import TaskView from './TaskView';
 import { axiosReq } from '../../api/axiosDefaults';
 import { Spinner } from 'react-bootstrap';
+import TaskCreate from './TaskCreate';
 
 const TaskList = ( props ) => {
 
@@ -51,6 +52,16 @@ const TaskList = ( props ) => {
     }
   }, [focus_id, goal_id, type]);
 
+  function CreateContext() {
+    if (type==="daytoday") {
+      return <TaskCreate type={type} focus_id={focus_id} />
+    } else if (type==="goal") {
+      return <TaskCreate type={type} goal_id={goal_id} />
+    } else if (type==="miscellaneous") {
+      return <TaskCreate type={type} />
+    } 
+  };
+
   return (
     <div>
       <div>
@@ -71,9 +82,7 @@ const TaskList = ( props ) => {
             </div>
         )}
       </div>
-      <div>
-        Create a new task
-      </div>
+      <CreateContext />
     </div>
   )
 }
