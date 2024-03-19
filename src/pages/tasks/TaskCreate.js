@@ -79,6 +79,7 @@ const TaskCreate = (props) => {
 
   const handleCancel = (event) => {
     event.preventDefault();
+    setErrors({});
     setTaskData({
       name: '',
       focus: focus_id,
