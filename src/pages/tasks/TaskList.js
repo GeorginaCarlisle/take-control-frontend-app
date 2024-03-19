@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Task.module.css';
-import TaskView from './TaskView';
+import TaskIndividual from './TaskIndividual';
 import { axiosReq } from '../../api/axiosDefaults';
 import { Spinner } from 'react-bootstrap';
 import TaskCreate from './TaskCreate';
@@ -68,7 +68,7 @@ const TaskList = ( props ) => {
         {hasLoaded ? (
           tasks.results.length ? (
             tasks.results.map(task => (
-              <TaskView key={task.id} {...task} />
+              <TaskIndividual key={task.id} task={task} focus_id={focus_id} goal_id={goal_id} tasks={tasks} setTasks={setTasks}/>
             ))
           ) : (
             <div>
