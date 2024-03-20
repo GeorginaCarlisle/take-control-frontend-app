@@ -8,71 +8,51 @@ const ActionTask = (props) => {
     name,
     image,
     context,
-    deadline,
-    deadline_info,
-    goal_deadline_info,
     today,
     achieved,
+    deadline_info,
+    goal_deadline_info,
+    type,
     activeTasks,
     setActiveTasks,
-    todayTasks,
-    setTodayTasks,
-    type
   } = props;
 
-  const todayList = todayTasks?.results;
-
-  const activeList = activeTasks?.results;
-
   const handleTodayToggle = async (event) => {
-      const checkbox = event.target;
-      if (checkbox.checked) {
-        try {
-          const {data} = await axiosReq.patch(`/tasks/${id}`, { today: true });
-          setTodayTasks(
-            { results: [
-              ...todayList,
-              data
-            ]}
-          );
-          const taskIndex = activeList.findIndex(task => task.id === id);
-          activeList[taskIndex] = data;
-          setActiveTasks(
-            {
-              results: [
-                ...activeList
-              ]
-            }
-          );
-        } catch(err){
-          console.log(err)
-        }
-      } else {
-        try {
-          const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
-          const todayTaskIndex = todayList.findIndex(task => task.id === id);
-          todayList.splice(todayTaskIndex, 1);
-          setTodayTasks(
-            {
-              results: [
-                ...todayList
-              ]
-            }
-          );
-          const activeTaskIndex = activeList.findIndex(task => task.id === id);
-          activeList[activeTaskIndex] = data;
-          setActiveTasks(
-            {
-              results: [
-                ...activeList
-              ]
-            }
-          );
-        } catch(err){
-          console.log(err)
-        }
-      } 
-    }
+    const checkbox = event.target;
+    if (checkbox.checked) {
+      try {
+        const {data} = await axiosReq.patch(`/tasks/${id}`, { today: true });
+        const activeList = activeTasks.results;
+        const taskIndex = activeList.findIndex(task => task.id === id);
+        activeList[taskIndex] = data;
+        setActiveTasks(
+          {
+            results: [
+              ...activeList
+            ]
+          }
+        );
+      } catch(err){
+        console.log(err)
+      }
+    } else {
+      try {
+        const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
+        const activeList = activeTasks.results;
+        const taskIndex = activeList.findIndex(task => task.id === id);
+        activeList[taskIndex] = data;
+        setActiveTasks(
+          {
+            results: [
+              ...activeList
+            ]
+          }
+        );
+      } catch(err){
+        console.log(err)
+      }
+    } 
+  }
 
   function DeadlineContext() {
     if (deadline_info) {

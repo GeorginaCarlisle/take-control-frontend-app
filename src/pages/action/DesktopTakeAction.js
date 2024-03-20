@@ -1,58 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from '../../styles/TakeAction.module.css'
 import pageStyles from '../../styles/Page.module.css';
 import ActionTask from './ActionTask';
-import { axiosReq } from '../../api/axiosDefaults';
 import { Spinner } from 'react-bootstrap';
 
-const DesktopTakeAction = () => {
+const DesktopTakeAction = (props) => {
 
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const [activeTasks, setActiveTasks] = useState({ results: []});
-  const [todayTasks, setTodayTasks] = useState({ results: []});
-  const [completedTasks, setCompletedTasks] = useState({ results: []});
-
-  useEffect(() => {
-    const fetchActiveTasks = async () => {
-      try {
-        const {data} = await axiosReq.get('tasks/?active=True');
-        setActiveTasks(data);
-        setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
-      }
-    };
-    setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchActiveTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
-  }, []);
-
-  useEffect(() => {
-    const fetchTodayTasks = async () => {
-      try {
-        const {data} = await axiosReq.get('tasks/?today=True');
-        setTodayTasks(data);
-        setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
-      }
-    };
-    setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchTodayTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
-  }, []);
+  const {
+    hasLoaded,
+    activeTasks,
+    setActiveTasks,
+    activeList,
+    todayList,
+    achievedList
+  } = props;
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
@@ -64,15 +25,13 @@ const DesktopTakeAction = () => {
         </div>
         <div className={styles.TasksContainer}>
           {hasLoaded ? (
-            activeTasks.results.length>0 ? (
-              activeTasks.results.map( task => (
+            activeList?.length>0 ? (
+              activeList.map( task => (
                 <ActionTask 
                   key={task.id}
                   {...task}
                   activeTasks={activeTasks}
                   setActiveTasks={setActiveTasks} 
-                  todayTasks={todayTasks}
-                  setTodayTasks={setTodayTasks} 
                   type="active"/>
               ))
             ) : (
@@ -94,15 +53,13 @@ const DesktopTakeAction = () => {
         </div>
         <div className={styles.TasksContainer}>
           {hasLoaded ? (
-            todayTasks.results.length>0 ? (
-              todayTasks.results.map( task => (
+            todayList?.length>0 ? (
+              todayList.map( task => (
                 <ActionTask 
                   key={task.id}
                   {...task}
                   activeTasks={activeTasks}
                   setActiveTasks={setActiveTasks} 
-                  todayTasks={todayTasks}
-                  setTodayTasks={setTodayTasks} 
                   type="today"/>
               ))
             ) : (
@@ -121,7 +78,25 @@ const DesktopTakeAction = () => {
           <h3>Completed</h3>
         </div>
         <div className={styles.TasksContainer}>
-          <p>List of tasks</p>
+        {hasLoaded ? (
+            achievedList?.length>0 ? (
+              achievedList.map( task => (
+                <ActionTask 
+                  key={task.id}
+                  {...task}
+                  activeTasks={activeTasks}
+                  setActiveTasks={setActiveTasks} 
+                  type="achieved"/>
+              ))
+            ) : (
+              <p>You dont have any tasks checked off as done</p>
+            )
+          ) : (
+            <div className={styles.SpinnerContainer}>
+              <Spinner animation="border" />
+              <p>We are just loading your tasks</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

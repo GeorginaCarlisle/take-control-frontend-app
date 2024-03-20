@@ -1,57 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Accordion, AccordionContext, Card, Spinner, useAccordionToggle } from 'react-bootstrap';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';
-import { axiosReq } from '../../api/axiosDefaults';
 
-const MobileTakeAction = () => {
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const [activeTasks, setActiveTasks] = useState({ results: []});
-  const [todayTasks, setTodayTasks] = useState({ results: []});
-  const [completedTasks, setCompletedTasks] = useState({ results: []});
-
-  useEffect(() => {
-    const fetchActiveTasks = async () => {
-      try {
-        const {data} = await axiosReq.get('tasks/?active=True');
-        setActiveTasks(data);
-        setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
-      }
-    };
-    setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchActiveTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
-  }, []);
-
-  useEffect(() => {
-    const fetchTodayTasks = async () => {
-      try {
-        const {data} = await axiosReq.get('tasks/?today=True');
-        setTodayTasks(data);
-        setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
-      }
-    };
-    setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchTodayTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
-  }, []);
+const MobileTakeAction = (props) => {
+  
+  const {
+    hasLoaded,
+    activeTasks,
+    setActiveTasks,
+    activeList,
+    todayList,
+    achievedList
+  } = props;
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -94,16 +56,14 @@ const MobileTakeAction = () => {
               <p>Ordering filter</p>
             </div>
             {hasLoaded ? (
-              activeTasks.results.length>0 ? (
-                activeTasks.results.map( task => (
+              activeList?.length>0 ? (
+                activeList.map( task => (
                   <ActionTask 
-                  key={task.id}
-                  {...task}
-                  activeTasks={activeTasks}
-                  setActiveTasks={setActiveTasks} 
-                  todayTasks={todayTasks}
-                  setTodayTasks={setTodayTasks} 
-                  type="active"/>
+                    key={task.id}
+                    {...task}
+                    activeTasks={activeTasks}
+                    setActiveTasks={setActiveTasks} 
+                    type="active"/>
                 ))
               ) : (
                 <p>You dont have any active tasks</p>
@@ -130,15 +90,13 @@ const MobileTakeAction = () => {
               <p>Ordering filter</p>
             </div>
             {hasLoaded ? (
-              todayTasks.results.length>0 ? (
-                todayTasks.results.map( task => (
+              todayList?.length>0 ? (
+                todayList.map( task => (
                   <ActionTask 
                     key={task.id}
                     {...task}
                     activeTasks={activeTasks}
                     setActiveTasks={setActiveTasks} 
-                    todayTasks={todayTasks}
-                    setTodayTasks={setTodayTasks} 
                     type="today"/>
                 ))
               ) : (
@@ -162,7 +120,25 @@ const MobileTakeAction = () => {
         </Card.Header>
         <Accordion.Collapse eventKey="2">
           <Card.Body>
-            <p>List of completed tasks</p>
+            {hasLoaded ? (
+              achievedList?.length>0 ? (
+                achievedList.map( task => (
+                  <ActionTask 
+                    key={task.id}
+                    {...task}
+                    activeTasks={activeTasks}
+                    setActiveTasks={setActiveTasks} 
+                    type="achieved"/>
+                ))
+              ) : (
+                <p>You dont have any tasks checked off as done</p>
+              )
+            ) : (
+              <div className={styles.SpinnerContainer}>
+                <Spinner animation="border" />
+                <p>We are just loading your tasks</p>
+              </div>
+            )}
           </Card.Body>
         </Accordion.Collapse>
       </Card>
