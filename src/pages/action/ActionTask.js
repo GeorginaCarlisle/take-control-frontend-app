@@ -98,12 +98,12 @@ const ActionTask = (props) => {
             today ? (
               <>
                 <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked />
-                <label for="today">Today</label>
+                <label htmlFor="today">Today</label>
               </>
             ) : (
               <>
                 <input type="checkbox" id="today" name="today" onChange={handleTodayToggle}/>
-                <label for="today">Today</label>
+                <label htmlFor="today">Today</label>
               </>
             )
           ) : null
@@ -111,7 +111,7 @@ const ActionTask = (props) => {
           {type==="today" && (
             <>
               <input type="checkbox" id="achieved" name="today" />
-              <label for="achieved">Done</label>
+              <label htmlFor="achieved">Done</label>
             </>
           )}
         </div>
