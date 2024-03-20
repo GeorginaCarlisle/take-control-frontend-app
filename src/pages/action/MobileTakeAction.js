@@ -125,8 +125,10 @@ const MobileTakeAction = () => {
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
-          <Card.Body>
-            <p>Ordering filter</p>
+          <Card.Body className={styles.AccordionBody}>
+            <div className={styles.FunctionContainer}>
+              <p>Ordering filter</p>
+            </div>
             {hasLoaded ? (
               todayTasks.results.length>0 ? (
                 todayTasks.results.map( task => (
