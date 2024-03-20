@@ -24,7 +24,7 @@ const MobileFocus = ({ id }) => {
   const history = useHistory();
 
   const handleBack = () => {
-    history.push('/plan')
+    history.goBack();
   }
 
   // function copied from React bootstrap and adjusted

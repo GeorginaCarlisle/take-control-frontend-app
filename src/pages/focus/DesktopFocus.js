@@ -19,7 +19,7 @@ const DesktopFocus = ({ id }) => {
   const history = useHistory();
 
   const handleBack = () => {
-    history.push('/plan')
+    history.goBack();
   }
 
   return (

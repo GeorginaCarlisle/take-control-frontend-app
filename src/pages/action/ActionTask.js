@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/ActionTask.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const ActionTask = (props) => {
   const {
@@ -9,6 +10,7 @@ const ActionTask = (props) => {
     image,
     context,
     today,
+    focus,
     deadline_info,
     goal_deadline_info,
     type,
@@ -118,10 +120,26 @@ const ActionTask = (props) => {
     }
   };
 
+  function LinkContext() {
+    if (focus) {
+      return (
+        <Link to={`/focus/${focus}`}>
+          <img className={styles.Image} src={image} alt='focus'/>
+        </Link>
+      )
+    } else {
+      return (
+        <Link to="/miscellaneous">
+          <img className={styles.Image} src={image} alt='focus'/>
+        </Link>
+      )
+    }
+  };
+
    return (
     <div className={styles.TaskContainer}>
         <div className={styles.ImageContainer}>
-          <img className={styles.Image} src={image} alt='focus'/>
+          <LinkContext />
         </div>
         <div className={styles.DetailsContainer}>
             <h4>{name}</h4>

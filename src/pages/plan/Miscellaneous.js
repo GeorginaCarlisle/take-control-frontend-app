@@ -15,7 +15,7 @@ const Miscellaneous = () => {
   const history = useHistory();
 
   const handleBack = () => {
-    history.push('/plan')
+    history.goBack();
   }
 
   return (
