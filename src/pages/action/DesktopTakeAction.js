@@ -44,7 +44,14 @@ const DesktopTakeAction = () => {
           {hasLoaded ? (
             activeTasks.results.length>0 ? (
               activeTasks.results.map( task => (
-                <ActionTask key={task.id} {...task} setActiveTasks={setActiveTasks} setTodayTasks={setTodayTasks} type="active"/>
+                <ActionTask 
+                  key={task.id}
+                  {...task}
+                  activeTasks={activeTasks}
+                  setActiveTasks={setActiveTasks} 
+                  todayTasks={todayTasks}
+                  setTodayTasks={setTodayTasks} 
+                  type="active"/>
               ))
             ) : (
               <p>You dont have any active tasks</p>

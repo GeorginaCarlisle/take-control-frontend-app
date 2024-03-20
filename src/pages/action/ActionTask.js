@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../styles/ActionTask.module.css';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const ActionTask = (props) => {
   const {
@@ -12,10 +13,66 @@ const ActionTask = (props) => {
     goal_deadline_info,
     today,
     achieved,
+    activeTasks,
     setActiveTasks,
+    todayTasks,
     setTodayTasks,
     type
   } = props;
+
+  const todayList = todayTasks?.results;
+
+  const activeList = activeTasks?.results;
+
+  const handleTodayToggle = async (event) => {
+      const checkbox = event.target;
+      if (checkbox.checked) {
+        try {
+          const {data} = await axiosReq.patch(`/tasks/${id}`, { today: true });
+          setTodayTasks(
+            { results: [
+              ...todayList,
+              data
+            ]}
+          );
+          const taskIndex = activeList.findIndex(task => task.id === id);
+          activeList[taskIndex] = data;
+          setActiveTasks(
+            {
+              results: [
+                ...activeList
+              ]
+            }
+          );
+        } catch(err){
+          console.log(err)
+        }
+      } else {
+        try {
+          const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
+          const todayTaskIndex = todayList.findIndex(task => task.id === id);
+          todayList[todayTaskIndex] = data;
+          setTodayTasks(
+            {
+              results: [
+                ...todayList
+              ]
+            }
+          );
+          const activeTaskIndex = activeList.findIndex(task => task.id === id);
+          activeList[activeTaskIndex] = data;
+          setActiveTasks(
+            {
+              results: [
+                ...activeList
+              ]
+            }
+          );
+        } catch(err){
+          console.log(err)
+        }
+      } 
+    }
 
   function DeadlineContext() {
     if (deadline_info) {
@@ -59,12 +116,12 @@ const ActionTask = (props) => {
         <div className={styles.CheckboxContainer}>
           {today ? (
             <>
-              <input type="checkbox" id="today" name="today" checked />
+              <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked />
               <label for="today">Today</label>
             </>
           ) : (
             <>
-              <input type="checkbox" id="today" name="today" />
+              <input type="checkbox" id="today" name="today" onChange={handleTodayToggle}/>
               <label for="today">Today</label>
             </>
           )}
