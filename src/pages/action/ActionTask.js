@@ -96,7 +96,7 @@ const ActionTask = (props) => {
     if (deadline_info) {
       if (deadline_info.includes("OVERDUE")) {
         return <p className={styles.RedWarning}>{deadline_info}</p>
-      } else if (deadline_info.includes("TODAY")) {
+      } else if (deadline_info.includes("TODAY") || deadline_info.includes("tomorrow")) {
         return <p className={styles.AmberWarning}>{deadline_info}</p>
       } else {
         return <p>{deadline_info}</p>
