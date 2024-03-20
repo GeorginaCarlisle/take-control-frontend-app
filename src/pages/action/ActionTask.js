@@ -9,7 +9,6 @@ const ActionTask = (props) => {
     image,
     context,
     today,
-    achieved,
     deadline_info,
     goal_deadline_info,
     type,
