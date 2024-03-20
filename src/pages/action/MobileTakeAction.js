@@ -32,6 +32,27 @@ const MobileTakeAction = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const fetchTodayTasks = async () => {
+      try {
+        const {data} = await axiosReq.get('tasks/?today=True');
+        setTodayTasks(data);
+        setHasLoaded(true);
+      }  catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      fetchTodayTasks();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, []);
+
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
     const currentEventKey = useContext(AccordionContext);
@@ -75,7 +96,14 @@ const MobileTakeAction = () => {
             {hasLoaded ? (
               activeTasks.results.length>0 ? (
                 activeTasks.results.map( task => (
-                  <ActionTask key={task.id} {...task} setActiveTasks={setActiveTasks} setTodayTasks={setTodayTasks} type="active"/>
+                  <ActionTask 
+                  key={task.id}
+                  {...task}
+                  activeTasks={activeTasks}
+                  setActiveTasks={setActiveTasks} 
+                  todayTasks={todayTasks}
+                  setTodayTasks={setTodayTasks} 
+                  type="active"/>
                 ))
               ) : (
                 <p>You dont have any active tasks</p>
@@ -99,7 +127,27 @@ const MobileTakeAction = () => {
         <Accordion.Collapse eventKey="1">
           <Card.Body>
             <p>Ordering filter</p>
-            <p>List of today tasks</p>
+            {hasLoaded ? (
+              todayTasks.results.length>0 ? (
+                todayTasks.results.map( task => (
+                  <ActionTask 
+                    key={task.id}
+                    {...task}
+                    activeTasks={activeTasks}
+                    setActiveTasks={setActiveTasks} 
+                    todayTasks={todayTasks}
+                    setTodayTasks={setTodayTasks} 
+                    type="today"/>
+                ))
+              ) : (
+                <p>You dont have any tasks set for today</p>
+              )
+            ) : (
+              <div className={styles.SpinnerContainer}>
+                <Spinner animation="border" />
+                <p>We are just loading your tasks</p>
+              </div>
+            )}
           </Card.Body>
         </Accordion.Collapse>
       </Card>
