@@ -51,7 +51,7 @@ const ActionTask = (props) => {
         try {
           const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
           const todayTaskIndex = todayList.findIndex(task => task.id === id);
-          todayList[todayTaskIndex] = data;
+          todayList.splice(todayTaskIndex, 1);
           setTodayTasks(
             {
               results: [
@@ -114,15 +114,24 @@ const ActionTask = (props) => {
             <GoalDeadlineContext />
         </div>
         <div className={styles.CheckboxContainer}>
-          {today ? (
+          {type==="active" ? (
+            today ? (
+              <>
+                <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked />
+                <label for="today">Today</label>
+              </>
+            ) : (
+              <>
+                <input type="checkbox" id="today" name="today" onChange={handleTodayToggle}/>
+                <label for="today">Today</label>
+              </>
+            )
+          ) : null
+        }
+          {type==="today" && (
             <>
-              <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked />
-              <label for="today">Today</label>
-            </>
-          ) : (
-            <>
-              <input type="checkbox" id="today" name="today" onChange={handleTodayToggle}/>
-              <label for="today">Today</label>
+              <input type="checkbox" id="achieved" name="today" />
+              <label for="achieved">Done</label>
             </>
           )}
         </div>

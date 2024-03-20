@@ -33,8 +33,30 @@ const DesktopTakeAction = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const fetchTodayTasks = async () => {
+      try {
+        const {data} = await axiosReq.get('tasks/?today=True');
+        setTodayTasks(data);
+        setHasLoaded(true);
+      }  catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      fetchTodayTasks();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, []);
+
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
+
       <div className={styles.Column}>
         <div className={styles.TitleContainer}>
           <h3>Backlog</h3>
@@ -64,13 +86,34 @@ const DesktopTakeAction = () => {
           )}
         </div>
       </div>
+
       <div className={`${styles.Column} ${styles.MiddleColumn}`}>
         <div className={styles.TitleContainer}>
           <h3>Today</h3>
           <p className={styles.OrderBy}>Order by filter</p>
         </div>
         <div className={styles.TasksContainer}>
-          <p>List of tasks</p>
+          {hasLoaded ? (
+            todayTasks.results.length>0 ? (
+              todayTasks.results.map( task => (
+                <ActionTask 
+                  key={task.id}
+                  {...task}
+                  activeTasks={activeTasks}
+                  setActiveTasks={setActiveTasks} 
+                  todayTasks={todayTasks}
+                  setTodayTasks={setTodayTasks} 
+                  type="today"/>
+              ))
+            ) : (
+              <p>You dont have any tasks set for today</p>
+            )
+          ) : (
+            <div className={styles.SpinnerContainer}>
+              <Spinner animation="border" />
+              <p>We are just loading your tasks</p>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.Column}>
