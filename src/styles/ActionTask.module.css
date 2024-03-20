@@ -21,16 +21,37 @@
 }
 
 .DetailsContainer {
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .DetailsContainer > h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .DetailsContainer > p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-bottom: 0;
+}
+
+.CheckboxContainer {
+  Display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.CheckboxContainer > label {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.RedWarning {
+  color: red;
+}
+
+.AmberWarning {
+  color: orange;
 }

@@ -7,6 +7,7 @@ const ActionTask = (props) => {
     name,
     image,
     context,
+    deadline,
     deadline_info,
     goal_deadline_info,
     today,
@@ -16,17 +17,46 @@ const ActionTask = (props) => {
     type
   } = props;
 
-  return (
+  function DeadlineContext() {
+    if (deadline_info) {
+      if (deadline_info.includes("OVERDUE")) {
+        return <p className={styles.RedWarning}>{deadline_info}</p>
+      } else if (deadline_info.includes("TODAY")) {
+        return <p className={styles.AmberWarning}>{deadline_info}</p>
+      } else {
+        return <p>{deadline_info}</p>
+      }
+    } else {
+      return null
+    }
+  };
+
+  function GoalDeadlineContext() {
+    if (goal_deadline_info) {
+      if (goal_deadline_info.includes("OVERDUE")) {
+        return <p className={`${styles.GoalContext} ${styles.RedWarning}`}>{goal_deadline_info}</p>
+      } else if (goal_deadline_info.includes("TODAY") || goal_deadline_info.includes("TOMORROW")) {
+        return <p className={`${styles.GoalContext} ${styles.AmberWarning}`}>{goal_deadline_info}</p>
+      } else {
+        return <p className={styles.GoalContext}>{goal_deadline_info}</p>
+      }
+    } else {
+      return null
+    }
+  };
+
+   return (
     <div className={styles.TaskContainer}>
         <div className={styles.ImageContainer}>
           <img className={styles.Image} src={image} alt='focus'/>
         </div>
         <div className={styles.DetailsContainer}>
             <h4>{name}</h4>
-            {deadline_info && <p>Task deadline: {deadline_info}</p>}
-            <p>{context} {goal_deadline_info && goal_deadline_info}</p>
+            <p className={styles.TaskContext}>{context}</p>
+            <DeadlineContext />
+            <GoalDeadlineContext />
         </div>
-        <div>
+        <div className={styles.CheckboxContainer}>
           {today ? (
             <>
               <input type="checkbox" id="today" name="today" checked />

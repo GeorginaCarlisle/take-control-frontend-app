@@ -55,7 +55,6 @@ const DesktopTakeAction = () => {
               <p>We are just loading your tasks</p>
             </div>
           )}
-        
         </div>
       </div>
       <div className={`${styles.Column} ${styles.MiddleColumn}`}>
