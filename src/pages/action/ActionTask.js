@@ -54,6 +54,43 @@ const ActionTask = (props) => {
     } 
   }
 
+  const handleCompleteToggle = async (event) => {
+    const checkbox = event.target;
+    if (checkbox.checked) {
+      try {
+        const {data} = await axiosReq.patch(`/tasks/${id}`, { achieved: true });
+        const activeList = activeTasks.results;
+        const taskIndex = activeList.findIndex(task => task.id === id);
+        activeList[taskIndex] = data;
+        setActiveTasks(
+          {
+            results: [
+              ...activeList
+            ]
+          }
+        );
+      } catch(err){
+        console.log(err)
+      }
+    } else {
+      try {
+        const {data} = await axiosReq.patch(`/tasks/${id}`, { achieved: false });
+        const activeList = activeTasks.results;
+        const taskIndex = activeList.findIndex(task => task.id === id);
+        activeList[taskIndex] = data;
+        setActiveTasks(
+          {
+            results: [
+              ...activeList
+            ]
+          }
+        );
+      } catch(err){
+        console.log(err)
+      }
+    } 
+  }
+
   function DeadlineContext() {
     if (deadline_info) {
       if (deadline_info.includes("OVERDUE")) {
@@ -108,13 +145,19 @@ const ActionTask = (props) => {
             )
           ) : null
         }
-          {type==="today" && (
-            <>
-              <input type="checkbox" id="achieved" name="today" />
-              <label htmlFor="achieved">Done</label>
-            </>
-          )}
-        </div>
+        {type==="today" && (
+          <>
+            <input type="checkbox" id="achieved" name="today" onChange={handleCompleteToggle}/>
+            <label htmlFor="achieved">Done</label>
+          </>
+        )}
+        {type==="achieved" && (
+          <>
+            <input type="checkbox" id="achieved" name="today" onChange={handleCompleteToggle} checked/>
+            <label htmlFor="achieved">Done</label>
+          </>
+        )}
+      </div>
     </div>
   )
 }

@@ -43,7 +43,7 @@ const TakeAction = () => {
   useEffect(() => {
     if (activeTasks.results.length>0) {
       setActiveList(activeTasks.results);
-      setTodayList(activeTasks.results.filter(task => task.today === true));
+      setTodayList(activeTasks.results.filter(task => task.today === true && task.achieved === false));
       setAchievedList(activeTasks.results.filter(task => task.achieved === true));
     }
   }, [activeTasks]);
