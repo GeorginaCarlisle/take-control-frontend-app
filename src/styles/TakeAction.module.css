@@ -61,12 +61,14 @@
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
 }
 
 .Column {
   display: grid;
   grid-template-rows: 70px 1fr;
   overflow: auto;
+  min-width: 300px;
 }
 
 .MiddleColumn {
