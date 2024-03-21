@@ -136,7 +136,7 @@ const ActionTask = (props) => {
     }
   };
 
-   return (
+  return (
     <div className={styles.TaskContainer}>
         <div className={styles.ImageContainer}>
           <LinkContext />
