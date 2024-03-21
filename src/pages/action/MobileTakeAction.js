@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Accordion, AccordionContext, Card, Spinner, useAccordionToggle } from 'react-bootstrap';
+import { Accordion, AccordionContext, Card, Form, Spinner, useAccordionToggle } from 'react-bootstrap';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';
@@ -19,9 +19,38 @@ const MobileTakeAction = (props) => {
 
   const [filter, setFilter] = useState("");
 
+  const [query, setQuery] = useState("");
+
+  const [searchList, setSearchList] = useState({ results: []});
+
   const handleFilter = (event) => {
     setFilter(event.target.value);
   }
+
+  useEffect(() => {
+    if (query !== ""){
+      const updateSearchList = async () => {
+        try {
+          setHasLoaded(false);
+          const {data} = await axiosReq.get(`/tasks/?search=${query}`);
+          setSearchList(data);
+          setHasLoaded(true);
+        }  catch(err) {
+          //console.log(err)
+        }
+      };
+      // Below sets fetchPosts to fire after a 1 second pause
+      const timer = setTimeout(() => {
+        updateSearchList();
+      }, 1000)
+      // Below cleans up and clears the timeout function
+      return () => {
+        clearTimeout(timer)
+      }
+    } else {
+      setSearchList({ results: []});
+    }
+  }, [query])
 
   useEffect(() => {
     const changeActiveTaskOrder = async () => {
@@ -81,6 +110,16 @@ const MobileTakeAction = (props) => {
         <Accordion.Collapse eventKey="0">
           <Card.Body className={styles.AccordionBody}>
             <div className={styles.FunctionContainer}>
+              <div className={styles.SearchContainer}>
+                <Form onSubmit={(event) => event.preventDefault()}>
+                  <Form.Control
+                    type="text"
+                    className={styles.SearchInput}
+                    placeholder="Search tasks"
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}/>
+                </Form>
+              </div>
               <div className={styles.Filter}>
                 <label htmlFor="filter" className={styles.FilterLabel}>Order by:</label>
                 <select id="filter" name="filter" onChange={handleFilter} className={styles.FilterBox}>
@@ -92,8 +131,8 @@ const MobileTakeAction = (props) => {
               </div>
             </div>
             {hasLoaded ? (
-              activeList?.length>0 ? (
-                activeList.map( task => (
+              searchList.results.length>0 ? (
+                searchList.results.map( task => (
                   <ActionTask 
                     key={task.id}
                     {...task}
@@ -102,7 +141,18 @@ const MobileTakeAction = (props) => {
                     type="active"/>
                 ))
               ) : (
-                <p>You dont have any active tasks</p>
+                activeList?.length>0 ? (
+                  activeList.map( task => (
+                    <ActionTask 
+                      key={task.id}
+                      {...task}
+                      activeTasks={activeTasks}
+                      setActiveTasks={setActiveTasks} 
+                      type="active"/>
+                  ))
+                ) : (
+                  <p>You dont have any active tasks</p>
+                )
               )
             ) : (
               <div className={styles.SpinnerContainer}>
