@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Accordion, AccordionContext, Card, Spinner, useAccordionToggle } from 'react-bootstrap';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const MobileTakeAction = (props) => {
   
@@ -12,8 +13,36 @@ const MobileTakeAction = (props) => {
     setActiveTasks,
     activeList,
     todayList,
-    achievedList
+    achievedList,
+    setHasLoaded
   } = props;
+
+  const [filter, setFilter] = useState("");
+
+  const handleFilter = (event) => {
+    setFilter(event.target.value);
+  }
+
+  useEffect(() => {
+    const changeActiveTaskOrder = async () => {
+      try {
+        const {data} = await axiosReq.get(`/tasks/${filter}`);
+        setActiveTasks(data);
+        setHasLoaded(true);
+      }  catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      changeActiveTaskOrder();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [filter])
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -52,7 +81,15 @@ const MobileTakeAction = (props) => {
         <Accordion.Collapse eventKey="0">
           <Card.Body className={styles.AccordionBody}>
             <div className={styles.FunctionContainer}>
-              <p>Ordering filter</p>
+              <div className={styles.Filter}>
+                <label htmlFor="filter" className={styles.FilterLabel}>Order by:</label>
+                <select id="filter" name="filter" onChange={handleFilter} className={styles.FilterBox}>
+                  <option name="filter" value='?ordering=deadline'>Task deadline</option>
+                  <option name="filter" value='?ordering=focus__rank'>Focus Area</option>
+                  <option name="filter" value='?ordering=goal__deadline'>Goal</option>
+                  <option name="filter" value='?ordering=created_at'>Most recent task</option>
+                </select>
+              </div>
             </div>
             {hasLoaded ? (
               activeList?.length>0 ? (

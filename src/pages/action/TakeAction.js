@@ -154,6 +154,7 @@ const TakeAction = () => {
           activeList={activeList}
           todayList={todayList}
           achievedList={achievedList}
+          setHasLoaded={setHasLoaded}
         />
       </div>
       <div className={pageStyles.DesktopOnly}>
@@ -164,6 +165,7 @@ const TakeAction = () => {
           activeList={activeList}
           todayList={todayList}
           achievedList={achievedList}
+          setHasLoaded={setHasLoaded}
         />
       </div>
     </div>  

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/TakeAction.module.css'
 import pageStyles from '../../styles/Page.module.css';
 import ActionTask from './ActionTask';
 import { Spinner } from 'react-bootstrap';
+import { axiosReq } from '../../api/axiosDefaults';
 
 const DesktopTakeAction = (props) => {
 
@@ -12,8 +13,36 @@ const DesktopTakeAction = (props) => {
     setActiveTasks,
     activeList,
     todayList,
-    achievedList
+    achievedList,
+    setHasLoaded
   } = props;
+
+  const [filter, setFilter] = useState("");
+
+  const handleFilter = (event) => {
+    setFilter(event.target.value);
+  }
+
+  useEffect(() => {
+    const changeActiveTaskOrder = async () => {
+      try {
+        const {data} = await axiosReq.get(`/tasks/${filter}`);
+        setActiveTasks(data);
+        setHasLoaded(true);
+      }  catch(err) {
+        console.log(err)
+      }
+    };
+    setHasLoaded(false);
+    // Below sets fetchPosts to fire after a 1 second pause
+    const timer = setTimeout(() => {
+      changeActiveTaskOrder();
+    }, 1000)
+    // Below cleans up and clears the timeout function
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [filter])
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
@@ -21,7 +50,16 @@ const DesktopTakeAction = (props) => {
       <div className={styles.Column}>
         <div className={styles.TitleContainer}>
           <h3>Backlog</h3>
-          <p className={styles.OrderBy}>Order by filter</p>
+
+          <div className={styles.Filter}>
+            <label htmlFor="filter" className={styles.FilterLabel}>Order by:</label>
+            <select id="filter" name="filter" onChange={handleFilter} className={styles.FilterBox}>
+              <option name="filter" value='?ordering=deadline'>Task deadline</option>
+              <option name="filter" value='?ordering=focus__rank'>Focus Area</option>
+              <option name="filter" value='?ordering=goal__deadline'>Goal</option>
+              <option name="filter" value='?ordering=created_at'>Most recent task</option>
+            </select>
+          </div>
         </div>
         <div className={styles.TasksContainer}>
           {hasLoaded ? (
@@ -49,7 +87,6 @@ const DesktopTakeAction = (props) => {
       <div className={`${styles.Column} ${styles.MiddleColumn}`}>
         <div className={styles.TitleContainer}>
           <h3>Today</h3>
-          <p className={styles.OrderBy}>Order by filter</p>
         </div>
         <div className={styles.TasksContainer}>
           {hasLoaded ? (
