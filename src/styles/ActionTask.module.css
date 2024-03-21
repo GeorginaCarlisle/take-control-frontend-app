@@ -57,10 +57,22 @@
   text-align: center;
 }
 
+.CheckboxContainer > p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #007926;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
 .RedWarning {
   color: red;
 }
 
 .AmberWarning {
   color: orange;
+}
+
+.AchievedName {
+  color: #007926;
 }

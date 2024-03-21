@@ -10,6 +10,7 @@ const ActionTask = (props) => {
     image,
     context,
     today,
+    achieved,
     focus,
     deadline_info,
     goal_deadline_info,
@@ -138,28 +139,26 @@ const ActionTask = (props) => {
 
   return (
     <div className={styles.TaskContainer}>
-        <div className={styles.ImageContainer}>
-          <LinkContext />
-        </div>
-        <div className={styles.DetailsContainer}>
+      <div className={styles.ImageContainer}>
+        <LinkContext />
+      </div>
+      <div className={styles.DetailsContainer}>
+          {achieved ? (
+            <h4 className={styles.AchievedName}>{name}</h4>
+          ) : (
             <h4>{name}</h4>
-            <p className={styles.TaskContext}>{context}</p>
-            <DeadlineContext />
-            <GoalDeadlineContext />
-        </div>
-        <div className={styles.CheckboxContainer}>
-          {type==="active" ? (
-            today ? (
-              <>
-                <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked />
-                <label htmlFor="today">Today</label>
-              </>
-            ) : (
-              <>
-                <input type="checkbox" id="today" name="today" onChange={handleTodayToggle}/>
-                <label htmlFor="today">Today</label>
-              </>
-            )
+          )}
+          <p className={styles.TaskContext}>{context}</p>
+          <DeadlineContext />
+          <GoalDeadlineContext />
+      </div>
+      <div className={styles.CheckboxContainer}>
+        {type==="active" ? (
+            <>
+              <input type="checkbox" id="today" name="today" onChange={handleTodayToggle} checked={today} />
+              <label htmlFor="today">Today</label>
+              {achieved ? <p>DONE</p> : null}
+            </>
           ) : null
         }
         {type==="today" && (
