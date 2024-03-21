@@ -515,6 +515,8 @@ HTML, CSS, JavaScript and JSX
 
 [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used to decode the JSON web tokens.
 
+[react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Used to provide loading of next set of data on page scrolling where the data exceeds pagination limit.
+
 [Return to contents list](#contents)
 
 ## Tools and Technologies
@@ -571,6 +573,7 @@ See [TESTING.md](TESTING.md) for all testing and validation.
 | # 4 | The back button in mobilefocus is not working (no hover, no pointer and no functionality) when editing the focus. It works in all other scenarios where this button is found. | Explored the css using chrome dev tools and noticed a message saying [type=button]:not(:disabled). Explored further and noticed that the edit form element overlaps the button. | Adjusted styling so that there was no overlap, button now working. |
 | # 5 | Installing and attempting to use date-picker led to the following error: "./node_modules/date-fns/startOfISOWeek.mjs Can't import the named export 'startOfWeek' from non EcmaScript module (only default export is available)" | Research at [stackoverflow](https://stackoverflow.com/questions/69343038/cant-import-the-named-export-xxxx-from-non-ecmascript-module-only-default-expo) led me to believe that a webpack.config.js was needed to resolve the error. I then went round the houses twice (once on my own and once with tutor support), creating my own webpack.config.js file and fighting through lots of file, dependency and installation issues finally resulting in needing to remove the webpack file as it was preventing npm start with no way around that we could find. Alternative options were sort. Tried [react-bootstrap-date-picker](https://www.npmjs.com/package/@types/react-bootstrap-date-picker) but this caused dependency issues with the react bootstrap already installed. Tried [react-day-picker](https://react-day-picker.js.org/) but this led to the issue as it also utilized date-fns. | Decision due to time restraints to call off the hunt for a date picker and instead fall back on a simple hmtl input field with type date, then exploring any conversion need to work with drf api. |
 | # 6 | New tasks not showing in the backlog | Checked that no reference to active was being made in post requests. Issue identified as being a backend issue. | As active field is not currently being used, get request for the backlog has been changed to pull all tasks. |
+| # 7 | Infinite scroll not handling as expected. More data called, but loader keeps loading | Reading through documentation I believe the error is due to the set up of the take action page and the fact that no page scrolling as such takes place as oall scrolling is handled in the window | Decision to increase page size on the backend to allow more data to come through. Other solutions will be looked into during the next iteration of the project. |
 
 [Return to contents list](#contents)
 
