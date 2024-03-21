@@ -24,7 +24,7 @@ const TakeAction = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const {data} = await axiosReq.get('tasks/?active=True');
+        const {data} = await axiosReq.get('/tasks/');
         setActiveTasks(data);
         setHasLoaded(true);
       }  catch(err) {
