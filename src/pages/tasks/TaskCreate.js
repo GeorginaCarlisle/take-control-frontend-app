@@ -50,6 +50,7 @@ const TaskCreate = (props) => {
     }
     try {
       const {data} = await axiosReq.post('/tasks/', formData);
+      console.log(data)
       setTasks(
         { results: [
           ...taskList,

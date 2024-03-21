@@ -49,6 +49,15 @@
   color: #3c159c;
 }
 
+.SpinnerContainer {
+  display: flex;
+  margin: 5px;
+}
+
+.SpinnerContainer > p {
+  margin-left: 10px;
+}
+
 /* Edit specific */
 .EditContainer {
   padding: 20px;
@@ -79,6 +88,18 @@
 /* Delete specifc */
 .DeleteParagraph {
   margin-bottom: 0;
+}
+
+/* ActionTask specific */
+.ActionTaskForm {
+  max-width: 500px;
+}
+.Buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.DeadlineGroup {
+  margin-bottom: 10px;
 }
 
 @media screen and (min-width:576px){

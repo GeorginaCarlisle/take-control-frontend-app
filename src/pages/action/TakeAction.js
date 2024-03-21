@@ -3,11 +3,11 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/TakeAction.module.css';
 import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
 import MobileTakeAction from './MobileTakeAction';
 import DesktopTakeAction from './DesktopTakeAction.js';
 import { Button, Modal } from 'react-bootstrap';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults.js';
+import ActionTaskCreate from '../tasks/ActionTaskCreate.js';
 
 const TakeAction = () => {
 
@@ -143,17 +143,7 @@ const TakeAction = () => {
         <Modal.Header closeButton>
           <Modal.Title className={styles.ModalTitle}>Create New Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <p>Form</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className={btnStyles.Button} onClick={handleFormClose}>
-            Cancel
-          </Button>
-          <Button className={btnStyles.Button}>
-            Submit
-          </Button>
-        </Modal.Footer>
+        <ActionTaskCreate activeTasks={activeTasks} setActiveTasks={setActiveTasks} setShowForm={setShowForm}/>
       </Modal>
 
       <div className={pageStyles.MobileOnly}>
