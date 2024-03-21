@@ -16,7 +16,6 @@ import Profile from './pages/profile/Profile';
 import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
 import Miscellaneous from './pages/plan/Miscellaneous';
-import TaskCreateAction from './pages/tasks/TaskCreateAction';
 
 function App() {
 
@@ -45,9 +44,6 @@ function App() {
           )} />
           <Route exact path="/takeaction" render={() => (
             currentUser ? ( <TakeAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)
-            )} />
-          <Route exact path="/tasks/create" render={() => (
-            currentUser ? ( <TaskCreateAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)
             )} />
           <Route exact path="/labels" render={() => (
             currentUser ? ( <Labels /> ) : ( <Redirect to={{pathname: "/signin"}} />)

@@ -52,7 +52,6 @@ const MobileTakeAction = (props) => {
         <Accordion.Collapse eventKey="0">
           <Card.Body className={styles.AccordionBody}>
             <div className={styles.FunctionContainer}>
-              <p>Add additional task button</p>
               <p>Ordering filter</p>
             </div>
             {hasLoaded ? (

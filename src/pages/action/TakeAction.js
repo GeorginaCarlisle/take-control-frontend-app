@@ -19,6 +19,7 @@ const TakeAction = () => {
   const [todayList, setTodayList] = useState([]);
   const [achievedList, setAchievedList] = useState([]);
   const [showModal, setShowModel] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -48,6 +49,14 @@ const TakeAction = () => {
       setAchievedList(activeTasks.results.filter(task => task.achieved === true));
     }
   }, [activeTasks]);
+
+  const handleOpenForm = () => {
+    setShowForm(true);
+  };
+
+  const handleFormClose = () => {
+    setShowForm(false);
+  }
 
   const handleResetRequest = () => {
     setShowModel(true);
@@ -103,9 +112,9 @@ const TakeAction = () => {
         <h1>Take Action <span className={styles.ExtraInfo}>{currentUser.username}</span></h1>
       </div>
       <div className={styles.ButtonContainer}>
-        <Link className={`${btnStyles.Button} ${styles.AddTaskBtn}`} to={'/tasks/create'}>
+        <Button className={btnStyles.Button} onClick={handleOpenForm}>
           Add <span className={styles.ExtraInfo}>additional </span>task
-        </Link>
+        </Button>
         <Button className={btnStyles.Button} onClick={handleResetRequest}>
           End of day reset
         </Button>
@@ -126,6 +135,23 @@ const TakeAction = () => {
           </Button>
           <Button className={btnStyles.Button} onClick={handleReset}>
             Reset Take Action
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showForm} onHide={handleFormClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className={styles.ModalTitle}>Create New Task</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Form</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className={btnStyles.Button} onClick={handleFormClose}>
+            Cancel
+          </Button>
+          <Button className={btnStyles.Button}>
+            Submit
           </Button>
         </Modal.Footer>
       </Modal>

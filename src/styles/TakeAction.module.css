@@ -10,10 +10,6 @@
   max-width: 400px;
 }
 
-.AddTaskBtn {
-  display: none;
-}
-
 .ExtraInfo {
   display: none;
 }
@@ -115,8 +111,5 @@
   .ActionTitle {
     margin-top: 30px;
     margin-bottom: 20px;
-  }
-  .AddTaskBtn {
-    display: block;
   }
 }
