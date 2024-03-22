@@ -14,6 +14,7 @@ import TakeAction from './pages/action/TakeAction';
 import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
 import Miscellaneous from './pages/plan/Miscellaneous';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -43,7 +44,7 @@ function App() {
           <Route exact path="/takeaction" render={() => (
             currentUser ? ( <TakeAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)
             )} />
-          <Route render={() => <h1>Page not found</h1>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </div>
       <Footer />

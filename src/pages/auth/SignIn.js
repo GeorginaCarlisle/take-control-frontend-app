@@ -51,7 +51,7 @@ function SignIn() {
 
   return (
     <div className={pageStyles.PageContainer}>
-      <div className={pageStyles.TitleContainer}>
+      <div className={pageStyles.SpaceRoundTitle}>
         <div className={pageStyles.Title}>
           <img
             src={logo}
