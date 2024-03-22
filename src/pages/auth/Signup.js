@@ -9,7 +9,11 @@ import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 
-const Signup = () => {
+const Signup = (props) => {
+  const {
+    setShowGlobalSuccess,
+    setGlobalSuccessMessage
+  } = props;
 
   const [signUpData, setSignUpData] = useState({
     username: '',
@@ -35,6 +39,8 @@ const Signup = () => {
     event.preventDefault();
     try {
       await axios.post('/dj-rest-auth/registration/', signUpData);
+      setGlobalSuccessMessage("You are signed up to 'Take Control' and can now signin");
+      setShowGlobalSuccess(true);
       history.push('/signin');
     } catch(err){
       setErrors(err.response?.data);

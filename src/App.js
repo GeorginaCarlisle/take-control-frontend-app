@@ -3,6 +3,7 @@ import './api/axiosDefaults';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import styles from './App.module.css';
+import toastStyles from './styles/Toast.module.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,19 +16,53 @@ import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
 import Miscellaneous from './pages/plan/Miscellaneous';
 import NotFound from './pages/NotFound';
+import { Toast } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   const currentUser = useCurrentUser();
 
+  const [showGlobalSuccess, setShowGlobalSuccess] = useState(false);
+
+  const [globalSuccessMessage, setGlobalSuccessMessage] = useState("");
+
+  useEffect(() => {
+    // Closes the toast automatically after 8 seconds
+    if (showGlobalSuccess) {
+      const hideToast = () => {
+        setShowGlobalSuccess(false);
+        setGlobalSuccessMessage("");
+      }
+      const timer = setTimeout(() => {
+        hideToast();
+      }, 8000)
+      // Below cleans up and clears the timeout function
+      return () => {
+        clearTimeout(timer)
+      }
+    }
+  }, [showGlobalSuccess])
+
+  const handleHide = () => {
+    setShowGlobalSuccess(false);
+    setGlobalSuccessMessage("");
+  }
+
   return (
     <div className={styles.App}>
       <NavBar />
+      <Toast show={showGlobalSuccess} onClose={handleHide} className={toastStyles.Toast}>
+        <Toast.Header className={toastStyles.Header}>
+          <strong className={toastStyles.Title}>Success !!</strong>
+        </Toast.Header>
+        <Toast.Body>{globalSuccessMessage}Heloo hello lets put some text in here</Toast.Body>
+      </Toast>
       <div className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/about" render={() => <About />} />
-          <Route exact path="/signup" render={() => <Signup />} />
+          <Route exact path="/signup" render={() => <Signup setShowGlobalSuccess={setShowGlobalSuccess} setGlobalSuccessMessage={setGlobalSuccessMessage}/>} />
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/plan" render={() => (
             currentUser ? ( <Plan /> ) : ( <Redirect to={{pathname: "/signin"}} />)

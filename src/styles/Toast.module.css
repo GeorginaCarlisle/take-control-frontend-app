@@ -1,0 +1,16 @@
+.Toast {
+  position: fixed;
+  top: 60px;
+  right: 5px;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Title {
+  color: #007926;
+  font-size: 1.1rem;
+  margin-right: 20px;
+}
