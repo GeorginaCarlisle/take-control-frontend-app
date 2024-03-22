@@ -3,7 +3,6 @@ import './api/axiosDefaults';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import styles from './App.module.css';
-import toastStyles from './styles/Toast.module.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,33 +15,16 @@ import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
 import Miscellaneous from './pages/plan/Miscellaneous';
 import NotFound from './pages/NotFound';
-import { Toast } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
-import { useGlobalSuccessMessage, useSetGlobalSuccessMessage, useSetShowGlobalSuccess, useShowGlobalSuccess } from './contexts/GlobalMessageContext';
+import SuccessToast from './components/SuccessToast';
 
 function App() {
 
   const currentUser = useCurrentUser();
 
-  const showGlobalSuccess = useShowGlobalSuccess();
-  const setShowGlobalSuccess = useSetShowGlobalSuccess();
-  const globalSuccessMessage = useGlobalSuccessMessage();
-  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();
-
-  const handleHide = () => {
-    setShowGlobalSuccess(false);
-    setGlobalSuccessMessage("");
-  }
-
   return (
     <div className={styles.App}>
       <NavBar />
-      <Toast show={showGlobalSuccess} onClose={handleHide} className={toastStyles.Toast}>
-        <Toast.Header className={toastStyles.Header}>
-          <strong className={toastStyles.Title}>Success !!</strong>
-        </Toast.Header>
-        <Toast.Body>{globalSuccessMessage}</Toast.Body>
-      </Toast>
+      <SuccessToast />
       <div className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
