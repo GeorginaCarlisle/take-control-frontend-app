@@ -29,8 +29,6 @@ const NavBar = () => {
     <>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/plan">Plan</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/takeaction">Take Action</NavLink>
-      <NavLink className={styles.Link} activeClassName={styles.Active} to="/labels">Labels</NavLink>
-      <NavLink className={styles.Link} activeClassName={styles.Active} to="/profile">Profile</NavLink>
       <NavLink className={styles.Link} onClick={handleSignout} to="/" >Signout</NavLink>
     </>
   );

@@ -11,8 +11,6 @@ import Signup from './pages/auth/Signup';
 import SignIn from './pages/auth/SignIn';
 import Plan from './pages/plan/Plan';
 import TakeAction from './pages/action/TakeAction';
-import Labels from './pages/labels/Labels';
-import Profile from './pages/profile/Profile';
 import Focus from './pages/focus/Focus';
 import FocusCreate from './pages/focus/FocusCreate';
 import Miscellaneous from './pages/plan/Miscellaneous';
@@ -44,12 +42,6 @@ function App() {
           )} />
           <Route exact path="/takeaction" render={() => (
             currentUser ? ( <TakeAction /> ) : ( <Redirect to={{pathname: "/signin"}} />)
-            )} />
-          <Route exact path="/labels" render={() => (
-            currentUser ? ( <Labels /> ) : ( <Redirect to={{pathname: "/signin"}} />)
-            )} />
-          <Route exact path="/profile" render={() => (
-            currentUser ? ( <Profile /> ) : ( <Redirect to={{pathname: "/signin"}} />)
             )} />
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
