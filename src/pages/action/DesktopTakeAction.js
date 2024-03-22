@@ -93,9 +93,9 @@ const DesktopTakeAction = (props) => {
             <label htmlFor="filter" className={styles.FilterLabel}>Order by:</label>
             <select id="filter" name="filter" onChange={handleFilter} className={styles.FilterBox}>
               <option name="filter" value='?ordering=deadline'>Task deadline</option>
-              <option name="filter" value='?ordering=focus__rank'>Focus Area</option>
+              <option name="filter" value='?ordering=-focus'>Focus Area</option>
               <option name="filter" value='?ordering=goal__deadline'>Goal</option>
-              <option name="filter" value='?ordering=created_at'>Most recent task</option>
+              <option name="filter" value='?ordering=-created_at'>Most recent task</option>
             </select>
           </div>
         </div>
