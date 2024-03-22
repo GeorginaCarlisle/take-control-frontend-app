@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';

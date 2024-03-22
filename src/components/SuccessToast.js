@@ -1,7 +1,7 @@
 import React from 'react';
 import { Toast } from 'react-bootstrap';
-import { useGlobalSuccessMessage, useSetGlobalSuccessMessage, useSetShowGlobalSuccess, useShowGlobalSuccess } from './contexts/GlobalMessageContext';
-import toastStyles from './styles/Toast.module.css';
+import toastStyles from '../styles/Toast.module.css';
+import { useGlobalSuccessMessage, useSetGlobalSuccessMessage, useSetShowGlobalSuccess, useShowGlobalSuccess } from '../contexts/GlobalMessageContext';
 
 const SuccessToast = () => {
   
