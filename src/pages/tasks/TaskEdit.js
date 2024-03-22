@@ -3,6 +3,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { Alert, Form } from 'react-bootstrap';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const TaskEdit = (props) => {
   const {
@@ -15,6 +16,9 @@ const TaskEdit = (props) => {
     setTasks,
     setTaskState,
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const convertedDate = new Date(deadline).toISOString().split('T')[0];
 
@@ -64,6 +68,8 @@ const TaskEdit = (props) => {
     }
     try {
       const {data} = await axiosReq.put(`/tasks/${id}`, formData);
+      setGlobalSuccessMessage("You have edited your task");
+      setShowGlobalSuccess(true);
       const taskIndex = taskList.findIndex(task => task.id === id);
       taskList[taskIndex] = data;
       setTasks(

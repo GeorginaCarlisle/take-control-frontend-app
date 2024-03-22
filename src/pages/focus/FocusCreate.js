@@ -7,8 +7,12 @@ import defaultImage from '../../assets/default-focus.jpg';
 import { Alert, Button, Form, Image } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const FocusCreate = () => {
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const [focusData, setFocusData] = useState({
     name: '',
@@ -51,6 +55,8 @@ const FocusCreate = () => {
     }
     try {
       const {data} = await axiosReq.post('/focus/', formData);
+      setGlobalSuccessMessage("You have created a new focus area");
+      setShowGlobalSuccess(true);
       history.push(`/focus/${data.id}`);
     } catch(err){
       if (err.response?.status !== 401){

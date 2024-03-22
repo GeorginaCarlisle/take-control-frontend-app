@@ -3,6 +3,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { Button } from 'react-bootstrap';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const TaskDelete = (props) => {
   const {
@@ -13,6 +14,9 @@ const TaskDelete = (props) => {
     setTaskState
   } = props;
 
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
+
   const taskList = tasks.results;
 
   const handleCancel = () => {
@@ -22,6 +26,8 @@ const TaskDelete = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/tasks/${id}`);
+      setGlobalSuccessMessage("You have deleted your task");
+      setShowGlobalSuccess(true);
       const taskIndex = taskList.findIndex(task => task.id === id);
       taskList.splice(taskIndex, 1);
       setTasks(

@@ -4,6 +4,7 @@ import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const GoalCreate = (props) => {
   const {
@@ -13,6 +14,9 @@ const GoalCreate = (props) => {
     setKeyParameters,
     keyParameters
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const { focus_id } = keyParameters;
 
@@ -52,6 +56,8 @@ const GoalCreate = (props) => {
     }
     try {
       const {data} = await axiosReq.post('/goals/', formData);
+      setGlobalSuccessMessage("You have created a new goal");
+      setShowGlobalSuccess(true);
       setKeyParameters({
         ...keyParameters,
         goal_id: data.id,

@@ -8,10 +8,14 @@ import DesktopTakeAction from './DesktopTakeAction.js';
 import { Button, Modal } from 'react-bootstrap';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults.js';
 import ActionTaskCreate from '../tasks/ActionTaskCreate.js';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext.js';
 
 const TakeAction = () => {
 
   const currentUser = useCurrentUser();
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const [hasLoaded, setHasLoaded] = useState(false);
   const [activeTasks, setActiveTasks] = useState({ results: []});
@@ -71,7 +75,9 @@ const TakeAction = () => {
       for (const task of achievedList) {
         try {
           const { id } = task;
-          await axiosRes.delete(`/tasks/${id}`);
+          await axiosRes.delete(`/tasks/${id}`)
+          setGlobalSuccessMessage("You have reset the Take Action board. All complete tasks have been deleted and everything else returned to the backlog.");
+          setShowGlobalSuccess(true);
           const activeList = activeTasks.results;
           const taskIndex = activeList.findIndex(task => task.id === id);
           activeList.splice(taskIndex, 1);
@@ -91,6 +97,8 @@ const TakeAction = () => {
       for (const task of todayList) {
         const { id } = task;
         const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
+        setGlobalSuccessMessage("You have reset the Take Action board. All complete tasks have been deleted and everything else returned to the backlog.");
+        setShowGlobalSuccess(true);
         const activeList = activeTasks.results;
         const taskIndex = activeList.findIndex(task => task.id === id);
         activeList[taskIndex] = data;

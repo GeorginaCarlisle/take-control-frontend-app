@@ -4,6 +4,7 @@ import btnStyles from '../../styles/Button.module.css';
 import { Button } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const FocusDelete = (props) => {
   const {
@@ -12,6 +13,9 @@ const FocusDelete = (props) => {
     image,
     setFocusState,
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const history = useHistory();
 
@@ -22,6 +26,8 @@ const FocusDelete = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/focus/${id}`);
+      setGlobalSuccessMessage("You have deleted your focus area");
+      setShowGlobalSuccess(true);
       history.push('/plan')
     } catch(err){
       //console.log(err)

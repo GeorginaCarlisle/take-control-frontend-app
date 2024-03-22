@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
 import { axiosRes } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const GoalDelete = (props) => {
   const {
@@ -15,6 +16,9 @@ const GoalDelete = (props) => {
     keyParameters
   } = props;
 
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
+
   const goalList = goals.results;
 
   const handleCancel = () => {
@@ -24,6 +28,8 @@ const GoalDelete = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/goals/${id}`);
+      setGlobalSuccessMessage("You have deleted your goal");
+      setShowGlobalSuccess(true);
       const goalIndex = goalList.findIndex(goal => goal.id === id);
       goalList.splice(goalIndex, 1);
       if (keyParameters) {

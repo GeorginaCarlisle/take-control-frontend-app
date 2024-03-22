@@ -4,6 +4,7 @@ import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const ActionTaskCreate = (props) => {
   const {
@@ -11,6 +12,9 @@ const ActionTaskCreate = (props) => {
     setActiveTasks,
     setShowForm
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const [taskData, setTaskData] = useState({
     name: '',
@@ -106,10 +110,10 @@ const ActionTaskCreate = (props) => {
       const djangoDate = date.toISOString();
       formData.append('deadline', djangoDate);
     };
-    console.log(formData);
     try {
       const {data} = await axiosReq.post('/tasks/', formData);
-      console.log(data)
+      setGlobalSuccessMessage("You have created a new task");
+      setShowGlobalSuccess(true);
       const taskList = activeTasks.results;
       setActiveTasks(
         { results: [

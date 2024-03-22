@@ -3,6 +3,7 @@ import { Alert, Form } from 'react-bootstrap';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const TaskCreate = (props) => {
   const {
@@ -12,6 +13,9 @@ const TaskCreate = (props) => {
     setTasks,
     type
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const taskList = tasks.results;
 
@@ -50,7 +54,8 @@ const TaskCreate = (props) => {
     }
     try {
       const {data} = await axiosReq.post('/tasks/', formData);
-      console.log(data)
+      setGlobalSuccessMessage("You have created a new task");
+      setShowGlobalSuccess(true);
       setTasks(
         { results: [
           ...taskList,

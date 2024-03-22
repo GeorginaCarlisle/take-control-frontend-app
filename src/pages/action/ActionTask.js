@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/ActionTask.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const ActionTask = (props) => {
   const {
@@ -19,11 +20,16 @@ const ActionTask = (props) => {
     setActiveTasks,
   } = props;
 
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
+
   const handleTodayToggle = async (event) => {
     const checkbox = event.target;
     if (checkbox.checked) {
       try {
         const {data} = await axiosReq.patch(`/tasks/${id}`, { today: true });
+        setGlobalSuccessMessage("Task moved into today");
+        setShowGlobalSuccess(true);
         const activeList = activeTasks.results;
         const taskIndex = activeList.findIndex(task => task.id === id);
         activeList[taskIndex] = data;
@@ -40,6 +46,8 @@ const ActionTask = (props) => {
     } else {
       try {
         const {data} = await axiosReq.patch(`/tasks/${id}`, { today: false });
+        setGlobalSuccessMessage("Task removed from today");
+        setShowGlobalSuccess(true);
         const activeList = activeTasks.results;
         const taskIndex = activeList.findIndex(task => task.id === id);
         activeList[taskIndex] = data;
@@ -61,6 +69,8 @@ const ActionTask = (props) => {
     if (checkbox.checked) {
       try {
         const {data} = await axiosReq.patch(`/tasks/${id}`, { achieved: true });
+        setGlobalSuccessMessage("You have set a task as done. Great job!!");
+        setShowGlobalSuccess(true);
         const activeList = activeTasks.results;
         const taskIndex = activeList.findIndex(task => task.id === id);
         activeList[taskIndex] = data;
@@ -77,6 +87,8 @@ const ActionTask = (props) => {
     } else {
       try {
         const {data} = await axiosReq.patch(`/tasks/${id}`, { achieved: false });
+        setGlobalSuccessMessage("You have reset a task as to do");
+        setShowGlobalSuccess(true);
         const activeList = activeTasks.results;
         const taskIndex = activeList.findIndex(task => task.id === id);
         activeList[taskIndex] = data;

@@ -20,7 +20,7 @@ const SuccessToast = () => {
       <Toast.Header className={toastStyles.Header}>
         <strong className={toastStyles.Title}>Success !!</strong>
       </Toast.Header>
-      <Toast.Body>{globalSuccessMessage}</Toast.Body>
+      <Toast.Body className={toastStyles.Body}>{globalSuccessMessage}</Toast.Body>
     </Toast>
   )
 }

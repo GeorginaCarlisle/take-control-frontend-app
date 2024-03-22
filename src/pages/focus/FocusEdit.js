@@ -4,6 +4,7 @@ import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/FocusView.module.css';
 import { Alert, Button, Form, Image } from 'react-bootstrap';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const FocusEdit = (props) => {
   const {
@@ -14,6 +15,10 @@ const FocusEdit = (props) => {
     setFocusState,
     setFocusData
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
+
 
   const [newData, setNewData] = useState({
     newName: name,
@@ -54,6 +59,8 @@ const FocusEdit = (props) => {
     }
     try {
       const {data} = await axiosReq.put(`/focus/${id}`, formData);
+      setGlobalSuccessMessage("You have edited your focus area");
+      setShowGlobalSuccess(true);
       setFocusData(data);
       setFocusState('view');
     } catch(err){

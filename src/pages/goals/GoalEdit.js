@@ -4,6 +4,7 @@ import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const GoalEdit = (props) => {
   const {
@@ -18,6 +19,9 @@ const GoalEdit = (props) => {
     setGoals,
     setGoalState
   } = props;
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const convertedDate = new Date(deadline).toISOString().split('T')[0];
 
@@ -68,6 +72,8 @@ const GoalEdit = (props) => {
     }
     try {
       const {data} = await axiosReq.put(`/goals/${id}`, formData);
+      setGlobalSuccessMessage("You have edited your goal");
+      setShowGlobalSuccess(true);
       const goalIndex = goalList.findIndex(goal => goal.id === id);
       goalList[goalIndex] = data;
       setGoals(
