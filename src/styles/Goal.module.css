@@ -113,6 +113,14 @@
   margin: 20px 20px 0px 20px;
 }
 
+/* Goal highlight */
+
+.HighlightDeadlineWarning {
+  color: red;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
 /* General */
 
 .SpinnerContainer {
