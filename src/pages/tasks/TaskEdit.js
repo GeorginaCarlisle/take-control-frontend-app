@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { axiosReq } from '../../api/axiosDefaults';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
@@ -17,10 +17,20 @@ const TaskEdit = (props) => {
     setTaskState,
   } = props;
 
+  useEffect(() => {
+    console.log(`Deadline set to ${deadline}`)
+  }, [deadline])
+
   const setShowGlobalSuccess = useSetShowGlobalSuccess();
   const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
-  const convertedDate = new Date(deadline).toISOString().split('T')[0];
+  const convertedDate = () => {
+    if (deadline !== null){
+      return new Date(deadline).toISOString().split('T')[0];
+    } else {
+      return '';
+    } 
+  };
 
   const taskList = tasks.results;
 

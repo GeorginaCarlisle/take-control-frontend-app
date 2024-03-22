@@ -23,7 +23,13 @@ const GoalEdit = (props) => {
   const setShowGlobalSuccess = useSetShowGlobalSuccess();
   const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
-  const convertedDate = new Date(deadline).toISOString().split('T')[0];
+  const convertedDate = () => {
+    if (deadline !== null){
+      return new Date(deadline).toISOString().split('T')[0];
+    } else {
+      return '';
+    } 
+  };
 
   const goalList = goals.results;
 
