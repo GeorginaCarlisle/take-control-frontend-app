@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Task.module.css';
 import TaskIndividual from './TaskIndividual';
 import { axiosReq } from '../../api/axiosDefaults';
-import { Spinner } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/spinner';
 import TaskCreate from './TaskCreate';
 
 const TaskList = ( props ) => {
-
   const { focus_id, goal_id, type } = props;
 
   const [tasks, setTasks] = useState({ results: [] });
-
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const TaskList = ( props ) => {
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
-          console.log(err)
+          //console.log(err)
         }
       } else if (type==="miscellaneous") {
         try {
@@ -37,19 +35,12 @@ const TaskList = ( props ) => {
           setTasks(data);
           setHasLoaded(true);
         } catch(err) {
-          console.log(err)
+          //console.log(err)
         }
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchTasks();
   }, [focus_id, goal_id, type]);
 
   function CreateContext() {

@@ -41,7 +41,7 @@ const ActionTask = (props) => {
           }
         );
       } catch(err){
-        console.log(err)
+        //console.log(err)
       }
     } else {
       try {
@@ -59,7 +59,7 @@ const ActionTask = (props) => {
           }
         );
       } catch(err){
-        console.log(err)
+        //console.log(err)
       }
     } 
   }
@@ -82,7 +82,7 @@ const ActionTask = (props) => {
           }
         );
       } catch(err){
-        console.log(err)
+        //console.log(err)
       }
     } else {
       try {
@@ -100,7 +100,7 @@ const ActionTask = (props) => {
           }
         );
       } catch(err){
-        console.log(err)
+        //console.log(err)
       }
     } 
   }

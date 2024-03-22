@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/button';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
 import { axiosRes } from '../../api/axiosDefaults';

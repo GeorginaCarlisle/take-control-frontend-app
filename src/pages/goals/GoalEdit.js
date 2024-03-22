@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Alert, Button, Form } from 'react-bootstrap';
+import Alert from 'react-bootstrap/alert';
+import Button from 'react-bootstrap/button';
+import Form from 'react-bootstrap/form';
 import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';
@@ -89,8 +91,7 @@ const GoalEdit = (props) => {
       );
       setGoalState("view");
     } catch(err){
-      console.log(err);
-      console.log(err.response);
+      //console.log(err);
       if (err.response?.status !== 401){
         setErrors(err.response?.data);
       }
@@ -170,6 +171,12 @@ const GoalEdit = (props) => {
               className={styles.Input}
             />
           </Form.Group>
+
+          {errors.deadline?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <div className={styles.Group}>
             <label htmlFor="newDeadline">Achieve by:</label>
             <input
@@ -181,6 +188,11 @@ const GoalEdit = (props) => {
               className={styles.DateInput}
             />
           </div>
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
         </div>
         <div className={styles.Buttons}>
           <Button className={btnStyles.Button} onClick={handleCancel}>

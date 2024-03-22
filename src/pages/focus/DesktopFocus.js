@@ -25,7 +25,7 @@ const DesktopFocus = ({ id }) => {
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
       <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
-        <i class="fa-solid fa-x"></i>
+        <i className="fa-solid fa-x"></i>
       </button>
 
       <FocusArea id={focus_id} />

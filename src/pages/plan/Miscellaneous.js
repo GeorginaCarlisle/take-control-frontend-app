@@ -25,7 +25,7 @@ const Miscellaneous = () => {
       </div>      
       <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>
         <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
-          <i class="fa-solid fa-x"></i>
+          <i className="fa-solid fa-x"></i>
         </button>
         <div className={styles.Title}>
           <img className={styles.Image} src={miscellaneousImage} alt='miscellaneous'/>
@@ -34,7 +34,6 @@ const Miscellaneous = () => {
         <div className={styles.TaskList}>
           <TaskList type="miscellaneous"/>
         </div>
-
       </div>
     </div>  
   )

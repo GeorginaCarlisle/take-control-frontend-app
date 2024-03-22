@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Alert, Button, Form, Modal, Spinner } from 'react-bootstrap';
+import Alert from 'react-bootstrap/alert';
+import Button from 'react-bootstrap/button';
+import Form from 'react-bootstrap/form';
+import Modal from 'react-bootstrap/modal';
+import Spinner from 'react-bootstrap/spinner';
 import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';
@@ -31,15 +35,10 @@ const ActionTaskCreate = (props) => {
   } = taskData;
 
   const [errors, setErrors] = useState({});
-
   const [hasLoaded, setHasLoaded] = useState(false);
-
   const [hasLoadedGoals, setHasLoadedGoals] = useState(false);
-
   const [focuses, setFocuses] = useState({ results: []});
-
   const [goals, setGoals] = useState({ results: []});
-
 
   useEffect(() => {
     const fetchFocuses = async () => {
@@ -51,18 +50,10 @@ const ActionTaskCreate = (props) => {
         //console.log(err)
       }
     };
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchFocuses();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchFocuses();
   }, []);
 
   useEffect(() => {
-    console.log("useEffect for fetching goals called");
     if (focus!== '') {
       if (focus!== 'misc') {
         const fetchGoals = async () => {
@@ -75,18 +66,10 @@ const ActionTaskCreate = (props) => {
           }
         };
         setHasLoadedGoals(false);
-        // Below sets fetchPosts to fire after a 1 second pause
-        const timer = setTimeout(() => {
-          fetchGoals();
-        }, 1000)
-        // Below cleans up and clears the timeout function
-        return () => {
-          clearTimeout(timer)
-        }
+        fetchGoals();
       } else {
         setGoals({ results: []});
       }
-      
     }
   }, [focus]);
 
@@ -195,7 +178,6 @@ const ActionTaskCreate = (props) => {
                       {focuses.results.map( focus => (
                         <option key={focus.id} value={focus.id} name="focus">{focus.name}</option>
                       ))}
-
                     </select>
                   </>
                 ) : (
@@ -213,7 +195,7 @@ const ActionTaskCreate = (props) => {
                 hasLoadedGoals ? (
                   goals.results.length>0 ? (
                     <>
-                      {errors.name?.map((message, idx) => (
+                      {errors.goal?.map((message, idx) => (
                         <Alert key={idx} className={formStyles.ErrorAlert}>
                           {message}
                         </Alert>
@@ -241,6 +223,11 @@ const ActionTaskCreate = (props) => {
                 )
               ) : null}
             </div>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} className={formStyles.ErrorAlert}>
+                {message}
+              </Alert>
+            ))}
           </div>
           <div className={styles.Buttons}>
             <Button className={btnStyles.Button} onClick={handleFormClose}>

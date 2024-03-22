@@ -5,7 +5,8 @@ import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import MobileTakeAction from './MobileTakeAction';
 import DesktopTakeAction from './DesktopTakeAction.js';
-import { Button, Modal } from 'react-bootstrap';
+import Button from 'react-bootstrap/button';
+import Modal from 'react-bootstrap/modal';
 import { axiosReq, axiosRes } from '../../api/axiosDefaults.js';
 import ActionTaskCreate from '../tasks/ActionTaskCreate.js';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext.js';
@@ -31,19 +32,12 @@ const TakeAction = () => {
         const {data} = await axiosReq.get('/tasks/');
         setActiveTasks(data);
         setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
+      } catch(err) {
+        //console.log(err)
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchTasks();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchTasks();
   }, []);
 
   useEffect(() => {
@@ -89,7 +83,7 @@ const TakeAction = () => {
             }
           );
         } catch(err){
-          console.log(err);
+          //console.log(err);
         }
       };
     };

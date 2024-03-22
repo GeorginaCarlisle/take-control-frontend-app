@@ -3,7 +3,10 @@ import { axiosReq } from '../../api/axiosDefaults';
 import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/FocusView.module.css';
-import { Alert, Button, Form, Image } from 'react-bootstrap';
+import Alert from 'react-bootstrap/alert';
+import Button from 'react-bootstrap/button';
+import Form from 'react-bootstrap/form';
+import Image from 'react-bootstrap/image';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const FocusEdit = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/FocusView.module.css';
 import btnStyles from '../../styles/Button.module.css';
-import { Button } from 'react-bootstrap';
+import Button from 'react-bootstrap/button';
 import { axiosRes } from '../../api/axiosDefaults';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';

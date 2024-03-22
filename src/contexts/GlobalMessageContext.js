@@ -1,3 +1,8 @@
+/* This context provides the ability for all components to beable to
+add a message and set showGlobalSuccess to true. This will then trigger
+a toast that will display at the top left of the page just under the header
+with the given message. See Success Toast which is then nested inside App.js */
+
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const ShowGlobalSuccessContext = createContext();

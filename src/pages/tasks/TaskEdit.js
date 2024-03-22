@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { axiosReq } from '../../api/axiosDefaults';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
-import { Alert, Form } from 'react-bootstrap';
+import Alert from 'react-bootstrap/alert';
+import Form from 'react-bootstrap/form';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const TaskEdit = (props) => {
@@ -16,10 +17,6 @@ const TaskEdit = (props) => {
     setTasks,
     setTaskState,
   } = props;
-
-  useEffect(() => {
-    console.log(`Deadline set to ${deadline}`)
-  }, [deadline])
 
   const setShowGlobalSuccess = useSetShowGlobalSuccess();
   const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
@@ -89,7 +86,7 @@ const TaskEdit = (props) => {
       );
       setTaskState("view");
     } catch(err){
-      console.log(err);
+      //console.log(err);
       if (err.response?.status !== 401){
         setErrors(err.response?.data);
       }
@@ -118,6 +115,11 @@ const TaskEdit = (props) => {
             />
           </Form.Group>
 
+          {errors.deadline?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <div className={styles.Group}>
             <label htmlFor="newDeadline" className={styles.FormLabel}>Deadline:</label>
             <input
@@ -130,6 +132,11 @@ const TaskEdit = (props) => {
             />
           </div>
         </div>
+        {errors.non_field_errors?.map((message, idx) => (
+          <Alert key={idx} className={formStyles.ErrorAlert}>
+            {message}
+          </Alert>
+        ))}
         <div className={styles.EditIconContainer}>
           <button className={styles.EditIcon} type="submit" aria-label="Click to save task">
           <i className="fa-solid fa-floppy-disk"></i>

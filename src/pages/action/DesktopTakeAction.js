@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/TakeAction.module.css'
 import pageStyles from '../../styles/Page.module.css';
 import ActionTask from './ActionTask';
-import { Form, Spinner } from 'react-bootstrap';
+import Form from 'react-bootstrap/form';
+import Spinner from 'react-bootstrap/spinner';
 import { axiosReq } from '../../api/axiosDefaults';
 
 const DesktopTakeAction = (props) => {
@@ -18,9 +19,7 @@ const DesktopTakeAction = (props) => {
   } = props;
 
   const [filter, setFilter] = useState("");
-
   const [query, setQuery] = useState("");
-
   const [searchList, setSearchList] = useState({ results: []});
 
   const handleFilter = (event) => {
@@ -63,14 +62,7 @@ const DesktopTakeAction = (props) => {
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      changeActiveTaskOrder();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    changeActiveTaskOrder();
   }, [filter])
 
   return (
@@ -159,6 +151,7 @@ const DesktopTakeAction = (props) => {
           )}
         </div>
       </div>
+
       <div className={styles.Column}>
         <div className={styles.TitleContainer}>
           <h3>Completed</h3>

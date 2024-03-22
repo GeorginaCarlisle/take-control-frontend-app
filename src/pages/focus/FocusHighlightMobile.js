@@ -32,14 +32,7 @@ const FocusHighlightMobile = (props) => {
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchGoals();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchGoals();
   }, [id]);
 
   // function copied from React bootstrap and adjusted
@@ -60,9 +53,9 @@ const FocusHighlightMobile = (props) => {
       >
         {children}
         {isCurrentEventKey ? (
-          <i class="fa-solid fa-angle-down"></i>
+          <i className="fa-solid fa-angle-down"></i>
         ) : (
-          <i class="fa-solid fa-angle-up"></i>
+          <i className="fa-solid fa-angle-up"></i>
         )}
       </div>
     );

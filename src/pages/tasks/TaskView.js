@@ -1,6 +1,6 @@
 import React from 'react';
 import taskStyles from '../../styles/Task.module.css'
-import { Dropdown } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/dropdown';
 
 const TaskView = (props) => {
   const {
@@ -48,7 +48,7 @@ const TaskView = (props) => {
         {deadline_info ? (
           <p>{deadline_info}</p>
         ) : (
-          <p>(No deadline)</p>
+          <p>No deadline</p>
         )}
       </div>
     </div>

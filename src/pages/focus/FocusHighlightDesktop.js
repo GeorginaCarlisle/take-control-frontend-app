@@ -29,14 +29,7 @@ const FocusHighlightDesktop = (props) => {
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchGoals();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchGoals();
   }, [id]);
   
   return (

@@ -42,9 +42,7 @@ function SignIn() {
       setTokenTimestamp(data);
       history.push('/');
     } catch(err){
-      console.log(err)
-      console.log(err.response)
-      console.log(err.response.data)
+      //console.log(err)
       setErrors(err.response?.data);
     }
   };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Alert, Form } from 'react-bootstrap';
+import Alert from 'react-bootstrap/alert';
+import Form from 'react-bootstrap/form';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -117,6 +118,11 @@ const TaskCreate = (props) => {
             />
           </Form.Group>
 
+          {errors.deadline?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
           <div className={styles.Group}>
             <label htmlFor="deadline" className={styles.FormLabel}>Deadline:</label>
             <input
@@ -128,6 +134,11 @@ const TaskCreate = (props) => {
               className={styles.DateInput}
             />
           </div>
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert key={idx} className={formStyles.ErrorAlert}>
+              {message}
+            </Alert>
+          ))}
         </div>
         <div className={styles.IconContainer}>
           <button className={styles.Icon} type="submit" aria-label="Click to save task">

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Goal.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
-import { Button, Spinner } from 'react-bootstrap';
+import Button from 'react-bootstrap/button';
+import Spinner from 'react-bootstrap/spinner';
 import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
 import GoalEdit from './GoalEdit';
@@ -44,14 +45,7 @@ const GoalSection = (props) => {
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchGoals();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchGoals();
   }, [focus_id]);
 
   useEffect(() => {

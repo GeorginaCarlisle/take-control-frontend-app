@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom';
 const Focus = () => {
 
   const currentUser = useCurrentUser();
-
   const { id } = useParams();
 
   return (

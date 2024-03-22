@@ -4,7 +4,8 @@ import accStyles from '../../styles/Accordion.module.css';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
-import { Spinner, useAccordionToggle } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/spinner';
+import { useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
 import GoalCreate from './GoalCreate';
 import GoalIndividual from './GoalIndividual';
@@ -31,18 +32,11 @@ const GoalSectionMobile = (props) => {
         setGoals(data);
         setHasLoaded(true);
       } catch(err) {
-        console.log(err)
+        //console.log(err)
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchGoals();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchGoals();
   }, [focus_id]);
 
   // function copied from React bootstrap and adjusted
@@ -63,9 +57,9 @@ const GoalSectionMobile = (props) => {
       >
         {children}
         {isCurrentEventKey ? (
-          <i class="fa-solid fa-angle-down"></i>
+          <i className="fa-solid fa-angle-down"></i>
         ) : (
-          <i class="fa-solid fa-angle-up"></i>
+          <i className="fa-solid fa-angle-up"></i>
         )}
       </div>
     );
@@ -91,7 +85,7 @@ const GoalSectionMobile = (props) => {
       )}
       <Card>
         <Card.Header>
-          <ContextAwareToggle as={Card.Header} eventKey="99">
+          <ContextAwareToggle as={Card.Header} eventKey="999">
             {goals.results.length>0 ? (
               <h3>Create a new goal</h3>
             ) : (
@@ -100,7 +94,7 @@ const GoalSectionMobile = (props) => {
             
           </ContextAwareToggle>
         </Card.Header>
-        <Accordion.Collapse eventKey="99">
+        <Accordion.Collapse eventKey="999">
           <Card.Body>
             <GoalCreate goals={goals} setGoals={setGoals} setKeyParameters={setKeyParameters} keyParameters={keyParameters}/>
           </Card.Body>

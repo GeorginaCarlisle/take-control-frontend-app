@@ -1,35 +1,28 @@
-// The code in this file was copied from the 'Moments' walkthrough project.
+/* The code in this file was copied from the 'Moments' walkthrough project. 
+It is imported into NavBar and used to close the mobile nav on a click outside of the menu
+or when a menu link is clicked. */
 
 import { useEffect, useRef, useState } from 'react';
 
 const useClickOutsideToggle = () => {
 
-    // false when mobile nav collapsed and true when it has been expanded
-    const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const ref = useRef(null)
 
-    // This will hold a reference to the toggle element once screen size drops
-    const ref = useRef(null)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)){
+        setExpanded(false)
+      }
+    }
 
-    /**
-     *  Adds an event listener for mouse up on changes/rendering of the toggle element (identified through the use of ref which is only triggered for smaller screens).
-     *  Handling of event listener checks if it is outside of the toggle element and if so changes expanded to false, which collapses the menu.
-     *  Note: clicks on toggle are already programmed to collapse menu.
-     *  A cleanup function removes the eventlistener when
-     */ 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (ref.current && !ref.current.contains(event.target)){
-                setExpanded(false)
-            }
-        }
+    document.addEventListener('mouseup', handleClickOutside);
+    return () => {
+      document.removeEventListener('mouseup', handleClickOutside);
+    }
+  }, [ref]);
 
-        document.addEventListener('mouseup', handleClickOutside);
-        return () => {
-            document.removeEventListener('mouseup', handleClickOutside);
-        }
-    }, [ref]);
-
-    return { expanded, setExpanded, ref };
+  return { expanded, setExpanded, ref };
 };
 
 export default useClickOutsideToggle

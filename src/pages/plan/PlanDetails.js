@@ -30,14 +30,7 @@ const PlanDetails = ({mobile}) => {
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      fetchFocuses();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    fetchFocuses();
   }, []);
 
   // function copied from React bootstrap and adjusted
@@ -58,9 +51,9 @@ const PlanDetails = ({mobile}) => {
       >
         {children}
         {isCurrentEventKey ? (
-          <i class="fa-solid fa-angle-down" className={accStyles.Angle}></i>
+          <i className={`fa-solid fa-angle-down ${accStyles.Angle}`}></i>
         ) : (
-          <i class="fa-solid fa-angle-up" className={accStyles.Angle}></i>
+          <i className={`fa-solid fa-angle-up ${accStyles.Angle}`}></i>
         )}
       </div>
     );

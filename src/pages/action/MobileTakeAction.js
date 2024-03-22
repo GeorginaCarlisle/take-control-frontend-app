@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Accordion, AccordionContext, Card, Form, Spinner, useAccordionToggle } from 'react-bootstrap';
+import { useAccordionToggle } from 'react-bootstrap';
+import AccordionContext from 'react-bootstrap/accordioncontext';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/card';
+import Form from 'react-bootstrap/form';
+import Spinner from 'react-bootstrap/spinner';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';
 import { axiosReq } from '../../api/axiosDefaults';
+
 
 const MobileTakeAction = (props) => {
   
@@ -58,19 +64,12 @@ const MobileTakeAction = (props) => {
         const {data} = await axiosReq.get(`/tasks/${filter}`);
         setActiveTasks(data);
         setHasLoaded(true);
-      }  catch(err) {
-        console.log(err)
+      } catch(err) {
+        //console.log(err)
       }
     };
     setHasLoaded(false);
-    // Below sets fetchPosts to fire after a 1 second pause
-    const timer = setTimeout(() => {
-      changeActiveTaskOrder();
-    }, 1000)
-    // Below cleans up and clears the timeout function
-    return () => {
-      clearTimeout(timer)
-    }
+    changeActiveTaskOrder();
   }, [filter])
 
   // function copied from React bootstrap and adjusted
@@ -91,9 +90,9 @@ const MobileTakeAction = (props) => {
       >
         {children}
         {isCurrentEventKey ? (
-          <i class="fa-solid fa-angle-down"></i>
+          <i className="fa-solid fa-angle-down"></i>
         ) : (
-          <i class="fa-solid fa-angle-up"></i>
+          <i className="fa-solid fa-angle-up"></i>
         )}
       </div>
     );

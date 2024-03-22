@@ -26,10 +26,10 @@ const FocusView = (props) => {
         <p>{why}</p>
         <div className={styles.IconContainer}>
           <button className={btnStyles.Icon} aria-label="Click to edit focus" onClick={handleEdit}>
-            <i class="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-pen-to-square"></i>
           </button>
           <button className={btnStyles.Icon} aria-label="Click to delete focus" onClick={handleDelete}>
-            <i class="fa-solid fa-trash"></i>
+            <i className="fa-solid fa-trash"></i>
           </button>
         </div>
       </div>

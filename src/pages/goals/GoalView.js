@@ -40,10 +40,10 @@ const GoalView = (props) => {
         )}
         <div className={styles.IconContainer}>
           <button className={styles.Icon} onClick={handleEdit} aria-label="Click to edit focus">
-            <i class="fa-solid fa-pen-to-square"></i>
+            <i className="fa-solid fa-pen-to-square"></i>
           </button>
           <button className={styles.Icon} onClick={handleDelete}aria-label="Click to delete focus">
-            <i class="fa-solid fa-trash"></i>
+            <i className="fa-solid fa-trash"></i>
           </button>
         </div>
       </div>

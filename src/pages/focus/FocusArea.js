@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import styles from '../../styles/FocusView.module.css';
 import FocusView from './FocusView';
-import { Spinner } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/spinner';
 import FocusEdit from './FocusEdit';
 import FocusDelete from './FocusDelete';
 
