@@ -18,31 +18,16 @@ import Miscellaneous from './pages/plan/Miscellaneous';
 import NotFound from './pages/NotFound';
 import { Toast } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
+import { useGlobalSuccessMessage, useSetGlobalSuccessMessage, useSetShowGlobalSuccess, useShowGlobalSuccess } from './contexts/GlobalMessageContext';
 
 function App() {
 
   const currentUser = useCurrentUser();
 
-  const [showGlobalSuccess, setShowGlobalSuccess] = useState(false);
-
-  const [globalSuccessMessage, setGlobalSuccessMessage] = useState("");
-
-  useEffect(() => {
-    // Closes the toast automatically after 8 seconds
-    if (showGlobalSuccess) {
-      const hideToast = () => {
-        setShowGlobalSuccess(false);
-        setGlobalSuccessMessage("");
-      }
-      const timer = setTimeout(() => {
-        hideToast();
-      }, 8000)
-      // Below cleans up and clears the timeout function
-      return () => {
-        clearTimeout(timer)
-      }
-    }
-  }, [showGlobalSuccess])
+  const showGlobalSuccess = useShowGlobalSuccess();
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const globalSuccessMessage = useGlobalSuccessMessage();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();
 
   const handleHide = () => {
     setShowGlobalSuccess(false);
@@ -56,13 +41,13 @@ function App() {
         <Toast.Header className={toastStyles.Header}>
           <strong className={toastStyles.Title}>Success !!</strong>
         </Toast.Header>
-        <Toast.Body>{globalSuccessMessage}Heloo hello lets put some text in here</Toast.Body>
+        <Toast.Body>{globalSuccessMessage}</Toast.Body>
       </Toast>
       <div className={styles.Main}>
         <Switch>
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/about" render={() => <About />} />
-          <Route exact path="/signup" render={() => <Signup setShowGlobalSuccess={setShowGlobalSuccess} setGlobalSuccessMessage={setGlobalSuccessMessage}/>} />
+          <Route exact path="/signup" render={() => <Signup />} />
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/plan" render={() => (
             currentUser ? ( <Plan /> ) : ( <Redirect to={{pathname: "/signin"}} />)

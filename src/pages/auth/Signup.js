@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import pageStyles from '../../styles/Page.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import formStyles from '../../styles/Form.module.css';
@@ -8,12 +8,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
-const Signup = (props) => {
-  const {
-    setShowGlobalSuccess,
-    setGlobalSuccessMessage
-  } = props;
+const Signup = () => {
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const [signUpData, setSignUpData] = useState({
     username: '',

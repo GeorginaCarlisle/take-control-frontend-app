@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
+import { GlobalMessageProvider } from './contexts/GlobalMessageContext';
 
 
 ReactDOM.render(
@@ -12,7 +13,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <CurrentUserProvider>
-        <App />
+        <GlobalMessageProvider>
+          <App />
+        </GlobalMessageProvider>
       </CurrentUserProvider>
     </Router>
   </React.StrictMode>,
