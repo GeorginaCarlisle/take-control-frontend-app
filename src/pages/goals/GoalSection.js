@@ -87,13 +87,15 @@ const GoalSection = (props) => {
         style={{
           color: eventKey===goal_id ? '#3c159c' : 'black',
           fontWeight: eventKey===goal_id ? 'bold' : 'normal' }}
-        onClick={openGoal}>
+        onClick={openGoal}
+        aria-label={eventKey===goal_id ? 'click to open goal' : 'click to close goal'}
+      >
         {children}
         <div className={styles.TabControl}>
           {eventKey===goal_id ? (
-            <i class="fa-solid fa-angle-right"></i>
+            <i className="fa-solid fa-angle-right"></i>
           ) : (
-            <i class="fa-solid fa-angle-left"></i>
+            <i className="fa-solid fa-angle-left"></i>
           )}
         </div>
       </div>

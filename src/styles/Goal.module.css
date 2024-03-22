@@ -51,6 +51,11 @@
   grid-template-columns: 1fr 20px;
 }
 
+.GoalTab:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
 .GoalTab > p {
   margin-bottom: 0;
 }
