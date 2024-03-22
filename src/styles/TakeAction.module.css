@@ -1,8 +1,3 @@
-.ActionTitle {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
 .ButtonContainer {
   margin: 0 auto;
   display: flex;
@@ -78,7 +73,7 @@
 .MainContainer {
   padding: 0;
   width: 95vw;
-  height: 75vh;
+  height: 65vh;
   max-width: 1200px;
   margin-top: 20px;
   display: grid;
@@ -132,10 +127,6 @@
 @media screen and (min-width:768px){
   .ExtraInfo {
     display: inline;
-  }
-  .ActionTitle {
-    margin-top: 30px;
-    margin-bottom: 20px;
   }
   .Filter {
     position: absolute;

@@ -108,7 +108,7 @@ const TakeAction = () => {
 
   return (
     <div className={pageStyles.PageContainer}>
-      <div className={`${pageStyles.Title} ${styles.ActionTitle}`}>
+      <div className={pageStyles.Title}>
         <h1>Take Action <span className={styles.ExtraInfo}>{currentUser.username}</span></h1>
       </div>
       <div className={styles.ButtonContainer}>
