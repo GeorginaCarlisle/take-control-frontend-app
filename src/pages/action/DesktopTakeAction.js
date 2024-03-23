@@ -168,12 +168,12 @@ const DesktopTakeAction = (props) => {
                   type="achieved"/>
               ))
             ) : (
-              <p>You don't have any tasks checked off as done.</p>
+              <p className={styles.AddPadding}>You don't have any tasks checked off as done.</p>
             )
           ) : (
             <div className={styles.SpinnerContainer}>
               <Spinner animation="border" />
-              <p className={styles.AddPadding}>We are just loading your tasks.</p>
+              <p>We are just loading your tasks.</p>
             </div>
           )}
         </div>
