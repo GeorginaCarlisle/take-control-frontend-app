@@ -121,7 +121,10 @@
 
 .TasksContainer {
   overflow: auto;
+}
 
+.AddPadding {
+  padding: 5px;
 }
 
 @media screen and (min-width:768px){

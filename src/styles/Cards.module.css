@@ -103,3 +103,7 @@
 .ActiveToggle:hover {
   color:#3c159c;
 }
+
+.AddPadding {
+  padding: 5px;
+}

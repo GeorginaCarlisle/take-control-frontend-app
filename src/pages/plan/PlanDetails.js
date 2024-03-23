@@ -129,7 +129,7 @@ const PlanDetails = ({mobile}) => {
                       <h2>Your focus areas</h2>
                     </div>
                   </div>
-                  <div className={cardStyles.GoalContainer}>
+                  <div className={`${cardStyles.GoalContainer} ${cardStyles.AddPadding}`}>
                     <p>Define the areas of your life you wish to focus on by creating focus areas.</p>
                     <p>Once created all your focus areas will be viewable here in your plan.</p>
                     <p>Within each focus area, you can set yourself goals and add the tasks you need to complete to achieve them, as well as any day to day tasks linked with that area of your life.</p>
@@ -148,7 +148,7 @@ const PlanDetails = ({mobile}) => {
                     <h2>Miscellaneous</h2>
                   </div>
                 </div>
-                <div className={cardStyles.GoalContainer}>
+                <div className={`${cardStyles.GoalContainer} ${cardStyles.AddPadding}`}>
                   <p>A place for tasks that don't fit into any of your focus areas.</p>
                 </div>
                 <div className={cardStyles.ButtonContainer}>

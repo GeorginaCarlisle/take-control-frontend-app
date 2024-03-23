@@ -49,7 +49,9 @@ const FocusHighlightDesktop = (props) => {
               <GoalHighlights key={goal.id} {...goal} />
             ))
           ) : (
-            <p>You don't have any goals set for this focus area.</p>
+            <div className={cardStyles.AddPadding}>
+              <p>You don't have any goals set for this focus area.</p>
+            </div>
           )}
         </>
       ) : (

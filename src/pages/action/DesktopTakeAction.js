@@ -113,7 +113,7 @@ const DesktopTakeAction = (props) => {
                     type="active"/>
                 ))
               ) : (
-                <p>You dont have any active tasks</p>
+                <p className={styles.AddPadding}>No tasks found.</p>
               )
             )
           ) : (
@@ -141,7 +141,7 @@ const DesktopTakeAction = (props) => {
                   type="today"/>
               ))
             ) : (
-              <p>You dont have any tasks set for today</p>
+              <p className={styles.AddPadding}>You don't have any tasks set for today.</p>
             )
           ) : (
             <div className={styles.SpinnerContainer}>
@@ -168,12 +168,12 @@ const DesktopTakeAction = (props) => {
                   type="achieved"/>
               ))
             ) : (
-              <p>You dont have any tasks checked off as done</p>
+              <p>You don't have any tasks checked off as done.</p>
             )
           ) : (
             <div className={styles.SpinnerContainer}>
               <Spinner animation="border" />
-              <p>We are just loading your tasks</p>
+              <p className={styles.AddPadding}>We are just loading your tasks.</p>
             </div>
           )}
         </div>
