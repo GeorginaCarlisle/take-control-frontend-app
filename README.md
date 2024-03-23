@@ -491,9 +491,24 @@ Focus: All must-haves to be completed. A decision to then be taken on what else 
 Beginning of the sprint:
 ![Screenshot of the project board at the beginning of the third sprint](documentation/Agile/third-sprint-start.png)
 
+End of the sprint:
+![Screenshot of the project board at the end of the third sprint](documentation/Agile/third-sprint-end.png)
+
+Finished tasks for the frontend (no open issues remained for this sprint):
+![Screenshot of the closed frontend user stories](documentation/Agile/third-sprint-frontend-closed-1.png)
+![Screenshot of the remaining closed frontend user stories](documentation/Agile/third-sprint-frontend-closed-2.png)
+
+As good progress was made during this sprint extra issues were added and closed during the sprint:
+![Screenshot of the extra closed issues](documentation/Agile/third-sprint-frontend-extra-closed.png)
+
+Note: This sprint was closed slightly ahead of schedule with a decision to push straight on into sprint four and final testing and validation before re-assessing time remaining as to whether any further user stories should be worked on.
+
 #### Fourth Sprint
 
 Focus: Final testing and README tasks alongside ensuring any remaining bugs are fixed.
+
+Beginning of the sprint:
+![Screenshot of the project board at the beginning of the fourth sprint](documentation/Agile/fourth-sprint-start.png)
 
 [Return to contents list](#contents)
 
