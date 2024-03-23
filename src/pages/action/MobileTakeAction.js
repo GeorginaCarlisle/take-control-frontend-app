@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useAccordionToggle } from 'react-bootstrap';
-import AccordionContext from 'react-bootstrap/Accordioncontext';
+import { useAccordionToggle, AccordionContext } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';

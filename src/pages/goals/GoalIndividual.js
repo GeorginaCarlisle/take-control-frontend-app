@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { useAccordionToggle } from 'react-bootstrap';
+import { useAccordionToggle, AccordionContext } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
-import AccordionContext from 'react-bootstrap/Accordioncontext';
 import Card from 'react-bootstrap/Card';
 import styles from '../../styles/Goal.module.css';
 import accStyles from '../../styles/Accordion.module.css';
