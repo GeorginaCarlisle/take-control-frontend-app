@@ -1,6 +1,6 @@
 import React from 'react'
 import { axiosRes } from '../../api/axiosDefaults';
-import Button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/Button';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Alert from 'react-bootstrap/alert';
-import Button from 'react-bootstrap/button';
-import Form from 'react-bootstrap/form';
-import Modal from 'react-bootstrap/modal';
-import Spinner from 'react-bootstrap/spinner';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+import Spinner from 'react-bootstrap/Spinner';
 import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/TaskCreate.module.css';

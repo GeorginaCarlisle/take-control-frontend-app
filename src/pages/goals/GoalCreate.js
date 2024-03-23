@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Alert from 'react-bootstrap/alert';
-import Button from 'react-bootstrap/button';
-import Form from 'react-bootstrap/form';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import formStyles from '../../styles/Form.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import styles from '../../styles/GoalCreate.module.css';

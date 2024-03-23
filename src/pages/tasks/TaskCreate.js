@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Alert from 'react-bootstrap/alert';
-import Form from 'react-bootstrap/form';
+import Alert from 'react-bootstrap/Alert';
+import Form from 'react-bootstrap/Form';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
 import { axiosReq } from '../../api/axiosDefaults';

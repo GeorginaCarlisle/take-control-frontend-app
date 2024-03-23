@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/TakeAction.module.css'
 import pageStyles from '../../styles/Page.module.css';
 import ActionTask from './ActionTask';
-import Form from 'react-bootstrap/form';
-import Spinner from 'react-bootstrap/spinner';
+import Form from 'react-bootstrap/Form';
+import Spinner from 'react-bootstrap/Spinner';
 import { axiosReq } from '../../api/axiosDefaults';
 
 const DesktopTakeAction = (props) => {

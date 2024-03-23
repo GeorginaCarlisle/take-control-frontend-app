@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Task.module.css';
 import TaskIndividual from './TaskIndividual';
 import { axiosReq } from '../../api/axiosDefaults';
-import Spinner from 'react-bootstrap/spinner';
+import Spinner from 'react-bootstrap/Spinner';
 import TaskCreate from './TaskCreate';
 
 const TaskList = ( props ) => {

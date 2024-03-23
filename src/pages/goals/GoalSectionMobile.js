@@ -4,7 +4,7 @@ import accStyles from '../../styles/Accordion.module.css';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import Card from 'react-bootstrap/Card';
-import Spinner from 'react-bootstrap/spinner';
+import Spinner from 'react-bootstrap/Spinner';
 import { useAccordionToggle } from 'react-bootstrap';
 import { axiosReq } from '../../api/axiosDefaults';
 import GoalCreate from './GoalCreate';

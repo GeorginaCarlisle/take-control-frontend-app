@@ -1,6 +1,6 @@
 import React from 'react';
 import taskStyles from '../../styles/Task.module.css'
-import Dropdown from 'react-bootstrap/dropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const TaskView = (props) => {
   const {

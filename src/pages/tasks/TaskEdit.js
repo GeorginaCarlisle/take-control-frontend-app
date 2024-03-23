@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { axiosReq } from '../../api/axiosDefaults';
 import formStyles from '../../styles/Form.module.css';
 import styles from '../../styles/TaskCreate.module.css';
-import Alert from 'react-bootstrap/alert';
-import Form from 'react-bootstrap/form';
+import Alert from 'react-bootstrap/Alert';
+import Form from 'react-bootstrap/Form';
 import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 const TaskEdit = (props) => {

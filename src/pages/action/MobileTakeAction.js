@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useAccordionToggle } from 'react-bootstrap';
-import AccordionContext from 'react-bootstrap/accordioncontext';
+import AccordionContext from 'react-bootstrap/Accordioncontext';
 import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/card';
-import Form from 'react-bootstrap/form';
-import Spinner from 'react-bootstrap/spinner';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import Spinner from 'react-bootstrap/Spinner';
 import styles from '../../styles/TakeAction.module.css';
 import accStyles from '../../styles/Accordion.module.css';
 import ActionTask from './ActionTask';

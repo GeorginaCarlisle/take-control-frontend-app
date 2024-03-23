@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/Goal.module.css';
 import btnStyles from '../../styles/Button.module.css';
 import { axiosReq } from '../../api/axiosDefaults';
-import Button from 'react-bootstrap/button';
-import Spinner from 'react-bootstrap/spinner';
+import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import GoalView from './GoalView';
 import GoalCreate from './GoalCreate';
 import GoalEdit from './GoalEdit';
