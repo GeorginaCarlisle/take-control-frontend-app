@@ -10,9 +10,13 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSetCurrentUser } from '../../contexts/CurrentUserContext';
 import axios from 'axios';
 import { setTokenTimestamp } from '../../utils/utils';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../../contexts/GlobalMessageContext';
 
 
 function SignIn() {
+
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage();  
 
   const setCurrentUser = useSetCurrentUser();
 
@@ -40,6 +44,8 @@ function SignIn() {
       const {data} = await axios.post('/dj-rest-auth/login/', signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
+      setGlobalSuccessMessage("You are now signed in.");
+      setShowGlobalSuccess(true);
       history.push('/');
     } catch(err){
       //console.log(err)
