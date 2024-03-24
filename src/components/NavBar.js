@@ -8,6 +8,7 @@ import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import axios from 'axios';
 import { removeTokenTimestamp } from '../utils/utils';
+import { useSetGlobalSuccessMessage, useSetShowGlobalSuccess } from '../contexts/GlobalMessageContext';
 
 const NavBar = () => {
 
@@ -16,15 +17,21 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  const setShowGlobalSuccess = useSetShowGlobalSuccess();
+  const setGlobalSuccessMessage = useSetGlobalSuccessMessage(); 
+
   const handleSignout = async () => {
     try {
       await axios.post('dj-rest-auth/logout/');
+      setGlobalSuccessMessage("You have successfully signed out.");
+      setShowGlobalSuccess(true);
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch(err) {
       console.log(err)
     }
   }
+
   const loggedInLinks = (
     <>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/plan">Plan</NavLink>
