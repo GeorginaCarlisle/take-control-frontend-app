@@ -10,15 +10,13 @@ import { GlobalMessageProvider } from './contexts/GlobalMessageContext';
 
 ReactDOM.render(
 
-  <React.StrictMode>
     <Router>
       <CurrentUserProvider>
         <GlobalMessageProvider>
           <App />
         </GlobalMessageProvider>
       </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById('root')
 );
 
