@@ -81,6 +81,39 @@ Hovering over navigation links leads to a change in color to purple, this is a b
 
 In addition where the user is viewing a sub-page, such as when creating a new focus within the plan section, a back x is present in the top left of the features container. Clicking on the x will close the sub-page and return the user to their previous view, this is the expected behaviour for such an icon. The same hover functionality exists for this icon as the navigation links and an aria-label has also been attached to ensure clear understanding of the icon's purpose.
 
+![Screenshot showing the back x as present when creating a new focus area](/documentation/features/back-x.png)
+
+Further navigation through the site is provided by buttons. These buttons are all styled alike, with the same hover functionality. Clear names have been given to all buttons to aid with intuitive navigation.
+
+![Screenshot showing the button to "Go to miscellaneous area"](/documentation/features/button-open-miscellaneous.png)
+![Screenshot showing the button to "Go to miscellaneous area"](/documentation/features/button-open-miscellaneous-hover.png)
+
+When in the 'Take Action' page a method of navigating back into the plan is provided by clicking on the image next to a task. This will take the user back to the focus area for this task, or miscellaneous area if a miscellaneous task.
+
+#### Authentication
+
+Each users' data is private and protected, with authentication ensuring that no-one but the owner of the data can access it.
+
+New users wishing to use the application's functionality will need to sign up in order for data to be saved with them as the owner. Links to the sign-up page are placed clearly within the main navigation bar, as well as through a call to action button on the site's landing page.
+
+The 'Sign Up' page has a clear title and all input fields also have clear labels and placeholder text, thus making the form clear and easy to fill in. Should any fields be incorrectly completed, error messages are clearly displayed to the user. On successful completion of the form the user is re-directed to the 'Sign In' page where a success message is displayed.
+
+![Screenshot showing the sign up page"](/documentation/features/sign-up-laptop.png)
+![Screenshot showing error handling on the sign up page"](/documentation/features/sign-up-errors.png)
+![Screenshot showing a successful signup"](/documentation/features/sign-up-success.png)
+
+In order to access their data a user will need to sign in. A clear link to the "Sign In" page is present within the main navigation.
+
+The 'Sign In' page has a clear title and all input fields also have clear labels and placeholder text, thus making the form clear and easy to fill in. Should any fields be incorrectly completed, error messages are clearly displayed to the user. On successful completion of the form the user is re-directed to the home page, which alongside the header is now rendered specifically for authenticated users. A success message is displayed and the user is welcomed to their account.
+
+![Screenshot showing the sign in page"](/documentation/features/sign-in-laptop.png)
+![Screenshot showing error handling on the sign in page"](/documentation/features/sign-in-errors.png)
+![Screenshot showing a successful sign in"](/documentation/features/sign-in-success.png)
+
+JSON web tokens are used in the authentication process, with logic in place to ensure users are not unexpectedly logged out. When users are ready, in order to protect their data, they can logout. A clear link to 'Signout' is provided in the main navigation. On clicking to signout users are re-directed to the home page, which alongside the header is now rendered specifically for non-authenticated users. A success message is displayed to confirm that they are now signed out.
+
+![Screenshot showing a successful sign out"](/documentation/features/sign-out-success.png)
+
 ### Future Features
 
 [Return to contents list](#contents)

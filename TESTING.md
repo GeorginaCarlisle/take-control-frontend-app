@@ -29,19 +29,19 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | About.module.css | | |
 | Accordion.module.css | | |
 | ActionTask.module.css | | |
-| Button.module.css | | |
+| Button.module.css | PASS | |
 | Cards.module.css | | |
 | FocusCreate.module.css | | |
 | FocusDesktop.module.css | | |
 | FocusMobile.module.css | | |
 | FocusView.module.css | | |
 | Footer.module.css | | |
-| Form.module.css | | |
+| Form.module.css | PASS | |
 | Goal.module.css | | |
 | GoalCreate.module.css | | |
 | Miscellaneous.module.css | | |
 | NavBar.module.css | PASS | |
-| Page.module.css | | |
+| Page.module.css | PASS | |
 | TakeAction.module.css | | |
 | Task.module.css | | |
 | TaskCreate.module.css | | |
@@ -103,22 +103,30 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 9 | As a new user, I can easily set up an account, so that I can quickly get stuck into exploring and using the application. | | |
-| | | | |
-| 10 | As a signed-up user, I can use my username and password to sign in to my account, so that my account remains secure and only I can login. | | |
-
-| 11 | As a signed-up user, I am the only one who can access my data, so that it remains safe and secure. | | |
-
-| 13 | As an authenticated user, I can easily logout of my account, so that I can keep my account secure. | | |
-
-| 14 | As an authenticated user, I can maintain my authenticated status until I choose to log out, so that I am not unexpectedly logged out due to expired access tokens. | | |
+| 9 | As a new user, I can easily set up an account, so that I can quickly get stuck into exploring and using the application. | A link to signup is present in the Navbar for non-authenticated users. | PASS |
+| | | A call to action button to signup is present on the landing page. | PASS |
+| | | Links take the user to the signup page. | PASS |
+| | | Clear page title. | PASS |
+| | | Sign up form with clear labels to aid completion. | PASS |
+| | | Errors in form input fields are clearly displayed back to the user. | PASS |
+| | | Successful completion takes user to the login page. | PASS |
+| 10 | As a signed-up user, I can use my username and password to sign in to my account, so that my account remains secure and only I can login. | A link to sign in is present in the Navbar for non-authenticated users. | PASS |
+| | | Link takes the user to the sign in page. | PASS |
+| | | Clear page title. | PASS |
+| | | Sign in form with clear labels to aid completion. | PASS |
+| | | Errors in form input fields are clearly displayed back to the user. | PASS |
+| | | Successful completion takes user to the home page, which welcomes them and provides call to action buttons to 'plan' and 'take action'. | PASS |
+| 11 | As a signed-up user, I am the only one who can access my data, so that it remains safe and secure. | Current user data is accessible to all pages and components, so that everything is rendered appropriately for the current user. | PASS |
+| 13 | As an authenticated user, I can easily logout of my account, so that I can keep my account secure. | Authenticated users are provided with a clear link to sign out in the navigation bar. | PASS |
+| | | Clicking sign out will sign the user out and return them to the home page. | PASS |
+| 14 | As an authenticated user, I can maintain my authenticated status until I choose to log out, so that I am not unexpectedly logged out due to expired access tokens. | Users are not unexpectedly signed out after 5 minutes. | PASS |
 
 ### EPIC - Focus areas
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 17 | As an authenticated user, I can create focus areas, so that I can set out the different areas in my life that I want to use this app to support with and why each area is important to me. | | |
-
+| | | | |
 | 18 | As an authenticated user, I can edit a focus area, so that I can make changes should I wish. | | |
 
 | 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | | |
@@ -209,17 +217,17 @@ All completed user stories have been manually tested against their acceptance cr
 
 ## Form input testing
 
-| Form | Handles change | Handles errors | Handles submit |
-| --- | --- | --- | --- |
-| Signup | | | |
-| Signin | | | |
-| FocusCreate | | | |
-| FocusEdit | | | |
-| GoalCreate | | | |
-| GoalEdit | | | |
-| TaskCreate | | | |
-| ActionTaskCreate | | | |
-| Task Edit| | | |
+| Form | Handles change | Handles errors | Handles submit | Success message |
+| --- | --- | --- | --- | --- |
+| Signup | PASS | PASS | PASS | PASS |
+| Signin | PASS | PASS | PASS | PASS |
+| FocusCreate | | | | |
+| FocusEdit | | | | |
+| GoalCreate | | | | |
+| GoalEdit | | | | |
+| TaskCreate | | | | |
+| ActionTaskCreate | | | | |
+| Task Edit| | | | |
 
 [Return to contents list](#contents)
 
@@ -238,7 +246,7 @@ Wave testing screenshots are displayed below:
 | "/" | Home page for logged out user | | |
 | | Home page for logged in user | | |
 | "/about" | About page | | |
-| "/signup" | Sign up page | | |
+| "/signup" | Sign up page | No errors | Alert "A nearby image has the same alternative text" caused by the logo being used twice with the same alt reference. |
 | "/signin" | Sign in page | | |
 | "/plan" | Plan page - mobile | | |
 | | Plan page - desktop | | |
@@ -264,6 +272,8 @@ Wave testing screenshots are displayed below:
 | | TakeAction page in desktop | | |
 | unknown route | Page not found page | | |
 
+Note: All pages show an alert linked to ...
+
 ### Text contrast levels
 
 #### Header
@@ -277,26 +287,23 @@ Contrast levels for highlighted links in header:
 Contrast levels for site title in header:
 ![Screen shot showing a contrast of 4.61:1](documentation/testing/colour-contrast/header-site-title.png)
 
-Contrast levels for main text:
-![colour scheme](documentation/planning/colour/normal-text.png)
+#### Main page
 
-Contrast levels for logo and section headings:
-![colour scheme](documentation/planning/colour/logo-colour.png)
+Contrast levels for page titles:
+![Screen shot showing a contrast of 5.51:1](documentation/testing/colour-contrast/main-page-title.png)
 
-Contrast levels for interactive elements on hover:
-![colour scheme](documentation/planning/colour/page-title-colour.png)
+#### Inside page container
 
-Contrast levels for interactive elements:
-![colour scheme](documentation/planning/colour/interactive-elements-colour.png)
+Contrast levels for normal text in page containers:
+![Screen shot showing a contrast of 19.26:1](documentation/testing/colour-contrast/page-container-normal-text.png)
 
-Contrast levels for the footer:
-![colour scheme](documentation/planning/colour/footer.png)
+#### Buttons
 
-Contrast levels for the alert main text:
-![colour scheme](documentation/planning/colour/alert-background.png)
+Contrast levels for buttons:
+![Screen shot showing a contrast of 7.54:1](documentation/testing/colour-contrast/button.png)
 
-Contrast levels for the alert title:
-![colour scheme](documentation/planning/colour/alert-title.png)
+Contrast levels for buttons on hover:
+![Screen shot showing a contrast of 7.54:1](documentation/testing/colour-contrast/button-hover.png)
 
 [Return to contents list](#contents)
 
@@ -304,36 +311,64 @@ Contrast levels for the alert title:
 
 Chrome developer tools Lighthouse was used to test the performance, accessibility, best practices and SEO of all views. The results are shown below:
 
-| Route | Specific view | Performance | Accessibility | Best Pracices | SEO | Extra notes |
-| --- | --- | --- | --- | --- | --- | --- |
-| "/" | Home page for logged out user | | | | | |
-| | Home page for logged in user | | | | | |
-| "/about" | About page | | | | | |
-| "/signup" | Sign up page | | | | | |
-| "/signin" | Sign in page | | | | | |
-| "/plan" | Plan page - mobile | | | | | |
-| | Plan page - desktop | | | | | |
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | | |
-| | Miscellaneous page with a task in edit mode | | | | | |
-| | Miscellaneous page with a task in delete mode | | | | | |
-| "/focus/create" | Create new focus page | | | | | |
-| "/focus/:id" | Focus page in mobile with everything set to view | | | | | |
-| | Focus page in mobile with focus set to edit | | | | | |
-| | Focus page in mobile with focus set to delete | | | | | |
-| | Focus page in mobile with a goal set to edit | | | | | |
-| | Focus page in mobile with a goal set to delete | | | | | |
-| | Focus page in mobile with a task set to edit | | | | | |
-| | Focus page in mobile with a task set to delete | | | | | |
-| | Focus page in desktop with everything set to view | | | | | |
-| | Focus page in desktop with focus set to edit | | | | | |
-| | Focus page in desktop with focus set to delete | | | | | |
-| | Focus page in desktop with a goal set to edit | | | | | |
-| | Focus page in desktop with a goal set to delete | | | | | |
-| | Focus page in desktop with a task set to edit | | | | | |
-| | Focus page in desktop with a task set to delete | | | | | |
-| "/takeaction" | TakeAction page in mobile | | | | | |
-| | TakeAction page in desktop | | | | | |
-| unknown route | Page not found page | | | | | |
+| Route | Specific view | Desktop/mobile | Performance | Accessibility | Best Pracices | SEO | Extra notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| "/" | Home page for logged out user | | | | | | |
+| | | Mobile | | | | | |
+| | Home page for logged in user | | | | | | |
+| | | Mobile | | | | | |
+| "/about" | About page | | | | | | |
+| | | Mobile | | | | | |
+| "/signup" | Sign up page | Desktop | 99 | 100 | 96 | 100 | |
+| | | Mobile | 94 | 100 | 96 | 100 | |
+| "/signin" | Sign in page | | | | | | |
+| | | Mobile | | | | | |
+| "/plan" | Plan page - mobile | | | | | | |
+| | | Mobile | | | | | |
+| | Plan page - desktop | | | | | | |
+| | | Mobile | | | | | |
+| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | | | |
+| | | Mobile | | | | | |
+| | Miscellaneous page with a task in edit mode | | | | | | |
+| | | Mobile | | | | | |
+| | Miscellaneous page with a task in delete mode | | | | | | |
+| | | Mobile | | | | | |
+| "/focus/create" | Create new focus page | | | | | | |
+| | | Mobile | | | | | |
+| "/focus/:id" | Focus page in mobile with everything set to view | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with focus set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with focus set to delete | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with a goal set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with a goal set to delete | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with a task set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in mobile with a task set to delete | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with everything set to view | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with focus set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with focus set to delete | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with a goal set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with a goal set to delete | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with a task set to edit | | | | | | |
+| | | Mobile | | | | | |
+| | Focus page in desktop with a task set to delete | | | | | | |
+| | | Mobile | | | | | |
+| "/takeaction" | TakeAction page in mobile | | | | | | |
+| | | Mobile | | | | | |
+| | TakeAction page in desktop | | | | | | |
+| | | Mobile | | | | | |
+| unknown route | Page not found page | | | | | | |
+| | | Mobile | | | | | |
 
 [Return to contents list](#contents)
 
