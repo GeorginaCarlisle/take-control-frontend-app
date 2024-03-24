@@ -25,6 +25,10 @@ const FocusCreate = () => {
 
   const history = useHistory();
 
+  const handleBack = () => {
+    history.goBack();
+  }
+
   const [errors, setErrors] = useState({});
 
   const { name, why, image } = focusData;
@@ -74,6 +78,9 @@ const FocusCreate = () => {
         <h1 className={pageStyles.Title}>Create a new focus</h1>
       </div>
       <div className={`${pageStyles.ContentContainer} ${styles.FormContainer}`}>
+        <button className={btnStyles.BackCross} aria-label="Click to return to the plan" onClick={handleBack}>
+          <i className="fa-solid fa-x"></i>
+        </button>
         <Form onSubmit={handleSubmit}>
           <div className={styles.FocusForm}>
             <Form.Group className={styles.ImageGroup}>
