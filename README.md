@@ -64,6 +64,23 @@ Links:
 
 ### Existing Features
 
+#### Navigation
+
+A header with navigation links is present at the top of all pages, providing easy navigation between different sections of the application. It is fixed in position at the top of the screen, so that it is always accessible. Moving between sections is handled by routing, preventing the page from needing to re-load and making for a more seamless user experience. The navigation links provided are specific to whether the user is logged in or logged out. This ensures they are never provided with links that are unaccessible to them and also that they have the links they need.
+
+On mobile, the navigation links are held in a dropdown menu. This allows for optimal use of the available screen size when on mobile. The menu is accessed by clicking on a hamburger icon, this is the expected behaviour for such an icon. Re-clicking the hamburger icon, choosing a link or clicking outside of the menu will close it.
+
+The header contains the site title and logo in the top left. This makes it clear to the user that they are on the "Take Control" site. The logo and title also act as a link back to the home page, an expected behaviour.
+
+Hovering over navigation links leads to a change in color to purple, this is a behaviour that is standarized across the site for interactive elements aiding in intuitive navigation.
+
+![Screenshot of the header when logged out on mobile](/documentation/features/mobile-header-logged-out.png)
+![Screenshot of the header when logged in on mobile](/documentation/features/mobile-header-logged-in.png)
+![Screenshot of the header when logged out on desktop](/documentation/features/desktop-header-logged-out.png)
+![Screenshot of the header when logged in on desktop](/documentation/features/desktop-header-logged-in.png)
+
+In addition where the user is viewing a sub-page, such as when creating a new focus within the plan section, a back x is present in the top left of the features container. Clicking on the x will close the sub-page and return the user to their previous view, this is the expected behaviour for such an icon. The same hover functionality exists for this icon as the navigation links and an aria-label has also been attached to ensure clear understanding of the icon's purpose.
+
 ### Future Features
 
 [Return to contents list](#contents)

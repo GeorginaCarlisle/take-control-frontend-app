@@ -40,7 +40,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | Goal.module.css | | |
 | GoalCreate.module.css | | |
 | Miscellaneous.module.css | | |
-| NavBar.module.css | | |
+| NavBar.module.css | PASS | |
 | Page.module.css | | |
 | TakeAction.module.css | | |
 | Task.module.css | | |
@@ -79,26 +79,32 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 3 | As a new user, I can find out more about the take action side of the application, so that I can learn more about how the application works enticing me to sign up. | | |
 
-#### Epic - Navigation
+### Epic - Navigation
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 4 | As a user, a clear navigation bar is present throughout the site, so that I can navigate easily between different sections of the application. | | |
+| 4 | As a user, a clear navigation bar is present throughout the site, so that I can navigate easily between different sections of the application. | Navigation bar fixed at the top of all pages. | PASS |
+| | | Links are present to help the user navigate through the site. | PASS |
+| | | The apps logo is displayed on the left and takes the user back to the home page. | PASS |
+| | | On smaller screens the navigation links are accessed by clicking on a hamburger icon. | PASS |
+| | | Navigation menu can be toggled off by re-clicking the hamburger icon or by clicking outside of the menu. | PASS |
+| | | Navigation menu is automatically toggled off on the page changing. | PASS |
+| 5 | As a user, the navigation bar contains links which are specific to whether I am logged in or logged out, so that all available links are relevant and accessible to me. | Non authenticated users should find: about, signup and signin in the nav bar. | PASS |
+| | | Authenticated users should find: plan, take action and signout in the nav bar. | PASS |
+| | | Non authenticated users trying to access (plan, take action and any of their nested routes) will be redirected to the login page. | PASS |
+| | | All links should work as expected. | PASS |
+| 6 | As a user, navigation between different sections of the website is seamless without un-necessary page refreshing, so that I can navigate quickly around the site. | Clicking on navigation links takes the user to the required section of the site. | PASS |
+| | | No page refreshing occurs. | PASS |
+| 7 | As an authorised user, all sub pages include an x that will return me to my previous page on clicking, so that I can easily check things out and then return to where I was. | When visiting a focus, miscellaneous, focuscreate, actionTaskCreate or daily reset I can see a clear x in the top right corner. | PASS |
+| | | Clicking on the x returns me to my previous page. | PASS |
+| 8 | As an authorised user, clicking on a task within the ‘take action’ page will take me to the ‘plan’ page where that task is located. | Clicking on the picture next to a task in Take action takes me to that focus area in the plan section. | |
 
-| 5 | As a user, the navigation bar contains links which are specific to whether I am logged in or logged out, so that all available links are relevant and accessible to me. | | |
-
-| 6 | As a user, navigation between different sections of the website is seamless without un-necessary page refreshing, so that I can navigate quickly around the site. | | |
-
-| 7 | As an authorised user, all sub pages include an x that will return me to my previous page on clicking, so that I can easily check things out and then return to where I was. | | |
-
-| 8 | As an authorised user, clicking on a task within the ‘take action’ page will take me to the ‘plan’ page where that task is located. | | |
-
-#### Epic - Authentication
+### Epic - Authentication
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 9 | As a new user, I can easily set up an account, so that I can quickly get stuck into exploring and using the application. | | |
-
+| | | | |
 | 10 | As a signed-up user, I can use my username and password to sign in to my account, so that my account remains secure and only I can login. | | |
 
 | 11 | As a signed-up user, I am the only one who can access my data, so that it remains safe and secure. | | |
@@ -107,7 +113,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 14 | As an authenticated user, I can maintain my authenticated status until I choose to log out, so that I am not unexpectedly logged out due to expired access tokens. | | |
 
-#### EPIC - Focus areas
+### EPIC - Focus areas
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -117,7 +123,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | | |
 
-#### EPIC - Goals
+### EPIC - Goals
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -127,7 +133,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | | |
 
-#### EPIC - Tasks
+### EPIC - Tasks
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -141,7 +147,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 28 | As an authenticated user, I can delete a task, so that I can remove information I no longer need or want. | | |
 
-#### EPIC - Plan
+### EPIC - Plan
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -151,7 +157,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 32 | As an authenticated user, I can view all my miscellaneous tasks together in one place, so that I can plan tasks that don't link to any of my focus areas. | | |
 
-#### EPIC - Informed User
+### EPIC - Informed User
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -159,7 +165,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 34 | As an authenticated user, I receive a confirmation message on clicking to delete, so that I am made aware of any linked information that will also be deleted should I proceed and can avoid any accidental deletes. | | |
 
-#### EPIC - Take Action
+### EPIC - Take Action
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -167,7 +173,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 37 | I can click to reset the Action page, deleting one-off completed tasks and returning everything else to the backlog, so that I can start afresh each day. | | |
 
-#### EPIC - Backlog
+### EPIC - Backlog
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -177,7 +183,7 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 41 | As an authenticated user, I can quickly add new tasks to the backlog without needing to go through the planning page, so that I can quickly and easily add additional tasks. | | |
 
-#### EPIC - Today
+### EPIC - Today
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -185,13 +191,13 @@ All completed user stories have been manually tested against their acceptance cr
 
 | 44 | As an authenticated user, I can order tasks in today, so that tasks are displayed in the order I intend to work through them. | | |
 
-#### EPIC - Completed
+### EPIC - Completed
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 45 | As an authenticated user, I can toggle tasks as completed moving them to a completed list, so that I can see exactly what I have achieved. | | |
 
-#### Epic - Tracking
+### Epic - Tracking
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
@@ -259,6 +265,17 @@ Wave testing screenshots are displayed below:
 | unknown route | Page not found page | | |
 
 ### Text contrast levels
+
+#### Header
+
+Contrast levels for links in header:
+![Screen shot showing a contrast of 17.36:1](documentation/testing/colour-contrast/header-normal-text.png)
+
+Contrast levels for highlighted links in header:
+![Screen shot showing a contrast of 9.75:1](documentation/testing/colour-contrast/header-highlighted-links.png)
+
+Contrast levels for site title in header:
+![Screen shot showing a contrast of 4.61:1](documentation/testing/colour-contrast/header-site-title.png)
 
 Contrast levels for main text:
 ![colour scheme](documentation/planning/colour/normal-text.png)
