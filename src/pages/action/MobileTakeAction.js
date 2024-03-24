@@ -170,9 +170,6 @@ const MobileTakeAction = (props) => {
         </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body className={styles.AccordionBody}>
-            <div className={styles.FunctionContainer}>
-              <p>Ordering filter</p>
-            </div>
             {hasLoaded ? (
               todayList?.length>0 ? (
                 todayList.map( task => (
