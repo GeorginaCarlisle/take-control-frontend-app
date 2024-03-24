@@ -149,7 +149,7 @@ const MobileTakeAction = (props) => {
                       type="active"/>
                   ))
                 ) : (
-                  <p>You dont have any active tasks</p>
+                  <p className={styles.AddPadding}>You dont have any active tasks</p>
                 )
               )
             ) : (
@@ -184,7 +184,7 @@ const MobileTakeAction = (props) => {
                     type="today"/>
                 ))
               ) : (
-                <p>You dont have any tasks set for today</p>
+                <p className={styles.AddPadding}>You dont have any tasks set for today</p>
               )
             ) : (
               <div className={styles.SpinnerContainer}>
@@ -203,7 +203,7 @@ const MobileTakeAction = (props) => {
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="2">
-          <Card.Body>
+          <Card.Body className={styles.AccordionBody}>
             {hasLoaded ? (
               achievedList?.length>0 ? (
                 achievedList.map( task => (
@@ -215,7 +215,7 @@ const MobileTakeAction = (props) => {
                     type="achieved"/>
                 ))
               ) : (
-                <p>You dont have any tasks checked off as done</p>
+                <p className={styles.AddPadding}>You dont have any tasks checked off as done</p>
               )
             ) : (
               <div className={styles.SpinnerContainer}>
