@@ -20,52 +20,6 @@
 
 ## Code Validation
 
-### HTML Validation
-
-The [Nu Html Checker](https://validator.w3.org/nu/) was used to validate all html code with the results shown below. The index.html file was copied directly into the validator and returned no errors.
-
-In order to test all other html code .... Screenshots have only been taken where the validator showed warnings or errors.
-
-Note the following files are part of every view and so haven't been mentioned directly in the table below:
-
-- App.js
-- SuccessToast.js
-- NavBar.js (this is rendered differently for logged in and logged out, but these have both been covered)
-- Footer.js
-
-| Route | Specific view | JSX files covered | Result | Extra notes |
-| --- | --- | --- | --- | --- |
-| "/" | Home page for logged out user | Home.js | | |
-| | Home page for logged in user | Home.js | | |
-| "/about" | About page | About.js | | |
-| "/signup" | Sign up page | Signup.js | | |
-| "/signin" | Sign in page | Signup.js | | |
-| "/plan" | Plan page - mobile | Plan.js, PlanDetails.js, FocusHighlightMobile.js and GoalHighlights.js | | |
-| | Plan page - desktop | Plan.js, PlanDetails.js, FocusHighlightDesktop.js and GoalHighlights.js | | |
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | Miscellaneous.js, TaskList.js, TaskIndividual.js, TaskView.js and TaskCreate.js | | |
-| | Miscellaneous page with a task in edit mode | Miscellaneous.js, TaskList.js, TaskIndividual.js, TaskEdit.js and TaskCreate.js | | |
-| | Miscellaneous page with a task in delete mode| Miscellaneous.js, TaskList.js, TaskIndividual.js, TaskDelete.js and TaskCreate.js | | |
-| "/focus/create" | Create new focus page | FocusCreate.js | | |
-| "/focus/:id" | Focus page in mobile with everything set to view | Focus.js, MobileFocus.js, FocusArea.js, FocusView.js, GoalSectionMobile.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in mobile with focus set to edit | Focus.js, MobileFocus.js, FocusArea.js, FocusEdit.js, GoalSectionMobile.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in mobile with focus set to delete | Focus.js, MobileFocus.js, FocusArea.js, FocusDelete.js, GoalSectionMobile.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in mobile with a goal set to edit | Focus.js, MobileFocus.js, FocusArea.js, FocusView.js, GoalSectionMobile.js, GoalEdit.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in mobile with a goal set to delete | Focus.js, MobileFocus.js, FocusArea.js, FocusView.js, GoalSectionMobile.js, GoalDelete.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in mobile with a task set to edit | Focus.js, MobileFocus.js, FocusArea.js, FocusView.js, GoalSectionMobile.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js, TaskEdit.js and TaskView.js | | |
-| | Focus page in mobile with a task set to delete | Focus.js, MobileFocus.js, FocusArea.js, FocusView.js, GoalSectionMobile.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js, TaskDelete.js and TaskView.js | | |
-| | Focus page in desktop with everything set to view | Focus.js, DesktopFocus.js, FocusArea.js, FocusView.js, GoalSection.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in desktop with focus set to edit | Focus.js, DesktopFocus.js, FocusArea.js, FocusEdit.js, GoalSection.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in desktop with focus set to delete | Focus.js, DesktopFocus.js, FocusArea.js, FocusDelete.js, GoalSection.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in desktop with a goal set to edit | Focus.js, DesktopFocus.js, FocusArea.js, FocusView.js, GoalSection.js, GoalEdit.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in desktop with a goal set to delete | Focus.js, DesktopFocus.js, FocusArea.js, FocusView.js, GoalSection.js, GoalDelete.js, TaskList.js, TaskIndividual.js, TaskCreate.js and TaskView.js | | |
-| | Focus page in desktop with a task set to edit | Focus.js, DesktopFocus.js, FocusArea.js, FocusView.js, GoalSection.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js, TaskEdit.js and TaskView.js | | |
-| | Focus page in desktop with a task set to delete | Focus.js, DesktopFocus.js, FocusArea.js, FocusView.js, GoalSection.js, GoalView.js, TaskList.js, TaskIndividual.js, TaskCreate.js, TaskDelete.js and TaskView.js | | |
-| "/takeaction" | TakeAction page in mobile| TakeActin.js, MobileTakeAction.js, ActionTask.js | | |
-| | TakeAction page in desktop | TakeActin.js, DesktopTakeAction.js, ActionTask.js| | |
-| unknown route | Page not found page | NotFound.js | | |
-
-[Return to contents list](#contents)
-
 ### CSS Validation
 
 All css files have been passed through the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
