@@ -37,8 +37,8 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | FocusView.module.css | PASS | |
 | Footer.module.css | | |
 | Form.module.css | PASS | |
-| Goal.module.css | | |
-| GoalCreate.module.css | | |
+| Goal.module.css | PASS | |
+| GoalCreate.module.css | PASS | |
 | Miscellaneous.module.css | PASS | |
 | NavBar.module.css | PASS | |
 | Page.module.css | PASS | |
@@ -147,18 +147,29 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 20 | As an authenticated user, I can create goals that are linked to a focus area, so that I can set myself progression targets that are specific, measurable, achievable, reachable and time-bound, defining the value to be gained in achieving the goal. | | |
-| | | | |
-| 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | | |
-
-| 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | | |
+| 20 | As an authenticated user, I can create goals that are linked to a focus area, so that I can set myself progression targets that are specific, measurable, achievable, reachable and time-bound, defining the value to be gained in achieving the goal. | When viewing a focus I can click an "Add Goal" button at the bottom of the goal list. | |
+| | | Clicking the button brings up a form to create a new task. | |
+| | | At any point I can cancel, hiding the form. | |
+| | | Submitting the form creates a new goal, with the goal appearing in its view state, as well as being added to the goal list. | |
+| | | I am informed of any errors in my input fields when submitting. | |
+| 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | When viewing a goal I can click on a button to edit. | |
+| | | Clicking edit brings up the goal in a form. | |
+| | | I can edit each of the details. | |
+| | | Clicking to save updates my goal details and returns me to the goal view. | |
+| | | I can click cancel at any point to return to the goal view without saving. | |
+| | | I am informed of any errors in my inputs. | |
+| 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | When viewing a goal there is a button to delete. | |
+| | | On clicking to delete I am presented with a confirmation message. | |
+| | | I can then confirm or cancel the delete request. | |
+| | | On cancel I am returned to the goal view. | |
+| | | On delete, the goal is deleted and I am returned to the main focus view with no goal selected. | |
 
 ### EPIC - Tasks
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 24 | As an authenticated user, I can create tasks linked directly to a focus area, so that I can set out day to day tasks associated with that area. | | |
-
+| | | | |
 | 25 | As an authenticated user, I can create tasks linked to a goal, so that I can set out the steps I will need to take to achieve my goal. | | |
 
 | 26 | As an authenticated user, I can create unlinked tasks, so that I can include any tasks not directly linked to a set focus area or goal. | | |
@@ -301,6 +312,18 @@ Wave testing screenshots are displayed below:
 
 Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
 
+Form label errors:
+TaskCreate and GoalCreate forms within the focus page return missing form labels when wave is run. See [bugs](https://github.com/GeorginaCarlisle/take-control-frontend-app/blob/main/README.md#bugs-and-fixes) for how these errors were tackled. The images below show the errors and also show the generated html that clearly show that input and label are correctly linked. It is also to be noted that no form errors are picked up by lighthouse and so I believe the errors may be inherent to wave and not my code.
+
+![Screenshot showing the wave errors](documentation/testing/wave-errors/wave-form-errors.jpg)
+![Screenshot showing the task name input and label html](documentation/testing/wave-errors/name-field-task.jpg)
+![Screenshot showing the task deadline input and label html](documentation/testing/wave-errors/deadline-field-task.png)
+![Screenshot showing the goal title input and label html](documentation/testing/wave-errors/title-field-goal.png)
+![Screenshot showing the goal description input and label html](documentation/testing/wave-errors/description-field-goal.png)
+![Screenshot showing the goal criteria input and label html](documentation/testing/wave-errors/criteria-field-goal.png)
+![Screenshot showing the goal value input and label html](documentation/testing/wave-errors/value-field-goal.png)
+![Screenshot showing the goal achieved by input and label html](documentation/testing/wave-errors/achieved-by-field-goal.png)
+
 ### Text contrast levels
 
 #### Header
@@ -362,34 +385,24 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | | | | | |
 | "/focus/create" | Create new focus page | Desktop | 99 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
-| "/focus/:id" | Focus page in mobile with everything set to view | | | | | | |
-| | | Mobile | | | | | |
+| "/focus/:id" | Focus page in mobile on first creating focus | | | | | | |
+| | Focus page in mobile with goals and tasks and everything set to view | | | | | | |
 | | Focus page in mobile with focus set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in mobile with focus set to delete | | | | | | |
-| | | Mobile | | | | | |
+| | Focus page in mobile with a goal set to create | | | | | | |
 | | Focus page in mobile with a goal set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in mobile with a goal set to delete | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in mobile with a task set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in mobile with a task set to delete | | | | | | |
-| | | Mobile | | | | | |
-| | Focus page in desktop with everything set to view | | | | | | |
-| | | Mobile | | | | | |
+| | Focus page in desktop with everything on first creating focus | | | | | | |
+| | Focus page in desktop with goals and tasks and everything set to view | | | | | | |
 | | Focus page in desktop with focus set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in desktop with focus set to delete | | | | | | |
-| | | Mobile | | | | | |
+| | Focus page in desktop with a goal set to create | | | | | | |
 | | Focus page in desktop with a goal set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in desktop with a goal set to delete | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in desktop with a task set to edit | | | | | | |
-| | | Mobile | | | | | |
 | | Focus page in desktop with a task set to delete | | | | | | |
-| | | Mobile | | | | | |
 | "/takeaction" | TakeAction page in mobile | | | | | | |
 | | | Mobile | | | | | |
 | | TakeAction page in desktop | | | | | | |
