@@ -27,19 +27,19 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | CSS file | Result | Extra notes |
 | --- | --- | --- |
 | About.module.css | | |
-| Accordion.module.css | | |
+| Accordion.module.css | PASS | |
 | ActionTask.module.css | | |
 | Button.module.css | PASS | |
-| Cards.module.css | | |
-| FocusCreate.module.css | | |
-| FocusDesktop.module.css | | |
-| FocusMobile.module.css | | |
-| FocusView.module.css | | |
+| Cards.module.css | PASS | |
+| FocusCreate.module.css | PASS | |
+| FocusDesktop.module.css | PASS | |
+| FocusMobile.module.css | PASS | |
+| FocusView.module.css | PASS | |
 | Footer.module.css | | |
 | Form.module.css | PASS | |
 | Goal.module.css | | |
 | GoalCreate.module.css | | |
-| Miscellaneous.module.css | | |
+| Miscellaneous.module.css | PASS | |
 | NavBar.module.css | PASS | |
 | Page.module.css | PASS | |
 | TakeAction.module.css | | |
@@ -125,18 +125,30 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 17 | As an authenticated user, I can create focus areas, so that I can set out the different areas in my life that I want to use this app to support with and why each area is important to me. | | |
-| | | | |
-| 18 | As an authenticated user, I can edit a focus area, so that I can make changes should I wish. | | |
-
-| 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | | |
+| 17 | As an authenticated user, I can create focus areas, so that I can set out the different areas in my life that I want to use this app to support with and why each area is important to me. | Clicking the button to add new focus, within the plan page, takes me to the create focus form. | PASS |
+| | | Title confirms I am in the correct place to create a new focus. | PASS |
+| | | Form has clear labels to aid completion. | PASS |
+| | | Errors in form input fields are clearly displayed back to me. | PASS |
+| | | Successful completion creates a new focus and takes me to a page where I can add goals and tasks to my focus. | PASS |
+| | | At any point I can cancel and return to the plan page. | |
+| 18 | As an authenticated user, I can edit a focus area, so that I can make changes should I wish. | When viewing a focus I can click on an edit button. | |
+| | | I can view my current focus details in a form. | |
+| | | I can edit each of the details. | |
+| | | Clicking to save updates my focus details and returns me to the focus view. | |
+| | | I can click cancel at any point to return to the focus view without saving. | |
+| | | I am informed of any errors in my inputs. | |
+| 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | When viewing a focus area there is a button to delete. | |
+| | | On clicking to delete I am presented with a confirmation message. | |
+| | | I can then confirm or cancel the delete request. | |
+| | | On cancel I am returned to the focus view. | |
+| | | On delete, the focus area is deleted and I am returned to the main plan. | |
 
 ### EPIC - Goals
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 20 | As an authenticated user, I can create goals that are linked to a focus area, so that I can set myself progression targets that are specific, measurable, achievable, reachable and time-bound, defining the value to be gained in achieving the goal. | | |
-
+| | | | |
 | 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | | |
 
 | 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | | |
@@ -159,11 +171,24 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 30 | As an authenticated user, I can view all my focus areas and their nested goals together on one page, so that I can see and manage the bigger picture of everything I have going on. | | |
-
-| 31 | As an authenticated user, I can view all the goals and tasks within a given focus area together, helping me to plan how I wish to move forwards in this area and everything that is need to achieve that progression. | | |
-
-| 32 | As an authenticated user, I can view all my miscellaneous tasks together in one place, so that I can plan tasks that don't link to any of my focus areas. | | |
+| 30 | As an authenticated user, I can view all my focus areas and their nested goals together on one page, so that I can see and manage the bigger picture of everything I have going on. | Title lets me know where I am | |
+| | | Clear buttons to take me to "Add focus" and "Rank focus areas" | |
+| | | All my focus areas and my miscellaneous area are clearly visible | |
+| | | On mobile an accordion makes it possible to see all the focus areas at once, with the option to expand and see more details.| |
+| | | Each focus area is displayed with name, why, image and any nested goals. | |
+| | | Each nested goal is displayed with name, description, value, deadline and active status. | |
+| | | On mobile name and image are always displayed, with further info in expanded view. | |
+| | | Each focus area contains a "Go" button to take me to the view for that focus. | |
+| 31 | As an authenticated user, I can view all the goals and tasks within a given focus area together, helping me to plan how I wish to move forwards in this area and everything that is need to achieve that progression. | Clear title lets me know where I am. | |
+| | | Clicking on the X in the top right takes me back to the main plan page. | |
+| | | Information about the Focus is clearly displayed at the top, with options to edit and delete. | |
+| | | All goals and day to day tasks linked to the focus are shown with options to add, edit and delete. | |
+| | | On desktop, the goal titles are listed with space to expand one of the goals, showing all information and nested tasks. | |
+| | | On mobile, day-to-day tasks, goals and their nested tasks are displayed in an accordion. | |
+| | | Borders, white spacing and titles clearly separate out the information. | |
+| 32 | As an authenticated user, I can view all my miscellaneous tasks together in one place, so that I can plan tasks that don't link to any of my focus areas. | A miscellaneous area is always visible in the main plan with the miscellaneous image, title an explanation of this sections purpose. | |
+| | | I can click to go into the miscellaneous area where I can see a list of all miscellaneous tasks. | |
+| | | An x in the top right can be clicked to take me back to the main plan page. | |
 
 ### EPIC - Informed User
 
@@ -239,6 +264,8 @@ Chrome's extension [wave](https://wave.webaim.org/) was used to test accessibili
 
 - [Lighthouse](#lighthouse) click to see testing.
 
+### Wave testing
+
 Wave testing screenshots are displayed below:
 
 | Route | Specific view | Result | Extra notes |
@@ -253,7 +280,7 @@ Wave testing screenshots are displayed below:
 | "/miscellaneous" | Miscellaneous page with all tasks in view mode | | |
 | | Miscellaneous page with a task in edit mode | | |
 | | Miscellaneous page with a task in delete mode | | |
-| "/focus/create" | Create new focus page | | |
+| "/focus/create" | Create new focus page | No errors | |
 | "/focus/:id" | Focus page in mobile with everything set to view | | |
 | | Focus page in mobile with focus set to edit | | |
 | | Focus page in mobile with focus set to delete | | |
@@ -272,7 +299,7 @@ Wave testing screenshots are displayed below:
 | | TakeAction page in desktop | | |
 | unknown route | Page not found page | | |
 
-Note: All pages show an alert linked to ...
+Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
 
 ### Text contrast levels
 
@@ -333,8 +360,8 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | | | | | |
 | | Miscellaneous page with a task in delete mode | | | | | | |
 | | | Mobile | | | | | |
-| "/focus/create" | Create new focus page | | | | | | |
-| | | Mobile | | | | | |
+| "/focus/create" | Create new focus page | Desktop | 99 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/focus/:id" | Focus page in mobile with everything set to view | | | | | | |
 | | | Mobile | | | | | |
 | | Focus page in mobile with focus set to edit | | | | | | |

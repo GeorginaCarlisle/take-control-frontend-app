@@ -112,6 +112,18 @@ JSON web tokens are used in the authentication process, with logic in place to e
 
 ![Screenshot showing a successful sign out"](/documentation/features/sign-out-success.png)
 
+#### Focus Areas
+
+Authenticated users can create focus areas, so that they can define the areas of their life they wish to focus on. These focus will then contain goals and tasks, and provide a way to organise and easily identify the underlying purpose behind a task.
+
+A button to create a new focus is clearly visible at the top of the plan page. This takes users to a form where they can create a focus area giving it an image and defining the reason why this area is important to them. The image and why are optional, and if no image is added the shown default image is used. Should any fields be incorrectly completed, error messages are clearly displayed to the user. Successful completion directs the user into the view area for this focus, where the user can start to add goals and tasks.
+
+![Screenshot showing the create new focus area button"](/documentation/features/new-focus-button.png)
+![Screenshot showing the focus create form on mobile"](/documentation/features/focus-create-mobile.png)
+![Screenshot showing the focus create form on laptop"](/documentation/features/focus-create-laptop.png)
+![Screenshot showing error handling on the focus create form"](/documentation/features/focus-create-errors.png)
+![Screenshot showing redirection on successful focus creation"](/documentation/features/focus-create-success.png)
+
 ### Future Features
 
 [Return to contents list](#contents)
@@ -751,6 +763,14 @@ The following specific code was copied from the "Moments" walkthrough:
 [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue?preview.text=Take%20Control&classification=Display&stroke=Sans+Serif) by Ryoichi Tsunekawa
 
 [Lato](https://fonts.google.com/specimen/Lato?query=Lato) by Lukasz Dziedzic
+
+### Images
+
+Image of a person writing in a notebook by [Ylanite Koppens](https://www.pexels.com/photo/person-holding-silver-retractable-pen-in-white-ruled-book-796603/) - has been used as the image associated with all miscellaneous tasks.
+
+Image looking through a camera lens by [Marek](https://www.pexels.com/photo/person-holding-black-camera-lens-339379/) - has been used as the default focus image.
+
+Image of woman standing in the sunlight by [Andrea Piacquadio](https://www.pexels.com/photo/woman-in-yellow-long-sleeve-standing-under-the-sunlight-3779756/) - has been used as an example focus image.
 
 [Return to contents list](#contents)
 
