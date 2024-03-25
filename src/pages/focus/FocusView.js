@@ -22,7 +22,7 @@ const FocusView = (props) => {
     <div className={styles.ViewContainer}>
       <img className={styles.Image} src={image} alt='focus'/>
       <div className={styles.Details}>
-        <h3 className={styles.Title}>{name}</h3>
+        <h2 className={styles.Title}>{name}</h2>
         <p>{why}</p>
         <div className={styles.IconContainer}>
           <button className={btnStyles.Icon} aria-label="Click to edit focus" onClick={handleEdit}>
