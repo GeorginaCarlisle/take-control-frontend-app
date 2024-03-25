@@ -69,7 +69,7 @@ const MobileFocus = ({ id }) => {
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body className={styles.BodyContainer}>
-              <TaskList focus_id={focus_id} type="day to day"/>
+              <TaskList focus_id={focus_id} type="daytoday"/>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

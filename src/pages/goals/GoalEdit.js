@@ -109,7 +109,7 @@ const GoalEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="newTitle" className={styles.Group}>
+          <Form.Group controlId="new-goal-title" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Goal:</Form.Label>
             <Form.Control
               type="text"
@@ -126,7 +126,7 @@ const GoalEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="newDescription" className={styles.Group}>
+          <Form.Group controlId="new-goal-description" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Description:</Form.Label>
             <Form.Control
               type="text"
@@ -143,7 +143,7 @@ const GoalEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="newValue" className={styles.Group}>
+          <Form.Group controlId="new-goal-value" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Value:</Form.Label>
             <Form.Control
               type="text"
@@ -160,7 +160,7 @@ const GoalEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="newCriteria" className={styles.Group}>
+          <Form.Group controlId="new-goal-criteria" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Criteria:</Form.Label>
             <Form.Control
               type="text"
@@ -177,17 +177,17 @@ const GoalEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <div className={styles.Group}>
-            <label htmlFor="newDeadline">Achieve by:</label>
-            <input
+          <Form.Group controlId="new-goal-deadline" className={styles.Group}>
+            <Form.Label className={styles.FormLabel}>Achieve by:</Form.Label>
+            <Form.Control
               type="date"
-              id="newDeadline"
               name="newDeadline"
               value={newDeadline}
               onChange={handleChange}
               className={styles.DateInput}
             />
-          </div>
+          </Form.Group>
+
           {errors.non_field_errors?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
               {message}

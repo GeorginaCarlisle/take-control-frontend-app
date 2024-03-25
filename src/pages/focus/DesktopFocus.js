@@ -37,7 +37,7 @@ const DesktopFocus = ({ id }) => {
             <h3>Day to day tasks</h3>
             <p>(Those jobs that just need doing)</p>
           </div>
-          <TaskList focus_id={focus_id} type="day to day"/>
+          <TaskList focus_id={focus_id} type="daytoday"/>
         </div>
       </div>
     </div>

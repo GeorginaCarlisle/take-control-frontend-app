@@ -106,7 +106,7 @@ const TaskCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="name" className={styles.Group}>
+          <Form.Group controlId={`name-${type}`} className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Task:</Form.Label>
             <Form.Control
               type="text"
@@ -124,11 +124,10 @@ const TaskCreate = (props) => {
             </Alert>
           ))}
 
-          <Form.Group controlId="deadline" className={styles.Group}>
+          <Form.Group controlId={`deadline-${type}`} className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Deadline:</Form.Label>
             <Form.Control
               type="date"
-              id="deadline"
               name="deadline"
               value={deadline}
               onChange={handleChange}

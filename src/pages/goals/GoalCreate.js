@@ -119,7 +119,7 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="title" className={styles.Group}>
+          <Form.Group controlId="goal-title" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Goal:</Form.Label>
             <Form.Control
               type="text"
@@ -136,7 +136,7 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="description" className={styles.Group}>
+          <Form.Group controlId="goal-description" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Description:</Form.Label>
             <Form.Control
               type="text"
@@ -153,7 +153,7 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="value" className={styles.Group}>
+          <Form.Group controlId="goal-value" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Value:</Form.Label>
             <Form.Control
               type="text"
@@ -170,7 +170,7 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="criteria" className={styles.Group}>
+          <Form.Group controlId="goal-criteria" className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Criteria:</Form.Label>
             <Form.Control
               type="text"
@@ -187,12 +187,11 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          
-          <Form.Group controlId="deadline" className={styles.Group}>
-            <Form.Label className={styles.FormLabel}>Deadline:</Form.Label>
+
+          <Form.Group controlId="goal-achieve-by" className={styles.Group}>
+            <Form.Label className={styles.FormLabel}>Achieve by:</Form.Label>
             <Form.Control
               type="date"
-              id="deadline"
               name="deadline"
               value={deadline}
               onChange={handleChange}

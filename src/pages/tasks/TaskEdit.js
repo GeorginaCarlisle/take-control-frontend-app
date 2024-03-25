@@ -16,6 +16,7 @@ const TaskEdit = (props) => {
     tasks,
     setTasks,
     setTaskState,
+    type
   } = props;
 
   const setShowGlobalSuccess = useSetShowGlobalSuccess();
@@ -23,6 +24,7 @@ const TaskEdit = (props) => {
 
   const convertedDate = () => {
     if (deadline !== null){
+      console.log("converting deadline");
       return new Date(deadline).toISOString().split('T')[0];
     } else {
       return '';
@@ -35,14 +37,17 @@ const TaskEdit = (props) => {
     newName: name,
     newFocus: focus,
     newGoal: goal,
-    newDeadline: convertedDate,
+    newDeadline: convertedDate(),
   })
+
   const {
     newName,
     newFocus,
     newGoal,
     newDeadline,
   } = taskData;
+
+  console.log(newDeadline)
 
   const [errors, setErrors] = useState({});
 
@@ -103,7 +108,7 @@ const TaskEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Form.Group controlId="newName" className={styles.Group}>
+          <Form.Group controlId={`new-name-${type}`} className={styles.Group}>
             <Form.Label className={styles.FormLabel}>Task:</Form.Label>
             <Form.Control
               type="text"
@@ -120,17 +125,18 @@ const TaskEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <div className={styles.Group}>
-            <label htmlFor="newDeadline" className={styles.FormLabel}>Deadline:</label>
-            <input
+
+          <Form.Group controlId={`new-deadline-${type}`} className={styles.Group}>
+            <Form.Label className={styles.FormLabel}>Deadline:</Form.Label>
+            <Form.Control
               type="date"
-              id="newDeadline"
               name="newDeadline"
               value={newDeadline}
               onChange={handleChange}
               className={styles.DateInput}
             />
-          </div>
+          </Form.Group>
+
         </div>
         {errors.non_field_errors?.map((message, idx) => (
           <Alert key={idx} className={formStyles.ErrorAlert}>

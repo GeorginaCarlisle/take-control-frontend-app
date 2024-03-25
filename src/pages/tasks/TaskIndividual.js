@@ -9,7 +9,8 @@ const TaskIndividual = (props) => {
     focus_id,
     goal_id,
     tasks,
-    setTasks
+    setTasks,
+    type
   } = props;
 
   const [taskState, setTaskState] = useState("view");
@@ -18,7 +19,7 @@ const TaskIndividual = (props) => {
     if (taskState==='view') {
       return <TaskView key={task.id} {...task} setTaskState={setTaskState}/>
     } else if (taskState==='edit') {
-      return <TaskEdit {...task} setTaskState={setTaskState} tasks={tasks} setTasks={setTasks} focus_id={focus_id} goal_id={goal_id}/>
+      return <TaskEdit {...task} type={type} setTaskState={setTaskState} tasks={tasks} setTasks={setTasks} focus_id={focus_id} goal_id={goal_id}/>
     } else if (taskState==='delete') {
       return <TaskDelete {...task} tasks={tasks} setTasks={setTasks} setTaskState={setTaskState}/>
     }

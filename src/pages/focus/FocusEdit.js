@@ -81,7 +81,7 @@ const FocusEdit = (props) => {
     <Form onSubmit={handleSubmit}>
       <div className={styles.FocusForm}>
 
-        <Form.Group className={styles.ImageGroup}>
+        <Form.Group controlId="focus-new-image" className={styles.ImageGroup}>
           {errors.image?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
               {message}
@@ -108,7 +108,7 @@ const FocusEdit = (props) => {
                   </Alert>
                 ))}
               </div>
-              <Form.Group controlId="newName" className={styles.Group}>
+              <Form.Group controlId="focus-new-name" className={styles.Group}>
                 <Form.Label className={styles.FormLabel}>Focus:</Form.Label>
                 <Form.Control
                   type="text"
@@ -129,7 +129,7 @@ const FocusEdit = (props) => {
                   </Alert>
                 ))}
               </div>
-              <Form.Group controlId="newWhy" className={styles.Group}>
+              <Form.Group controlId="focus-new-why" className={styles.Group}>
                 <Form.Label className={styles.FormLabel}>Why:</Form.Label>
                 <Form.Control
                   type="text"
