@@ -187,9 +187,10 @@ const GoalCreate = (props) => {
               {message}
             </Alert>
           ))}
-          <div className={styles.Group}>
-            <label htmlFor="deadline">Achieve by:</label>
-            <input
+          
+          <Form.Group controlId="deadline" className={styles.Group}>
+            <Form.Label className={styles.FormLabel}>Deadline:</Form.Label>
+            <Form.Control
               type="date"
               id="deadline"
               name="deadline"
@@ -197,7 +198,7 @@ const GoalCreate = (props) => {
               onChange={handleChange}
               className={styles.DateInput}
             />
-          </div>
+          </Form.Group>
 
           {errors.non_field_errors?.map((message, idx) => (
             <Alert key={idx} className={formStyles.ErrorAlert}>
