@@ -24,8 +24,8 @@ const TaskEdit = (props) => {
 
   const convertedDate = () => {
     if (deadline !== null){
-      console.log("converting deadline");
-      return new Date(deadline).toISOString().split('T')[0];
+      const dateWithTime = new Date(deadline).toISOString()
+      return dateWithTime.split('T')[0];
     } else {
       return '';
     } 
@@ -46,8 +46,6 @@ const TaskEdit = (props) => {
     newGoal,
     newDeadline,
   } = taskData;
-
-  console.log(newDeadline)
 
   const [errors, setErrors] = useState({});
 
@@ -74,7 +72,7 @@ const TaskEdit = (props) => {
     }
     if (newDeadline) {
       const parts = newDeadline.split('-');
-      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      const date = new Date(parts[0], parts[1] - 1, parts[2], 12);
       const djangoDate = date.toISOString();
       formData.append('deadline', djangoDate);
     }

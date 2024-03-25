@@ -40,7 +40,7 @@ const GoalEdit = (props) => {
     newDescription: description,
     newValue: value,
     newCriteria: criteria,
-    newDeadline: convertedDate,
+    newDeadline: convertedDate(),
   });
 
   const [errors, setErrors] = useState({});
@@ -74,7 +74,7 @@ const GoalEdit = (props) => {
     formData.append('focus', focus)
     if (newDeadline) {
       const parts = newDeadline.split('-');
-      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      const date = new Date(parts[0], parts[1] - 1, parts[2], 12);
       const djangoDate = date.toISOString();
       formData.append('deadline', djangoDate)
     }

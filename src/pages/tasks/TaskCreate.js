@@ -49,7 +49,7 @@ const TaskCreate = (props) => {
     }
     if (deadline) {
       const parts = deadline.split('-');
-      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      const date = new Date(parts[0], parts[1] - 1, parts[2], 12);
       const djangoDate = date.toISOString();
       formData.append('deadline', djangoDate);
     }
