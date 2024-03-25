@@ -11,6 +11,7 @@ import GoalDelete from './GoalDelete';
 
 const GoalIndividual = (props) => {
   const {
+    focus_id,
     goal,
     goals,
     setGoals
@@ -66,7 +67,7 @@ const GoalIndividual = (props) => {
           <GoalContext />
           <div className={styles.NestedTasks}>
             <h3>Tasks for your goal</h3>
-            <TaskList goal_id={goal.id} type="goal"/>
+            <TaskList goal_id={goal.id} focus_id={focus_id} type="goal"/>
           </div>
         </Card.Body>
       </Accordion.Collapse>

@@ -69,7 +69,7 @@ const GoalSectionMobile = (props) => {
       {hasLoaded ? (
         goals.results.length>0 && (
           goals.results.map( goal => (
-            <GoalIndividual key={goal.id} goal={goal} goals={goals} setGoals={setGoals}/>
+            <GoalIndividual key={goal.id} focus_id={focus_id} goal={goal} goals={goals} setGoals={setGoals}/>
           ))
         )
       ) : (
