@@ -124,7 +124,32 @@ A button to create a new focus is clearly visible at the top of the plan page. T
 ![Screenshot showing error handling on the focus create form"](/documentation/features/focus-create-errors.png)
 ![Screenshot showing redirection on successful focus creation"](/documentation/features/focus-create-success.png)
 
+#### Goals
+
+Within their focus areas authenticated users can create goals, giving themselves direction and something to aim for as they move forwards. All that is needed to create a goal is a goal name. However, there are a numer of optional input fields that can be used to make goals specific, measurable, achievable, reachable and time-bound as well as a field to  define the value to be gained in achieving the goal.
+
+On mobiles there is a section within each focus areas' accordion for creating a new goal. Clicking on the tab will open up the form. On larger screens a button to create a new goal is clearly visible at the bottom of the goal list within each focus area. Clicking this will open up a form within the central space.
+
+Should any fields be incorrectly completed, error messages are clearly displayed to the user. Successful completion on mobile clears the form, a success message is displayed and a extra tab containing the new goal is added to the accordion. Successful completion on larger screens changes the central space to show the new goal, a success message is displayed and a tab containing the goal's name is added to the goal list.
+
+![Screenshot showing the create new goal on mobile](/documentation/features/goal-create-mobile.png)
+![Screenshot showing the create new goal form on laptop](/documentation/features/goal-create-laptop.png)
+![Screenshot showing the successful creation of a goal on mobile](/documentation/features/goal-create-success%20mobile.png)
+![Screenshot showing the successful creation of a goal on laptop](/documentation/features/goal-create-success.png)
+
 ### Future Features
+
+#### Nested goals
+
+The api used by this application already has functionality built in that allows users to choose to nest children goals inside a parent goal. This allows large goals to be broken up into smaller more easily achieveable chunks. In future this functionality will be brought into the frontend application. 
+
+See user story 21 - Nested goals within the [scope plane of design](#the-scope-plane) and the wireframes for the focus page within the [skeleton plane of design](#the-skeleton-plane).
+
+#### Activate and pause goals
+
+In future there will also be the option to pause and then re-activate goals. This active status will be passed on to tasks nested within the goal, with only active tasks being displayed within 'Take Action'. This will provide a way of narrowing focus when needed and controlling which tasks are displayed in the backlog ready to be completed.
+
+See user story 39 - Activate and pause goals within the [scope plane of design](#the-scope-plane).
 
 [Return to contents list](#contents)
 

@@ -147,11 +147,11 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 20 | As an authenticated user, I can create goals that are linked to a focus area, so that I can set myself progression targets that are specific, measurable, achievable, reachable and time-bound, defining the value to be gained in achieving the goal. | When viewing a focus I can click an "Add Goal" button at the bottom of the goal list. | |
-| | | Clicking the button brings up a form to create a new task. | |
-| | | At any point I can cancel, hiding the form. | |
-| | | Submitting the form creates a new goal, with the goal appearing in its view state, as well as being added to the goal list. | |
-| | | I am informed of any errors in my input fields when submitting. | |
+| 20 | As an authenticated user, I can create goals that are linked to a focus area, so that I can set myself progression targets that are specific, measurable, achievable, reachable and time-bound, defining the value to be gained in achieving the goal. | When viewing a focus I can click an "Add Goal" button at the bottom of the goal list. | PASS |
+| | | Clicking the button brings up a form to create a new task. | PASS |
+| | | At any point I can cancel, hiding the form. | PASS |
+| | | Submitting the form creates a new goal, with the goal appearing in its view state, as well as being added to the goal list. | PASS |
+| | | I am informed of any errors in my input fields when submitting. | PASS |
 | 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | When viewing a goal I can click on a button to edit. | |
 | | | Clicking edit brings up the goal in a form. | |
 | | | I can edit each of the details. | |
@@ -292,20 +292,14 @@ Wave testing screenshots are displayed below:
 | | Miscellaneous page with a task in edit mode | | |
 | | Miscellaneous page with a task in delete mode | | |
 | "/focus/create" | Create new focus page | No errors | |
-| "/focus/:id" | Focus page in mobile with everything set to view | | |
-| | Focus page in mobile with focus set to edit | | |
-| | Focus page in mobile with focus set to delete | | |
-| | Focus page in mobile with a goal set to edit | | |
-| | Focus page in mobile with a goal set to delete | | |
-| | Focus page in mobile with a task set to edit | | |
-| | Focus page in mobile with a task set to delete | | |
-| | Focus page in desktop with everything set to view | | |
-| | Focus page in desktop with focus set to edit | | |
-| | Focus page in desktop with focus set to delete | | |
-| | Focus page in desktop with a goal set to edit | | |
-| | Focus page in desktop with a goal set to delete | | |
-| | Focus page in desktop with a task set to edit | | |
-| | Focus page in desktop with a task set to delete | | |
+| "/focus/:id" | Focus page with everything set to view | | |
+| | Focus page with focus set to edit | | |
+| | Focus page with focus set to delete | | |
+| | Focus page with a goal set to create | Form label errors | See below for further details |
+| | Focus page with a goal set to edit | | |
+| | Focus page with a goal set to delete | | |
+| | Focus page with a task set to edit | | |
+| | Focus page with a task set to delete | | |
 | "/takeaction" | TakeAction page in mobile | | |
 | | TakeAction page in desktop | | |
 | unknown route | Page not found page | | |
@@ -347,13 +341,19 @@ Contrast levels for page titles:
 Contrast levels for normal text in page containers:
 ![Screen shot showing a contrast of 19.26:1](documentation/testing/colour-contrast/page-container-normal-text.png)
 
-#### Buttons
+#### Buttons and icons
 
 Contrast levels for buttons:
 ![Screen shot showing a contrast of 7.54:1](documentation/testing/colour-contrast/button.png)
 
 Contrast levels for buttons on hover:
 ![Screen shot showing a contrast of 7.54:1](documentation/testing/colour-contrast/button-hover.png)
+
+Contrast levels for clickable icons:
+![Screen shot showing a contrast of 6.92:1](documentation/testing/colour-contrast/icon.png)
+
+Contrast levels for clickable icons on hover:
+![Screen shot showing a contrast of 10.82:1](documentation/testing/colour-contrast/icon-hover.png)
 
 [Return to contents list](#contents)
 
@@ -385,30 +385,16 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | | | | | |
 | "/focus/create" | Create new focus page | Desktop | 99 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
-| "/focus/:id" | Focus page in mobile on first creating focus | | | | | | |
-| | Focus page in mobile with goals and tasks and everything set to view | | | | | | |
-| | Focus page in mobile with focus set to edit | | | | | | |
-| | Focus page in mobile with focus set to delete | | | | | | |
-| | Focus page in mobile with a goal set to create | | | | | | |
-| | Focus page in mobile with a goal set to edit | | | | | | |
-| | Focus page in mobile with a goal set to delete | | | | | | |
-| | Focus page in mobile with a task set to edit | | | | | | |
-| | Focus page in mobile with a task set to delete | | | | | | |
-| | Focus page in desktop with everything on first creating focus | | | | | | |
-| | Focus page in desktop with goals and tasks and everything set to view | | | | | | |
-| | Focus page in desktop with focus set to edit | | | | | | |
-| | Focus page in desktop with focus set to delete | | | | | | |
-| | Focus page in desktop with a goal set to create | | | | | | |
-| | Focus page in desktop with a goal set to edit | | | | | | |
-| | Focus page in desktop with a goal set to delete | | | | | | |
-| | Focus page in desktop with a task set to edit | | | | | | |
-| | Focus page in desktop with a task set to delete | | | | | | |
+| "/focus/:id" | Desktop | Focus page with everything set to view | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Mobile | | | | | |
 | "/takeaction" | TakeAction page in mobile | | | | | | |
 | | | Mobile | | | | | |
 | | TakeAction page in desktop | | | | | | |
 | | | Mobile | | | | | |
 | unknown route | Page not found page | | | | | | |
 | | | Mobile | | | | | |
+
+Note: Only the views as first generated via a url route can be tested through lighthouse.
 
 [Return to contents list](#contents)
 
