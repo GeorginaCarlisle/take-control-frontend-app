@@ -90,11 +90,11 @@ const FocusCreate = () => {
                 </Alert>
               ))}
               {image ? (
-                <Image src={image} className={styles.Image}/>
+                <Image src={image} className={styles.Image} alt="Chosen focus image"/>
               ) : (
                 <div className={styles.AddImage}>
                   <div className={styles.ImageContainer}>
-                    <Image src={defaultImage} className={styles.DefaultImage}/>
+                    <Image src={defaultImage} className={styles.DefaultImage} alt="Default focus image showing the view through a camera lens"/>
                   </div>
                   <p>Click below to add an image</p>
                 </div>
