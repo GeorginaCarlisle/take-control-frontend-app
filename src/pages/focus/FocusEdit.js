@@ -87,7 +87,7 @@ const FocusEdit = (props) => {
               {message}
             </Alert>
           ))}
-          <Image src={newImage} className={styles.EditImage}/>
+          <Image src={newImage} className={styles.EditImage} alt='focus'/>
           <Form.File
             id="image-upload"
             accept="image/*"
