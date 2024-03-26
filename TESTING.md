@@ -130,18 +130,18 @@ All completed user stories have been manually tested against their acceptance cr
 | | | Form has clear labels to aid completion. | PASS |
 | | | Errors in form input fields are clearly displayed back to me. | PASS |
 | | | Successful completion creates a new focus and takes me to a page where I can add goals and tasks to my focus. | PASS |
-| | | At any point I can cancel and return to the plan page. | |
-| 18 | As an authenticated user, I can edit a focus area, so that I can make changes should I wish. | When viewing a focus I can click on an edit button. | |
-| | | I can view my current focus details in a form. | |
-| | | I can edit each of the details. | |
-| | | Clicking to save updates my focus details and returns me to the focus view. | |
-| | | I can click cancel at any point to return to the focus view without saving. | |
-| | | I am informed of any errors in my inputs. | |
-| 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | When viewing a focus area there is a button to delete. | |
-| | | On clicking to delete I am presented with a confirmation message. | |
-| | | I can then confirm or cancel the delete request. | |
-| | | On cancel I am returned to the focus view. | |
-| | | On delete, the focus area is deleted and I am returned to the main plan. | |
+| | | At any point I can cancel and return to the plan page. | PASS |
+| 18 | As an authenticated user, I can edit a focus area, so that I can make changes should I wish. | When viewing a focus I can click on an edit button. | PASS |
+| | | I can view my current focus details in a form. | PASS |
+| | | I can edit each of the details. | PASS |
+| | | Clicking to save updates my focus details and returns me to the focus view. | PASS |
+| | | I can click cancel at any point to return to the focus view without saving. | PASS |
+| | | I am informed of any errors in my inputs. | PASS |
+| 19 | As an authenticated user, I can delete a focus area, so that I can remove information I no longer need or want. | When viewing a focus area there is a button to delete. | PASS |
+| | | On clicking to delete I am presented with a confirmation message. | PASS |
+| | | I can then confirm or cancel the delete request. | PASS |
+| | | On cancel I am returned to the focus view. | PASS |
+| | | On delete, the focus area is deleted and I am returned to the main plan. | PASS |
 
 ### EPIC - Goals
 
@@ -272,8 +272,8 @@ All completed user stories have been manually tested against their acceptance cr
 | --- | --- | --- | --- | --- |
 | Signup | PASS | PASS | PASS | PASS |
 | Signin | PASS | PASS | PASS | PASS |
-| FocusCreate | | | | |
-| FocusEdit | | | | |
+| FocusCreate | PASS | PASS | PASS | PASS |
+| FocusEdit | PASS | PASS | PASS | PASS |
 | GoalCreate | | | | |
 | GoalEdit | | | | |
 | TaskCreate | PASS | PASS | PASS | PASS |
@@ -307,10 +307,10 @@ Wave testing screenshots are displayed below:
 | | Miscellaneous page with a task in edit mode | | |
 | | Miscellaneous page with a task in delete mode | | |
 | "/focus/create" | Create new focus page | No errors | |
-| "/focus/:id" | Focus page with everything set to view | | |
-| | Focus page with focus set to edit | | |
-| | Focus page with focus set to delete | | |
-| | Focus page with a goal set to create | Form label errors | See below for further details |
+| "/focus/:id" | Focus page with everything set to view | Form label errors for new task forms - both daytoday and goal | See below for further details |
+| | Focus page with focus set to edit | No errors from focus area | |
+| | Focus page with focus set to delete | No errors from focus area | |
+| | Focus page with a goal set to create | Form label errors for goal create form | See below for further details |
 | | Focus page with a goal set to edit | | |
 | | Focus page with a goal set to delete | | |
 | | Focus page with a task set to edit | | |
@@ -355,6 +355,9 @@ Contrast levels for page titles:
 
 Contrast levels for normal text in page containers:
 ![Screen shot showing a contrast of 19.26:1](documentation/testing/colour-contrast/page-container-normal-text.png)
+
+Contrast levels for title text in page containers:
+![Screen shot showing a contrast of 10.82:1](documentation/testing/colour-contrast/page-container-title-text.png)
 
 #### Buttons and icons
 
@@ -401,7 +404,7 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | "/focus/create" | Create new focus page | Desktop | 99 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/focus/:id" | Desktop | Focus page with everything set to view | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
-| | | Mobile | | | | | |
+| | | Mobile | 66 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/takeaction" | TakeAction page in mobile | | | | | | |
 | | | Mobile | | | | | |
 | | TakeAction page in desktop | | | | | | |

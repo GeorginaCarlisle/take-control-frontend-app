@@ -124,6 +124,18 @@ A button to create a new focus is clearly visible at the top of the plan page. T
 ![Screenshot showing error handling on the focus create form"](/documentation/features/focus-create-errors.png)
 ![Screenshot showing redirection on successful focus creation"](/documentation/features/focus-create-success.png)
 
+When viewing a focus area an edit icon is clearly visible. Clicking on this icon brings up the focus details in a form, where the user can then edit any of the details.
+
+![Screenshot showing the edit focus form on mobile"](/documentation/features/focus-edit-mobile.png)
+![Screenshot showing the edit focus form on laptop"](/documentation/features/focus-edit-laptop.png)
+![Screenshot showing a successful edit on mobile"](/documentation/features/focus-edit-mobile-success.png)
+
+When viewing a focus area a delete icon is clearly visible. Clicking on this icon brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep.
+
+![Screenshot showing the focus delete confirmation on mobile"](/documentation/features/focus-delete-mobile.png)
+![Screenshot showing the focus delete confirmation on laptop"](/documentation/features/focus-delete-laptop.png)
+![Screenshot showing a successful focus delete on mobile"](/documentation/features/focus-delete-success.png)
+
 #### Goals
 
 Within their focus areas authenticated users can create goals, giving themselves direction and something to aim for as they move forwards. All that is needed to create a goal is a goal name. However, there are a numer of optional input fields that can be used to make goals specific, measurable, achievable, reachable and time-bound as well as a field to  define the value to be gained in achieving the goal.
@@ -165,7 +177,7 @@ Tasks can also be created directly from the 'Take Action' page, where there is a
 
 #### Nested goals
 
-The api used by this application already has functionality built in that allows users to choose to nest children goals inside a parent goal. This allows large goals to be broken up into smaller more easily achieveable chunks. In future this functionality will be brought into the frontend application. 
+The api used by this application already has functionality built in that allows users to choose to nest children goals inside a parent goal. This allows large goals to be broken up into smaller more easily achieveable chunks. In future this functionality will be brought into the frontend application.
 
 See user story 21 - Nested goals within the [scope plane of design](#the-scope-plane) and the wireframes for the focus page within the [skeleton plane of design](#the-skeleton-plane).
 
@@ -407,6 +419,10 @@ The focus page is accessed through the plan page and includes a number of compon
 ![Screenshot showing how the focus page will look when viewing](documentation/planning/wireframes/focus-view.png)
 
 ![Screenshot showing how all the different elements on the focus page will look when being edited](documentation/planning/wireframes/focus-edit.png)
+
+Changes during development:
+
+- To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created. 
 
 #### Miscellaneous page
 
