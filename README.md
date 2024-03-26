@@ -175,6 +175,12 @@ Tasks can also be created directly from the 'Take Action' page, where there is a
 
 ### Future Features
 
+#### Editing and deletion of user profile
+
+At the moment there is no functionality present to allow the user to edit their username, email address or password. Nor is there a way for them to delete their account. This functionality will be a priority for the next iteration of this project. For this first iteration the priority was in making sure that the application itself was fully functioning in order to showcase what this project is about.
+
+See user stories 12, 15 and 16 within the [scope plane of design](#the-scope-plane).
+
 #### Nested goals
 
 The api used by this application already has functionality built in that allows users to choose to nest children goals inside a parent goal. This allows large goals to be broken up into smaller more easily achieveable chunks. In future this functionality will be brought into the frontend application.
