@@ -186,6 +186,21 @@ Tasks can also be created directly from the 'Take Action' page, where there is a
 ![Screenshot showing the successful creation of a task from the 'Take Action' page on mobile](/documentation/features/action-task-create-mobile.png)
 ![Screenshot showing the successful creation of a task from the 'Take Action' page on laptop](/documentation/features/action-task-create-laptop.png)
 
+When viewing a task in while in a focus or the miscellaneous area, three dots are clearly visible to the left. Clicking on the dots brings up a choice to edit or delete. Clicking to edit brings up the task details in a form, where the user can then edit any of the details.
+
+![Screenshot showing the edit task form on mobile"](/documentation/features/task-edit-mobile.png)
+![Screenshot showing the edit task form on laptop"](/documentation/features/task-edit-laptop.png)
+![Screenshot showing a successful edit on mobile"](/documentation/features//task-edit-mobile-success.png)
+![Screenshot showing a successful edit on laptop"](/documentation/features/task-edit-laptop-success.png)
+
+When viewing a task in while in a focus or the miscellaneous area, three dots are clearly visible to the left. Clicking on the dots brings up a choice to edit or delete. Clicking to delete brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep. On successful delete the task is removed from the list of tasks and a success message is displayed.
+
+![Screenshot showing the task choices on mobile"](/documentation/features/task-choices.png)
+![Screenshot showing the task delete confirmation on mobile"](/documentation/features/task-delete-mobile.png)
+![Screenshot showing the task delete confirmation on laptop"](/documentation/features/task-delete-laptop.png)
+![Screenshot showing a successful task delete on mobile"](/documentation/features/task-delete-success-mobile.png)
+![Screenshot showing a successful task delete on laptop"](/documentation/features/task-delete-success-laptop.png)
+
 ### Future Features
 
 #### Editing and deletion of user profile
@@ -443,6 +458,7 @@ Changes during development:
 
 - To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created.
 - The nested goal functionality will be implemented as a future feature.
+- The additional fields and information related to setting tasks as repeated will be implemented as a future feature.
 
 #### Miscellaneous page
 

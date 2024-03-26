@@ -28,7 +28,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | --- | --- | --- |
 | About.module.css | | |
 | Accordion.module.css | PASS | |
-| ActionTask.module.css | | |
+| ActionTask.module.css | PASS | |
 | Button.module.css | PASS | |
 | Cards.module.css | PASS | |
 | FocusCreate.module.css | PASS | |
@@ -43,8 +43,8 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | NavBar.module.css | PASS | |
 | Page.module.css | PASS | |
 | TakeAction.module.css | | |
-| Task.module.css | | |
-| TaskCreate.module.css | | |
+| Task.module.css | PASS | |
+| TaskCreate.module.css | PASS | |
 | Toast.module.css | | |
 
 [Return to contents list](#contents)
@@ -180,18 +180,18 @@ All completed user stories have been manually tested against their acceptance cr
 | | | Submitting the form creates a miscellaneous task with the new task appearing in the list of miscellaneous tasks and the form emptying. | PASS |
 | | | At any point I can click to cancel, which empties the form. | PASS |
 | | | I am informed of any errors in my input fields when submitting. | PASS |
-| 27 | As an authenticated user, I can edit a task, so that I can make changes should I wish. | All tasks viewed in the planning section of the site have three dots next to them. | |
-| | | Clicking on the three dots brings up a list of options including edit. | |
-| | | Clicking to edit transforms the view of the task into an edit form. | |
-| | | I can make changes to my task details. | |
-| | | At any point I can click cancel transforming the view back to normal. | |
-| | | Clicking submit edits my task and transforms the view back to normal with all changes in place. | |
-| 28 | As an authenticated user, I can delete a task, so that I can remove information I no longer need or want. | All tasks viewed in the planning section of the site have three dots next to them. | |
-| | | Clicking on the three dots brings up a list of options including delete. | |
-| | | On clicking to delete I am presented with a confirmation message. | |
-| | | I can then confirm or cancel the delete request. | |
-| | | On cancel I am returned to the task view. | |
-| | | On delete, the task is deleted and removed from the task list. | |
+| 27 | As an authenticated user, I can edit a task, so that I can make changes should I wish. | All tasks viewed in the planning section of the site have three dots next to them. | PASS |
+| | | Clicking on the three dots brings up a list of options including edit. | PASS |
+| | | Clicking to edit transforms the view of the task into an edit form. | PASS |
+| | | I can make changes to my task details. | PASS |
+| | | At any point I can click cancel transforming the view back to normal. | PASS |
+| | | Clicking submit edits my task and transforms the view back to normal with all changes in place. | PASS |
+| 28 | As an authenticated user, I can delete a task, so that I can remove information I no longer need or want. | All tasks viewed in the planning section of the site have three dots next to them. | PASS |
+| | | Clicking on the three dots brings up a list of options including delete. | PASS |
+| | | On clicking to delete I am presented with a confirmation message. | PASS |
+| | | I can then confirm or cancel the delete request. | PASS|
+| | | On cancel I am returned to the task view. | PASS |
+| | | On delete, the task is deleted and removed from the task list. | PASS |
 
 ### EPIC - Plan
 
@@ -278,7 +278,7 @@ All completed user stories have been manually tested against their acceptance cr
 | GoalEdit | PASS | PASS | PASS | PASS |
 | TaskCreate | PASS | PASS | PASS | PASS |
 | ActionTaskCreate | PASS | PASS | PASS | PASS |
-| Task Edit| | | | |
+| Task Edit | PASS | PASS | PASS | PASS |
 
 [Return to contents list](#contents)
 
@@ -313,8 +313,8 @@ Wave testing screenshots are displayed below:
 | | Focus page with a goal set to create | Form label errors for goal create form | See below for further details |
 | | Focus page with a goal set to edit | No errors from goal areas | |
 | | Focus page with a goal set to delete | No errors from goal area | |
-| | Focus page with a task set to edit | | |
-| | Focus page with a task set to delete | | |
+| | Focus page with a task set to edit | No errors for task edit form | |
+| | Focus page with a task set to delete | No errors from task delete confirm | |
 | "/takeaction" | TakeAction page in mobile | | |
 | | TakeAction page in desktop | | |
 | unknown route | Page not found page | | |
@@ -358,6 +358,9 @@ Contrast levels for normal text in page containers:
 
 Contrast levels for title text in page containers:
 ![Screen shot showing a contrast of 10.82:1](documentation/testing/colour-contrast/page-container-title-text.png)
+
+Contrast levels for text in highlighted task ( on edit or delete):
+![Screen shot showing a contrast of 15.4:1](documentation/testing/colour-contrast/text-highlighted-task.png)
 
 #### Buttons and icons
 
