@@ -197,24 +197,24 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 30 | As an authenticated user, I can view all my focus areas and their nested goals together on one page, so that I can see and manage the bigger picture of everything I have going on. | Title lets me know where I am | |
-| | | Clear buttons to take me to "Add focus" and "Rank focus areas" | |
-| | | All my focus areas and my miscellaneous area are clearly visible | |
-| | | On mobile an accordion makes it possible to see all the focus areas at once, with the option to expand and see more details.| |
-| | | Each focus area is displayed with name, why, image and any nested goals. | |
-| | | Each nested goal is displayed with name, description, value, deadline and active status. | |
-| | | On mobile name and image are always displayed, with further info in expanded view. | |
-| | | Each focus area contains a "Go" button to take me to the view for that focus. | |
-| 31 | As an authenticated user, I can view all the goals and tasks within a given focus area together, helping me to plan how I wish to move forwards in this area and everything that is need to achieve that progression. | Clear title lets me know where I am. | |
-| | | Clicking on the X in the top right takes me back to the main plan page. | |
-| | | Information about the Focus is clearly displayed at the top, with options to edit and delete. | |
-| | | All goals and day to day tasks linked to the focus are shown with options to add, edit and delete. | |
-| | | On desktop, the goal titles are listed with space to expand one of the goals, showing all information and nested tasks. | |
-| | | On mobile, day-to-day tasks, goals and their nested tasks are displayed in an accordion. | |
-| | | Borders, white spacing and titles clearly separate out the information. | |
-| 32 | As an authenticated user, I can view all my miscellaneous tasks together in one place, so that I can plan tasks that don't link to any of my focus areas. | A miscellaneous area is always visible in the main plan with the miscellaneous image, title an explanation of this sections purpose. | |
-| | | I can click to go into the miscellaneous area where I can see a list of all miscellaneous tasks. | |
-| | | An x in the top right can be clicked to take me back to the main plan page. | |
+| 30 | As an authenticated user, I can view all my focus areas and their nested goals together on one page, so that I can see and manage the bigger picture of everything I have going on. | Title lets me know where I am | PASS |
+| | | A clear button takes me to "Add focus" | PASS |
+| | | All my focus areas and my miscellaneous area are clearly visible | PASS |
+| | | On mobile an accordion makes it possible to see all the focus areas at once, with the option to expand and see more details. | PASS |
+| | | Each focus area is displayed with name, why (if given), image and any nested goals. | PASS |
+| | | Each nested goal is displayed with name, description, deadline and additional deadline near warning (if deadline is near). | PASS |
+| | | On mobile name and image are always displayed, with further info in expanded view. | PASS |
+| | | Each focus area contains a "Go" button to take me to the view for that focus. | PASS |
+| 31 | As an authenticated user, I can view all the goals and tasks within a given focus area together, helping me to plan how I wish to move forwards in this area and everything that is need to achieve that progression. | Clear title lets me know where I am. | PASS |
+| | | Clicking on the X in the top right takes me back to the main plan page. | PASS |
+| | | Information about the Focus is clearly displayed at the top, with options to edit and delete. | PASS |
+| | | All goals and day to day tasks linked to the focus are shown with options to add, edit and delete. | PASS |
+| | | On desktop, the goal titles are listed with space to expand one of the goals, showing all information and nested tasks. | PASS |
+| | | On mobile, day-to-day tasks, goals and their nested tasks are displayed in an accordion. | PASS |
+| | | Borders, white spacing and titles clearly separate out the information. | PASS |
+| 32 | As an authenticated user, I can view all my miscellaneous tasks together in one place, so that I can plan tasks that don't link to any of my focus areas. | A miscellaneous area is always visible in the main plan with the miscellaneous image, title and explanation of this sections purpose. | PASS |
+| | | I can click to go into the miscellaneous area where I can see a list of all miscellaneous tasks. | PASS |
+| | | An x in the top right can be clicked to take me back to the main plan page. | PASS |
 
 ### EPIC - Informed User
 
@@ -394,10 +394,8 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | 94 | 100 | 96 | 100 | |
 | "/signin" | Sign in page | | | | | | |
 | | | Mobile | | | | | |
-| "/plan" | Plan page - mobile | | | | | | |
-| | | Mobile | | | | | |
-| | Plan page - desktop | | | | | | |
-| | | Mobile | | | | | |
+| "/plan" | Plan page | Mobile | 77 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Desktop | 76 | 100 | 78 | 100 | Third party cookies affecting best practices result.|
 | "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | | | |
 | | | Mobile | | | | | |
 | | Miscellaneous page with a task in edit mode | | | | | | |

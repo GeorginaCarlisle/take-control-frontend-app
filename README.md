@@ -112,6 +112,32 @@ JSON web tokens are used in the authentication process, with logic in place to e
 
 ![Screenshot showing a successful sign out"](/documentation/features/sign-out-success.png)
 
+#### Plan
+
+This area of the application is specifically designed for planning. It is an area that each user can mould to their own needs through how much of the available functionality they choose to use.
+
+Users can define what is important to them, the areas in their life they wish to use this app to help with orginaising and moving forward in, by creating focus areas.
+
+Within these focus areas they can create specific goals, adding the tasks needed to be completed in order to achieve the goal. Or they can simply add tasks specific to this area without any goals.
+
+The miscellaneous section provides an area where users can any tasks that don't relate to the focus areas they have created.
+
+The plan page can be accessed directly from the main navigation menu as well as from a call to action button displayed when users first log in to their account.
+
+New users without any data will be presented with an explanation of the focus areas (this will disappear once they have a focus area) alongside the miscellaneous section. On mobiles this data is held within an accordion so that the user can quickly see everything before then choosing what they want to go into. On larger screens the different areas are shown in card form. A clear button to "Create a new focus area" is displayed at the top, so that this functionality is quick to access and isn't missed.
+
+![Screenshot showing the plan page with no data on mobile"](/documentation/features/plan-no-data-mobile.png)
+![Screenshot showing the plan page with no data on laptop"](/documentation/features/plan-no-data-laptop.png)
+![Screenshot showing the plan page with focus areas on mobile accordion closed"](/documentation/features/plan-page-mobile.png)
+![Screenshot showing the plan page with focus areas on mobile accordion open"](/documentation/features/plan-page-mobile-open.png)
+![Screenshot showing the plan page with focus areas on laptop"](/documentation/features/plan-page-desktop.png)
+
+Each card, or accordion section will display the focus area alongside image (A default image is provided if not given) and focus why (if given). Underneath the goals within that focus area will be listed in deadline order. The goals will be listed with their deadline and description, should they have these, and also if the deadline is near a warning message to highlight this.
+
+At the bottom of each focus area is a clear link to take the user in to that focus area. The miscellaneous area also has a link.
+
+Clicking on these links will open up the focus area, or miscellaneous area.
+
 #### Focus Areas
 
 Authenticated users can create focus areas, so that they can define the areas of their life they wish to focus on. These focus will then contain goals and tasks, and provide a way to organise and easily identify the underlying purpose behind a task.
@@ -121,8 +147,29 @@ A button to create a new focus is clearly visible at the top of the plan page. T
 ![Screenshot showing the create new focus area button"](/documentation/features/new-focus-button.png)
 ![Screenshot showing the focus create form on mobile"](/documentation/features/focus-create-mobile.png)
 ![Screenshot showing the focus create form on laptop"](/documentation/features/focus-create-laptop.png)
-![Screenshot showing error handling on the focus create form"](/documentation/features/focus-create-errors.png)
-![Screenshot showing redirection on successful focus creation"](/documentation/features/focus-create-success.png)
+![Screenshot showing error handling on the focus create form](/documentation/features/focus-create-errors.png)
+
+#### Focus view
+
+Once a focus area is created users are directed straight to their focus area. At other times focus areas can be navigated to through the plan page.
+
+Initially the focus area will be empty with placeholder messaging to support new users in using this area.
+
+![Screenshot showing redirection on successful focus creation](/documentation/features/focus-create-success.png)
+
+On mobile the different areas are within different sections on an accordion, with each goal created having it's own section.
+
+![Screenshot showing the focus area on mobile with all tabs closed](/documentation/features/focus-area-mobile-1.png)
+![Screenshot showing the focus area on mobile with day to day tasks open](/documentation/features/focus-area-mobile-2.png)
+![Screenshot showing the focus area on mobile with a goal tab open](/documentation/features/focus-area-mobile-3.png)
+
+On larger screens the page is split into different areas. Details about the focus are displayed at the top. Day to day tasks on the right and a list of goals on the left. Clicking on a goal opens it up into the central space.
+
+![Screenshot showing the focus area on laptop](/documentation/features/focus-area-laptop.png)
+
+Users can return to the plan page by clicking on the x in the top right.
+
+#### Editing and deletion of focus areas
 
 When viewing a focus area an edit icon is clearly visible. Clicking on this icon brings up the focus details in a form, where the user can then edit any of the details.
 
@@ -188,18 +235,27 @@ Tasks can also be created directly from the 'Take Action' page, where there is a
 
 When viewing a task in while in a focus or the miscellaneous area, three dots are clearly visible to the left. Clicking on the dots brings up a choice to edit or delete. Clicking to edit brings up the task details in a form, where the user can then edit any of the details.
 
-![Screenshot showing the edit task form on mobile"](/documentation/features/task-edit-mobile.png)
-![Screenshot showing the edit task form on laptop"](/documentation/features/task-edit-laptop.png)
-![Screenshot showing a successful edit on mobile"](/documentation/features//task-edit-mobile-success.png)
-![Screenshot showing a successful edit on laptop"](/documentation/features/task-edit-laptop-success.png)
+![Screenshot showing the edit task form on mobile](/documentation/features/task-edit-mobile.png)
+![Screenshot showing the edit task form on laptop](/documentation/features/task-edit-laptop.png)
+![Screenshot showing a successful edit on mobile](/documentation/features//task-edit-mobile-success.png)
+![Screenshot showing a successful edit on laptop](/documentation/features/task-edit-laptop-success.png)
 
 When viewing a task in while in a focus or the miscellaneous area, three dots are clearly visible to the left. Clicking on the dots brings up a choice to edit or delete. Clicking to delete brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep. On successful delete the task is removed from the list of tasks and a success message is displayed.
 
-![Screenshot showing the task choices on mobile"](/documentation/features/task-choices.png)
-![Screenshot showing the task delete confirmation on mobile"](/documentation/features/task-delete-mobile.png)
-![Screenshot showing the task delete confirmation on laptop"](/documentation/features/task-delete-laptop.png)
-![Screenshot showing a successful task delete on mobile"](/documentation/features/task-delete-success-mobile.png)
-![Screenshot showing a successful task delete on laptop"](/documentation/features/task-delete-success-laptop.png)
+![Screenshot showing the task choices on mobile](/documentation/features/task-choices.png)
+![Screenshot showing the task delete confirmation on mobile](/documentation/features/task-delete-mobile.png)
+![Screenshot showing the task delete confirmation on laptop](/documentation/features/task-delete-laptop.png)
+![Screenshot showing a successful task delete on mobile](/documentation/features/task-delete-success-mobile.png)
+![Screenshot showing a successful task delete on laptop](/documentation/features/task-delete-success-laptop.png)
+
+#### Miscellaneous area
+
+For tasks a user wishes to record that don't fall into one of their focus areas, a miscellaneous area has been provided. The miscellaneous area can be accessed drirectly from the plan page.
+
+Miscellanous tasks are listed in order of deadline, with a form to add further tasks at the bottom.
+
+![Screenshot showing the miscellaneous area on mobile](/documentation/features/miscellaneous-mobile.png)
+![Screenshot showing the miscellaneous area on laptop](/documentation/features/miscellaneous-laptop.png)
 
 ### Future Features
 
@@ -444,6 +500,10 @@ This is where users will first be taken when they log in.
 
 ![Screenshot showing how the main planning page will look](documentation/planning/wireframes/plan-page.png)
 
+Differences between planning and live project:
+
+- The functionality to activate and pause goals will be implemented in future.
+
 #### Focus page
 
 The focus page is accessed through the plan page and includes a number of components, all of which can be rendered in create, view, or edit modes. Three wireframes have been included to show these different variations.
@@ -454,7 +514,7 @@ The focus page is accessed through the plan page and includes a number of compon
 
 ![Screenshot showing how all the different elements on the focus page will look when being edited](documentation/planning/wireframes/focus-edit.png)
 
-Changes during development:
+Differences between planning and live project:
 
 - To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created.
 - The nested goal functionality will be implemented as a future feature.
@@ -465,6 +525,10 @@ Changes during development:
 This is page for unlinked tasks and is accessed from the main plan page. It will also handle editing in the same manner as the focus page.
 
 ![Screenshot showing how the miscellaneous page will look](documentation/planning/wireframes/miscellaneous-view.png)
+
+Differences between planning and live project:
+
+- The additional fields and information related to setting tasks as repeated will be implemented as a future feature.
 
 #### Take Action page
 
@@ -880,6 +944,8 @@ Image of a person writing in a notebook by [Ylanite Koppens](https://www.pexels.
 Image looking through a camera lens by [Marek](https://www.pexels.com/photo/person-holding-black-camera-lens-339379/) - has been used as the default focus image.
 
 Image of woman standing in the sunlight by [Andrea Piacquadio](https://www.pexels.com/photo/woman-in-yellow-long-sleeve-standing-under-the-sunlight-3779756/) - has been used as an example focus image.
+
+Iamge of cottage by [Max Vakhtbovycn](https://www.pexels.com/photo/residential-cottage-house-with-courtyard-5997993)
 
 [Return to contents list](#contents)
 
