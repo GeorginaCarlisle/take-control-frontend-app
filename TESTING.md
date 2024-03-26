@@ -45,7 +45,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | TakeAction.module.css | | |
 | Task.module.css | PASS | |
 | TaskCreate.module.css | PASS | |
-| Toast.module.css | | |
+| Toast.module.css | PASS | |
 
 [Return to contents list](#contents)
 
@@ -220,16 +220,21 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 33 | As an authenticated user, I receive a success message on creation, editing and deleting, so that I know my action was successful. | | |
-| | | | |
-| 34 | As an authenticated user, I receive a confirmation message on clicking to delete, so that I am made aware of any linked information that will also be deleted should I proceed and can avoid any accidental deletes. | | |
+| 33 | As an authenticated user, I receive a success message on creation, editing and deleting, so that I know my action was successful. | Every time I submit a form to create, edit or delete data a toast pops up. | PASS |
+| | | The toast has a header of success. | PASS |
+| | | The toast contains details of the action that has been performed. | PASS |
+| | | The toast has an x that I can use to dismiss the message. | PASS |
+| | | The toast automatically disappears after 8 seconds. | PASS |
+| 34 | As an authenticated user, I receive a confirmation message on clicking to delete, so that I am made aware of any linked information that will also be deleted should I proceed and can avoid any accidental deletes. | On clicking a delete icon or delete option I am presented with a confirmation message that informs that any nested goals or tasks will also be deleted. | PASS |
+| | | I am presented with the option to delete or cancel. | PASS |
+| | | Clicking to cancel returns me to viewing the item in question. | PASS |
 
 ### EPIC - Take Action
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 36 | As an authenticated user, I can view all active tasks together in a take action page, so that I can plan and organise my day. | | |
-
+| | | | |
 | 37 | I can click to reset the Action page, deleting one-off completed tasks and returning everything else to the backlog, so that I can start afresh each day. | | |
 
 ### EPIC - Backlog

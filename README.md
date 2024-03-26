@@ -257,6 +257,12 @@ Miscellanous tasks are listed in order of deadline, with a form to add further t
 ![Screenshot showing the miscellaneous area on mobile](/documentation/features/miscellaneous-mobile.png)
 ![Screenshot showing the miscellaneous area on laptop](/documentation/features/miscellaneous-laptop.png)
 
+#### Success messages
+
+Every time a user successfully makes a change to their data - creation, editing or deletion - a success message is given. Every success message contains a title and details about the change that has been made. This success message is displayed at the top right of the screen just under the header, so as to always be visible but out of the way so it doesn't interrupt the user. The success messages can be dismissed by clicking the x, or will disappear on there own after 8 seconds. This provides time for the user to see and read the message, while allowing the user to continue with what they are doing without having to stop a close a message everytime they make a change to the data.
+
+![Screenshot of a success message](/documentation/features/success-toast.png)
+
 ### Future Features
 
 #### Editing and deletion of user profile
