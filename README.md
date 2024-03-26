@@ -130,7 +130,7 @@ When viewing a focus area an edit icon is clearly visible. Clicking on this icon
 ![Screenshot showing the edit focus form on laptop"](/documentation/features/focus-edit-laptop.png)
 ![Screenshot showing a successful edit on mobile"](/documentation/features/focus-edit-mobile-success.png)
 
-When viewing a focus area a delete icon is clearly visible. Clicking on this icon brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep.
+When viewing a focus area a delete icon is clearly visible. Clicking on this icon brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep. On successful delete users are return to the plan page and a success message is displayed.
 
 ![Screenshot showing the focus delete confirmation on mobile"](/documentation/features/focus-delete-mobile.png)
 ![Screenshot showing the focus delete confirmation on laptop"](/documentation/features/focus-delete-laptop.png)
@@ -148,6 +148,19 @@ Should any fields be incorrectly completed, error messages are clearly displayed
 ![Screenshot showing the create new goal form on laptop](/documentation/features/goal-create-laptop.png)
 ![Screenshot showing the successful creation of a goal on mobile](/documentation/features/goal-create-success%20mobile.png)
 ![Screenshot showing the successful creation of a goal on laptop](/documentation/features/goal-create-success.png)
+
+When viewing a goal an edit icon is clearly visible. Clicking on this icon brings up the goal details in a form, where the user can then edit any of the details.
+
+![Screenshot showing the edit goal form on mobile"](/documentation/features/goal-edit-mobile.png)
+![Screenshot showing the edit goal form on laptop"](/documentation/features/goal-edit-mobile.png)
+![Screenshot showing a successful edit on mobile"](/documentation/features/goal-edit-mobile-success.png)
+
+When viewing a goal a delete icon is clearly visible. Clicking on this icon brings up a confirmation message message explaining what will happen on delete. Users can then choose to cancel or to delete. This ensures users don't accidentally delete anything they wish to keep. On successful delete the goal is removed from the focus area and a success message is displayed.
+
+![Screenshot showing the goal delete confirmation on mobile"](/documentation/features/goal-delete-mobile.png)
+![Screenshot showing the goal delete confirmation on laptop"](/documentation/features/goal-delete-laptop.pngg)
+![Screenshot showing a successful goal delete on mobile"](/documentation/features/goal-delete-mobile-success.png)
+![Screenshot showing a successful goal delete on laptop"](/documentation/features/goal-delete-laptop-success.png)
 
 #### Tasks
 
@@ -428,7 +441,8 @@ The focus page is accessed through the plan page and includes a number of compon
 
 Changes during development:
 
-- To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created. 
+- To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created.
+- The nested goal functionality will be implemented as a future feature.
 
 #### Miscellaneous page
 

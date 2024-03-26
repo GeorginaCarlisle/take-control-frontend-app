@@ -152,17 +152,17 @@ All completed user stories have been manually tested against their acceptance cr
 | | | At any point I can cancel, hiding the form. | PASS |
 | | | Submitting the form creates a new goal, with the goal appearing in its view state, as well as being added to the goal list. | PASS |
 | | | I am informed of any errors in my input fields when submitting. | PASS |
-| 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | When viewing a goal I can click on a button to edit. | |
-| | | Clicking edit brings up the goal in a form. | |
-| | | I can edit each of the details. | |
-| | | Clicking to save updates my goal details and returns me to the goal view. | |
-| | | I can click cancel at any point to return to the goal view without saving. | |
-| | | I am informed of any errors in my inputs. | |
-| 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | When viewing a goal there is a button to delete. | |
-| | | On clicking to delete I am presented with a confirmation message. | |
-| | | I can then confirm or cancel the delete request. | |
-| | | On cancel I am returned to the goal view. | |
-| | | On delete, the goal is deleted and I am returned to the main focus view with no goal selected. | |
+| 22 | As an authenticated user, I can edit a goal so that I can make changes should I wish. | When viewing a goal I can click on a button to edit. | PASS |
+| | | Clicking edit brings up the goal in a form. | PASS |
+| | | I can edit each of the details. | PASS |
+| | | Clicking to save updates my goal details and returns me to the goal view. | PASS |
+| | | I can click cancel at any point to return to the goal view without saving. | PASS |
+| | | I am informed of any errors in my inputs. | PASS |
+| 23 | As an authenticated user, I can delete a goal, so that I can remove information I no longer need or want. | When viewing a goal there is a button to delete. | PASS |
+| | | On clicking to delete I am presented with a confirmation message. | PASS |
+| | | I can then confirm or cancel the delete request. | PASS |
+| | | On cancel I am returned to the goal view. | PASS |
+| | | On delete, the goal is deleted and I am returned to the main focus view with no goal selected. | PASS |
 
 ### EPIC - Tasks
 
@@ -274,8 +274,8 @@ All completed user stories have been manually tested against their acceptance cr
 | Signin | PASS | PASS | PASS | PASS |
 | FocusCreate | PASS | PASS | PASS | PASS |
 | FocusEdit | PASS | PASS | PASS | PASS |
-| GoalCreate | | | | |
-| GoalEdit | | | | |
+| GoalCreate | PASS | PASS | PASS | PASS |
+| GoalEdit | PASS | PASS | PASS | PASS |
 | TaskCreate | PASS | PASS | PASS | PASS |
 | ActionTaskCreate | PASS | PASS | PASS | PASS |
 | Task Edit| | | | |
@@ -311,8 +311,8 @@ Wave testing screenshots are displayed below:
 | | Focus page with focus set to edit | No errors from focus area | |
 | | Focus page with focus set to delete | No errors from focus area | |
 | | Focus page with a goal set to create | Form label errors for goal create form | See below for further details |
-| | Focus page with a goal set to edit | | |
-| | Focus page with a goal set to delete | | |
+| | Focus page with a goal set to edit | No errors from goal areas | |
+| | Focus page with a goal set to delete | No errors from goal area | |
 | | Focus page with a task set to edit | | |
 | | Focus page with a task set to delete | | |
 | "/takeaction" | TakeAction page in mobile | | |
