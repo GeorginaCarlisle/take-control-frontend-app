@@ -137,6 +137,30 @@ Should any fields be incorrectly completed, error messages are clearly displayed
 ![Screenshot showing the successful creation of a goal on mobile](/documentation/features/goal-create-success%20mobile.png)
 ![Screenshot showing the successful creation of a goal on laptop](/documentation/features/goal-create-success.png)
 
+#### Tasks
+
+Authenticated users can create tasks to list all the things they need and want to do. These tasks can be organised through focus areas and goals. When planning users can create:
+
+Miscellaneous tasks - Tasks not attached to any focus areas.
+
+![Screenshot showing the successful creation of a miscellaneous task on mobile](/documentation/features/task-miscellaneous-mobile.png)
+![Screenshot showing the successful creation of a miscellaneous task on laptop](/documentation/features/task-miscellaneous-laptop.png)
+
+Day to day tasks - Tasks linked to a focus area, but not part of a specific goal.
+
+![Screenshot showing the successful creation of a day to day task on mobile](/documentation/features/create-daytoday-task-mobile-success.png)
+![Screenshot showing the successful creation of a day to day task on laptop](/documentation/features/create-daytoday-task-laptop-success.png)
+
+Goal tasks - Tasks specifically linked to goal. The steps needed to be taken to achieve that goal.
+
+![Screenshot showing the successful creation of a goal task on mobile](/documentation/features/create-goal-task-mobile-success.png)
+![Screenshot showing the successful creation of a goal task on laptop](/documentation/features/create-goal-task-laptop-success.png)
+
+Tasks can also be created directly from the 'Take Action' page, where there is a clear button at the top to "Add additional task". The form to create a new task here has extra fields that allow the user to choose whether to link the task to a focus area and then to a goal should they wish. This allows users to quickly add extra tasks without needing to navigate away from the "Take Action" page.
+
+![Screenshot showing the successful creation of a task from the 'Take Action' page on mobile](/documentation/features/action-task-create-mobile.png)
+![Screenshot showing the successful creation of a task from the 'Take Action' page on laptop](/documentation/features/action-task-create-laptop.png)
+
 ### Future Features
 
 #### Nested goals
@@ -150,6 +174,12 @@ See user story 21 - Nested goals within the [scope plane of design](#the-scope-p
 In future there will also be the option to pause and then re-activate goals. This active status will be passed on to tasks nested within the goal, with only active tasks being displayed within 'Take Action'. This will provide a way of narrowing focus when needed and controlling which tasks are displayed in the backlog ready to be completed.
 
 See user story 39 - Activate and pause goals within the [scope plane of design](#the-scope-plane).
+
+#### Repeated tasks
+
+In future extra fields will be available when creating a task. These will allow users to specify tasks to be repeated, including details on frequency. The daily reset functionality will be adjusted so that any completed repeated tasks are not deleted but simply returned to the backlog. Additional data will also be generated so that users are kept informed of how many times they have completed the task that week.
+
+See user story 29 - Repeated tasks within the [scope plane of design](#the-scope-plane) and the wireframes for the focus page and new task page within the [skeleton plane of design](#the-skeleton-plane).
 
 [Return to contents list](#contents)
 

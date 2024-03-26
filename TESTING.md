@@ -168,15 +168,30 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 24 | As an authenticated user, I can create tasks linked directly to a focus area, so that I can set out day to day tasks associated with that area. | | |
-| | | | |
-| 25 | As an authenticated user, I can create tasks linked to a goal, so that I can set out the steps I will need to take to achieve my goal. | | |
-
-| 26 | As an authenticated user, I can create unlinked tasks, so that I can include any tasks not directly linked to a set focus area or goal. | | |
-
-| 27 | As an authenticated user, I can edit a task, so that I can make changes should I wish. | | |
-
-| 28 | As an authenticated user, I can delete a task, so that I can remove information I no longer need or want. | | |
+| 24 | As an authenticated user, I can create tasks linked directly to a focus area, so that I can set out day to day tasks associated with that area. | At the bottom of the day to day tasks for each focus is a form to create a new day to day task. | PASS |
+| | | Submitting the form creates a new day to day task for that focus area with the new task appearing in the list of day to day tasks and the form emptying. | PASS |
+| | | At any point I can click to cancel, which empties the form. | PASS |
+| | | I am informed of any errors in my input fields when submitting. | PASS |
+| 25 | As an authenticated user, I can create tasks linked to a goal, so that I can set out the steps I will need to take to achieve my goal. | At the bottom of the goal section is a form to create a new task. | PASS |
+| | | Submitting the form creates a new task for that goal, with the new task appearing in the list of tasks for the goal and the form emptying. | PASS |
+| | | At any point I can click to cancel, which empties the form. | PASS |
+| | | I am informed of any errors in my input fields when submitting. | PASS |
+| 26 | As an authenticated user, I can create unlinked tasks, so that I can include any tasks not directly linked to a set focus area or goal. | At the bottom of the miscellaneous area is a form to create a new miscellaneous task. | PASS |
+| | | Submitting the form creates a miscellaneous task with the new task appearing in the list of miscellaneous tasks and the form emptying. | PASS |
+| | | At any point I can click to cancel, which empties the form. | PASS |
+| | | I am informed of any errors in my input fields when submitting. | PASS |
+| 27 | As an authenticated user, I can edit a task, so that I can make changes should I wish. | All tasks viewed in the planning section of the site have three dots next to them. | |
+| | | Clicking on the three dots brings up a list of options including edit. | |
+| | | Clicking to edit transforms the view of the task into an edit form. | |
+| | | I can make changes to my task details. | |
+| | | At any point I can click cancel transforming the view back to normal. | |
+| | | Clicking submit edits my task and transforms the view back to normal with all changes in place. | |
+| 28 | As an authenticated user, I can delete a task, so that I can remove information I no longer need or want. | All tasks viewed in the planning section of the site have three dots next to them. | |
+| | | Clicking on the three dots brings up a list of options including delete. | |
+| | | On clicking to delete I am presented with a confirmation message. | |
+| | | I can then confirm or cancel the delete request. | |
+| | | On cancel I am returned to the task view. | |
+| | | On delete, the task is deleted and removed from the task list. | |
 
 ### EPIC - Plan
 
@@ -206,7 +221,7 @@ All completed user stories have been manually tested against their acceptance cr
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 33 | As an authenticated user, I receive a success message on creation, editing and deleting, so that I know my action was successful. | | |
-
+| | | | |
 | 34 | As an authenticated user, I receive a confirmation message on clicking to delete, so that I am made aware of any linked information that will also be deleted should I proceed and can avoid any accidental deletes. | | |
 
 ### EPIC - Take Action
@@ -261,8 +276,8 @@ All completed user stories have been manually tested against their acceptance cr
 | FocusEdit | | | | |
 | GoalCreate | | | | |
 | GoalEdit | | | | |
-| TaskCreate | | | | |
-| ActionTaskCreate | | | | |
+| TaskCreate | PASS | PASS | PASS | PASS |
+| ActionTaskCreate | PASS | PASS | PASS | PASS |
 | Task Edit| | | | |
 
 [Return to contents list](#contents)
