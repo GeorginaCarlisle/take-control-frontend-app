@@ -45,7 +45,7 @@
 
 .GoalContainer {
   height: 200px;
-  overflow: scroll;
+  overflow: auto;
   border-color: #007926;  
   border: solid;
   border-width: 1.5px;
