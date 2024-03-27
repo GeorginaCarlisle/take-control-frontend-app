@@ -103,7 +103,7 @@
 }
 
 .DeadlineWarning {
-  color: red;
+  color: #D60000;
 }
 
 .NestedTasks > h3 {
@@ -116,7 +116,7 @@
 /* Goal highlight */
 
 .HighlightDeadlineWarning {
-  color: red;
+  color: #D60000;
   margin-bottom: 0;
   font-size: 0.8rem;
 }
