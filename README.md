@@ -298,6 +298,8 @@ Tasks are displayed with an image indicating the focus area they belong to, this
 - The deadline for the linked goal (if there is one), which will include a warning if the deadline is near.
 - The warnings will be highlighted in red for overdue deadlines or amber for deadlines due today or tomorrow.
 
+Clicking on a focus image will take the user to that focus area, providing a route to move between "Take Action" and "Plan". Changes on hover have been added to indicate this functionality.
+
 Users can adjust the order the tasks are displayed in, by using the order by options found at the top of the backlog list. The following options are provided:
 
 - Task Deadline (this is the default) with soonest deadline first and tasks without deadline then ordered by when they were created, oldest first.

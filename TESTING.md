@@ -35,7 +35,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | FocusDesktop.module.css | PASS | |
 | FocusMobile.module.css | PASS | |
 | FocusView.module.css | PASS | |
-| Footer.module.css | | |
+| Footer.module.css | PASS | |
 | Form.module.css | PASS | |
 | Goal.module.css | PASS | |
 | GoalCreate.module.css | PASS | |
@@ -97,7 +97,7 @@ All completed user stories have been manually tested against their acceptance cr
 | | | No page refreshing occurs. | PASS |
 | 7 | As an authorised user, all sub pages include an x that will return me to my previous page on clicking, so that I can easily check things out and then return to where I was. | When visiting a focus, miscellaneous, focuscreate, actionTaskCreate or daily reset I can see a clear x in the top right corner. | PASS |
 | | | Clicking on the x returns me to my previous page. | PASS |
-| 8 | As an authorised user, clicking on a task within the ‘take action’ page will take me to the ‘plan’ page where that task is located. | Clicking on the picture next to a task in Take action takes me to that focus area in the plan section. | |
+| 8 | As an authorised user, clicking on a task within the ‘take action’ page will take me to the ‘plan’ page where that task is located. | Clicking on the picture next to a task in Take action takes me to that focus area in the plan section. | PASS |
 
 ### Epic - Authentication
 
@@ -259,7 +259,7 @@ All completed user stories have been manually tested against their acceptance cr
 | 41 | As an authenticated user, I can quickly add new tasks to the backlog without needing to go through the planning page, so that I can quickly and easily add additional tasks. | When I am in "Take Action" there is a clear button to add an additional task. | PASS |
 | | | Clicking the button opens an "Add New Task" Modal. | PASS |
 | | | The modal contains a form to create a new task. | PASS |
-| | | The form also includes a section to link to a focus area and if focus area linked a section to link to a goal. | |
+| | | The form also includes a section to link to a focus area and if focus area linked a section to link to a goal. | PASS |
 | | | I can then choose to cancel or submit. | PASS |
 | | | Cancelling closes the modal. | PASS |
 | | | Submitting creates a new task, closes the modal and my new task is visible in the backlog. | PASS |
@@ -327,15 +327,14 @@ Wave testing screenshots are displayed below:
 | Route | Specific view | Result | Extra notes |
 | --- | --- | --- | --- |
 | "/" | Home page for logged out user | | |
-| | Home page for logged in user | | |
+| | Home page for logged in user | No errors | Alert - nearby image with the same alt text due to the logo (with it's alt text) being displayed twice |
 | "/about" | About page | | |
 | "/signup" | Sign up page | No errors | Alert "A nearby image has the same alternative text" caused by the logo being used twice with the same alt reference. |
-| "/signin" | Sign in page | | |
-| "/plan" | Plan page - mobile | | |
-| | Plan page - desktop | | |
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | |
-| | Miscellaneous page with a task in edit mode | | |
-| | Miscellaneous page with a task in delete mode | | |
+| "/signin" | Sign in page | No errors | Alert "A nearby image has the same alternative text" caused by the logo being used twice with the same alt reference. |
+| "/plan" | Plan page | No errors | |
+| "/miscellaneous" | Miscellaneous page with all tasks in view mode | No errors | Alert: skipped heading level |
+| | Miscellaneous page with a task in edit mode | No errors or warnings for edit section | |
+| | Miscellaneous page with a task in delete mode | No errors or warnings for delete section | |
 | "/focus/create" | Create new focus page | No errors | |
 | "/focus/:id" | Focus page with everything set to view | Form label errors for new task forms - both daytoday and goal | See below for further details |
 | | Focus page with focus set to edit | No errors from focus area | |
@@ -346,7 +345,7 @@ Wave testing screenshots are displayed below:
 | | Focus page with a task set to edit | No errors for task edit form | |
 | | Focus page with a task set to delete | No errors from task delete confirm | |
 | "/takeaction" | TakeAction page | Form label errors for checkboxes and search and ordering filters | See below for further details |
-| unknown route | Page not found page | | |
+| unknown route | Page not found page | No errors | Redundant link |
 
 Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
 
@@ -404,6 +403,12 @@ Contrast levels for text in highlighted task ( on edit or delete):
 Contrast levels for task title when highlighted as achieved:
 ![Screen shot showing a contrast of 5.11:1](documentation/testing/colour-contrast/achieved-task-title.png)
 
+Contrast levels for red warning text:
+![Screen shot showing a contrast of 4.99:1](documentation/testing/colour-contrast/red-warning-text.png)
+
+Contrast levels for red warning text:
+![Screen shot showing a contrast of 4.57:1](documentation/testing/colour-contrast/amber-warning-text.png)
+
 #### Buttons and icons
 
 Contrast levels for buttons:
@@ -434,24 +439,20 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | | | | | |
 | "/signup" | Sign up page | Desktop | 99 | 100 | 96 | 100 | |
 | | | Mobile | 94 | 100 | 96 | 100 | |
-| "/signin" | Sign in page | | | | | | |
-| | | Mobile | | | | | |
+| "/signin" | Sign in page | 99 | 100 | 96 | 100 | | |
+| | | Mobile | 95 | 100 | 96 | 100 | |
 | "/plan" | Plan page | Mobile | 77 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Desktop | 76 | 100 | 78 | 100 | Third party cookies affecting best practices result.|
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | | | |
-| | | Mobile | | | | | |
-| | Miscellaneous page with a task in edit mode | | | | | | |
-| | | Mobile | | | | | |
-| | Miscellaneous page with a task in delete mode | | | | | | |
-| | | Mobile | | | | | |
+| "/miscellaneous" | Miscellaneous page | Desktop | 92 | 98 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Mobile | 76 | 98 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/focus/create" | Create new focus page | Desktop | 99 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/focus/:id" | Desktop | Focus page with everything set to view | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 66 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/takeaction" | TakeAction page | Desktop | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 76 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
-| unknown route | Page not found page | | | | | | |
-| | | Mobile | | | | | |
+| unknown route | Page not found page | Desktop | 99 | 100 | 78 | 100 | |
+| | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 
 Note: Only the views as first generated via a url route could be tested through lighthouse.
 
@@ -466,31 +467,23 @@ The platform has been fully tested across a range of screen sizes, from 350px up
 | "/" | Home page for logged out user | | | | |
 | | Home page for logged in user | | | | |
 | "/about" | About page | | | | |
-| "/signup" | Sign up page | | | | |
-| "/signin" | Sign in page | | | | |
-| "/plan" | Plan page - mobile | | | | |
-| | Plan page - desktop | | | | |
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | |
-| | Miscellaneous page with a task in edit mode | | | | |
-| | Miscellaneous page with a task in delete mode | | | | |
-| "/focus/create" | Create new focus page | | | | |
-| "/focus/:id" | Focus page in mobile with everything set to view | | | | |
-| | Focus page in mobile with focus set to edit | | | | |
-| | Focus page in mobile with focus set to delete | | | | |
-| | Focus page in mobile with a goal set to edit | | | | |
-| | Focus page in mobile with a goal set to delete | | | | |
-| | Focus page in mobile with a task set to edit | | | | |
-| | Focus page in mobile with a task set to delete | | | | |
-| | Focus page in desktop with everything set to view | | | | |
-| | Focus page in desktop with focus set to edit | | | | |
-| | Focus page in desktop with focus set to delete | | | | |
-| | Focus page in desktop with a goal set to edit | | | | |
-| | Focus page in desktop with a goal set to delete | | | | |
-| | Focus page in desktop with a task set to edit | | | | |
-| | Focus page in desktop with a task set to delete | | | | |
-| "/takeaction" | TakeAction page in mobile | | | | |
-| | TakeAction page in desktop | | | | |
-| unknown route | Page not found page | | | | |
+| "/signup" | Sign up page | PASS | PASS | PASS | PASS |
+| "/signin" | Sign in page | PASS | PASS | PASS | PASS |
+| "/plan" | Plan page - mobile | PASS | PASS | PASS | PASS |
+| | Plan page - desktop | PASS | PASS | PASS | PASS |
+| "/miscellaneous" | Miscellaneous page with all tasks in view mode | PASS | PASS | PASS | PASS |
+| | Miscellaneous page with a task in edit mode | PASS | PASS | PASS | PASS |
+| | Miscellaneous page with a task in delete mode | PASS | PASS | PASS | PASS |
+| "/focus/create" | Create new focus page | PASS | PASS | PASS | PASS |
+| "/focus/:id" | Focus page in mobile with everything set to view | PASS | PASS | PASS | PASS |
+| | Focus page in with focus set to edit | PASS | PASS | PASS | PASS |
+| | Focus page in with focus set to delete | PASS | PASS | PASS | PASS |
+| | Focus page in with a goal set to edit | PASS | PASS | PASS | PASS |
+| | Focus page in with a goal set to delete | PASS | PASS | PASS | PASS |
+| | Focus page in with a task set to edit | PASS | PASS | PASS | PASS |
+| | Focus page in with a task set to delete | PASS | PASS | PASS | PASS |
+| "/takeaction" | TakeAction page | PASS | On tablet the TakeAction grid is wider than the screen and scroll has been enabled | PASS | PASS |
+| unknown route | Page not found page | PASS | PASS | PASS | PASS |
 
 [Return to contents list](#contents)
 
@@ -501,32 +494,18 @@ This project was built and test along the way predominantly in a Chrome browser.
 | Route | Specific view | Chrome | Safari | Firefox | Edge |
 | --- | --- | --- | --- | --- | --- |
 | "/" | Home page for logged out user | | | | |
-| | Home page for logged in user | | | | |
+| | Home page for logged in user | PASS | Fail - Cannot access | PASS | PASS |
 | "/about" | About page | | | | |
-| "/signup" | Sign up page | | | | |
-| "/signin" | Sign in page | | | | |
-| "/plan" | Plan page - mobile | | | | |
-| | Plan page - desktop | | | | |
-| "/miscellaneous" | Miscellaneous page with all tasks in view mode | | | | |
-| | Miscellaneous page with a task in edit mode | | | | |
-| | Miscellaneous page with a task in delete mode | | | | |
-| "/focus/create" | Create new focus page | | | | |
-| "/focus/:id" | Focus page in mobile with everything set to view | | | | |
-| | Focus page in mobile with focus set to edit | | | | |
-| | Focus page in mobile with focus set to delete | | | | |
-| | Focus page in mobile with a goal set to edit | | | | |
-| | Focus page in mobile with a goal set to delete | | | | |
-| | Focus page in mobile with a task set to edit | | | | |
-| | Focus page in mobile with a task set to delete | | | | |
-| | Focus page in desktop with everything set to view | | | | |
-| | Focus page in desktop with focus set to edit | | | | |
-| | Focus page in desktop with focus set to delete | | | | |
-| | Focus page in desktop with a goal set to edit | | | | |
-| | Focus page in desktop with a goal set to delete | | | | |
-| | Focus page in desktop with a task set to edit | | | | |
-| | Focus page in desktop with a task set to delete | | | | |
-| "/takeaction" | TakeAction page in mobile | | | | |
-| | TakeAction page in desktop | | | | |
-| unknown route | Page not found page | | | | |
+| "/signup" | Sign up page | PASS | PASS | PASS | PASS |
+| "/signin" | Sign in page | PASS | PASS | PASS | PASS |
+| "/plan" | Plan page - mobile | PASS | Fail - Cannot access | Not tested | Not tested |
+| | Plan page - desktop | PASS | Fail - Cannot access | PASS | PASS |
+| "/miscellaneous" | Miscellaneous page | PASS | Fail - Cannot access | PASS | PASS |
+| "/focus/create" | Create new focus page | PASS | Fail - Cannot access | PASS | PASS |
+| "/focus/:id" | Focus page - mobile | PASS | Fail - Cannot access | Not tested | Not tested |
+| | Focus page - desktop | PASS | Fail - Cannot access | PASS | PASS |
+| "/takeaction" | TakeAction page in mobile | PASS | Fail - Cannot access | PASS | PASS |
+| | TakeAction page in desktop | PASS | Fail - Cannot access | PASS | PASS |
+| unknown route | Page not found page | PASS | PASS | PASS | PASS |
 
 [Return to contents list](#contents)
