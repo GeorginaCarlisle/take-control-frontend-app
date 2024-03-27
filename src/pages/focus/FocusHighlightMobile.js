@@ -65,7 +65,7 @@ const FocusHighlightMobile = (props) => {
       <Card.Header>
         <ContextAwareToggle as={Card.Header} eventKey={id}>
           <div className={accStyles.Title}>
-            <img className={accStyles.Image} src={image} alt='focus'/>
+            <img className={accStyles.Image} src={image} alt={`${name} focus`}/>
             <h2>{name}</h2>
           </div>
         </ContextAwareToggle>

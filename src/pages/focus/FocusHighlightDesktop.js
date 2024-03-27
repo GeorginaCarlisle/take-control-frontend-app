@@ -35,7 +35,7 @@ const FocusHighlightDesktop = (props) => {
   return (
     <div className={cardStyles.Card}>
     <div className={cardStyles.Header}>
-      <img className={cardStyles.Image} src={image} alt='focus'/>
+      <img className={cardStyles.Image} src={image} alt={`${name} focus`}/>
       <div className={cardStyles.Title}>
         <h2>{name}</h2>
         <p>{why}</p>
