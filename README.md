@@ -263,6 +263,25 @@ Every time a user successfully makes a change to their data - creation, editing 
 
 ![Screenshot of a success message](/documentation/features/success-toast.png)
 
+#### Take Action
+
+Once a user has made their plan, the "Take Action" section is where they can select tasks they want to work on today and start ticking them off. It can be accessed directly from the main navigation menu as well as from a call to action button displayed when users first log in to their account.
+
+The Take Action is made of three sections, displayed in an accordion on mobiles and alongside each other on larger screens. On tablets these sections will need to be scrolled across, as it was decided that this was a better option that squeezing up the data, still utilizing an accordion at this screen width or using an alternative structure. When there is no data present placeholder text has been used.
+
+![Screenshot showing the take action page closed on mobile](/documentation/features/take-action-mobile-closed.png)
+![Screenshot showing the take action page with no data on mobile](/documentation/features/take-action-no-data-mobile.png)
+![Screenshot showing the take action page with backlog open on mobile"](/documentation/features/take-action-mobile-backlog.png)
+![Screenshot showing the take action page with today open on mobile"](/documentation/features/take-action-mobile-today.png)
+![Screenshot showing the take action page with completed open on mobile"](/documentation/features/take-action-mobile-completed.png)
+![Screenshot showing the take action page with no data on laptop](/documentation/features/take-action-no-data-laptop.png)
+![Screenshot showing the take action page on laptop"](/documentation/features/take-action-laptop.png)
+
+An "End of day reset" button is provided at the top of the page. Clicking on this brings up a confirmation message which explains this process. On confirmation, any completed tasks are deleted and all today tasks are moved back into the backlog. This provides a quick way of clearing the "Take Action" page ready for a new day.
+
+![Screenshot showing the end of day reset confirmation on mobile"](/documentation/features/end-of-day-reset-mobile.png)
+![Screenshot showing the end of day reset confirmation on laptop"](/documentation/features/end-of-day-reset-laptop.png)
+
 ### Future Features
 
 #### Editing and deletion of user profile
@@ -539,6 +558,13 @@ Differences between planning and live project:
 #### Take Action page
 
 ![Screenshot showing how the take action page will look](documentation/planning/wireframes/take-action-page.png)
+
+Differences between planning and live project:
+
+- The additional fields and information related to setting tasks as repeated will be implemented as a future feature.
+- A search feature has been added for the backlog column, enabling users to quickly find relevant tasks.
+- Ordering of today tasks will be implemented as a future feature.
+- The 'End of day reset' and 'Add task' buttons have been moved to just under the title on mobile. This ensures these buttons are not missed.
 
 #### Labels page
 

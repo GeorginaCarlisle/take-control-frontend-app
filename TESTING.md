@@ -42,7 +42,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 | Miscellaneous.module.css | PASS | |
 | NavBar.module.css | PASS | |
 | Page.module.css | PASS | |
-| TakeAction.module.css | | |
+| TakeAction.module.css | PASS | |
 | Task.module.css | PASS | |
 | TaskCreate.module.css | PASS | |
 | Toast.module.css | PASS | |
@@ -233,16 +233,24 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 36 | As an authenticated user, I can view all active tasks together in a take action page, so that I can plan and organise my day. | | |
-| | | | |
-| 37 | I can click to reset the Action page, deleting one-off completed tasks and returning everything else to the backlog, so that I can start afresh each day. | | |
+| 36 | As an authenticated user, I can view all active tasks together in a take action page, so that I can plan and organise my day. | I can access the take action page directly from a link in the navigation bar and also from a call to action button in the signed in homepage. | PASS |
+| | | A clear title informs me that I am in "Take Action". | PASS |
+| | | There are three clear sections - Backlog, Today and Completed | PASS |
+| | | On mobile these sections are contained within an accordion where sections can be opened or closed | PASS |
+| | | A section titled backlog contains all my active tasks. | PASS |
+| | | Each task has an image specifying which focus area it belongs to. | PASS |
+| | | Each Task also specifies the goal it is attached to (if this is the case) and any deadline information. | PASS |
+| 37 | I can click to reset the Action page, deleting one-off completed tasks and returning everything else to the backlog, so that I can start afresh each day. | When in the Take Action there is a button called "End of day reset" | PASS |
+| | | Clicking the button brings up a confirmation message explaining the reset process | PASS |
+| | | Clicking to cancel removes the confirmation message and no changes are made. | PASS |
+| | | Clicking to reset deletes all achieved tasks, sets today to false for all today tasks and removes the confirmation message with all changes visible. | PASS |
 
 ### EPIC - Backlog
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 38 | As an authenticated user, I can view all my pending tasks within a backlog list, so that I can easily see everything to be done altogether. | | |
-
+| | | | |
 | 40 | As an authenticated user, I can order tasks in the backlog by repeated, focus, deadline, most recent, least recent, day to day or goal, so that I can set up the backlog in a way that works for me. | | |
 
 | 41 | As an authenticated user, I can quickly add new tasks to the backlog without needing to go through the planning page, so that I can quickly and easily add additional tasks. | | |
@@ -320,8 +328,7 @@ Wave testing screenshots are displayed below:
 | | Focus page with a goal set to delete | No errors from goal area | |
 | | Focus page with a task set to edit | No errors for task edit form | |
 | | Focus page with a task set to delete | No errors from task delete confirm | |
-| "/takeaction" | TakeAction page in mobile | | |
-| | TakeAction page in desktop | | |
+| "/takeaction" | TakeAction page | Form label errors for checkboxes and search and ordering filters | See below for further details |
 | unknown route | Page not found page | | |
 
 Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
@@ -337,6 +344,16 @@ TaskCreate and GoalCreate forms within the focus page return missing form labels
 ![Screenshot showing the goal criteria input and label html](documentation/testing/wave-errors/criteria-field-goal.png)
 ![Screenshot showing the goal value input and label html](documentation/testing/wave-errors/value-field-goal.png)
 ![Screenshot showing the goal achieved by input and label html](documentation/testing/wave-errors/achieved-by-field-goal.png)
+
+Checkboxes in the "Take Action" page return missing form labels and multiple form labels. Each input label pair has a unque id and are correctly linked, see image below.
+
+![Screenshot showing the wave errors and code for the checkboxes](documentation/testing/wave-errors/checkbox-labels.png)
+
+Ordering filter returns select missing label and multiple form labels. The label and select correctly linked, with this being the only element with this id, see image below.
+
+![Screenshot showing the wave errors and code for the ordering filter](documentation/testing/wave-errors/ordering-filter.png)
+
+Search filter returns missing label. In this case there is no label but there is clear placeholder text to indicate the role of this input.
 
 ### Text contrast levels
 
@@ -366,6 +383,9 @@ Contrast levels for title text in page containers:
 
 Contrast levels for text in highlighted task ( on edit or delete):
 ![Screen shot showing a contrast of 15.4:1](documentation/testing/colour-contrast/text-highlighted-task.png)
+
+Contrast levels for task title when highlighted as achieved:
+![Screen shot showing a contrast of 5.11:1](documentation/testing/colour-contrast/achieved-task-title.png)
 
 #### Buttons and icons
 
@@ -411,14 +431,12 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 | | | Mobile | 90 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/focus/:id" | Desktop | Focus page with everything set to view | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Mobile | 66 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
-| "/takeaction" | TakeAction page in mobile | | | | | | |
-| | | Mobile | | | | | |
-| | TakeAction page in desktop | | | | | | |
-| | | Mobile | | | | | |
+| "/takeaction" | TakeAction page | Desktop | 79 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Mobile | 76 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | unknown route | Page not found page | | | | | | |
 | | | Mobile | | | | | |
 
-Note: Only the views as first generated via a url route can be tested through lighthouse.
+Note: Only the views as first generated via a url route could be tested through lighthouse.
 
 [Return to contents list](#contents)
 
