@@ -29,6 +29,13 @@ const FocusArea = ( {id} ) => {
         setFocusData({name, why, image});
         setHasLoaded(true);
       } catch(err){
+        if (err.response?.status === 401) {
+          history.push(`/signin`);
+        } else if (err.response?.status === 403) {
+          history.push(`/plan`);
+        } else if (err.response?.status === 404) {
+          history.push('/plan');
+        }
         //console.log(err);
       }
     };
