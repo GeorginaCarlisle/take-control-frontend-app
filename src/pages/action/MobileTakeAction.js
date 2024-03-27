@@ -61,8 +61,6 @@ const MobileTakeAction = (props) => {
     const changeActiveTaskOrder = async () => {
       try {
         const {data} = await axiosReq.get(`/tasks/${filter}`);
-        console.log(filter)
-        console.log(data)
         setActiveTasks(data);
         setHasLoaded(true);
       } catch(err) {
