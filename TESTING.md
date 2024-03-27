@@ -268,22 +268,26 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 43 | As an authenticated user, I can toggle tasks to work on today moving them into a today list, so that I can prioritise and organise what I want to achieve today. | | |
-| | | | |
-| 44 | As an authenticated user, I can order tasks in today, so that tasks are displayed in the order I intend to work through them. | | |
+| 43 | As an authenticated user, I can toggle tasks to work on today moving them into a today list, so that I can prioritise and organise what I want to achieve today. | A section titled today in the take action page contains all my tasks marked as today. | PASS |
+| | | All tasks in the backlog have a today checkbox. | PASS |
+| | | When the checkbox is toggled on the task also appears in the today column. | PASS |
+| | | When the checkbox is toggled off the task is removed from the today column. | PASS |
 
 ### EPIC - Completed
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 45 | As an authenticated user, I can toggle tasks as completed moving them to a completed list, so that I can see exactly what I have achieved. | | |
+| 45 | As an authenticated user, I can toggle tasks as completed moving them to a completed list, so that I can see exactly what I have achieved. | A section titled completed in the take action page contains all my tasks marked as completed. | PASS |
+| | | All tasks in the today column have a done checkbox. | PASS |
+| | | When the checkbox is toggled on the task disappears from today and appears in the completed column. | PASS |
+| | | The checkbox is also present in the completed column and when toggled off the task is moved back. | PASS |
 
 ### Epic - Tracking
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 50 | As an authenticated user, where I have set a deadline, the app calculates how long I have left in easy terms (weeks initially and then days), so that I can make sure I meet my deadlines. | | |
-
+| | | | |
 | 51 | As an authenticated user, when my deadlines are near the associated tasks are highlighted, so that my attention is drawn to tasks that I need to prioritise in order to meet my deadlines. | | |
 
 [Return to contents list](#contents)

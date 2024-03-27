@@ -287,7 +287,7 @@ A button to "Add additional task" is also provided at the top of the page. Click
 ![Screenshot showing the successful creation of a task from the 'Take Action' page on mobile](/documentation/features/action-task-create-mobile.png)
 ![Screenshot showing the successful creation of a task from the 'Take Action' page on laptop](/documentation/features/action-task-create-laptop.png)
 
-#### Backlog
+#### Backlog column
 
 All a users tasks can be viewed in the backlog, allowing them to see all their tasks together. Tasks are initially ordered by task deadline and then by the order the tasks were created in, with task first created first.
 
@@ -312,6 +312,16 @@ Users can also specifically search for taks, by using the search input box found
 
 ![Screenshot showing the search being used on mobile](/documentation/features/backlog-search-mobile.png)
 ![Screenshot showing the search being used on laptop](/documentation/features/backlog-search-laptop.png)
+
+#### Today column
+
+Tasks checked as today in the backlog will appear in the today column. Unchecking today in the backlog will remove the task from today. All tasks in the today column are displayed with a done checkbox.
+
+#### Completed column
+
+Tasks checked as done in the today column are removed from today and added to completed. Here they are displayed with done checked to on. Users can unchecked done to remove the task from completed and return it to today.
+
+All tasks set as done have their names highlighted in green (both in the completed column and in the backlog column) and in the backlog column are also given a done status which appears under the today checkbox.
 
 ### Future Features
 
@@ -346,6 +356,12 @@ In future extra fields will be available when creating a task. These will allow 
 See user story 29 - Repeated tasks within the [scope plane of design](#the-scope-plane) and the wireframes for the focus page and new task page within the [skeleton plane of design](#the-skeleton-plane).
 
 [Return to contents list](#contents)
+
+#### Ordering today tasks
+
+In future there will be an option to order tasks within the today column, providing further functionailty to help users prioritise their tasks.
+
+See user story 44 - Order today tasks within the [scope plane of design](#the-scope-plane) and the wireframes for the ordering page within the [skeleton plane of design](#the-skeleton-plane).
 
 ## Design
 
