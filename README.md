@@ -282,6 +282,37 @@ An "End of day reset" button is provided at the top of the page. Clicking on thi
 ![Screenshot showing the end of day reset confirmation on mobile"](/documentation/features/end-of-day-reset-mobile.png)
 ![Screenshot showing the end of day reset confirmation on laptop"](/documentation/features/end-of-day-reset-laptop.png)
 
+A button to "Add additional task" is also provided at the top of the page. Clicking on this brings up a form to create a new task with extra fields provided that allow the user to choose whether to link the task to a focus area and then to a goal should they wish. This allows users to quickly add extra tasks without needing to navigate away from the "Take Action" page.
+
+![Screenshot showing the successful creation of a task from the 'Take Action' page on mobile](/documentation/features/action-task-create-mobile.png)
+![Screenshot showing the successful creation of a task from the 'Take Action' page on laptop](/documentation/features/action-task-create-laptop.png)
+
+#### Backlog
+
+All a users tasks can be viewed in the backlog, allowing them to see all their tasks together. Tasks are initially ordered by task deadline and then by the order the tasks were created in, with task first created first.
+
+Tasks are displayed with an image indicating the focus area they belong to, this makes it visually clear which area a task belongs to. Underneath the task name extra information is then displayed:
+
+- The context of the task, is it a step towards a specific goal, a day to day task for a focus area or a miscellaneous task
+- The deadline (if there is one) for the task is displayed, which will include a warning if the deadline is near.
+- The deadline for the linked goal (if there is one), which will include a warning if the deadline is near.
+
+Users can adjust the order the tasks are displayed in, by using the order by options found at the top of the backlog list. The following options are provided:
+
+- Task Deadline (this is the default) with soonest deadline first and tasks without deadline then ordered by when they were created, oldest first.
+- Focus Area where the focus areas are ordered by when they were created, oldest first.
+- Goal with goals with the soonest deadline first
+- Most recent task.
+
+![Screenshot showing the backlog ordered by task deadline](/documentation/features/backlog-order-task.png)
+![Screenshot showing the backlog ordered by focus area](/documentation/features/backlog-order-focus.png)
+![Screenshot showing the backlog ordered by goal](/documentation/features/backlog-order-goal.png)
+
+Users can also specifically search for taks, by using the search input box found at the top of the backlog list. On entering a key word, all tasks whose name, or the name of it's linked goal or linked focus area will be returned.
+
+![Screenshot showing the search being used on mobile](/documentation/features/backlog-search-mobile.png)
+![Screenshot showing the search being used on laptop](/documentation/features/backlog-search-laptop.png)
+
 ### Future Features
 
 #### Editing and deletion of user profile
@@ -289,6 +320,12 @@ An "End of day reset" button is provided at the top of the page. Clicking on thi
 At the moment there is no functionality present to allow the user to edit their username, email address or password. Nor is there a way for them to delete their account. This functionality will be a priority for the next iteration of this project. For this first iteration the priority was in making sure that the application itself was fully functioning in order to showcase what this project is about.
 
 See user stories 12, 15 and 16 within the [scope plane of design](#the-scope-plane).
+
+#### Ranking focus areas
+
+In future there will be an option to rank focus areas, with the ordering of backlog tasks by focus showing the highest ranked focus area first. This will provide another way for users to be able to prioritise which tasks to work on first.
+
+See user story 42 - Rank focus areas within the [scope plane of design](#the-scope-plane) and the wireframes for the ordering page within the [skeleton plane of design](#the-skeleton-plane).
 
 #### Nested goals
 
@@ -579,6 +616,10 @@ Once labels have been created, they can be added in the Take Action page.
 This wireframe shows today's tasks being ordered. The same setup will also be used for ranking focus areas.
 
 ![Screenshot showing how the ordering page will look](documentation/planning/wireframes/ordering-page.png)
+
+Differences between planning and live project:
+
+- The ability to order focus areas and today tasks will be implemented as a future feature.
 
 #### New task page
 

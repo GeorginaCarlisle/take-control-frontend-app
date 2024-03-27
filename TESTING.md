@@ -249,18 +249,27 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 38 | As an authenticated user, I can view all my pending tasks within a backlog list, so that I can easily see everything to be done altogether. | | |
-| | | | |
-| 40 | As an authenticated user, I can order tasks in the backlog by repeated, focus, deadline, most recent, least recent, day to day or goal, so that I can set up the backlog in a way that works for me. | | |
-
-| 41 | As an authenticated user, I can quickly add new tasks to the backlog without needing to go through the planning page, so that I can quickly and easily add additional tasks. | | |
+| 38 | As an authenticated user, I can view all my pending tasks within a backlog list, so that I can easily see everything to be done altogether. | Backlog contains all tasks | PASS |
+| | | Message provided if no tasks available | PASS |
+| | | Tasks are ordered by deadline | PASS |
+| 40 | As an authenticated user, I can order tasks in the backlog by repeated, focus, deadline, most recent, least recent, day to day or goal, so that I can set up the backlog in a way that works for me. | In the backlog section there is a selection box to provide ordering of the tasks. | PASS |
+| | | This sits under the title in desktop and at the top of the expanded backlog section in mobile. | PASS |
+| | | Clicking on the selection box brings up a list of ordering options. | PASS |
+| | | Clicking an option causes the backlog list of tasks to order accordingly. | PASS |
+| 41 | As an authenticated user, I can quickly add new tasks to the backlog without needing to go through the planning page, so that I can quickly and easily add additional tasks. | When I am in "Take Action" there is a clear button to add an additional task. | PASS |
+| | | Clicking the button opens an "Add New Task" Modal. | PASS |
+| | | The modal contains a form to create a new task. | PASS |
+| | | The form also includes a section to link to a focus area and if focus area linked a section to link to a goal. | |
+| | | I can then choose to cancel or submit. | PASS |
+| | | Cancelling closes the modal. | PASS |
+| | | Submitting creates a new task, closes the modal and my new task is visible in the backlog. | PASS |
 
 ### EPIC - Today
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
 | 43 | As an authenticated user, I can toggle tasks to work on today moving them into a today list, so that I can prioritise and organise what I want to achieve today. | | |
-
+| | | | |
 | 44 | As an authenticated user, I can order tasks in today, so that tasks are displayed in the order I intend to work through them. | | |
 
 ### EPIC - Completed
