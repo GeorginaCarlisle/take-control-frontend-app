@@ -296,6 +296,7 @@ Tasks are displayed with an image indicating the focus area they belong to, this
 - The context of the task, is it a step towards a specific goal, a day to day task for a focus area or a miscellaneous task
 - The deadline (if there is one) for the task is displayed, which will include a warning if the deadline is near.
 - The deadline for the linked goal (if there is one), which will include a warning if the deadline is near.
+- The warnings will be highlighted in red for overdue deadlines or amber for deadlines due today or tomorrow.
 
 Users can adjust the order the tasks are displayed in, by using the order by options found at the top of the backlog list. The following options are provided:
 
@@ -354,6 +355,15 @@ See user story 39 - Activate and pause goals within the [scope plane of design](
 In future extra fields will be available when creating a task. These will allow users to specify tasks to be repeated, including details on frequency. The daily reset functionality will be adjusted so that any completed repeated tasks are not deleted but simply returned to the backlog. Additional data will also be generated so that users are kept informed of how many times they have completed the task that week.
 
 See user story 29 - Repeated tasks within the [scope plane of design](#the-scope-plane) and the wireframes for the focus page and new task page within the [skeleton plane of design](#the-skeleton-plane).
+
+#### Tracking
+
+In future the application will keep track of the following, keeping the user better informed:
+
+- Where tasks are set as repeated, the app will keep track of how many have been completed for the set time period, displaying this information to the user. See user story 52.
+- Repeated tasks that need to be completed today in order to achieve the set frequency are highlighted, in order to support the user in keeping on top of repeat jobs or habits I am trying to form. See user story 53.
+- Tasks that have been awaiting completion for a long time will be highlighted, helping users to weed out tasks that are no longer important as well as not leaving important things undone. See user story 54.
+- Goals that haven’t had any tasks or tasks of nested goals completed are highlighted, helping users to weed out goals that are no longer important as well as not leaving important goals undone. See user story 55.
 
 [Return to contents list](#contents)
 

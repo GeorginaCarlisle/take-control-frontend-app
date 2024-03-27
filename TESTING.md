@@ -286,9 +286,13 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 50 | As an authenticated user, where I have set a deadline, the app calculates how long I have left in easy terms (weeks initially and then days), so that I can make sure I meet my deadlines. | | |
-| | | | |
-| 51 | As an authenticated user, when my deadlines are near the associated tasks are highlighted, so that my attention is drawn to tasks that I need to prioritise in order to meet my deadlines. | | |
+| 50 | As an authenticated user, where I have set a deadline, the app calculates how long I have left in easy terms (weeks initially and then days), so that I can make sure I meet my deadlines. | | This story has been adjusted, see below |
+| 50 adjusted | As an authenticated user, where I have set a deadline and the deadline is close or overdue, this is clearly displayed, so that I can make sure I meet my deadlines. | When viewing a goal in "Plan" an extra message is included when the deadline is near or overdue. This message is highlighted in red. |PASS |
+| | | When viewing a task in "Take Action" information is displayed about the tasks deadline and parent goal deadline, if these exist. | PASS |
+| | | A specific message is displayed where the deadlines are overdue, today or tomorrow. | PASS |
+| | | Where overdue this is highlighted in red. | PASS  |
+| | | Where Today or Tomorrow this is highlighted in amber. | PASS |
+| 51 | As an authenticated user, when my deadlines are near the associated tasks are highlighted, so that my attention is drawn to tasks that I need to prioritise in order to meet my deadlines. | | This has been covered in user story 50 |
 
 [Return to contents list](#contents)
 
