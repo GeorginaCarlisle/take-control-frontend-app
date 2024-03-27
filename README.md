@@ -332,6 +332,12 @@ At the moment there is no functionality present to allow the user to edit their 
 
 See user stories 12, 15 and 16 within the [scope plane of design](#the-scope-plane).
 
+#### Improved navigation
+
+Currently when creating a new goal when on mobile, the goal appears as a new tab, you get a success message and the form clears. But you are still left within the opened create a new goal section. In future logic will be added on form submission that will close the create a new goal section and open up the newly created goal.
+
+Currently the only link from the take action page back into the plan is by clicking on the focus image next to each task, which will take the user into that focus area. In future extra logic will be added that will open up the linked goal (if there is one) and highlight the specific task.
+
 #### Ranking focus areas
 
 In future there will be an option to rank focus areas, with the ordering of backlog tasks by focus showing the highest ranked focus area first. This will provide another way for users to be able to prioritise which tasks to work on first.
@@ -365,13 +371,25 @@ In future the application will keep track of the following, keeping the user bet
 - Tasks that have been awaiting completion for a long time will be highlighted, helping users to weed out tasks that are no longer important as well as not leaving important things undone. See user story 54.
 - Goals that haven’t had any tasks or tasks of nested goals completed are highlighted, helping users to weed out goals that are no longer important as well as not leaving important goals undone. See user story 55.
 
-[Return to contents list](#contents)
-
 #### Ordering today tasks
 
 In future there will be an option to order tasks within the today column, providing further functionailty to help users prioritise their tasks.
 
 See user story 44 - Order today tasks within the [scope plane of design](#the-scope-plane) and the wireframes for the ordering page within the [skeleton plane of design](#the-skeleton-plane).
+
+#### Labels
+
+In future there will be an option to create custom labels which can then be added to tasks, providing further functionailty to help users organise and prioritise their tasks.
+
+See user stories 46, 47, 48 and 49 within the [scope plane of design](#the-scope-plane) and the wireframes for the labels page within the [skeleton plane of design](#the-skeleton-plane).
+
+#### Teams
+
+In future users will be able to set up a team of other users who they would like to grant access to a specific focus area and it's nested goals and tasks.
+
+See user stories 56, 57 and 58 within the [scope plane of design](#the-scope-plane).
+
+[Return to contents list](#contents)
 
 ## Design
 
@@ -607,6 +625,7 @@ Differences between planning and live project:
 - To allow the main focus page to be accessed by routing with a url including the focus.id number, creation of a new focus was given it's own page. On successful creation of a new focus the user is then redirect to the focus page for the focus they have just created.
 - The nested goal functionality will be implemented as a future feature.
 - The additional fields and information related to setting tasks as repeated will be implemented as a future feature.
+- The labels functionality will be implemented as a future feature.
 
 #### Miscellaneous page
 
@@ -617,6 +636,7 @@ This is page for unlinked tasks and is accessed from the main plan page. It will
 Differences between planning and live project:
 
 - The additional fields and information related to setting tasks as repeated will be implemented as a future feature.
+- The labels functionality will be implemented as a future feature.
 
 #### Take Action page
 
@@ -628,6 +648,7 @@ Differences between planning and live project:
 - A search feature has been added for the backlog column, enabling users to quickly find relevant tasks.
 - Ordering of today tasks will be implemented as a future feature.
 - The 'End of day reset' and 'Add task' buttons have been moved to just under the title on mobile. This ensures these buttons are not missed.
+- The labels functionality will be implemented as a future feature.
 
 #### Labels page
 
@@ -636,6 +657,10 @@ Differences between planning and live project:
 Once labels have been created, they can be added in the Take Action page.
 
 ![Screenshot showing how the labels can be added](documentation/planning/wireframes/labels-add.png)
+
+Differences between planning and live project:
+
+- The labels functionality in it's entirity will be implemented as a future feature.
 
 #### Ordering page
 
