@@ -70,7 +70,7 @@ const DesktopTakeAction = (props) => {
 
       <div className={styles.Column}>
         <div className={styles.TitleContainer}>
-          <h3>Backlog</h3>
+          <h2>Backlog</h2>
           <div className={styles.SearchContainer}>
             <Form onSubmit={(event) => event.preventDefault()}>
               <Form.Control
@@ -127,7 +127,7 @@ const DesktopTakeAction = (props) => {
 
       <div className={`${styles.Column} ${styles.MiddleColumn}`}>
         <div className={styles.TitleContainer}>
-          <h3>Today</h3>
+          <h2>Today</h2>
         </div>
         <div className={styles.TasksContainer}>
           {hasLoaded ? (
@@ -154,7 +154,7 @@ const DesktopTakeAction = (props) => {
 
       <div className={styles.Column}>
         <div className={styles.TitleContainer}>
-          <h3>Completed</h3>
+          <h2>Completed</h2>
         </div>
         <div className={styles.TasksContainer}>
         {hasLoaded ? (

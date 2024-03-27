@@ -156,9 +156,9 @@ const ActionTask = (props) => {
       </div>
       <div className={styles.DetailsContainer}>
           {achieved ? (
-            <h4 className={styles.AchievedName}>{name}</h4>
+            <h3 className={styles.AchievedName}>{name}</h3>
           ) : (
-            <h4>{name}</h4>
+            <h3>{name}</h3>
           )}
           <p className={styles.TaskContext}>{context}</p>
           <DeadlineContext />

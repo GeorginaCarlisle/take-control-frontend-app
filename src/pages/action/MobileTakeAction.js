@@ -102,7 +102,7 @@ const MobileTakeAction = (props) => {
       <Card>
         <Card.Header>
           <ContextAwareToggle as={Card.Header} eventKey="0">
-            <h3>Backlog</h3>
+            <h2>Backlog</h2>
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
@@ -165,7 +165,7 @@ const MobileTakeAction = (props) => {
       <Card>
         <Card.Header>
           <ContextAwareToggle as={Card.Header} eventKey="1">
-            <h3>Today</h3>
+            <h2>Today</h2>
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="1">
@@ -196,7 +196,7 @@ const MobileTakeAction = (props) => {
       <Card>
         <Card.Header>
           <ContextAwareToggle as={Card.Header} eventKey="2">
-            <h3>Completed</h3>
+            <h2>Completed</h2>
           </ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="2">
