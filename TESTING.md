@@ -346,29 +346,56 @@ Wave testing screenshots are displayed below:
 
 Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
 
+#### Wave Error explanations
+
 Form label errors:
 TaskCreate and GoalCreate forms within the focus page return missing form labels when wave is run. See [bugs](https://github.com/GeorginaCarlisle/take-control-frontend-app/blob/main/README.md#bugs-and-fixes) for how these errors were tackled. The images below show the errors and also show the generated html that clearly show that input and label are correctly linked. It is also to be noted that no form errors are picked up by lighthouse and so I believe the errors may be inherent to wave and not my code.
 
 ![Screenshot showing the wave errors](documentation/testing/wave-errors/wave-form-errors.jpg)
+
+Task name input and label:
 ![Screenshot showing the task name input and label html](documentation/testing/wave-errors/name-field-task.jpg)
+
+Task deadline input and label:
 ![Screenshot showing the task deadline input and label html](documentation/testing/wave-errors/deadline-field-task.png)
+
+Goal title input and label:
 ![Screenshot showing the goal title input and label html](documentation/testing/wave-errors/title-field-goal.png)
+
+Goal description input and label:
 ![Screenshot showing the goal description input and label html](documentation/testing/wave-errors/description-field-goal.png)
+
+Goal criteria input and label:
 ![Screenshot showing the goal criteria input and label html](documentation/testing/wave-errors/criteria-field-goal.png)
+
+Goal value input and label:
 ![Screenshot showing the goal value input and label html](documentation/testing/wave-errors/value-field-goal.png)
+
+Goal achieved input and label:
 ![Screenshot showing the goal achieved by input and label html](documentation/testing/wave-errors/achieved-by-field-goal.png)
 
-Checkboxes in the "Take Action" page return missing form labels and multiple form labels. Each input label pair has a unque id and are correctly linked, see image below.
-
+Checkboxes in the "Take Action" page return missing form labels and multiple form labels. Each input label pair has a unque id and are correctly linked:
 ![Screenshot showing the wave errors and code for the checkboxes](documentation/testing/wave-errors/checkbox-labels.png)
 
-Ordering filter returns select missing label and multiple form labels. The label and select correctly linked, with this being the only element with this id, see image below.
-
+Ordering filter returns select missing label and multiple form labels. The label and select correctly linked, with this being the only element with this id:
 ![Screenshot showing the wave errors and code for the ordering filter](documentation/testing/wave-errors/ordering-filter.png)
 
 Search filter returns missing label. In this case there is no label but there is clear placeholder text to indicate the role of this input.
 
 ### Text contrast levels
+
+The majority of text contrasts meet the strictest criteria: WCAG AAA criteria for normal text.
+
+The following meet the WCAG AAA criteria for large text but not normal text, and are only used for large text:
+
+- Site title text in the header
+- Page titles
+- Task titles in take action checked as done
+
+The following meet only the WCAG AA criteria for normal text, the size they are found on the site. These are used infrequently and while the colours were darkened it was felt that to darken any further would negate the role of these colours to highlight and stand out amongst neighbouring text:
+
+- Red warning text
+- Amber warning text
 
 #### Header
 
@@ -403,7 +430,7 @@ Contrast levels for task title when highlighted as achieved:
 Contrast levels for red warning text:
 ![Screen shot showing a contrast of 4.99:1](documentation/testing/colour-contrast/red-warning-text.png)
 
-Contrast levels for red warning text:
+Contrast levels for amber warning text:
 ![Screen shot showing a contrast of 4.57:1](documentation/testing/colour-contrast/amber-warning-text.png)
 
 #### Buttons and icons
@@ -488,7 +515,7 @@ This project was built and test along the way predominantly in a Chrome browser.
 | Route | Specific view | Chrome | Safari | Firefox | Edge |
 | --- | --- | --- | --- | --- | --- |
 | "/" | Home page for logged out user | PASS | PASS | PASS | PASS |
-| | Home page for logged in user | PASS | Fail - Cannot access | PASS | PASS |
+| | Home page for logged in user | PASS | PASS | PASS | PASS |
 | "/signup" | Sign up page | PASS | PASS | PASS | PASS |
 | "/signin" | Sign in page | PASS | PASS | PASS | PASS |
 | "/plan" | Plan page - mobile | PASS | Fail - Cannot access | Not tested | Not tested |
@@ -500,5 +527,7 @@ This project was built and test along the way predominantly in a Chrome browser.
 | "/takeaction" | TakeAction page in mobile | PASS | Fail - Cannot access | PASS | PASS |
 | | TakeAction page in desktop | PASS | Fail - Cannot access | PASS | PASS |
 | unknown route | Page not found page | PASS | PASS | PASS | PASS |
+
+Please see [bug #2](https://github.com/GeorginaCarlisle/take-control-frontend-app/blob/main/README.md#bugs-and-fixes) for further details about Safari.
 
 [Return to contents list](#contents)
