@@ -42,7 +42,6 @@ const NavBar = () => {
 
   const loggedOutLinks = (
     <>
-      <NavLink className={styles.Link} activeClassName={styles.Active} to="/about">About</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/signup">Sign Up</NavLink>
       <NavLink className={styles.Link} activeClassName={styles.Active} to="/signin">Sign In</NavLink>
     </>

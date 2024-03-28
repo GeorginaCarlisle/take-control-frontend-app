@@ -5,7 +5,6 @@ import styles from './App.module.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
 import Signup from './pages/auth/Signup';
 import SignIn from './pages/auth/SignIn';
 import Plan from './pages/plan/Plan';
@@ -45,7 +44,6 @@ function App() {
           {tokensChecked ? (
             <Switch>
             <Route exact path="/" render={() => <Home />} />
-            <Route exact path="/about" render={() => <About />} />
             <Route exact path="/signup" render={() => <Signup />} />
             <Route exact path="/signin" render={() => <SignIn />} />
             <Route exact path="/plan" render={() => (

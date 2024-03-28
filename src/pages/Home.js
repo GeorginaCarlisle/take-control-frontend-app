@@ -4,6 +4,7 @@ import pageStyles from '../styles/Page.module.css';
 import logo from '../assets/purple-logo.png';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import { useCurrentUser } from '../contexts/CurrentUserContext';
+import About from './About';
 
 
 const Home = () => {
@@ -14,9 +15,6 @@ const Home = () => {
     <>
       <Link className={btnStyles.Button} to={'/signup'}>
       Get signed up!
-      </Link>
-      <Link className={btnStyles.Button} to={'/about'}>
-      Find out more
       </Link>
     </>
   );
@@ -47,8 +45,8 @@ const Home = () => {
           {currentUser ? (`Welcome to your account ${currentUser.username}`) : (
             "keep all your plates spinning")}
         </h2>
-      
       </div>
+      {!currentUser && <About />}
       <div className={btnStyles.ButtonContainer}>
         {currentUser ? (signedInButtons) : (signedOutButtons)}
       </div>
