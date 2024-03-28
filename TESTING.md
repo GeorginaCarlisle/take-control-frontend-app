@@ -26,7 +26,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 
 | CSS file | Result | Extra notes |
 | --- | --- | --- |
-| About.module.css | | |
+| About.module.css | PASS | |
 | Accordion.module.css | PASS | |
 | ActionTask.module.css | PASS | |
 | Button.module.css | PASS | |
@@ -73,11 +73,19 @@ All completed user stories have been manually tested against their acceptance cr
 
 | # | User Story | Acceptance Criteria | Result |
 | --- | --- | --- | --- |
-| 1 | As a new user, I can instantly see information about the application, so that I can understand the value that it may offer me. | | |
-
-| 2 | As a new user, I can find out more about the planning side of the application, so that I can learn more about how the application works enticing me to sign up. | | |
-
-| 3 | As a new user, I can find out more about the take action side of the application, so that I can learn more about how the application works enticing me to sign up. | | |
+| 1 | As a new user, I can instantly see information about the application, so that I can understand the value that it may offer me. | Favicon of app logo | PASS |
+| | | App Logo and name stand out as the main title | PASS |
+| | | "Keep all your plates spinning" slogan stands out | PASS |
+| | | Clear information about the app provided | PASS |
+| | | Images display are specific to whether the user is displaying the page on mobile or desktop | PASS |
+| | | Bottom of the screen takes user to the sign up | PASS |
+| | | Footer provides info about development of the app | PASS |
+| 2 | As a new user, I can find out more about the planning side of the application, so that I can learn more about how the application works enticing me to sign up. | Screenshots showing the plan page included. | PASS |
+| | | Screenshots showing a focus area included. | PASS |
+| | | Screenshots showing the miscellaneous area included. | PASS |
+| | | Clear and concise explanation provided. | PASS |
+| 3 | As a new user, I can find out more about the take action side of the application, so that I can learn more about how the application works enticing me to sign up. | Screenshots showing the take action page included. | PASS |
+| | | Clear and concise explanation. | PASS |
 
 ### Epic - Navigation
 
@@ -326,9 +334,8 @@ Wave testing screenshots are displayed below:
 
 | Route | Specific view | Result | Extra notes |
 | --- | --- | --- | --- |
-| "/" | Home page for logged out user | | |
+| "/" | Home page for logged out user | No errors | Alert - nearby image with the same alt text due to the logo (with it's alt text) being displayed twice |
 | | Home page for logged in user | No errors | Alert - nearby image with the same alt text due to the logo (with it's alt text) being displayed twice |
-| "/about" | About page | | |
 | "/signup" | Sign up page | No errors | Alert "A nearby image has the same alternative text" caused by the logo being used twice with the same alt reference. |
 | "/signin" | Sign in page | No errors | Alert "A nearby image has the same alternative text" caused by the logo being used twice with the same alt reference. |
 | "/plan" | Plan page | No errors | |
@@ -345,7 +352,7 @@ Wave testing screenshots are displayed below:
 | | Focus page with a task set to edit | No errors for task edit form | |
 | | Focus page with a task set to delete | No errors from task delete confirm | |
 | "/takeaction" | TakeAction page | Form label errors for checkboxes and search and ordering filters | See below for further details |
-| unknown route | Page not found page | No errors | Redundant link |
+| unknown route | Page not found page | No errors | Alert: Redundant link |
 
 Note: All pages show an alert linked to the noscript element from index.html with contents: You need to enable JavaScript to run this app.
 
@@ -431,15 +438,13 @@ Chrome developer tools Lighthouse was used to test the performance, accessibilit
 
 | Route | Specific view | Desktop/mobile | Performance | Accessibility | Best Pracices | SEO | Extra notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| "/" | Home page for logged out user | | | | | | |
-| | | Mobile | | | | | |
-| | Home page for logged in user | | | | | | |
-| | | Mobile | | | | | |
-| "/about" | About page | | | | | | |
-| | | Mobile | | | | | |
+| "/" | Home page for logged out user | Desktop | 86 | 100 | 96 | 100 | |
+| | | Mobile | 61 | 100 | 96 | 100 | |
+| | Home page for logged in user | Desktop | 71 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
+| | | Mobile | 59 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | "/signup" | Sign up page | Desktop | 99 | 100 | 96 | 100 | |
 | | | Mobile | 94 | 100 | 96 | 100 | |
-| "/signin" | Sign in page | 99 | 100 | 96 | 100 | | |
+| "/signin" | Sign in page | Desktop | 99 | 100 | 96 | 100 | |
 | | | Mobile | 95 | 100 | 96 | 100 | |
 | "/plan" | Plan page | Mobile | 77 | 100 | 78 | 100 | Third party cookies affecting best practices result. |
 | | | Desktop | 76 | 100 | 78 | 100 | Third party cookies affecting best practices result.|
@@ -464,9 +469,8 @@ The platform has been fully tested across a range of screen sizes, from 350px up
 
 | Route | Specific view | Mobile | Tablet | Laptop | Large Desktop |
 | --- | --- | --- | --- | --- | --- |
-| "/" | Home page for logged out user | | | | |
-| | Home page for logged in user | | | | |
-| "/about" | About page | | | | |
+| "/" | Home page for logged out user | PASS | PASS | PASS | PASS |
+| | Home page for logged in user | PASS | PASS | PASS | PASS |
 | "/signup" | Sign up page | PASS | PASS | PASS | PASS |
 | "/signin" | Sign in page | PASS | PASS | PASS | PASS |
 | "/plan" | Plan page - mobile | PASS | PASS | PASS | PASS |
@@ -493,9 +497,8 @@ This project was built and test along the way predominantly in a Chrome browser.
 
 | Route | Specific view | Chrome | Safari | Firefox | Edge |
 | --- | --- | --- | --- | --- | --- |
-| "/" | Home page for logged out user | | | | |
+| "/" | Home page for logged out user | PASS | PASS | PASS | PASS |
 | | Home page for logged in user | PASS | Fail - Cannot access | PASS | PASS |
-| "/about" | About page | | | | |
 | "/signup" | Sign up page | PASS | PASS | PASS | PASS |
 | "/signin" | Sign in page | PASS | PASS | PASS | PASS |
 | "/plan" | Plan page - mobile | PASS | Fail - Cannot access | Not tested | Not tested |

@@ -64,6 +64,17 @@ Links:
 
 ### Existing Features
 
+#### New user experience
+
+On first navigating to the website users are presented with the project's logo, name and slogan. Underneath this they will find a clear explanation, alongside screenshots, of what the application offers. A link to signup sits below the information so that users can head straight to signup without first needing to scroll back up to the top. The project's logo is also utilised as a favicon for the page.
+
+![Screenshot of the landing page on mobile - top](/documentation/features/landing-page-mobile-1.png)
+![Screenshot of the landing page on mobile - middle top](/documentation/features/landing-page-mobile-2.png)
+![Screenshot of the landing page on mobile - middle bottom](/documentation/features/landing-page-mobile-3.png)
+![Screenshot of the landing page on mobile - bottom](/documentation/features/landing-page-mobile-4.png)
+![Screenshot of the landing page on laptop - top](/documentation/features/landing-page-laptop-1.png)
+![Screenshot of the landing page on laptop - bottom](/documentation/features/landing-page-laptop-2.png)
+
 #### Navigation
 
 A header with navigation links is present at the top of all pages, providing easy navigation between different sections of the application. It is fixed in position at the top of the screen, so that it is always accessible. Moving between sections is handled by routing, preventing the page from needing to re-load and making for a more seamless user experience. The navigation links provided are specific to whether the user is logged in or logged out. This ensures they are never provided with links that are unaccessible to them and also that they have the links they need.
@@ -601,6 +612,11 @@ A number of wireframes have been created to plan out how and where everything wi
 #### Landing Page
 
 ![Screenshot showing how the landing page will look](documentation/planning/wireframes/landing-page.png)
+
+Differences between planning and live project:
+
+- The explanation of the application and how it is displayed has been greatly improved.
+- There is no find out more page, with everything being covered on the landing page.
 
 #### Main plan page
 
