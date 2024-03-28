@@ -18,7 +18,7 @@ import mobilecompleted from '../assets/mobile-completed.png';
 const About = () => {
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.AboutContainer}`}>
-      <div className={`${styles.TextContainer} ${styles.Intro}`}>
+      <div className={styles.HeaderContainer}>
         <p>
           When there is lots you want to achieve, alongside plenty of responsibilities, 
           it can be hard to keep all your plates spinning.

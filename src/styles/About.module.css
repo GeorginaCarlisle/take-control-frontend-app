@@ -21,6 +21,16 @@
   margin-bottom: 10px;
 }
 
+.HeaderContainer {
+  background-color: #f5f5f5;
+  border-color: #bfbfbf;  
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 10px 5px 0px 5px;
+  margin: 30px 10px 30px 10px;
+}
+
 strong {
   color: #3c159c;
 }
@@ -98,7 +108,7 @@ strong {
   .MobileImage {
     display: none;
   }
-  .Intro {
+  .HeaderContainer {
     text-align: center;
     max-width: 890px;
   }
@@ -116,6 +126,9 @@ strong {
 @media screen and (min-width:992px){
   .TextContainer {
     margin: 20px;
+    padding: 10px;
+  }
+  .HeaderContainer {
     padding: 10px;
   }
   .InfoSectionLeft {
