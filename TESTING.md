@@ -51,17 +51,7 @@ All css files have been passed through the [W3C CSS Validation Service](https://
 
 ### JavaScript Validation
 
-EsLint was installed and in use during building of this project and has been used to validate all the JavaScript files, the majority of which also contain JSX. All files pass through the EsLint without warning, other than the following:
-
-DesktopTakeAction.js with the following warnings:
-
-- Line 52:6:  React Hook useEffect has a missing dependency: 'setHasLoaded'. Either include it or remove the dependency array
-- Line 66:6:  React Hook useEffect has missing dependencies: 'setActiveTasks' and 'setHasLoaded'. Either include them or remove the dependency array
-
-MobileTakeAction.js with the following warnings:
-
-- Line 58:6:  React Hook useEffect has a missing dependency: 'setHasLoaded'. Either include it or remove the dependency array
-- Line 72:6:  React Hook useEffect has missing dependencies: 'setActiveTasks' and 'setHasLoaded'. Either include them or remove the dependency array
+EsLint was installed and in use during building of this project and has been used to validate all the JavaScript files, the majority of which also contain JSX. All files pass through the EsLint without warning.
 
 [Return to contents list](#contents)
 

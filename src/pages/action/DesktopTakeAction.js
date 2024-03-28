@@ -49,7 +49,7 @@ const DesktopTakeAction = (props) => {
     } else {
       setSearchList({ results: []});
     }
-  }, [query])
+  }, [query, setHasLoaded])
 
   useEffect(() => {
     const changeActiveTaskOrder = async () => {
@@ -63,7 +63,7 @@ const DesktopTakeAction = (props) => {
     };
     setHasLoaded(false);
     changeActiveTaskOrder();
-  }, [filter])
+  }, [filter, setActiveTasks, setHasLoaded])
 
   return (
     <div className={`${pageStyles.ContentContainer} ${styles.MainContainer}`}>

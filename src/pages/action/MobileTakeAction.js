@@ -55,7 +55,7 @@ const MobileTakeAction = (props) => {
     } else {
       setSearchList({ results: []});
     }
-  }, [query])
+  }, [query, setHasLoaded])
 
   useEffect(() => {
     const changeActiveTaskOrder = async () => {
@@ -69,7 +69,7 @@ const MobileTakeAction = (props) => {
     };
     setHasLoaded(false);
     changeActiveTaskOrder();
-  }, [filter])
+  }, [filter, setActiveTasks, setHasLoaded])
 
   // function copied from React bootstrap and adjusted
   function ContextAwareToggle({ children, eventKey, callback }) {
